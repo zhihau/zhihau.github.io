@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - index</title>
+        <title>ZhiHau Blog - How to install linux bash shell on Windows 10</title>
 <style>
 /**
 * Highlight.js
@@ -67,112 +67,101 @@ fjs.parentNode.insertBefore(js, fjs);
 	</div>
         <div class="content" style="padding: 48 64 16 64">
         
+<p>
+<span id="-vlang"></span><span class="tag" id="vlang">vlang</span> <span id="-Linux"></span><span class="tag" id="Linux">Linux</span> <span id="-Windows"></span><span class="tag" id="Windows">Windows</span> <span id="-bash"></span><span class="tag" id="bash">bash</span> <span id="-installation"></span><span class="tag" id="installation">installation</span>
+</p>
 
-<div id="ASP.Net"><h1 id="ASP.Net" class="header"><a href="#ASP.Net">ASP.Net</a></h1></div>
+<div id="How to install linux bash shell on Windows 10"><h1 id="How to install linux bash shell on Windows 10" class="header"><a href="#How to install linux bash shell on Windows 10">How to install linux bash shell on Windows 10</a></h1></div>
+
+<p>
+<img src="D:/Personal/vimwiki_html/img/zhihau-bash.PNG" />
+</p>
+
+<p>
+I want to build <a href="vlang.html">vlang</a> code in real bash shell. Not a bash like shell. For instance, <a href="https://www.mingw-w64.org/">MinGW</a>. Because I get some error when I compile <a href="vlang.html">vlang</a> code in <a href="https://www.mingw-w64.org/">MinGW</a>.
+</p>
+
+<div id="How to install linux bash shell on Windows 10-Steps"><h2 id="Steps" class="header"><a href="#How to install linux bash shell on Windows 10-Steps">Steps</a></h2></div>
+<ol>
+<li>
+Type <code>control panel</code> hit <span id="How to install linux bash shell on Windows 10-Steps-Enter"></span><strong id="Enter">Enter</strong> key in the search box.
+
+<li>
+Click <span id="How to install linux bash shell on Windows 10-Steps-control panel"></span><strong id="control panel">control panel</strong> menu item to open it.
+
+<li>
+Click <span id="How to install linux bash shell on Windows 10-Steps-programs"></span><strong id="programs">programs</strong> item
+
+<li>
+Find and click <span id="How to install linux bash shell on Windows 10-Steps-Turn windows features on or off"></span><strong id="Turn windows features on or off">Turn windows features on or off</strong> at the right side of the window.
+
+<li>
+Checked these features <span id="How to install linux bash shell on Windows 10-Steps-Virtual Machine Platform"></span><strong id="Virtual Machine Platform">Virtual Machine Platform</strong> and <span id="How to install linux bash shell on Windows 10-Steps-Windows Subsystem for Linux"></span><strong id="Windows Subsystem for Linux">Windows Subsystem for Linux</strong> and click OK button.
+
+<li>
+Wait a minute. 
+
+<li>
+Reboot your system. 
+
+<li>
+Type <code>microsoft store</code> hit <span id="How to install linux bash shell on Windows 10-Steps-Enter"></span><strong id="Enter">Enter</strong> key in the search box. Search <code>Ubuntu</code> in <span id="How to install linux bash shell on Windows 10-Steps-Microsoft store"></span><strong id="Microsoft store">Microsoft store</strong> window. Click <span id="How to install linux bash shell on Windows 10-Steps-Get"></span><strong id="Get">Get</strong> button to download it.<img src="D:/Personal/vimwiki_html/img/search-Ubuntu-on-microsoft-store.PNG" />
+
+<li>
+When I download completed, I get a bad user experience. The dark blue button move to a wrong position, it is out of the window. <img src="D:/Personal/vimwiki_html/img/microsoft-store-button-out-of-window.PNG" />
+
+<li>
+What's the button? Let's drag the right border of the window to left. We can find the answer. This is a open button.<img src="D:/Personal/vimwiki_html/img/open-button-in-microsoft-store.PNG" />
+
+<li>
+Click the <span id="How to install linux bash shell on Windows 10-Steps-open"></span><strong id="open">open</strong> button. It will install Ubuntu on your computer.<img src="D:/Personal/vimwiki_html/img/install-ubuntu.PNG" />
+
+<li>
+Afterward you have to set your username and password. Now you have a real bash shell on Windows. Right click on Ubuntu icon in the taskbar. Choose <span id="How to install linux bash shell on Windows 10-Steps-Pin to taskbar"></span><strong id="Pin to taskbar">Pin to taskbar</strong> to access bash shell quickly.
+
+</ol>
+
+<div id="How to install linux bash shell on Windows 10-Ubuntu bash shell environment"><h2 id="Ubuntu bash shell environment" class="header"><a href="#How to install linux bash shell on Windows 10-Ubuntu bash shell environment">Ubuntu bash shell environment</a></h2></div>
 <ul>
 <li>
-<a href="How to create ASP dot net MVC web application in Visual Studio 2019.html">How to create ASP dot net MVC web application in Visual Studio 2019</a>
+Where is c and d drive? /mnt/c , /mnt/d
+
+<li>
+How to open file manager on bash shell? Type command <code>explorer.exe .</code>.
+
+<li>
+How to use v command on bash shell? Type command <code>v.exe .</code>.
+
+<li>
+How to run a command in current directory? Type command <code>./file.exe</code>.
+
+<li>
+If you cannot create a file. When you open a bash, click <span id="How to install linux bash shell on Windows 10-Ubuntu bash shell environment-run as administrator"></span><strong id="run as administrator">run as administrator</strong> to open it with administrator permission.
+
+<li>
+How to add my bin path to Linux PATH? 
 
 </ul>
+<p>
+Creating a <span id="How to install linux bash shell on Windows 10-Ubuntu bash shell environment-bin"></span><strong id="bin">bin</strong> folder in the drive d. Copy <span id="How to install linux bash shell on Windows 10-Ubuntu bash shell environment-file.exe"></span><strong id="file.exe">file.exe</strong> to the new directory <span id="How to install linux bash shell on Windows 10-Ubuntu bash shell environment-/mnt/d/bin"></span><strong id="/mnt/d/bin">/mnt/d/bin</strong>. Open ~/.bashrc via <code>the command vi ~/.bashrc</code>. Append `<code>export PATH:$PATH:/mnt/d/bin</code> at the end of the file. Then open a new bash shell. Now you can use the file command with <code>file.exe</code>. <span id="How to install linux bash shell on Windows 10-Ubuntu bash shell environment-Remember that the file extension muse have."></span><strong id="Remember that the file extension muse have.">Remember that the file extension muse have.</strong>
+</p>
 
-<div id="Jobs"><h1 id="Jobs" class="header"><a href="#Jobs">Jobs</a></h1></div>
+<div id="How to install linux bash shell on Windows 10-How to install an app?"><h2 id="How to install an app?" class="header"><a href="#How to install linux bash shell on Windows 10-How to install an app?">How to install an app?</a></h2></div>
+<p>
+Click <span id="How to install linux bash shell on Windows 10-How to install an app?-start"></span><strong id="start">start</strong> menu. Look for the program then right click. Select <span id="How to install linux bash shell on Windows 10-How to install an app?-uninstall"></span><strong id="uninstall">uninstall</strong>. It doesn't have any uninstalling message to remind you. You need to wait a minute. Then the app icon will disappear. It's not user friendly. 
+</p>
+
+<p>
+If you opened a Microsoft Store window, a <span id="How to install linux bash shell on Windows 10-How to install an app?-open"></span><strong id="open">open</strong> button shows on the app page. You have to close the Microsoft Store window then open it again. The <span id="How to install linux bash shell on Windows 10-How to install an app?-open"></span><strong id="open">open</strong> button will replace with <span id="How to install linux bash shell on Windows 10-How to install an app?-install"></span><strong id="install">install</strong> button on the app page.It's not user friendly.
+</p>
+ 
+<div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
 <ul>
 <li>
-<a href="How to print labor insurance transfer order.html">How to print labor insurance transfer order</a>
+<a href="https://www.baeldung.com/linux/path-variable">Adding a Path to the Linux PATH Variable</a>
 
 <li>
-<a href="How to convert jpg to pdf file.html">How to convert jpg to pdf file</a>
-
-<li>
-<a href="How to convert merge many pdf files to one pdf file.html">How to convert merge many pdf files to one pdf file</a>
-
-</ul>
-
-<div id="JavaScript"><h1 id="JavaScript" class="header"><a href="#JavaScript">JavaScript</a></h1></div>
-<ul>
-<li>
-<a href="How to add copy button with highlight_js.html">How to add copy button with highlight_js</a>
-
-<li>
-<a href="How to use highlight_js with custom code.html">How to use highlight_js with custom code</a>
-
-<li>
-<a href="How to add google search box to a web page.html">How to add google search box to a web page</a>
-
-</ul>
-
-<div id="vlang"><h1 id="vlang" class="header"><a href="#vlang">vlang</a></h1></div>
-<ul>
-<li>
-<a href="Building your command line interface (CLR) tool with vlang.html">Building your command line interface (CLR) tool with vlang</a>
-
-<li>
-<a href="Create math  quiz web application using vlang.html">Create math  quiz web application using vlang</a> 
-
-<li>
-<a href="The easy way to run the vlang code in gvim.html">The easy way to run the vlang code in gvim</a>
-
-</ul>
-
-<div id="Git"><h1 id="Git" class="header"><a href="#Git">Git</a></h1></div>
-<ul>
-<li>
-<a href="Keeping a fork update.html">Keeping a fork update</a>
-
-<li>
-<a href="How to solve a merge conflict.html">How to solve a merge conflict</a>
-
-<li>
-<a href="Related Git eol.html">Related Git eol</a>
-
-</ul>
-
-<div id="Vim"><h1 id="Vim" class="header"><a href="#Vim">Vim</a></h1></div>
-<ul>
-<li>
-<a href="vimwiki FAQ.html">vimwiki FAQ</a>
-
-<li>
-<a href="vim tips.html">vim tips</a>
-
-<li>
-<a href="Using autocomplete function in Vim.html">Using autocomplete function in Vim</a>
-
-</ul>
-
-<div id="Windows"><h1 id="Windows" class="header"><a href="#Windows">Windows</a></h1></div>
-<ul>
-<li>
-<a href="program help.html">program help</a>
-
-<li>
-<a href="How to add a add remove programs shortcut on Windows desktop.html">How to add a add remove programs shortcut on Windows desktop</a>
-
-<li>
-<a href="How to install linux bash shell on Windows 10.html">How to install linux bash shell on Windows 10</a>
-
-<li>
-<a href="How to change default web browser on Window 10.html">How to change default web browser on Window 10</a>
-
-<li>
-<a href="How to disable Windows 10 update.html">How to disable Windows 10 update</a>
-
-</ul>
-
-<div id="site"><h1 id="site" class="header"><a href="#site">site</a></h1></div>
-<ul>
-<li>
-<a href="How to add a twitter button to your web site.html">How to add a twitter button to your web site</a>
-
-<li>
-<a href="How to add a facebook share button to your web site.html">How to add a facebook share button to your web site</a>
-
-</ul>
-
-<div id="Other"><h1 id="Other" class="header"><a href="#Other">Other</a></h1></div>
-<ul>
-<li>
-<a href="About page.html">About page</a>
+<a href="https://itsfoss.com/install-bash-on-windows/">How to Install Linux Bash Shell on Windows 10</a>
 
 </ul>
 
@@ -185,7 +174,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/index.html" 
+data-href="https://zhihau.github.io/How to install linux bash shell on Windows 10.html" 
 data-layout="button_count">
 </div>
 	

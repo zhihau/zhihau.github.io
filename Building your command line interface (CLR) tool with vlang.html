@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - index</title>
+        <title>ZhiHau Blog - Building your command line interface (CLR) tool with vlang</title>
 <style>
 /**
 * Highlight.js
@@ -67,112 +67,157 @@ fjs.parentNode.insertBefore(js, fjs);
 	</div>
         <div class="content" style="padding: 48 64 16 64">
         
+<p>
+<span id="-vlang"></span><span class="tag" id="vlang">vlang</span> <span id="-Windows"></span><span class="tag" id="Windows">Windows</span> <span id="-commandline"></span><span class="tag" id="commandline">commandline</span> <span id="-development"></span><span class="tag" id="development">development</span> <span id="-gnu"></span><span class="tag" id="gnu">gnu</span>
+</p>
 
-<div id="ASP.Net"><h1 id="ASP.Net" class="header"><a href="#ASP.Net">ASP.Net</a></h1></div>
+<div id="Building your command line interface (CLR) tool with vlang on Windows"><h1 id="Building your command line interface (CLR) tool with vlang on Windows" class="header"><a href="#Building your command line interface (CLR) tool with vlang on Windows">Building your command line interface (CLR) tool with vlang on Windows</a></h1></div>
+
+<p>
+When I am a student, I like <a href="https://en.wikipedia.org/wiki/Linux">Linux</a> course. The teacher teaches us how to type commands in a black screen. There is no colorful icons. Just boring text and black screen. We have to login into a remote Linux server in a terminal . Trying many commands. Afterward  I know Linux equals these commands. Although there is a <a href="https://en.wikipedia.org/wiki/X_Window_SystemX">Window</a>, the teacher doesn't teach that. I think it's so simple, a mouse can easily use it. 
+</p>
+
+<p>
+Today I will make my <code>mkdir</code> command line interface tool with <a href="https://vlang.io/">vlang</a>. The command style likes <a href="https://en.wikipedia.org/wiki/GNU">GNU</a> <code>mkdir</code> command. I will reference <a href="https://github.com/vlang/coreutils/blob/main/common/common.v">the common module</a>. It contains many useful utility for building a GUI like's command. My <code>mkdir </code>command named md has been distinguished from the built-in <code>mkdir</code> command.  Merely creating a folder is boring. The folder name can contains emoji. If I type and execute the Github emoji shortcode on the command line, it will convert this shortcode to an emoji unicode text. For example, the command is <code>md :stuck_out_tongue:_Hello</code>. After executed, it will create a folder named  😛_Hello. 
+</p>
+
+<p>
+<img src="D:/Personal/vimwiki_html/img/emoji-filename-zoomin.PNG" />
+</p>
+
+<div id="Building your command line interface (CLR) tool with vlang on Windows-Topics"><h2 id="Topics" class="header"><a href="#Building your command line interface (CLR) tool with vlang on Windows-Topics">Topics</a></h2></div>
 <ul>
 <li>
-<a href="How to create ASP dot net MVC web application in Visual Studio 2019.html">How to create ASP dot net MVC web application in Visual Studio 2019</a>
+Prepare vlang environment
+
+<li>
+Create directory
+
+<li>
+Add emoji function
 
 </ul>
 
-<div id="Jobs"><h1 id="Jobs" class="header"><a href="#Jobs">Jobs</a></h1></div>
+<div id="Building your command line interface (CLR) tool with vlang on Windows-[[Create math  quiz web application using vlang|Prepare vlang environment]]"><h2 id="[[Create math  quiz web application using vlang|Prepare vlang environment]]" class="header"><a href="#Building your command line interface (CLR) tool with vlang on Windows-[[Create math  quiz web application using vlang|Prepare vlang environment]]"><a href="Create math  quiz web application using vlang.html">Prepare vlang environment</a></a></h2></div>
+<p>
+Download v_windows from <a href="https://vlang.io/">V Programming Language</a>. Extract the zip file. Go to the directory v_windows. Use the command <code>v up</code> updates source code to latest version. If it doesn't work, clone source code from <a href="https://github.com/vlang/v">the vlang repositoy</a>. Afterward execute <code>make.bat</code>. 
+</p>
+
+<div id="Building your command line interface (CLR) tool with vlang on Windows-Create directory"><h2 id="Create directory" class="header"><a href="#Building your command line interface (CLR) tool with vlang on Windows-Create directory">Create directory</a></h2></div>
+<p>
+Create our project folder using command <code>mkdir md</code>. Change the directory to the directory <code>cd md</code>. Initial our project via executing the command <code>v int</code>. It creates a <span id="Building your command line interface (CLR) tool with vlang on Windows-Create directory-md.v"></span><strong id="md.v">md.v</strong> file automatically. This is our main source code file. <a href="https://github.com/vlang/coreutils/blob/main/common/common.v">Downland common.v</a> to current directory.
+</p>
+
+<p>
+*The emoji character 😛 is utf8 encoding. The code file <code>md.v</code> must save as utf8 file encoding. Otherwise the emoji character will be changed to the question mark character. *Let's add some code to <code>md.v</code>. We need to import <span id="Building your command line interface (CLR) tool with vlang on Windows-Create directory-os"></span><strong id="os">os</strong> module to use <span id="Building your command line interface (CLR) tool with vlang on Windows-Create directory-mkdir"></span><strong id="mkdir">mkdir</strong> function. And import common module we mentioned before. Then define constant name and description of the program. The Settings structure contains verbose and dirnames variables. When we use the command with option verbose, it will print "created directory '??'" on the command line. The message tells us that we just created a directory. If we want to a respond, the verbose option is useful. The value of the option verbose will store to the Settings structure. Another variable is dirnames. We can create multiple directories at the same time. Using the command <code>md aa bb cc</code>. It will create directory aa, bb and cc. So we need a string array to store these directory name. 
+</p>
+<pre class="v">
+module main
+
+import os
+import common
+
+const (
+	app_name        = 'md'
+	app_description = 'Create the DIRECTORY(ies), if they do not already exist. If directory name contains Github emoji shortcode, it will convert to a emoji UTF8 code.
+'
+)
+
+struct Settings {
+	verbose 	bool
+	dirnames           []string
+}
+</pre>
+<p>
+In the main function I call the args function. It will return a Settings structure data. The data passed into  md function. 
+</p>
+<pre class="v">
+fn main() {
+	md(args())
+}
+</pre>
+<p>
+We create directories and replace emoji string in the md function. If there is option verbose, print a message.
+</p>
+<pre class="v">
+fn md(settings Settings) {
+	mut dirnames := settings.dirnames
+
+	for dirname in dirnames {
+		new_dirname:=dirname.replace(':stuck_out_tongue:','😛')
+		os.mkdir(new_dirname) or {
+			eprintln('$app_name: cannot create directory \'$dirname\': File exists ')
+			continue
+		}
+		if settings.verbose {println('$app_name: created directory \'$dirname\'')}
+	}
+}
+</pre>
+<p>
+The args function handles the command options and parameters.
+</p>
+<pre class="v">
+
+fn args() Settings {
+	mut fp := common.flag_parser(os.args)
+	fp.application(app_name)
+	fp.description(app_description)
+
+	verbose := fp.bool('verbose', `v`, false, 'print a message for each created directory')
+
+	dirnames := fp.finalize() or {
+		eprintln(err)
+		println(fp.usage())
+		exit(1)
+	}
+	if dirnames.len==0 {
+		eprintln('$app_name: missing operand')
+		eprintln("Try '$app_name --help' for more information.")
+		exit(1)
+	}
+	return Settings{verbose,dirnames}
+}
+</pre>
+<p>
+We have source code. Let's run it with the command <code>v.</code>. It generates a md.exe file. Now we can use the command to create a directory with an emoji directory name. Type the command on the command line.
+</p>
+
+<p>
+<code>./md.exe :stuck_out_tongue:_keep_smile</code>
+</p>
+
+<p>
+OK. But the emoji is too small and no color. Merely like a black line draws on a white paper.
+</p>
+
+<p>
+<img src="D:/Personal/vimwiki_html/img/emoji-filename.PNG" />
+</p>
+
+<p>
+Let's zoom in the picture.  It likes a face with two big teeth.😞
+</p>
+
+<p>
+<img src="D:/Personal/vimwiki_html/img/emoji-filename-zoomin.PNG" />
+</p>
+
+<div id="Building your command line interface (CLR) tool with vlang on Windows-Reference"><h2 id="Reference" class="header"><a href="#Building your command line interface (CLR) tool with vlang on Windows-Reference">Reference</a></h2></div>
 <ul>
 <li>
-<a href="How to print labor insurance transfer order.html">How to print labor insurance transfer order</a>
+<a href="https://github.com/vlang/coreutils">vlang coreutils</a>
 
 <li>
-<a href="How to convert jpg to pdf file.html">How to convert jpg to pdf file</a>
+<a href="https://github.com/vlang/v">vlang github</a>
 
 <li>
-<a href="How to convert merge many pdf files to one pdf file.html">How to convert merge many pdf files to one pdf file</a>
-
-</ul>
-
-<div id="JavaScript"><h1 id="JavaScript" class="header"><a href="#JavaScript">JavaScript</a></h1></div>
-<ul>
-<li>
-<a href="How to add copy button with highlight_js.html">How to add copy button with highlight_js</a>
+<a href="https://github.com/vlang/v">V Document</a>
 
 <li>
-<a href="How to use highlight_js with custom code.html">How to use highlight_js with custom code</a>
+<a href="https://modules.vlang.io/os.html">os modules Document</a>
 
 <li>
-<a href="How to add google search box to a web page.html">How to add google search box to a web page</a>
-
-</ul>
-
-<div id="vlang"><h1 id="vlang" class="header"><a href="#vlang">vlang</a></h1></div>
-<ul>
-<li>
-<a href="Building your command line interface (CLR) tool with vlang.html">Building your command line interface (CLR) tool with vlang</a>
-
-<li>
-<a href="Create math  quiz web application using vlang.html">Create math  quiz web application using vlang</a> 
-
-<li>
-<a href="The easy way to run the vlang code in gvim.html">The easy way to run the vlang code in gvim</a>
-
-</ul>
-
-<div id="Git"><h1 id="Git" class="header"><a href="#Git">Git</a></h1></div>
-<ul>
-<li>
-<a href="Keeping a fork update.html">Keeping a fork update</a>
-
-<li>
-<a href="How to solve a merge conflict.html">How to solve a merge conflict</a>
-
-<li>
-<a href="Related Git eol.html">Related Git eol</a>
-
-</ul>
-
-<div id="Vim"><h1 id="Vim" class="header"><a href="#Vim">Vim</a></h1></div>
-<ul>
-<li>
-<a href="vimwiki FAQ.html">vimwiki FAQ</a>
-
-<li>
-<a href="vim tips.html">vim tips</a>
-
-<li>
-<a href="Using autocomplete function in Vim.html">Using autocomplete function in Vim</a>
-
-</ul>
-
-<div id="Windows"><h1 id="Windows" class="header"><a href="#Windows">Windows</a></h1></div>
-<ul>
-<li>
-<a href="program help.html">program help</a>
-
-<li>
-<a href="How to add a add remove programs shortcut on Windows desktop.html">How to add a add remove programs shortcut on Windows desktop</a>
-
-<li>
-<a href="How to install linux bash shell on Windows 10.html">How to install linux bash shell on Windows 10</a>
-
-<li>
-<a href="How to change default web browser on Window 10.html">How to change default web browser on Window 10</a>
-
-<li>
-<a href="How to disable Windows 10 update.html">How to disable Windows 10 update</a>
-
-</ul>
-
-<div id="site"><h1 id="site" class="header"><a href="#site">site</a></h1></div>
-<ul>
-<li>
-<a href="How to add a twitter button to your web site.html">How to add a twitter button to your web site</a>
-
-<li>
-<a href="How to add a facebook share button to your web site.html">How to add a facebook share button to your web site</a>
-
-</ul>
-
-<div id="Other"><h1 id="Other" class="header"><a href="#Other">Other</a></h1></div>
-<ul>
-<li>
-<a href="About page.html">About page</a>
+<a href="https://emojipedia.org/">emojipedia.org</a>
 
 </ul>
 
@@ -185,7 +230,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/index.html" 
+data-href="https://zhihau.github.io/Building your command line interface (CLR) tool with vlang.html" 
 data-layout="button_count">
 </div>
 	

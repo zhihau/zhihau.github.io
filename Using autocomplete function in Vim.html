@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - index</title>
+        <title>ZhiHau Blog - Using autocomplete function in Vim</title>
 <style>
 /**
 * Highlight.js
@@ -67,112 +67,99 @@ fjs.parentNode.insertBefore(js, fjs);
 	</div>
         <div class="content" style="padding: 48 64 16 64">
         
+<p>
+<span id="-vim"></span><span class="tag" id="vim">vim</span> <span id="-windows"></span><span class="tag" id="windows">windows</span> <span id="-autocomplete"></span><span class="tag" id="autocomplete">autocomplete</span> <span id="-replace"></span><span class="tag" id="replace">replace</span> <span id="-editor"></span><span class="tag" id="editor">editor</span>
+</p>
 
-<div id="ASP.Net"><h1 id="ASP.Net" class="header"><a href="#ASP.Net">ASP.Net</a></h1></div>
+<div id="Using autocomplete function in Vim"><h1 id="Using autocomplete function in Vim" class="header"><a href="#Using autocomplete function in Vim">Using autocomplete function in Vim</a></h1></div>
+
+<p>
+When I edit a markdown file, there are some keywords have to create links. I have to open <a href="https://en.wikipedia.org/wiki/Google_Chrome">Chrome</a> browser and search every word on <a href="https://en.wikipedia.org/wiki/Google">Google</a>. Coping the URL from the location bar. Pasting to my editor. It's so boring. If I find a keyword once, and record the keyword and URL pair to a text file. Next time I come across the same keyword. Can I press a key to bring URL string to the file? Yes, I can. Vim editor has an autocomplete function can do that. 
+</p>
+
+<p>
+Using <code>abbr</code> command. We can define a key value pair. Every time I type the key string with <span id="Using autocomplete function in Vim-&lt;CR&gt;"></span><strong id="&lt;CR&gt;">&lt;CR&gt;</strong> or <span id="Using autocomplete function in Vim-&lt;space&gt;"></span><strong id="&lt;space&gt;">&lt;space&gt;</strong> key. It will bring the value to the file. It's really cool. For instance, I type <code>:abbr vlang https://vlang.io/</code> on command mode. Then when you edit the file, type <span id="Using autocomplete function in Vim-vlang&lt;space&gt;"></span><strong id="vlang&lt;space&gt;">vlang&lt;space&gt;</strong> to bring string <a href="https://vlang.io/">https://vlang.io/</a> to the file. If you want to be stricter,  you can format the key to start with a capital letter.
+</p>
+
+<p>
+<code>:abbr Vlang https://vlang.io/</code>
+</p>
+
+<p>
+How to keep the setting permanently? Let's add something to the vimrc file. Open vimrc via the command <code>e $MYVIMRC</code>.
+</p>
+<pre class="vim">
+"file:_vimrc
+"There are different file names on Windows or Linux. So we have to check the file name.
+if has('win32')
+	let $MYLOCALVIMRC = $HOME . "/_link.vim"
+else
+	let $MYLOCALVIMRC = $HOME . "/.link.vim"
+endif
+"Read our link file
+if filereadable($MYLOCALVIMRC)
+	source $MYLOCALVIMRC
+endif
+</pre>
+
+<pre class="vim">
+"file:_link.vim
+:abbr Vlang https://vlang.io/
+</pre>
+
+<p>
+Reload the vimrc file to take effect. We can add many links in _link.vim file. The autocomplete function makes you type less. 
+</p>
+
+<div id="Using autocomplete function in Vim-Variables"><h2 id="Variables" class="header"><a href="#Using autocomplete function in Vim-Variables">Variables</a></h2></div>
 <ul>
 <li>
-<a href="How to create ASP dot net MVC web application in Visual Studio 2019.html">How to create ASP dot net MVC web application in Visual Studio 2019</a>
+$VIMRUNTIME = <span id="Using autocomplete function in Vim-Variables-/c/Program\ Files/Vim/vim80"></span><strong id="/c/Program\ Files/Vim/vim80">/c/Program\ Files/Vim/vim80</strong>
+
+<li>
+$VIM = <span id="Using autocomplete function in Vim-Variables-/c/Program\ Files/Vim"></span><strong id="/c/Program\ Files/Vim">/c/Program\ Files/Vim</strong>
+
+<li>
+$HOME = <span id="Using autocomplete function in Vim-Variables-/c/Users/Zhihau"></span><strong id="/c/Users/Zhihau">/c/Users/Zhihau</strong>
+
+<li>
+$MYVIMRC = <span id="Using autocomplete function in Vim-Variables-/c/Users/Zhihau/_vimrc"></span><strong id="/c/Users/Zhihau/_vimrc">/c/Users/Zhihau/_vimrc</strong>
+
+<li>
+Executable file directory: $VIMRUNTIME/vim.exe
+
+<li>
+vimrc directory: $VIM/_vimrc
+
+<li>
+How to print variable on command mode ? <code>:echo $VIMRUNTIME</code>
+
+<li>
+Open link file: <code>:e $HOME/_link.vim</code>
 
 </ul>
 
-<div id="Jobs"><h1 id="Jobs" class="header"><a href="#Jobs">Jobs</a></h1></div>
+<div id="Using autocomplete function in Vim-Tips"><h2 id="Tips" class="header"><a href="#Using autocomplete function in Vim-Tips">Tips</a></h2></div>
+<p>
+If you want to add header or footer to your articles, you can create a link string for that. <span id="Using autocomplete function in Vim-Tips-&lt;CR&gt;"></span><strong id="&lt;CR&gt;">&lt;CR&gt;</strong> string to start a new line.
+</p>
+
+<pre class="vim">
+"file:abbr_footer.vom
+abbr Friends who are interested in this story may wish to leave a message below to share your thoughts. If you like my story remember to follow, clap, share and [buy me a coffee](https://www.buymeacoffee.com/zhihau).
+See you in the next story bye. Friends, thank you for reading my aritle.&lt;CR&gt;If you have any suggestions, please leave me a message below.
+</pre>
+
+<div id="Using autocomplete function in Vim-Reference"><h2 id="Reference" class="header"><a href="#Using autocomplete function in Vim-Reference">Reference</a></h2></div>
 <ul>
 <li>
-<a href="How to print labor insurance transfer order.html">How to print labor insurance transfer order</a>
+<a href="https://vim.fandom.com/wiki/Open_vimrc_file">Open vimrc file</a>
 
 <li>
-<a href="How to convert jpg to pdf file.html">How to convert jpg to pdf file</a>
+<a href="https://vi.stackexchange.com/questions/9250/includes-in-vimrc">Includes in vimrc?</a>
 
 <li>
-<a href="How to convert merge many pdf files to one pdf file.html">How to convert merge many pdf files to one pdf file</a>
-
-</ul>
-
-<div id="JavaScript"><h1 id="JavaScript" class="header"><a href="#JavaScript">JavaScript</a></h1></div>
-<ul>
-<li>
-<a href="How to add copy button with highlight_js.html">How to add copy button with highlight_js</a>
-
-<li>
-<a href="How to use highlight_js with custom code.html">How to use highlight_js with custom code</a>
-
-<li>
-<a href="How to add google search box to a web page.html">How to add google search box to a web page</a>
-
-</ul>
-
-<div id="vlang"><h1 id="vlang" class="header"><a href="#vlang">vlang</a></h1></div>
-<ul>
-<li>
-<a href="Building your command line interface (CLR) tool with vlang.html">Building your command line interface (CLR) tool with vlang</a>
-
-<li>
-<a href="Create math  quiz web application using vlang.html">Create math  quiz web application using vlang</a> 
-
-<li>
-<a href="The easy way to run the vlang code in gvim.html">The easy way to run the vlang code in gvim</a>
-
-</ul>
-
-<div id="Git"><h1 id="Git" class="header"><a href="#Git">Git</a></h1></div>
-<ul>
-<li>
-<a href="Keeping a fork update.html">Keeping a fork update</a>
-
-<li>
-<a href="How to solve a merge conflict.html">How to solve a merge conflict</a>
-
-<li>
-<a href="Related Git eol.html">Related Git eol</a>
-
-</ul>
-
-<div id="Vim"><h1 id="Vim" class="header"><a href="#Vim">Vim</a></h1></div>
-<ul>
-<li>
-<a href="vimwiki FAQ.html">vimwiki FAQ</a>
-
-<li>
-<a href="vim tips.html">vim tips</a>
-
-<li>
-<a href="Using autocomplete function in Vim.html">Using autocomplete function in Vim</a>
-
-</ul>
-
-<div id="Windows"><h1 id="Windows" class="header"><a href="#Windows">Windows</a></h1></div>
-<ul>
-<li>
-<a href="program help.html">program help</a>
-
-<li>
-<a href="How to add a add remove programs shortcut on Windows desktop.html">How to add a add remove programs shortcut on Windows desktop</a>
-
-<li>
-<a href="How to install linux bash shell on Windows 10.html">How to install linux bash shell on Windows 10</a>
-
-<li>
-<a href="How to change default web browser on Window 10.html">How to change default web browser on Window 10</a>
-
-<li>
-<a href="How to disable Windows 10 update.html">How to disable Windows 10 update</a>
-
-</ul>
-
-<div id="site"><h1 id="site" class="header"><a href="#site">site</a></h1></div>
-<ul>
-<li>
-<a href="How to add a twitter button to your web site.html">How to add a twitter button to your web site</a>
-
-<li>
-<a href="How to add a facebook share button to your web site.html">How to add a facebook share button to your web site</a>
-
-</ul>
-
-<div id="Other"><h1 id="Other" class="header"><a href="#Other">Other</a></h1></div>
-<ul>
-<li>
-<a href="About page.html">About page</a>
+<a href="https://superuser.com/questions/102343/can-i-add-a-set-of-words-to-the-vim-autocomplete-vocabulary">Can I add a set of words to the Vim autocomplete vocabulary?</a>
 
 </ul>
 
@@ -185,7 +172,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/index.html" 
+data-href="https://zhihau.github.io/Using autocomplete function in Vim.html" 
 data-layout="button_count">
 </div>
 	

@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - index</title>
+        <title>ZhiHau Blog - Create math  quiz web application using vlang</title>
 <style>
 /**
 * Highlight.js
@@ -67,112 +67,183 @@ fjs.parentNode.insertBefore(js, fjs);
 	</div>
         <div class="content" style="padding: 48 64 16 64">
         
+<p>
+<span id="-vlang"></span><span class="tag" id="vlang">vlang</span> <span id="-development"></span><span class="tag" id="development">development</span> <span id="-querystring"></span><span class="tag" id="querystring">querystring</span> <span id="-windows"></span><span class="tag" id="windows">windows</span> <span id="-math"></span><span class="tag" id="math">math</span>
+</p>
 
-<div id="ASP.Net"><h1 id="ASP.Net" class="header"><a href="#ASP.Net">ASP.Net</a></h1></div>
+<div id="Create a Math Quiz Web Application with vlang on Windows"><h1 id="Create a Math Quiz Web Application with vlang on Windows" class="header"><a href="#Create a Math Quiz Web Application with vlang on Windows">Create a Math Quiz Web Application with vlang on Windows</a></h1></div>
+
+<div id="Create a Math Quiz Web Application with vlang on Windows-What is vlang?"><h2 id="What is vlang?" class="header"><a href="#Create a Math Quiz Web Application with vlang on Windows-What is vlang?">What is vlang?</a></h2></div>
+<blockquote>
+The <a href="https://vlang.io/">V Programming Language</a>. Simple, fast, safe, compiled. For developing maintainable software. 
+</blockquote>
+
+<p>
+I will use the Vweb module to create the math quiz web application on Windows. It can accept query string <a href="http://localhost:8080/add/operand1/operand2.">http://localhost:8080/add/operand1/operand2.</a> 
+</p>
+
+<p>
+<img src="D:/Personal/vimwiki_html/img/vweb-query-string.PNG" />
+</p>
+
+<div id="Create a Math Quiz Web Application with vlang on Windows-Topics"><h2 id="Topics" class="header"><a href="#Create a Math Quiz Web Application with vlang on Windows-Topics">Topics</a></h2></div>
 <ul>
 <li>
-<a href="How to create ASP dot net MVC web application in Visual Studio 2019.html">How to create ASP dot net MVC web application in Visual Studio 2019</a>
+Prepare vlang environment
+
+<li>
+Initial Project
+
+<li>
+Create a Vweb project
+
+<li>
+How to implement a Vweb query string?
 
 </ul>
+ 
+<div id="Create a Math Quiz Web Application with vlang on Windows-Prepare vlang environment"><h2 id="Prepare vlang environment" class="header"><a href="#Create a Math Quiz Web Application with vlang on Windows-Prepare vlang environment">Prepare vlang environment</a></h2></div>
+<p>
+Download v_windows from <a href="https://vlang.io/">V Programming Language</a>. Extract the zip file. Go to the directory v_windows. Use the command <code>v up</code> updates source code to latest version. If it doesn't work, clone source code from <a href="https://github.com/vlang/v">the vlang repositoy</a>. Afterward execute <code>make.bat</code>. 
+</p>
 
-<div id="Jobs"><h1 id="Jobs" class="header"><a href="#Jobs">Jobs</a></h1></div>
+<div id="Create a Math Quiz Web Application with vlang on Windows-Initial Project"><h2 id="Initial Project" class="header"><a href="#Create a Math Quiz Web Application with vlang on Windows-Initial Project">Initial Project</a></h2></div>
+<p>
+Create our project folder using command <code>mkdir quiz</code>. Change the directory to the folder <code>cd quiz</code>. Initial our project via executing the command <code>v int</code>. It creates a <span id="Create a Math Quiz Web Application with vlang on Windows-Initial Project-quiz.v"></span><strong id="quiz.v">quiz.v</strong> file automatically. This is our main source code file. Open it to see what's inside.
+</p>
+<pre class="v">
+module main
+
+fn main() {
+	println('Hello World!')
+}
+</pre>
+<p>
+There is a main function. Like <a href="https://en.wikipedia.org/wiki/C_(programming_language">C programming language</a>). It is the entry point of the program. First line declares the module name as <span id="Create a Math Quiz Web Application with vlang on Windows-Initial Project-main"></span><strong id="main">main</strong>. The default module name is <span id="Create a Math Quiz Web Application with vlang on Windows-Initial Project-main"></span><strong id="main">main</strong>. A module likes a folder. The folder contains many functions inside. How to use the module? For example, we want to use a <span id="Create a Math Quiz Web Application with vlang on Windows-Initial Project-say_hi"></span><strong id="say_hi">say_hi</strong> function. It is written in <span id="Create a Math Quiz Web Application with vlang on Windows-Initial Project-myfile.v"></span><strong id="myfile.v">myfile.v</strong> file. The <span id="Create a Math Quiz Web Application with vlang on Windows-Initial Project-say_hi"></span><strong id="say_hi">say_hi</strong> function has to use <code>pub</code> keyword to declare the function that is a public function.Then we can use the <span id="Create a Math Quiz Web Application with vlang on Windows-Initial Project-say hi"></span><strong id="say hi">say hi</strong> function in <span id="Create a Math Quiz Web Application with vlang on Windows-Initial Project-main.c"></span><strong id="main.c">main.c</strong>.
+</p>
+
+<pre class="v">
+// Declare module name as mymodule
+module mymodule
+
+// To export a function we have to use `pub`
+pub fn say_hi() {
+	println('hi from mymodule!')
+}
+</pre>
+
+<pre class="v">
+import mymodule
+
+fn main() {
+        // Call function with module name. It is very clear that the say_hi function comes from the module mymodule.
+	mymodule.say_hi()
+}
+</pre>
+
+<div id="Create a Vweb project"><h1 id="Create a Vweb project" class="header"><a href="#Create a Vweb project">Create a Vweb project</a></h1></div>
+<p>
+I want to use the Vweb module to build my web application. So I must import the module to the quiz.v file. Add declare an app variable in the main function. Afterward we can use functions inside the app variable. My code will become like this.
+</p>
+
+<pre class="v">
+module main
+
+import vweb
+
+struct App {
+	vweb.Context
+}
+
+fn main() {
+	app := App{}
+	vweb.run(app, 8081)
+}
+// router path
+['/index']
+pub fn (mut app App) index() vweb.Result {
+	return app.text('Hello world from vweb!')
+}
+</pre>
+<p>
+The command prompt output:
+</p>
+<pre class="v">
+[Vweb] Running app on http://localhost:8081/
+</pre>
+<p>
+We can see our web application via the url <a href="http://localhost:8081/.">http://localhost:8081/.</a> Or use the link <a href="http://localhost:8081/index">http://localhost:8081/index</a> to see the same web application.
+</p>
+
+<p>
+<img src="D:/Personal/vimwiki_html/img/hello_vweb.PNG" />
+</p>
+
+<div id="How to impliment a Vweb query string?"><h1 id="How to impliment a Vweb query string?" class="header"><a href="#How to impliment a Vweb query string?">How to impliment a Vweb query string?</a></h1></div>
+<p>
+Query string is part of URL. URL links a page or document. Using query string can pass many different values to generate many different page. It's really helpful. In JavaScript you can get parems using searchParams property of the url objet.
+</p>
+
+<pre class="js">
+const params = new URL('https://example.com?foo=1&amp;bar=2').searchParams;
+params.get('foo'); // "1"
+params.get('bar'); // "2" 
+</pre>
+<p>
+In vlang the query string is different. It's not a key value pair format just a value. I think this format prevents people from guessing. What does value mean? <span id="How to impliment a Vweb query string?-&lt;mark&gt;Remember that the router name , function name and html template file name must be the same. &lt;/mark&gt;"></span><strong id="&lt;mark&gt;Remember that the router name , function name and html template file name must be the same. &lt;/mark&gt;">&lt;mark&gt;Remember that the router name , function name and html template file name must be the same. &lt;/mark&gt;</strong>
+</p>
+
+<pre class="v">
+// Declare a query string
+['/add/:operand1/:operand2'; get]
+pub fn (mut app App) add(operand1 int, operand2 int) vweb.Result {
+	// Print debug information in command prompt
+	println(operand1)
+	println(operand2)
+	// Declare and initial a immutable variable sum. If you want to modify the value of the variable using `mut` keyword at the beginning of the line.
+	sum:=operand1+operand2
+	// In this function we have three variables operand1, operand2 and sum. These will pass to the html templat file.
+	// Find a html file name as add.html
+	return $vweb.html()
+}
+</pre>
+<p>
+Create the <span id="How to impliment a Vweb query string?-add.html"></span><strong id="add.html">add.html</strong> template file. Use at @ character to get the value from the variable. Afterward execute command <code>v run quiz.v</code>.
+</p>
+<pre class="html">
+&lt;body&gt;
+&lt;p&gt;
+@operand1 + @operand2 = ? &lt;span id="sum" style="display:none"&gt;@sum&lt;/span&gt;
+&lt;/p&gt;
+&lt;button onclick="ans()"&gt;Show Answer&lt;/button&gt;
+&lt;script&gt;
+function ans(){
+document.getElementById('sum').style.display="block";	
+}
+&lt;/script&gt;
+&lt;/body&gt;
+</pre>
+<p>
+Now we can add two numbers from the query string <a href="http://localhost:8081/add/12/18.">http://localhost:8081/add/12/18.</a>
+</p>
+
+<p>
+<img src="D:/Personal/vimwiki_html/img/vweb-query-string.PNG" />
+</p>
+
+<div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
 <ul>
 <li>
-<a href="How to print labor insurance transfer order.html">How to print labor insurance transfer order</a>
+<a href="https://github.com/vlang/v/tree/master/tutorials/building_a_simple_web_blog_with_vweb">building_a_simple_web_blog_with_vweb</a>
 
 <li>
-<a href="How to convert jpg to pdf file.html">How to convert jpg to pdf file</a>
+<a href="https://github.com/vlang/v">vlang github</a>
 
 <li>
-<a href="How to convert merge many pdf files to one pdf file.html">How to convert merge many pdf files to one pdf file</a>
-
-</ul>
-
-<div id="JavaScript"><h1 id="JavaScript" class="header"><a href="#JavaScript">JavaScript</a></h1></div>
-<ul>
-<li>
-<a href="How to add copy button with highlight_js.html">How to add copy button with highlight_js</a>
+<a href="https://github.com/vlang/v">V Document</a>
 
 <li>
-<a href="How to use highlight_js with custom code.html">How to use highlight_js with custom code</a>
-
-<li>
-<a href="How to add google search box to a web page.html">How to add google search box to a web page</a>
-
-</ul>
-
-<div id="vlang"><h1 id="vlang" class="header"><a href="#vlang">vlang</a></h1></div>
-<ul>
-<li>
-<a href="Building your command line interface (CLR) tool with vlang.html">Building your command line interface (CLR) tool with vlang</a>
-
-<li>
-<a href="Create math  quiz web application using vlang.html">Create math  quiz web application using vlang</a> 
-
-<li>
-<a href="The easy way to run the vlang code in gvim.html">The easy way to run the vlang code in gvim</a>
-
-</ul>
-
-<div id="Git"><h1 id="Git" class="header"><a href="#Git">Git</a></h1></div>
-<ul>
-<li>
-<a href="Keeping a fork update.html">Keeping a fork update</a>
-
-<li>
-<a href="How to solve a merge conflict.html">How to solve a merge conflict</a>
-
-<li>
-<a href="Related Git eol.html">Related Git eol</a>
-
-</ul>
-
-<div id="Vim"><h1 id="Vim" class="header"><a href="#Vim">Vim</a></h1></div>
-<ul>
-<li>
-<a href="vimwiki FAQ.html">vimwiki FAQ</a>
-
-<li>
-<a href="vim tips.html">vim tips</a>
-
-<li>
-<a href="Using autocomplete function in Vim.html">Using autocomplete function in Vim</a>
-
-</ul>
-
-<div id="Windows"><h1 id="Windows" class="header"><a href="#Windows">Windows</a></h1></div>
-<ul>
-<li>
-<a href="program help.html">program help</a>
-
-<li>
-<a href="How to add a add remove programs shortcut on Windows desktop.html">How to add a add remove programs shortcut on Windows desktop</a>
-
-<li>
-<a href="How to install linux bash shell on Windows 10.html">How to install linux bash shell on Windows 10</a>
-
-<li>
-<a href="How to change default web browser on Window 10.html">How to change default web browser on Window 10</a>
-
-<li>
-<a href="How to disable Windows 10 update.html">How to disable Windows 10 update</a>
-
-</ul>
-
-<div id="site"><h1 id="site" class="header"><a href="#site">site</a></h1></div>
-<ul>
-<li>
-<a href="How to add a twitter button to your web site.html">How to add a twitter button to your web site</a>
-
-<li>
-<a href="How to add a facebook share button to your web site.html">How to add a facebook share button to your web site</a>
-
-</ul>
-
-<div id="Other"><h1 id="Other" class="header"><a href="#Other">Other</a></h1></div>
-<ul>
-<li>
-<a href="About page.html">About page</a>
+<a href="https://modules.vlang.io/vweb.html">Vweb modules Document</a>
 
 </ul>
 
@@ -185,7 +256,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/index.html" 
+data-href="https://zhihau.github.io/Create math  quiz web application using vlang.html" 
 data-layout="button_count">
 </div>
 	

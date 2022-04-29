@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - index</title>
+        <title>ZhiHau Blog - The easy way to run the vlang code in gvim</title>
 <style>
 /**
 * Highlight.js
@@ -67,114 +67,149 @@ fjs.parentNode.insertBefore(js, fjs);
 	</div>
         <div class="content" style="padding: 48 64 16 64">
         
+<p>
+<span id="-vlang"></span><span class="tag" id="vlang">vlang</span> <span id="-vim"></span><span class="tag" id="vim">vim</span> <span id="-programming"></span><span class="tag" id="programming">programming</span> <span id="-tips"></span><span class="tag" id="tips">tips</span> <span id="-editor"></span><span class="tag" id="editor">editor</span>
+</p>
 
-<div id="ASP.Net"><h1 id="ASP.Net" class="header"><a href="#ASP.Net">ASP.Net</a></h1></div>
+<div id="The easy way to run the vlang code in gvim"><h1 id="The easy way to run the vlang code in gvim" class="header"><a href="#The easy way to run the vlang code in gvim">The easy way to run the vlang code in gvim</a></h1></div>
+
+<p>
+I like to write the code in vim. It press combination keys to go to a specific line. And a lot of hotkeys. You don't need to move the mouse again. It's good for your wrist health. If you want to try it, you can download gvim from <a href="https://www.vim.org/download.php">gvim downlod page</a>. I download and install gvim on Windows.
+</p>
+
+<p>
+Use command <code>v run file.v</code> to run a <a href="https://github.com/vlang/v">vlang</a> source code. Every time I want to test my code. I switch to the command prompt. Press the up key to load the last command <code>v run file.v</code>. It's really bothersome. Is there a easy way? I can press a key to run these behaviors. Yes, I can do that in gvim. Let's change the vimrc file. Go to the menu <span id="The easy way to run the vlang code in gvim-Edit | Startup settings"></span><strong id="Edit | Startup settings">Edit | Startup settings</strong> in the menu bar at the top side of the gvim window. Add bellow command to the <code>~\_vimrc</code> file. It means that press <span id="The easy way to run the vlang code in gvim-F5"></span><strong id="F5">F5</strong> key to write the file and  run the v program.
+</p>
+
+<p>
+<code>:map &lt;F5&gt; :w&lt;CR&gt;:!v run "%"&lt;CR&gt;</code>
+</p>
+
+<p>
+In the command mode type w and press <span id="The easy way to run the vlang code in gvim-Enter"></span><strong id="Enter">Enter</strong> key to save the file. Then type another command <code>:so %</code>. It means that load the current script file to take effect. Now, Open any <a href="https://github.com/vlang/v">vlang</a> file. We can press <span id="The easy way to run the vlang code in gvim-F5"></span><strong id="F5">F5</strong> key to run the v program. It will show a command prompt window to display some compile information. I have to close the command prompt window. Afterward back to my gvim editor to fix the bugs. If some error infomation shows in the command prompt, press any key to close the window.
+</p>
+
+<p>
+I must remember the line number of the bug. Because the command prompt window was closed. Is any way to keep the the command prompt window? I can reference the compile information when I edit the code. Yes, we can open another window to execute commands using dos start command. So I write another command in the _vimrc file. The command is:
+</p>
+
+<p>
+<code>:map &lt;F6&gt; :w&lt;CR&gt;:!start v run "%"&lt;CR&gt;</code>
+</p>
+
+<p>
+It means that press <span id="The easy way to run the vlang code in gvim-F6"></span><strong id="F6">F6</strong> key to write the file and open another command prompt window to run the v program. If the compile information is too long, we can press <span id="The easy way to run the vlang code in gvim-f6"></span><strong id="f6">f6</strong> key to keep the command prompt window. If we don't want it, press <span id="The easy way to run the vlang code in gvim-CTRL+C"></span><strong id="CTRL+C">CTRL+C</strong> to close it.
+</p>
+
+<div id="The easy way to run the vlang code in gvim-Shorten the run command"><h2 id="Shorten the run command" class="header"><a href="#The easy way to run the vlang code in gvim-Shorten the run command">Shorten the run command</a></h2></div>
+<p>
+You can use <a href="https://www.vim.org/scripts/script.php?script_id=4521">vim autosave plugin</a> to auto save files. It can prevent a computer problem that cause to lost your data. How to install this plugin? Juse append the following code to the vimrc file.
+</p>
+
+<pre class="vim">
+let g:auto_save = 1 " Enable autosave function
+call plug#begin('~/.vim/plugged')
+Plug '907th/vim-auto-save'
+call plug#end()
+</pre>
+<p>
+Type <code>:so %</code> command in command mode to reload the vimrc file. Afterward type <code>:PlugInstall</code> to install all plugins written in the vimrc file. If the plugin doesn't work, try reload the vimrc file again. Now whenever you leave the edit mode by pressing <span id="The easy way to run the vlang code in gvim-Shorten the run command-ESC"></span><strong id="ESC">ESC</strong> key, it will save the current file automatically. Autosave information appears on the status bar.
+</p>
+
+<p>
+<img src="D:/Personal/vimwiki_html/img/autosave.PNG" />
+</p>
+
+<p>
+If you want to disable this function temporarily, you can set the <span id="The easy way to run the vlang code in gvim-Shorten the run command-auto_save"></span><strong id="auto_save">auto_save</strong> option as 0 to disable it.
+</p>
+
+<p>
+<code>let g:auto_save = 0 " Disable autosave function</code>
+</p>
+
+
+<p>
+Now we have auto save function. So we can shorten our vlang run command in the vimrc file. Removing the write file action. The new command just compile and run vlang code. It doesn't do two things on one keypress. Become more efficient!
+</p>
+
+<p>
+<code>:map &lt;F5&gt; :!v run "%"&lt;CR&gt;</code>
+</p>
+
+
+<div id="The easy way to run the vlang code in gvim-Vimscript filenames"><h2 id="Vimscript filenames" class="header"><a href="#The easy way to run the vlang code in gvim-Vimscript filenames">Vimscript filenames</a></h2></div>
 <ul>
 <li>
-<a href="How to create ASP dot net MVC web application in Visual Studio 2019.html">How to create ASP dot net MVC web application in Visual Studio 2019</a>
+"%" means no drive name. e.g.
 
 </ul>
 
-<div id="Jobs"><h1 id="Jobs" class="header"><a href="#Jobs">Jobs</a></h1></div>
+<p>
+<code>Windows format - "\Users\Zhihau\Desktop\file.txt" </code> 
+<code>Linux format - "Users\Zhihau\Desktop\file.txt"  </code>
+</p>
+
 <ul>
 <li>
-<a href="How to print labor insurance transfer order.html">How to print labor insurance transfer order</a>
-
-<li>
-<a href="How to convert jpg to pdf file.html">How to convert jpg to pdf file</a>
-
-<li>
-<a href="How to convert merge many pdf files to one pdf file.html">How to convert merge many pdf files to one pdf file</a>
+"%:p" means full file name. e.g.
 
 </ul>
 
-<div id="JavaScript"><h1 id="JavaScript" class="header"><a href="#JavaScript">JavaScript</a></h1></div>
+<p>
+<code>Windows format - "C:\Users\Zhihau\Desktop\file.txt"</code>
+</p>
+
 <ul>
 <li>
-<a href="How to add copy button with highlight_js.html">How to add copy button with highlight_js</a>
-
-<li>
-<a href="How to use highlight_js with custom code.html">How to use highlight_js with custom code</a>
-
-<li>
-<a href="How to add google search box to a web page.html">How to add google search box to a web page</a>
+"%:p:h" means only directory. e.g.
 
 </ul>
 
-<div id="vlang"><h1 id="vlang" class="header"><a href="#vlang">vlang</a></h1></div>
+<p>
+<code>Windows format - "C:\Users\Zhihau\Desktop"</code>
+</p>
+
 <ul>
 <li>
-<a href="Building your command line interface (CLR) tool with vlang.html">Building your command line interface (CLR) tool with vlang</a>
-
-<li>
-<a href="Create math  quiz web application using vlang.html">Create math  quiz web application using vlang</a> 
-
-<li>
-<a href="The easy way to run the vlang code in gvim.html">The easy way to run the vlang code in gvim</a>
+"%:t" means file name. e.g.
 
 </ul>
 
-<div id="Git"><h1 id="Git" class="header"><a href="#Git">Git</a></h1></div>
+<p>
+<code>"file.txt"</code>
+</p>
+
 <ul>
 <li>
-<a href="Keeping a fork update.html">Keeping a fork update</a>
-
-<li>
-<a href="How to solve a merge conflict.html">How to solve a merge conflict</a>
-
-<li>
-<a href="Related Git eol.html">Related Git eol</a>
+"%:e" means file extension. e.g.
 
 </ul>
 
-<div id="Vim"><h1 id="Vim" class="header"><a href="#Vim">Vim</a></h1></div>
+<p>
+<code>"txt"</code>
+</p>
+
 <ul>
 <li>
-<a href="vimwiki FAQ.html">vimwiki FAQ</a>
-
-<li>
-<a href="vim tips.html">vim tips</a>
-
-<li>
-<a href="Using autocomplete function in Vim.html">Using autocomplete function in Vim</a>
+"%:r" means no file extension. e.g.
 
 </ul>
 
-<div id="Windows"><h1 id="Windows" class="header"><a href="#Windows">Windows</a></h1></div>
+<p>
+<code>Windows format - "C:\Users\Zhihau\Desktop\file"</code>
+</p>
+
 <ul>
 <li>
-<a href="program help.html">program help</a>
-
-<li>
-<a href="How to add a add remove programs shortcut on Windows desktop.html">How to add a add remove programs shortcut on Windows desktop</a>
-
-<li>
-<a href="How to install linux bash shell on Windows 10.html">How to install linux bash shell on Windows 10</a>
-
-<li>
-<a href="How to change default web browser on Window 10.html">How to change default web browser on Window 10</a>
-
-<li>
-<a href="How to disable Windows 10 update.html">How to disable Windows 10 update</a>
+To see more information <code>:help expand</code>
 
 </ul>
 
-<div id="site"><h1 id="site" class="header"><a href="#site">site</a></h1></div>
-<ul>
-<li>
-<a href="How to add a twitter button to your web site.html">How to add a twitter button to your web site</a>
-
-<li>
-<a href="How to add a facebook share button to your web site.html">How to add a facebook share button to your web site</a>
-
-</ul>
-
-<div id="Other"><h1 id="Other" class="header"><a href="#Other">Other</a></h1></div>
-<ul>
-<li>
-<a href="About page.html">About page</a>
-
-</ul>
+<div id="The easy way to run the vlang code in gvim-Reference"><h2 id="Reference" class="header"><a href="#The easy way to run the vlang code in gvim-Reference">Reference</a></h2></div>
+<p>
+<a href="https://devhints.io/vimscript">Vim scripting cheatsheet</a>
+</p>
 
         </div>
         <div class="footer" style="padding:0 64 64 64">
@@ -185,7 +220,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/index.html" 
+data-href="https://zhihau.github.io/The easy way to run the vlang code in gvim.html" 
 data-layout="button_count">
 </div>
 	
