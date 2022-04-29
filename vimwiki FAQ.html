@@ -1,5 +1,8 @@
 <html>
 <head>
+<!--google adsence-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2865072968912801"
+     crossorigin="anonymous"></script>
         <link rel="Stylesheet" type="text/css" href="style.css" />
 <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css" />-->
 <!--<link rel="stylesheet" type="text/css" href="default.min.css" />-->
@@ -64,19 +67,47 @@ fjs.parentNode.insertBefore(js, fjs);
 	  <a href="About%20page.html" id="about-button"class="w3-bar-item w3-button w3-mobile"title="About"><i class="fa fa-user"></i></a>
 
 	  <a href="#" id="copy-link-button"class="w3-tooltip w3-bar-item w3-button w3-mobile" id="copy-link-button" title="Copy link"><i class="fa fa-link"></i>
-	</div>
+	</div><!--end of bar-->
         <div class="content" style="padding: 48 64 16 64">
         
 <p>
 <span id="-vimwiki"></span><span class="tag" id="vimwiki">vimwiki</span>
 </p>
 
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="vimwiki FAQ.html#vimwiki FAQ">vimwiki FAQ</a>
+
+<ul>
+<li>
+<a href="vimwiki FAQ.html#vimwiki FAQ-vimwiki Cheat Sheet">vimwiki Cheat Sheet</a>
+
+<li>
+<a href="vimwiki FAQ.html#vimwiki FAQ-Link name cannot have dot character">Link name cannot have dot character</a>
+
+<li>
+<a href="vimwiki FAQ.html#vimwiki FAQ-How to change wiki directory?">How to change wiki directory?</a>
+
+<li>
+<a href="vimwiki FAQ.html#vimwiki FAQ-How to use vimwiki build-in syntax highlight ?">How to use vimwiki build-in syntax highlight ?</a>
+
+<li>
+<a href="vimwiki FAQ.html#vimwiki FAQ-How to fix error e513 write error_conversion failed?">How to fix error e513 write error_conversion failed?</a>
+
+</ul>
+<li>
+<a href="vimwiki FAQ.html#Reference">Reference</a>
+
+</ul>
+
 <div id="vimwiki FAQ"><h1 id="vimwiki FAQ" class="header"><a href="#vimwiki FAQ">vimwiki FAQ</a></h1></div>
-<div id="vimwiki FAQ-Shortcut"><h2 id="Shortcut" class="header"><a href="#vimwiki FAQ-Shortcut">Shortcut</a></h2></div>
+
+<div id="vimwiki FAQ-vimwiki Cheat Sheet"><h2 id="vimwiki Cheat Sheet" class="header"><a href="#vimwiki FAQ-vimwiki Cheat Sheet">vimwiki Cheat Sheet</a></h2></div>
 <table>
 <tr>
 <th>
-Shortcut
+Normal Mode Shortcut
 </th>
 <th>
 Description
@@ -100,10 +131,115 @@ Open wiki link in vertical split window
 </tr>
 <tr>
 <td>
-<code>h vimwiki-syntax</code>
+<code>TAB</code>
+</td>
+<td>
+Go to next link
+</td>
+</tr>
+<tr>
+<td>
+<code>Shift+TAB</code>
+</td>
+<td>
+Go to previous link
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>
+Command Mode Shortcut
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
+<code>:h vimwiki-syntax</code>
 </td>
 <td>
 View vimwiki syntax
+</td>
+</tr>
+<tr>
+<td>
+<code>:VimwikiTOC</code>
+</td>
+<td>
+Generate TOC at first line of current wiki file.
+</td>
+</tr>
+<tr>
+<td>
+<code>:Vimwiki2HTML</code>
+</td>
+<td>
+Generate html file from current wiki file.
+</td>
+</tr>
+<tr>
+<td>
+<code>:VimwikiAll2HTML</code>
+</td>
+<td>
+Generate html files from all wiki files.
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>
+Content
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
+<code>= Contents =</code>
+</td>
+<td>
+With :VimwikiTOC. It will generate a list of headers under the Contents header.
+</td>
+</tr>
+<tr>
+<td>
+<code>%nohtml</code>
+</td>
+<td>
+Define don't generate html file in current wiki page.
+</td>
+</tr>
+<tr>
+<td>
+<code>%%comment</code>
+</td>
+<td>
+If you use nohtml tag, it will generate a broken link on the html page. Convert the broken link to a comment will prevent this problem.
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>
+vimrc command
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
+<code>let g:vimwiki_list = [{'path': '~/my_site/', 'auto_toc': 1}]</code>
+</td>
+<td>
+automatically update TOC when the current wiki page is saved.
 </td>
 </tr>
 </table>
