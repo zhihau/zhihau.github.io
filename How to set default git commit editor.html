@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - How to convert jpg to pdf file</title>
+        <title>ZhiHau Blog - How to set default git commit editor</title>
 <style>
 /**
 * Highlight.js
@@ -88,76 +88,65 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content" style="padding: 48 64 16 64">
         
 <p>
-<span id="-jobs"></span><span class="tag" id="jobs">jobs</span> <span id="-pdf"></span><span class="tag" id="pdf">pdf</span> <span id="-python"></span><span class="tag" id="python">python</span>
+<span id="-git"></span><span class="tag" id="git">git</span>
 </p>
 
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
 <ul>
 <li>
-<a href="How to convert jpg to pdf file.html#How to convert jpg to pdf file?">How to convert jpg to pdf file?</a>
+<a href="How to set default git commit editor.html#How to set default git commit editor">How to set default git commit editor</a>
+
+<ul>
+<li>
+<a href="How to set default git commit editor.html#How to set default git commit editor-How to set default git commit editor as gvim?">How to set default git commit editor as gvim?</a>
 
 <li>
-<a href="How to convert jpg to pdf file.html#How to view image pdf in black and white mode ?">How to view image pdf in black and white mode ?</a>
-
-<li>
-<a href="How to convert jpg to pdf file.html#Reference">Reference</a>
+<a href="How to set default git commit editor.html#How to set default git commit editor-error: cannot overwrite multiple values with a single value">error: cannot overwrite multiple values with a single value</a>
 
 </ul>
+</ul>
 
-<div id="How to convert jpg to pdf file?"><h1 id="How to convert jpg to pdf file?" class="header"><a href="#How to convert jpg to pdf file?">How to convert jpg to pdf file?</a></h1></div>
+<div id="How to set default git commit editor"><h1 id="How to set default git commit editor" class="header"><a href="#How to set default git commit editor">How to set default git commit editor</a></h1></div>
 <p>
-Why convert something to pdf is so hard? I google a online pdf tool <a href="smallpdf.html">smallpdf</a>. It has convert and merge functions. Cool! I try to convert an image to pdf. Then I merge two files. A message *you can only process two functions a day. There is a big limitation. If I want to use full functions , I have to pay some money. But I don't have a lot of money.
+Type and execute command to see what's my default git commit editor.
+<code>git config --global core.editor</code>
+<span id="How to set default git commit editor-&quot;C:\Users\Zhihau\AppData\Local\Programs\Microsoft VS Code\Code.exe&quot; --wait"></span><strong id="&quot;C:\Users\Zhihau\AppData\Local\Programs\Microsoft VS Code\Code.exe&quot; --wait">"C:\Users\Zhihau\AppData\Local\Programs\Microsoft VS Code\Code.exe" --wait</strong>
+</p>
+
+<div id="How to set default git commit editor-How to set default git commit editor as gvim?"><h2 id="How to set default git commit editor as gvim?" class="header"><a href="#How to set default git commit editor-How to set default git commit editor as gvim?">How to set default git commit editor as gvim?</a></h2></div>
+<p>
+Right click on gvim shortcut and click <span id="How to set default git commit editor-How to set default git commit editor as gvim?-Properties"></span><strong id="Properties">Properties</strong> menu item. Copy the target text like <span id="How to set default git commit editor-How to set default git commit editor as gvim?-&quot;C:\Program Files (x86)\Vim\vim80\gvim.exe&quot;"></span><strong id="&quot;C:\Program Files (x86)\Vim\vim80\gvim.exe&quot;">"C:\Program Files (x86)\Vim\vim80\gvim.exe"</strong>. Combine the editor executable path with command. We will get below command.
+<code>git config --global core.editor "'C:\Program Files (x86)\Vim\vim80\gvim.exe' -f -i NONE"</code>
 </p>
 
 <p>
-Afterward I google <span id="How to convert jpg to pdf file?-free jpg to pdf converter"></span><strong id="free jpg to pdf converter">free jpg to pdf converter</strong>, I found a <a href="https://www.jpgtopdfconverter.com/">JPG to PDF converter</a>. The user interface is friendly. I drag three images for converting a pdf file. I happily open the file. It's so sad :-(. There are three red text watermark on every image. Remind that if you want to remove this text, please register.
+We can create a <span id="How to set default git commit editor-How to set default git commit editor as gvim?-gvim.bat"></span><strong id="gvim.bat">gvim.bat</strong> link to the executable file in directory <span id="How to set default git commit editor-How to set default git commit editor as gvim?-C:\Windows"></span><strong id="C:\Windows">C:\Windows</strong>. Afterward we don't execute git config command again, just edit the <span id="How to set default git commit editor-How to set default git commit editor as gvim?-gvim.bat"></span><strong id="gvim.bat">gvim.bat</strong> file. 
 </p>
-
-<p>
-<img src="https://zhihau.github.io/img/JPG To PDF Converter screenshot.PNG" />
-<span id="How to convert jpg to pdf file?-JPG To PDF Converter screenshot"></span><strong id="JPG To PDF Converter screenshot">JPG To PDF Converter screenshot</strong>
-</p>
-
-<p>
-Next I think that maybe <a href="https://stackoverflow.com/">stackoverflow</a> has some useful functions. I google <span id="How to convert jpg to pdf file?-stackoverflow jpg to pdf"></span><strong id="stackoverflow jpg to pdf">stackoverflow jpg to pdf</strong>. Then I try a python snippet. It can convert jpg to pdf. <span id="How to convert jpg to pdf file?-Mention that you need to set A4 size in the snippet. Otherwise the image will out of the page."></span><strong id="Mention that you need to set A4 size in the snippet. Otherwise the image will out of the page.">Mention that you need to set A4 size in the snippet. Otherwise the image will out of the page.</strong>
-</p>
-
-<ol>
-<li>
-<a href="https://www.python.org/downloads/release/python-340/">Download python 3.4.0</a>
-
-<li>
-<code>pip install PyPDF2</code>
-
-<li>
-Add below code to a file <span id="How to convert jpg to pdf file?-jpg2pdf.py"></span><strong id="jpg2pdf.py">jpg2pdf.py</strong>. Execute  command <code>python jpg2pdf.py</code>.
-<pre class="py">
-from fpdf import FPDF
-pdf = FPDF()
-# imagelist is the list with all image filenames
-imagelist=["image1.jpg","image2.jpg","image3.jpg"]
-for image in imagelist:
-# standard a4 page, 0,0,210,297
-    x=0
-    y=0
-    w=210
-    h=297
-    pdf.add_page()
-    pdf.image(image,x,y,w,h)
-pdf.output("yourfile.pdf", "F")
+<pre class="bat">
+"C:\Program Files (x86)\Vim\vim80\gvim.exe"
 </pre>
 
-</ol>
-
-<div id="How to view image pdf in black and white mode ?"><h1 id="How to view image pdf in black and white mode ?" class="header"><a href="#How to view image pdf in black and white mode ?">How to view image pdf in black and white mode ?</a></h1></div>
+<div id="How to set default git commit editor-error: cannot overwrite multiple values with a single value"><h2 id="error: cannot overwrite multiple values with a single value" class="header"><a href="#How to set default git commit editor-error: cannot overwrite multiple values with a single value">error: cannot overwrite multiple values with a single value</a></h2></div>
 <p>
-Open pdf file in <a href="https://en.wikipedia.org/wiki/Google_Chrome">chrome</a>. Click the print button to show Print dialog. We can change black white or color at color option. Choose <span id="How to view image pdf in black and white mode ?-black white"></span><strong id="black white">black white</strong> item to set the image as black and white mode.
+If you get an error message, when you config editor.
 </p>
-
-
-<div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
+<blockquote>
+$ git config --global core.editor "'C:\Windows\gvim.bat' -f -i NONE"
+warning: core.editor has multiple values
+error: cannot overwrite multiple values with a single value
+Use a regexp, --add or --replace-all to change core.editor.
+</blockquote>
 <p>
-<a href="https://stackoverflow.com/questions/27327513/create-pdf-from-a-list-of-images">Create PDF from a list of images</a>
+The message means you have two <span id="How to set default git commit editor-error: cannot overwrite multiple values with a single value-editor"></span><strong id="editor">editor</strong> settings in .gitconfig file. Open everything to find .gitconfig file. We can found it under directory <span id="How to set default git commit editor-error: cannot overwrite multiple values with a single value-c:\Users\Zhihau\.gitconfig"></span><strong id="c:\Users\Zhihau\.gitconfig">c:\Users\Zhihau\.gitconfig</strong>. Open it and keep editor setting only one record. The file looks like this.
+</p>
+<pre class="bat">
+[core]
+	editor = 'C:\\Program Files (x86)\\Vim\\vim80\\gvim.exe' -f -i NONE
+	autocrlf = input
+</pre>
+<p>
+Now, we can use command to set my favorite editor.
+<code>git config --global core.editor "'C:\Windows\gvim.bat' -f -i NONE"</code>
 </p>
 
         </div>
@@ -169,7 +158,7 @@ Open pdf file in <a href="https://en.wikipedia.org/wiki/Google_Chrome">chrome</a
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/How to convert jpg to pdf file.html" 
+data-href="https://zhihau.github.io/How to set default git commit editor.html" 
 data-layout="button_count">
 </div>
 	

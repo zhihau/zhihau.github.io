@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - How to convert jpg to pdf file</title>
+        <title>ZhiHau Blog - Projects page</title>
 <style>
 /**
 * Highlight.js
@@ -88,76 +88,12 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content" style="padding: 48 64 16 64">
         
 <p>
-<span id="-jobs"></span><span class="tag" id="jobs">jobs</span> <span id="-pdf"></span><span class="tag" id="pdf">pdf</span> <span id="-python"></span><span class="tag" id="python">python</span>
+<span id="-site"></span><span class="tag" id="site">site</span> <span id="-project"></span><span class="tag" id="project">project</span>
 </p>
 
-<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
-<ul>
-<li>
-<a href="How to convert jpg to pdf file.html#How to convert jpg to pdf file?">How to convert jpg to pdf file?</a>
-
-<li>
-<a href="How to convert jpg to pdf file.html#How to view image pdf in black and white mode ?">How to view image pdf in black and white mode ?</a>
-
-<li>
-<a href="How to convert jpg to pdf file.html#Reference">Reference</a>
-
-</ul>
-
-<div id="How to convert jpg to pdf file?"><h1 id="How to convert jpg to pdf file?" class="header"><a href="#How to convert jpg to pdf file?">How to convert jpg to pdf file?</a></h1></div>
+<div id="Projects"><h1 id="Projects" class="header"><a href="#Projects">Projects</a></h1></div>
 <p>
-Why convert something to pdf is so hard? I google a online pdf tool <a href="smallpdf.html">smallpdf</a>. It has convert and merge functions. Cool! I try to convert an image to pdf. Then I merge two files. A message *you can only process two functions a day. There is a big limitation. If I want to use full functions , I have to pay some money. But I don't have a lot of money.
-</p>
-
-<p>
-Afterward I google <span id="How to convert jpg to pdf file?-free jpg to pdf converter"></span><strong id="free jpg to pdf converter">free jpg to pdf converter</strong>, I found a <a href="https://www.jpgtopdfconverter.com/">JPG to PDF converter</a>. The user interface is friendly. I drag three images for converting a pdf file. I happily open the file. It's so sad :-(. There are three red text watermark on every image. Remind that if you want to remove this text, please register.
-</p>
-
-<p>
-<img src="https://zhihau.github.io/img/JPG To PDF Converter screenshot.PNG" />
-<span id="How to convert jpg to pdf file?-JPG To PDF Converter screenshot"></span><strong id="JPG To PDF Converter screenshot">JPG To PDF Converter screenshot</strong>
-</p>
-
-<p>
-Next I think that maybe <a href="https://stackoverflow.com/">stackoverflow</a> has some useful functions. I google <span id="How to convert jpg to pdf file?-stackoverflow jpg to pdf"></span><strong id="stackoverflow jpg to pdf">stackoverflow jpg to pdf</strong>. Then I try a python snippet. It can convert jpg to pdf. <span id="How to convert jpg to pdf file?-Mention that you need to set A4 size in the snippet. Otherwise the image will out of the page."></span><strong id="Mention that you need to set A4 size in the snippet. Otherwise the image will out of the page.">Mention that you need to set A4 size in the snippet. Otherwise the image will out of the page.</strong>
-</p>
-
-<ol>
-<li>
-<a href="https://www.python.org/downloads/release/python-340/">Download python 3.4.0</a>
-
-<li>
-<code>pip install PyPDF2</code>
-
-<li>
-Add below code to a file <span id="How to convert jpg to pdf file?-jpg2pdf.py"></span><strong id="jpg2pdf.py">jpg2pdf.py</strong>. Execute  command <code>python jpg2pdf.py</code>.
-<pre class="py">
-from fpdf import FPDF
-pdf = FPDF()
-# imagelist is the list with all image filenames
-imagelist=["image1.jpg","image2.jpg","image3.jpg"]
-for image in imagelist:
-# standard a4 page, 0,0,210,297
-    x=0
-    y=0
-    w=210
-    h=297
-    pdf.add_page()
-    pdf.image(image,x,y,w,h)
-pdf.output("yourfile.pdf", "F")
-</pre>
-
-</ol>
-
-<div id="How to view image pdf in black and white mode ?"><h1 id="How to view image pdf in black and white mode ?" class="header"><a href="#How to view image pdf in black and white mode ?">How to view image pdf in black and white mode ?</a></h1></div>
-<p>
-Open pdf file in <a href="https://en.wikipedia.org/wiki/Google_Chrome">chrome</a>. Click the print button to show Print dialog. We can change black white or color at color option. Choose <span id="How to view image pdf in black and white mode ?-black white"></span><strong id="black white">black white</strong> item to set the image as black and white mode.
-</p>
-
-
-<div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
-<p>
-<a href="https://stackoverflow.com/questions/27327513/create-pdf-from-a-list-of-images">Create PDF from a list of images</a>
+<a href="transparent-window.html">transparent-window</a>
 </p>
 
         </div>
@@ -169,7 +105,7 @@ Open pdf file in <a href="https://en.wikipedia.org/wiki/Google_Chrome">chrome</a
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/How to convert jpg to pdf file.html" 
+data-href="https://zhihau.github.io/Projects page.html" 
 data-layout="button_count">
 </div>
 	
