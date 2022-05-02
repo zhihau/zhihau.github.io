@@ -68,7 +68,7 @@ js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
 fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-	<div class="w3-bar w3-light-grey w3-border w3-large">
+	<div class="w3-bar w3-white w3-border-bottom w3-large">
 	  <a href="index.html" class="w3-bar-item w3-button   w3-black"style="font-size: small;
     font-weight: bold;">ZhiHau Blog</a>
 	<div id="search-box">
@@ -85,7 +85,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
 	  <a href="#" id="copy-link-button"class="w3-right w3-tooltip w3-bar-item w3-button " id="copy-link-button" title="Copy link"><i class="fa fa-link"></i>
 	</div><!--end of bar-->
-        <div class="content" style="padding: 48 64 16 64">
+        <div class="content w3-light-grey" style="padding: 48 64 16 64">
         
 <p>
 <span id="-vim"></span><span class="tag" id="vim">vim</span>
@@ -96,9 +96,21 @@ fjs.parentNode.insertBefore(js, fjs);
 <li>
 <a href="vim tips.html#vim cheat sheet">vim cheat sheet</a>
 
+<ul>
+<li>
+<a href="vim tips.html#vim cheat sheet-visual mode">visual mode</a>
+
+<li>
+<a href="vim tips.html#vim cheat sheet-command mode">command mode</a>
+
+</ul>
+<li>
+<a href="vim tips.html#Reference">Reference</a>
+
 </ul>
 
 <div id="vim cheat sheet"><h1 id="vim cheat sheet" class="header"><a href="#vim cheat sheet">vim cheat sheet</a></h1></div>
+<div id="vim cheat sheet-visual mode"><h2 id="visual mode" class="header"><a href="#vim cheat sheet-visual mode">visual mode</a></h2></div>
 <table>
 <tr>
 <th>
@@ -126,20 +138,85 @@ Paste text from OS clipboard
 </tr>
 <tr>
 <td>
+gj
+</td>
+<td>
+move cursor down (multiline text)
+</td>
+</tr>
+<tr>
+<td>
+gt/gT
+</td>
+<td>
+switch tab
+</td>
+</tr>
+</table>
+
+<div id="vim cheat sheet-command mode"><h2 id="command mode" class="header"><a href="#vim cheat sheet-command mode">command mode</a></h2></div>
+<table>
+<tr>
+<th>
+Shortcut
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
 :!start "%"
 </td>
 <td>
 Open file with the default program
 </td>
 </tr>
+<tr>
+<td>
+:set enc?
+</td>
+<td>
+Show file encoding
+</td>
+</tr>
+<tr>
+<td>
+:pwd
+</td>
+<td>
+Show current directory
+</td>
+</tr>
+<tr>
+<td>
+:colorscheme desert
+</td>
+<td>
+Change color scheme
+</td>
+</tr>
+<tr>
+<td>
+:wa
+</td>
+<td>
+write all open tab files
+</td>
+</tr>
 </table>
+
+<div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
+<p>
+<a href="https://vim.rtorr.com/">vim cheat sheet</a>
+</p>
 
         </div>
         <div class="footer" style="padding:0 64 64 64">
 
 		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
 	See you in the next story bye.</p>
-		<p><small>Page created on 2022-05-01</small></p>
+		<p><small>Page created on 2022-05-02</small></p>
 
 <!-- Your share button code -->
 <div class="fb-share-button" 

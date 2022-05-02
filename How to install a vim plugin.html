@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - How to add a add remove programs shortcut on Windows desktop</title>
+        <title>ZhiHau Blog - How to install a vim plugin</title>
 <style>
 /**
 * Highlight.js
@@ -88,30 +88,37 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey" style="padding: 48 64 16 64">
         
 <p>
-<span id="-Windows"></span><span class="tag" id="Windows">Windows</span>
+<span id="-vim"></span><span class="tag" id="vim">vim</span>
 </p>
 
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
 <ul>
 <li>
-<a href="How to add a add remove programs shortcut on Windows desktop.html#How to add a add/remove programs shortcut on Windows desktop?">How to add a add/remove programs shortcut on Windows desktop?</a>
+<a href="How to install a vim plugin.html#How to install a vim plugin">How to install a vim plugin</a>
 
 </ul>
 
-<div id="How to add a add/remove programs shortcut on Windows desktop?"><h1 id="How to add a add/remove programs shortcut on Windows desktop?" class="header"><a href="#How to add a add/remove programs shortcut on Windows desktop?">How to add a add/remove programs shortcut on Windows desktop?</a></h1></div>
-<p>
-I often try some programs. Install many programs on my laptop. If I'd like to uninstall a program, I have to open settings window. Type <span id="How to add a add/remove programs shortcut on Windows desktop?-remove"></span><strong id="remove">remove</strong> keyword in the search box to find add/remove programs function. It's boring. How to access this function quickly? Maybe I can create a add/remove programs shortcut on desktop. 
-</p>
-
-<p>
-Yes, I can . This is steps.
-</p>
+<div id="How to install a vim plugin"><h1 id="How to install a vim plugin" class="header"><a href="#How to install a vim plugin">How to install a vim plugin</a></h1></div>
 <ol>
 <li>
-Right click to show menu on desktop. Choose <span id="How to add a add/remove programs shortcut on Windows desktop?-New\shortcut"></span><strong id="New\shortcut">New\shortcut</strong> item. Type <code>appwiz.cpl</code> in the location box. Click <span id="How to add a add/remove programs shortcut on Windows desktop?-Next"></span><strong id="Next">Next</strong> button.
+Install <a href="https://github.com/junegunn/vim-plug">vim-plug</a>.
 
 <li>
-Type the shortcut name <span id="How to add a add/remove programs shortcut on Windows desktop?-Add remove programs"></span><strong id="Add remove programs">Add remove programs</strong>. Then click the <span id="How to add a add/remove programs shortcut on Windows desktop?-Finish"></span><strong id="Finish">Finish</strong> button. 
+Download plug.vim and put it in the <span id="How to install a vim plugin-autoload"></span><strong id="autoload">autoload</strong> directory.
+
+<li>
+Add vim-plug tags in vimrc file and put you'd like to install plugin between these tags. For instance, I want to install nerdtree plugin. The vimrc looks like this.
+<pre class="vim">
+call plug#begin('~/.vim/plugged')
+Plug 'preservim/nerdtree'
+call plug#end()
+</pre>
+
+<li>
+Next, restart vim or execute command <code>so %</code> in the command mode.
+
+<li>
+Run command <code>PlugInstall</code> to install plugins.
 
 </ol>
 
@@ -124,7 +131,7 @@ Type the shortcut name <span id="How to add a add/remove programs shortcut on Wi
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/How to add a add remove programs shortcut on Windows desktop.html" 
+data-href="https://zhihau.github.io/How to install a vim plugin.html" 
 data-layout="button_count">
 </div>
 	
