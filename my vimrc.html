@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - Programmer's Development Notes</title>
+        <title>ZhiHau Blog - my vimrc</title>
 <style>
 /**
 * Highlight.js
@@ -87,200 +87,120 @@ fjs.parentNode.insertBefore(js, fjs);
 	</div><!--end of bar-->
         <div class="content w3-light-grey" style="padding: 48 64 16 64">
         
+<p>
+<span id="-vim"></span><span class="tag" id="vim">vim</span>
+</p>
+<div id="my vimrc"><h1 id="my vimrc" class="header"><a href="#my vimrc">my vimrc</a></h1></div>
+<pre class="vim">
 
-<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
-<ul>
-<li>
-<a href="index.html#ASP.Net">ASP.Net</a>
+set nocompatible              " be iMproved, required
+set autochdir "auto change dir
+"default open file with utf8 encoding
+"if there is a unknown character, use one of the file encodings list to open
+"file.
+set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936,gbk,gb18030,gb2312
+"ex. [{'path': '~\vimwiki\', 
+let g:vimwiki_list = [{'path': 'D:\Personal\Vimwiki\', 
+	  \ 'auto_toc': 1,
+	  \ 'public_html': 'D:\Personal\Vimwiki_html\',
+	  \ 'template_path': 'D:\Personal\Vimwiki\autoload\',
+          \ 'template_default': 'default',
+          \ 'template_ext': '.tpl'}]
 
-<li>
-<a href="index.html#Jobs">Jobs</a>
+"show hidden characters
+"set ffs=unix
+"set list
+" F4: Toggle list (display unprintable characters).
+nnoremap &lt;F4&gt; :set list!&lt;CR&gt;
 
-<li>
-<a href="index.html#Python">Python</a>
+set spell
+"fix backspace key doesn't work
+set backspace=indent,eol,start
+"filetype off                  " required
+"https://phoenixnap.com/kb/vim-color-schemes
+colorscheme desert
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+" Enable folding with the spacebar
+nnoremap &lt;space&gt; za
+"
+set langmenu=en_US
+set fileencoding=utf-8
+let $LANG = 'en_US'
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+syntax on
+set nu
+set hls
+let g:auto_save = 1
+" enable auto format when write. (defaut)
+"let g:vfmt = 1
 
-<li>
-<a href="index.html#JavaScript">JavaScript</a>
+"autocmd BufEnter *.v exe 'noremap map &lt;F5&gt; &lt;Esc&gt;:w&lt;CR&gt;:!start help&lt;CR&gt;'
+":map &lt;F5&gt; :w&lt;CR&gt;:!v run "%"&lt;CR&gt;
+:map &lt;F2&gt; :e $MYVIMRC&lt;CR&gt;
+:map &lt;F3&gt; :e $HOME/_link.vim&lt;CR&gt;
+" write all tabs and compile run v code
+:map &lt;F5&gt; :wa&lt;CR&gt;:!v run "%:r"&lt;CR&gt;
+:map &lt;F6&gt; :wa&lt;CR&gt;:!start v run "%"&lt;CR&gt;
+:map &lt;F7&gt; :NERDTreeToggle %&lt;CR&gt;
+"use default program to open current file
+:map &lt;F8&gt; :!start "%"&lt;CR&gt;
+"check broken image
+:map &lt;F9&gt; :!cmd /k python d:\Bin\check_file_exists.py -d "%:p:h" -e html -i 0 -a img -x "png;PNG"&lt;CR&gt;
 
-<li>
-<a href="index.html#vlang">vlang</a>
 
-<li>
-<a href="index.html#Git">Git</a>
+"autocmd BufEnter *.md,*.markdown,*.html exe 'noremap &lt;F5&gt; :!start "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "%:p"&lt;CR&gt;'
 
-<li>
-<a href="index.html#Vim">Vim</a>
+" set the runtime path to include Vundle and initialize
+"set rtp+=$VIMRUNTIME/bundle/autoload/Vundle.vim
+"call vundle#begin('$VIMRUNTIME/bundle/autoload/')
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-<li>
-<a href="index.html#Windows">Windows</a>
+" let Vundle manage Vundle, required
+"Plugin 'VundleVim/Vundle.vim'
 
-<li>
-<a href="index.html#site">site</a>
+" All of your Plugins must be added before the following line
+"call vundle#end()            " required
+"
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+call plug#begin('~/.vim/plugged')
+Plug '907th/vim-auto-save'
+" Error  cat is not internal or external command
+"Plug 'zakuro9715/vim-vtools'
+Plug 'ollykel/v-vim'
+Plug 'vimwiki/vimwiki'
+Plug 'preservim/nerdtree'
 
-<li>
-<a href="index.html#Other">Other</a>
+call plug#end()
+" Source a local vimrc {{{
+    if has('win32')
+        let $MYLOCALVIMRC = $HOME . "/_link.vim"
+    else
+        let $MYLOCALVIMRC = $HOME . "/.link.vim"
+    endif
 
-</ul>
+    if filereadable($MYLOCALVIMRC)
+        source $MYLOCALVIMRC
+    endif
+" }}} 
+"Open vimwiki when vim start
+autocmd VimEnter * if argc() == 0 | execute 'VimwikiIndex' | endif
 
-<div id="ASP.Net"><h1 id="ASP.Net" class="header"><a href="#ASP.Net">ASP.Net</a></h1></div>
-<ul>
-<li>
-<a href="How to create ASP dot net MVC web application in Visual Studio 2019.html">How to create ASP dot net MVC web application in Visual Studio 2019</a>
-
-</ul>
-
-<div id="Jobs"><h1 id="Jobs" class="header"><a href="#Jobs">Jobs</a></h1></div>
-<ul>
-<li>
-<a href="How to print labor insurance transfer order.html">How to print labor insurance transfer order</a>
-
-<li>
-<a href="How to convert jpg to pdf file.html">How to convert jpg to pdf file</a>
-
-<li>
-<a href="How to convert merge many pdf files to one pdf file.html">How to convert merge many pdf files to one pdf file</a>
-
-<li>
-<a href="How to open a digital account with mega bank.html">How to open a digital account with mega bank</a>
-
-</ul>
-
-<div id="Python"><h1 id="Python" class="header"><a href="#Python">Python</a></h1></div>
-<ul>
-<li>
-<a href="How to calculate program execution time.html">How to calculate program execution time</a>
-
-<li>
-<a href="How to execute external program in python.html">How to execute external program in python</a>
-
-<li>
-<a href="How to calculate the average of a file full of numbers..html">How to calculate the average of a file full of numbers.</a>
-
-<li>
-<a href="Compare file names with fuzzy string matching module.html">Compare file names with fuzzy string matching module</a>
-
-</ul>
-
-<div id="JavaScript"><h1 id="JavaScript" class="header"><a href="#JavaScript">JavaScript</a></h1></div>
-<ul>
-<li>
-<a href="How to add copy button with highlight_js.html">How to add copy button with highlight_js</a>
-
-<li>
-<a href="How to use highlight_js with custom code.html">How to use highlight_js with custom code</a>
-
-<li>
-<a href="How to add google search box to a web page.html">How to add google search box to a web page</a>
-
-</ul>
-
-<div id="vlang"><h1 id="vlang" class="header"><a href="#vlang">vlang</a></h1></div>
-<ul>
-<li>
-<a href="Building your command line interface (CLR) tool with vlang.html">Building your command line interface (CLR) tool with vlang</a>
-
-<li>
-<a href="Create math  quiz web application using vlang.html">Create math  quiz web application using vlang</a> 
-
-<li>
-<a href="The easy way to run the vlang code in gvim.html">The easy way to run the vlang code in gvim</a>
-
-<li>
-<a href="Add V syntax highlighting in vim.html">Add V syntax highlighting in vim</a>
-
-<li>
-<a href="vlang bookmarks.html">vlang bookmarks</a>
-
-<li>
-<a href="How to update v.html">How to update v</a>
-
-</ul>
-
-<div id="Git"><h1 id="Git" class="header"><a href="#Git">Git</a></h1></div>
-<ul>
-<li>
-<a href="Keeping a fork update.html">Keeping a fork update</a>
-
-<li>
-<a href="How to solve a merge conflict.html">How to solve a merge conflict</a>
-
-<li>
-<a href="Related Git eol.html">Related Git eol</a>
-
-<li>
-<a href="How to set default git commit editor.html">How to set default git commit editor</a>
-
-<li>
-<a href="How to push rename file in git.html">How to push rename file in git</a>
-
-</ul>
-
-<div id="Vim"><h1 id="Vim" class="header"><a href="#Vim">Vim</a></h1></div>
-<ul>
-<li>
-<a href="vimwiki FAQ.html">vimwiki FAQ</a>
-
-<li>
-<a href="vim tips.html">vim tips</a>
-
-<li>
-<a href="my vimrc.html">my vimrc</a>
-
-<li>
-<a href="Using autocomplete function in Vim.html">Using autocomplete function in Vim</a>
-
-<li>
-<a href="How to install a vim plugin.html">How to install a vim plugin</a>
-
-</ul>
-
-<div id="Windows"><h1 id="Windows" class="header"><a href="#Windows">Windows</a></h1></div>
-<ul>
-<li>
-<a href="program help.html">program help</a>
-
-<li>
-<a href="How to add a add remove programs shortcut on Windows desktop.html">How to add a add remove programs shortcut on Windows desktop</a>
-
-<li>
-<a href="How to install linux bash shell on Windows 10.html">How to install linux bash shell on Windows 10</a>
-
-<li>
-<a href="How to change default web browser on Window 10.html">How to change default web browser on Window 10</a>
-
-<li>
-<a href="How to disable Windows 10 update.html">How to disable Windows 10 update</a>
-
-</ul>
-
-<div id="site"><h1 id="site" class="header"><a href="#site">site</a></h1></div>
-<ul>
-<li>
-<a href="How to add a twitter button to your web site.html">How to add a twitter button to your web site</a>
-
-<li>
-<a href="How to add a facebook share button to your web site.html">How to add a facebook share button to your web site</a>
-
-<li>
-<a href="How to add google adsense to your web site.html">How to add google adsense to your web site</a>
-
-<li>
-<a href="How to add google analytics to your web site.html">How to add google analytics to your web site</a>
-
-<li>
-<a href="site tool.html">site tool</a>
-
-</ul>
-
-<div id="Other"><h1 id="Other" class="header"><a href="#Other">Other</a></h1></div>
-<ul>
-<li>
-<a href="About page.html">About page</a>
-
-<li>
-<a href="Projects page.html">Projects page</a>
-
-</ul>
+</pre>
 
         </div>
         <div class="footer" style="padding:0 64 64 64">
@@ -291,7 +211,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/Programmer's Development Notes.html" 
+data-href="https://zhihau.github.io/my vimrc.html" 
 data-layout="button_count">
 </div>
 	
