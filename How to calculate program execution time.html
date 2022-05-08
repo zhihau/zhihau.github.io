@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - Programmer's Development Notes</title>
+        <title>ZhiHau Blog - How to calculate program execution time</title>
 <style>
 /**
 * Highlight.js
@@ -87,191 +87,79 @@ fjs.parentNode.insertBefore(js, fjs);
 	</div><!--end of bar-->
         <div class="content w3-light-grey" style="padding: 48 64 16 64">
         
+<p>
+<span id="-python"></span><span class="tag" id="python">python</span>
+</p>
 
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
 <ul>
 <li>
-<a href="index.html#ASP.Net">ASP.Net</a>
+<a href="How to calculate program execution time.html#How to calculate program execution time">How to calculate program execution time</a>
 
-<li>
-<a href="index.html#Jobs">Jobs</a>
-
-<li>
-<a href="index.html#Python">Python</a>
-
-<li>
-<a href="index.html#JavaScript">JavaScript</a>
-
-<li>
-<a href="index.html#vlang">vlang</a>
-
-<li>
-<a href="index.html#Git">Git</a>
-
-<li>
-<a href="index.html#Vim">Vim</a>
-
-<li>
-<a href="index.html#Windows">Windows</a>
-
-<li>
-<a href="index.html#site">site</a>
-
-<li>
-<a href="index.html#Other">Other</a>
-
-</ul>
-
-<div id="ASP.Net"><h1 id="ASP.Net" class="header"><a href="#ASP.Net">ASP.Net</a></h1></div>
 <ul>
 <li>
-<a href="How to create ASP dot net MVC web application in Visual Studio 2019.html">How to create ASP dot net MVC web application in Visual Studio 2019</a>
+<a href="How to calculate program execution time.html#How to calculate program execution time-a simple python program to calculate execution time">a simple python program to calculate execution time</a>
+
+<li>
+<a href="How to calculate program execution time.html#How to calculate program execution time-a simple python module to calculate execution time">a simple python module to calculate execution time</a>
 
 </ul>
-
-<div id="Jobs"><h1 id="Jobs" class="header"><a href="#Jobs">Jobs</a></h1></div>
-<ul>
-<li>
-<a href="How to print labor insurance transfer order.html">How to print labor insurance transfer order</a>
-
-<li>
-<a href="How to convert jpg to pdf file.html">How to convert jpg to pdf file</a>
-
-<li>
-<a href="How to convert merge many pdf files to one pdf file.html">How to convert merge many pdf files to one pdf file</a>
-
-<li>
-<a href="How to open a digital account with mega bank.html">How to open a digital account with mega bank</a>
-
 </ul>
 
-<div id="Python"><h1 id="Python" class="header"><a href="#Python">Python</a></h1></div>
-<ul>
-<li>
-<a href="How to calculate program execution time.html">How to calculate program execution time</a>
+<div id="How to calculate program execution time"><h1 id="How to calculate program execution time" class="header"><a href="#How to calculate program execution time">How to calculate program execution time</a></h1></div>
+<p>
+You can use timeit module to evaluate program execution time. For example:
+</p>
 
-<li>
-<a href="How to execute external program in python.html">How to execute external program in python</a>
+<div id="How to calculate program execution time-a simple python program to calculate execution time"><h2 id="a simple python program to calculate execution time" class="header"><a href="#How to calculate program execution time-a simple python program to calculate execution time">a simple python program to calculate execution time</a></h2></div>
+<pre class="python">
+import timeit
 
-<li>
-<a href="How to calculate the average of a file full of numbers..html">How to calculate the average of a file full of numbers.</a>
+start = timeit.default_timer()
+# All the program statements
+execution_time = stop - start
+print("Program Executed in %s seconds"%str(execution_time)) # It returns time in seconds
+</pre>
 
-</ul>
+<div id="How to calculate program execution time-a simple python module to calculate execution time"><h2 id="a simple python module to calculate execution time" class="header"><a href="#How to calculate program execution time-a simple python module to calculate execution time">a simple python module to calculate execution time</a></h2></div>
+<pre class="python">
+# filename: executetime.py
+# == How to use this module ==
+# import executetime as et
+# The class ExecuteTime no parameters. It will delete the record file executetime.txt.
+## executeTime = et.ExecuteTime()
+# All the program statements
+## executeTime.stop()
 
-<div id="JavaScript"><h1 id="JavaScript" class="header"><a href="#JavaScript">JavaScript</a></h1></div>
-<ul>
-<li>
-<a href="How to add copy button with highlight_js.html">How to add copy button with highlight_js</a>
+# The class ExecuteTime sets record option as true. It will write execute time every time to the record file executetime.txt.
+## executeTime = et.ExecuteTime(True)
+# All the program statements
+## executeTime.stop()
 
-<li>
-<a href="How to use highlight_js with custom code.html">How to use highlight_js with custom code</a>
+import timeit
+import os
+class ExecuteTime:
+  def __init__(self,record=False):
+    self.start = timeit.default_timer()
+    self.record=record
 
-<li>
-<a href="How to add google search box to a web page.html">How to add google search box to a web page</a>
+  def stop(self):
+    stop = timeit.default_timer()
+    execution_time = stop - self.start
+    print("Program Executed in %s seconds"%str(execution_time)) # It returns time in seconds
+    log_file_name='executetime.txt'
+    if self.record:
+        with open(log_file_name, 'a') as log:
+            log.write(str(execution_time)+"\n")
+    else:
+        if os.path.exists(log_file_name):
+            os.remove(log_file_name)
+            print(log_file_name+" has been deleted successfully")
+        else:
+            print(log_file_name+" does not exist!")
 
-</ul>
-
-<div id="vlang"><h1 id="vlang" class="header"><a href="#vlang">vlang</a></h1></div>
-<ul>
-<li>
-<a href="Building your command line interface (CLR) tool with vlang.html">Building your command line interface (CLR) tool with vlang</a>
-
-<li>
-<a href="Create math  quiz web application using vlang.html">Create math  quiz web application using vlang</a> 
-
-<li>
-<a href="The easy way to run the vlang code in gvim.html">The easy way to run the vlang code in gvim</a>
-
-<li>
-<a href="Add V syntax highlighting in vim.html">Add V syntax highlighting in vim</a>
-
-<li>
-<a href="vlang bookmarks.html">vlang bookmarks</a>
-
-<li>
-<a href="How to update v.html">How to update v</a>
-
-</ul>
-
-<div id="Git"><h1 id="Git" class="header"><a href="#Git">Git</a></h1></div>
-<ul>
-<li>
-<a href="Keeping a fork update.html">Keeping a fork update</a>
-
-<li>
-<a href="How to solve a merge conflict.html">How to solve a merge conflict</a>
-
-<li>
-<a href="Related Git eol.html">Related Git eol</a>
-
-<li>
-<a href="How to set default git commit editor.html">How to set default git commit editor</a>
-
-</ul>
-
-<div id="Vim"><h1 id="Vim" class="header"><a href="#Vim">Vim</a></h1></div>
-<ul>
-<li>
-<a href="vimwiki FAQ.html">vimwiki FAQ</a>
-
-<li>
-<a href="vim tips.html">vim tips</a>
-
-<li>
-<a href="Using autocomplete function in Vim.html">Using autocomplete function in Vim</a>
-
-<li>
-<a href="How to install a vim plugin.html">How to install a vim plugin</a>
-
-</ul>
-
-<div id="Windows"><h1 id="Windows" class="header"><a href="#Windows">Windows</a></h1></div>
-<ul>
-<li>
-<a href="program help.html">program help</a>
-
-<li>
-<a href="How to add a add remove programs shortcut on Windows desktop.html">How to add a add remove programs shortcut on Windows desktop</a>
-
-<li>
-<a href="How to install linux bash shell on Windows 10.html">How to install linux bash shell on Windows 10</a>
-
-<li>
-<a href="How to change default web browser on Window 10.html">How to change default web browser on Window 10</a>
-
-<li>
-<a href="How to disable Windows 10 update.html">How to disable Windows 10 update</a>
-
-</ul>
-
-<div id="site"><h1 id="site" class="header"><a href="#site">site</a></h1></div>
-<ul>
-<li>
-<a href="How to add a twitter button to your web site.html">How to add a twitter button to your web site</a>
-
-<li>
-<a href="How to add a facebook share button to your web site.html">How to add a facebook share button to your web site</a>
-
-<li>
-<a href="How to add google adsense to your web site.html">How to add google adsense to your web site</a>
-
-<li>
-<a href="How to add google analytics to your web site.html">How to add google analytics to your web site</a>
-
-<li>
-<a href="site tool.html">site tool</a>
-
-</ul>
-
-<div id="Other"><h1 id="Other" class="header"><a href="#Other">Other</a></h1></div>
-<ul>
-<li>
-<a href="About page.html">About page</a>
-
-<li>
-<a href="Projects page.html">Projects page</a>
-
-</ul>
+}}
+</pre>
 
         </div>
         <div class="footer" style="padding:0 64 64 64">
@@ -282,7 +170,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/Programmer's Development Notes.html" 
+data-href="https://zhihau.github.io/How to calculate program execution time.html" 
 data-layout="button_count">
 </div>
 	
