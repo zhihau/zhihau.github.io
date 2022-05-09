@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - How to disable Windows 10 update</title>
+        <title>ZhiHau Blog - Find windows 10 startup folder</title>
 <style>
 /**
 * Highlight.js
@@ -91,47 +91,13 @@ fjs.parentNode.insertBefore(js, fjs);
 <span id="-Windows"></span><span class="tag" id="Windows">Windows</span>
 </p>
 
-<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
-<ul>
-<li>
-<a href="How to disable Windows 10 update.html#How to disable Windows 10 update">How to disable Windows 10 update</a>
-
-<li>
-<a href="How to disable Windows 10 update.html#Reference">Reference</a>
-
-</ul>
-
-<div id="How to disable Windows 10 update"><h1 id="How to disable Windows 10 update" class="header"><a href="#How to disable Windows 10 update">How to disable Windows 10 update</a></h1></div>
-<ol>
-<li>
-Press <code>Win+R</code> key to open run dialog. 
-
-<li>
-Type <span id="How to disable Windows 10 update-regedit"></span><strong id="regedit">regedit</strong> and hit Enter to run it. 
-
-<li>
-Go to <code>Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\</code>.
-
-<li>
-Create a key Name as <span id="How to disable Windows 10 update-WindowsUpdate"></span><strong id="WindowsUpdate">WindowsUpdate</strong>. 
-
-<li>
-Create <span id="How to disable Windows 10 update-AU"></span><strong id="AU">AU</strong> key under <span id="How to disable Windows 10 update-WindowsUpdate"></span><strong id="WindowsUpdate">WindowsUpdate</strong> key.
-
-<li>
-Create <span id="How to disable Windows 10 update-DWORD (32-bit) value"></span><strong id="DWORD (32-bit) value">DWORD (32-bit) value</strong> in <span id="How to disable Windows 10 update-AU"></span><strong id="AU">AU</strong> key.
-
-<li>
-Name the value as <span id="How to disable Windows 10 update-NoAutoUpdate"></span><strong id="NoAutoUpdate">NoAutoUpdate</strong>. And change the value 0 to 1.
-
-<li>
-Restart your computer.
-
-</ol>
-
-<div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
+<div id="Find windows 10 startup folder"><h1 id="Find windows 10 startup folder" class="header"><a href="#Find windows 10 startup folder">Find windows 10 startup folder</a></h1></div>
 <p>
-<a href="https://www.windowscentral.com/how-stop-updates-installing-automatically-windows-10">How to</a>
+Open explorer change the directory to %appdata%\Microsoft\Windows\Start Menu\Programs\Startup.
+</p>
+
+<p>
+Or press win+r to open run dialog. Type <span id="Find windows 10 startup folder-%appdata%\Microsoft\Windows\Start Menu\Programs\Startup"></span><strong id="%appdata%\Microsoft\Windows\Start Menu\Programs\Startup">%appdata%\Microsoft\Windows\Start Menu\Programs\Startup</strong> and hit enter. It will bring you to correct folder.
 </p>
 
         </div>
@@ -143,7 +109,7 @@ Restart your computer.
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/How to disable Windows 10 update.html" 
+data-href="https://zhihau.github.io/Find windows 10 startup folder.html" 
 data-layout="button_count">
 </div>
 	
