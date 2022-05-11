@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - How to push rename file in git</title>
+        <title>ZhiHau Blog - python substring</title>
 <style>
 /**
 * Highlight.js
@@ -88,24 +88,51 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey" style="padding: 48 64 16 64">
         
 <p>
-<span id="-git"></span><span class="tag" id="git">git</span>
+<span id="-python"></span><span class="tag" id="python">python</span>
 </p>
 
-<div id="How to push rename file in git"><h1 id="How to push rename file in git" class="header"><a href="#How to push rename file in git">How to push rename file in git</a></h1></div>
-<ol>
+<div id="python substring"><h1 id="python substring" class="header"><a href="#python substring">python substring</a></h1></div>
+<pre class="python">
+b = "Hello, World!"
+print(b[2:5])
+# b[2:5] means start from 2 index, end to 4 index.
+# output:llo
+</pre>
+
+<ul>
 <li>
-git add .
+b[-1] #get last one character, <code>!</code>
 
 <li>
-Use this command to rename you file. <code>git mv img/zhihau-bash.png img/zhihau-bash.PNG</code>
+b[-2:] #start from index -2 to end , <code>d!</code>
 
 <li>
-git commit -m 'rename an image file'
+b[:-2] #start from start to index -2, <code>Hello, Worl</code>
+
+</ul>
+
+<div id="python substring-steps"><h2 id="steps" class="header"><a href="#python substring-steps">steps</a></h2></div>
+<ul>
+<li>
+b[::2] #print by every two character <code>hlo ol!</code>
 
 <li>
-git push
+b[::-1] #reversed steps, <code>!dlroW ,olleH</code>
 
-</ol>
+</ul>
+
+<div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
+<ul>
+<li>
+<a href="https://stackoverflow.com/questions/509211/understanding-slicing">https://stackoverflow.com/questions/509211/understanding-slicing</a>
+
+<li>
+<a href="https://stackoverflow.com/questions/663171/how-do-i-get-a-substring-of-a-string-in-python">https://stackoverflow.com/questions/663171/how-do-i-get-a-substring-of-a-string-in-python</a>
+
+<li>
+<a href="https://www.w3schools.com/python/python_strings_slicing.asp">https://www.w3schools.com/python/python_strings_slicing.asp</a>
+
+</ul>
 
         </div>
         <div class="footer" style="padding:0 64 64 64">
@@ -116,7 +143,7 @@ git push
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/How to push rename file in git.html" 
+data-href="https://zhihau.github.io/python substring.html" 
 data-layout="button_count">
 </div>
 	
