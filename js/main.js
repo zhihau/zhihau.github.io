@@ -1,11 +1,14 @@
 $(document).ready(function(){
   $("#search-box").hide();
+
   $("#search-button").click(function(){
     $("#search-box").toggle();
     $("#copy-link-button").toggle();
     $("#about-button").toggle();
+    $("#projects-button").toggle();
     $("#search-box-input").focus();
   });
+
   $("#copy-link-button").click(function(){
 	var dummy = document.createElement('input'),
 	    text = window.location.href;
