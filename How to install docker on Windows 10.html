@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - How to use templates in vim</title>
+        <title>ZhiHau Blog - How to install docker on Windows 10</title>
 <style>
 /**
 * Highlight.js
@@ -88,58 +88,73 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey" style="padding: 48 64 16 64">
         
 <p>
-<span id="-vim"></span><span class="tag" id="vim">vim</span>
+<span id="-docker"></span><span class="tag" id="docker">docker</span>
 </p>
 
-<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<div id="How to install docker on Windows 10"><h1 id="How to install docker on Windows 10" class="header"><a href="#How to install docker on Windows 10">How to install docker on Windows 10</a></h1></div>
 <ul>
 <li>
-<a href="How to use templates in vim.html#How to use templates in vim">How to use templates in vim</a>
+Download and install <a href="https://docs.docker.com/desktop/windows/install/">docker desktop</a>
 
 <li>
-<a href="How to use templates in vim.html#Reference">Reference</a>
+Restart computer
+
+<li>
+Docker Desktop shows error message.
+
+</ul>
+<p>
+<img src="https://zhihau.github.io/img/docker-desktop-cannot-start-hardware-assisted-virtualization-must-be-enabled-in-the-BIOS.png" />
+</p>
+
+<ul>
+<li>
+Download and install <a href="https://www.intel.com/content/www/us/en/download/12136/intel-processor-identification-utility-windows-version.html?">this program</a> to detect if your computer supports virtual technology.
+
+<li>
+Click tab <span id="How to install docker on Windows 10-cpu technology"></span><strong id="cpu technology">cpu technology</strong>.
+
+<li>
+There is a checkbox prefix the intel virtual technology item. It means your computer supports virtual technology.
 
 </ul>
 
-<div id="How to use templates in vim"><h1 id="How to use templates in vim" class="header"><a href="#How to use templates in vim">How to use templates in vim</a></h1></div>
-<ol>
+<ul>
 <li>
-Add below code to your vimrc file. Remember that vimrc file need to reload <code>:so %</code>.
-<pre class="vim">
-if has("autocmd")
-  augroup templates
-    autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
-    autocmd BufNewFile *.pl,*.py 0r ~/.vim/templates/skeleton.py
-  augroup END
-endif
-</pre>
-
-</ol>
-
-<ol>
-<li>
-Find your home path <code>:echo $HOME</code>. My home path is <span id="How to use templates in vim-C:\Users\Zhihau"></span><strong id="C:\Users\Zhihau">C:\Users\Zhihau</strong>.  
+Find a <a href="https://iqmore.tw/windows-10-cmd-find-motherboard-info">motherboard manufacturer</a>. Type command on command prompt.<code>wmic baseboard get product,Manufacturer</code>
 
 <li>
-Create folder <span id="How to use templates in vim-templates"></span><strong id="templates">templates</strong> under directory <span id="How to use templates in vim-C:\Users\Zhihau\.vim"></span><strong id="C:\Users\Zhihau\.vim">C:\Users\Zhihau\.vim</strong>. 
+Enable virtualization technology in BIOS system.
 
-<li>
-Create a file <span id="How to use templates in vim-skeleton.sh"></span><strong id="skeleton.sh">skeleton.sh</strong> in folder <span id="How to use templates in vim-templates"></span><strong id="templates">templates</strong>.
-<pre class="sh">
-#file name:skeleton.sh
-#!/bin/sh
-</pre>
-
-<li>
-Create a new shell script in vim <code>:e test.sh</code>. It will append the content of <span id="How to use templates in vim-skeleton.sh"></span><strong id="skeleton.sh">skeleton.sh</strong> to current file.
-
-</ol>
-
-<div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
+</ul>
 <p>
-<a href="https://shapeshed.com/vim-templates/">vim templates</a>
-<a href="https://vereperrot.github.io/vim/2019/04/28/Vim-tips.html">https://vereperrot.github.io/vim/2019/04/28/Vim-tips.html</a>
+<img src="https://zhihau.github.io/img/docker-desktop-wsl-2-installation-is-incomplete.png" />
 </p>
+
+<ul>
+<li>
+Download and install <a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">Download the Linux kernel update package</a>
+
+<li>
+Restart computer.
+
+</ul>
+
+<div id="How to install docker on Windows 10-start docker tutorial"><h2 id="start docker tutorial" class="header"><a href="#How to install docker on Windows 10-start docker tutorial">start docker tutorial</a></h2></div>
+<ul>
+<li>
+Click the gear icon(settings) at right-top corner of Docker Desktop. 
+
+<li>
+Click the fork icon at right-top corner  to close the setting page.
+
+<li>
+The tutorial will show . Press the blue start button to start tutorial.
+
+<li>
+Or go to home page. Click Quick Start Guide link at right side of the window.
+
+</ul>
 
         </div>
         <div class="footer" style="padding:0 64 64 64">
@@ -150,7 +165,7 @@ Create a new shell script in vim <code>:e test.sh</code>. It will append the con
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/How to use templates in vim.html" 
+data-href="https://zhihau.github.io/How to install docker on Windows 10.html" 
 data-layout="button_count">
 </div>
 	

@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - How to use templates in vim</title>
+        <title>ZhiHau Blog - How to install hadoop on Windows 10</title>
 <style>
 /**
 * Highlight.js
@@ -88,58 +88,186 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey" style="padding: 48 64 16 64">
         
 <p>
-<span id="-vim"></span><span class="tag" id="vim">vim</span>
+<span id="-SearchEngines"></span><span class="tag" id="SearchEngines">SearchEngines</span>
 </p>
 
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
 <ul>
 <li>
-<a href="How to use templates in vim.html#How to use templates in vim">How to use templates in vim</a>
+<a href="How to install hadoop on Windows 10.html#How to install hadoop on Windows 10">How to install hadoop on Windows 10</a>
 
 <li>
-<a href="How to use templates in vim.html#Reference">Reference</a>
+<a href="How to install hadoop on Windows 10.html#Reference">Reference</a>
 
 </ul>
 
-<div id="How to use templates in vim"><h1 id="How to use templates in vim" class="header"><a href="#How to use templates in vim">How to use templates in vim</a></h1></div>
-<ol>
+<div id="How to install hadoop on Windows 10"><h1 id="How to install hadoop on Windows 10" class="header"><a href="#How to install hadoop on Windows 10">How to install hadoop on Windows 10</a></h1></div>
+<ul>
 <li>
-Add below code to your vimrc file. Remember that vimrc file need to reload <code>:so %</code>.
-<pre class="vim">
-if has("autocmd")
-  augroup templates
-    autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
-    autocmd BufNewFile *.pl,*.py 0r ~/.vim/templates/skeleton.py
-  augroup END
-endif
+Download jdk installer from <a href="https://www.oracle.com/java/technologies/downloads/#jdk18-windows">this link</a>.
+
+<li>
+Install jdk-18_windows-x64_bin.msi.
+
+<li>
+Start a new command prompt to test jdk <code>javac -version</code>.
+
+<li>
+Go to <a href="https://hadoop.apache.org/">hadoop</a>. Click the download button.
+
+<li>
+Download and extract the latest hadoop 3.2.3 binary version.
+
+<li>
+Right click the pc icon in explorer then click properties menu iteom.
+
+<li>
+Type <span id="How to install hadoop on Windows 10-env"></span><strong id="env">env</strong> in the searchbox and hit enter key.
+
+<li>
+Add key <span id="How to install hadoop on Windows 10-HADOOP_HOME"></span><strong id="HADOOP_HOME">HADOOP_HOME</strong> and value <span id="How to install hadoop on Windows 10-D:\ZHIHAU\hadoop-3.2.3\bin"></span><strong id="D:\ZHIHAU\hadoop-3.2.3\bin">D:\ZHIHAU\hadoop-3.2.3\bin</strong> to user variables.
+
+<li>
+Add key <span id="How to install hadoop on Windows 10-JAVA_HOME"></span><strong id="JAVA_HOME">JAVA_HOME</strong> and value <span id="How to install hadoop on Windows 10-C:\Program Files\Java\jdk-18.0.1.1\bin"></span><strong id="C:\Program Files\Java\jdk-18.0.1.1\bin">C:\Program Files\Java\jdk-18.0.1.1\bin</strong> to user variables.
+
+<li>
+Add path <span id="How to install hadoop on Windows 10-D:\ZHIHAU\hadoop-3.2.3\bin"></span><strong id="D:\ZHIHAU\hadoop-3.2.3\bin">D:\ZHIHAU\hadoop-3.2.3\bin</strong> and <span id="How to install hadoop on Windows 10-C:\Program Files\Java\jdk-18.0.1.1\bin"></span><strong id="C:\Program Files\Java\jdk-18.0.1.1\bin">C:\Program Files\Java\jdk-18.0.1.1\bin</strong> to user PATH variable.
+
+<li>
+Edit <span id="How to install hadoop on Windows 10-hadoop-3.2.3\etc\hadoop\core-site.xml"></span><strong id="hadoop-3.2.3\etc\hadoop\core-site.xml">hadoop-3.2.3\etc\hadoop\core-site.xml</strong>. Paste the following code between configuration block.
+<pre class="xml">
+	 &lt;property&gt;
+
+       &lt;name&gt;fs.defaultFS&lt;/name&gt;
+
+       &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;
+
+   &lt;/property&gt;
+
 </pre>
 
-</ol>
+</ul>
 
-<ol>
+<ul>
 <li>
-Find your home path <code>:echo $HOME</code>. My home path is <span id="How to use templates in vim-C:\Users\Zhihau"></span><strong id="C:\Users\Zhihau">C:\Users\Zhihau</strong>.  
+Edit <span id="How to install hadoop on Windows 10-hadoop-3.2.3\etc\hadoop\mapred-site.xml"></span><strong id="hadoop-3.2.3\etc\hadoop\mapred-site.xml">hadoop-3.2.3\etc\hadoop\mapred-site.xml</strong>. Paste the following code between configuration block.
+<pre class="xml">
+&lt;property&gt;
 
-<li>
-Create folder <span id="How to use templates in vim-templates"></span><strong id="templates">templates</strong> under directory <span id="How to use templates in vim-C:\Users\Zhihau\.vim"></span><strong id="C:\Users\Zhihau\.vim">C:\Users\Zhihau\.vim</strong>. 
+       &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
 
-<li>
-Create a file <span id="How to use templates in vim-skeleton.sh"></span><strong id="skeleton.sh">skeleton.sh</strong> in folder <span id="How to use templates in vim-templates"></span><strong id="templates">templates</strong>.
-<pre class="sh">
-#file name:skeleton.sh
-#!/bin/sh
+       &lt;value&gt;yarn&lt;/value&gt;
+
+   &lt;/property&gt;
 </pre>
 
 <li>
-Create a new shell script in vim <code>:e test.sh</code>. It will append the content of <span id="How to use templates in vim-skeleton.sh"></span><strong id="skeleton.sh">skeleton.sh</strong> to current file.
+Create folder hadoop-3.2.3\data
 
-</ol>
+<li>
+Create folder hadoop-3.2.3\data\datanode
+
+<li>
+Create folder hadoop-3.2.3\data\namenode
+
+<li>
+Edit <span id="How to install hadoop on Windows 10-hadoop-3.2.3\etc\hadoop\hdfs-site.xml"></span><strong id="hadoop-3.2.3\etc\hadoop\hdfs-site.xml">hadoop-3.2.3\etc\hadoop\hdfs-site.xml</strong>.  Paste the following code between configuration block.
+<pre class="xml">
+
+&lt;property&gt;
+
+       &lt;name&gt;dfs.replication&lt;/name&gt;
+
+       &lt;value&gt;1&lt;/value&gt;
+
+   &lt;/property&gt;
+
+   &lt;property&gt;
+
+       &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;
+
+       &lt;value&gt;/hadoop-3.2.3/data/namenode&lt;/value&gt;
+
+   &lt;/property&gt;
+
+   &lt;property&gt;
+
+       &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;
+
+       &lt;value&gt;/hadoop-3.2.3/data/datanode&lt;/value&gt;
+
+   &lt;/property&gt;
+</pre>
+
+<li>
+Edit <span id="How to install hadoop on Windows 10-hadoop-3.2.3\etc\hadoop\yarn-site.xml"></span><strong id="hadoop-3.2.3\etc\hadoop\yarn-site.xml">hadoop-3.2.3\etc\hadoop\yarn-site.xml</strong>.  Paste the following code between configuration block.
+<pre class="xml">
+&lt;property&gt;
+
+                &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+
+                &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+
+   &lt;/property&gt;
+
+   &lt;property&gt;
+
+               &lt;name&gt;yarn.nodemanager.auxservices.mapreduce.shuffle.class&lt;/name&gt; 
+
+                &lt;value&gt;org.apache.hadoop.mapred.ShuffleHandler&lt;/value&gt;
+
+   &lt;/property&gt;
+</pre>
+
+<li>
+Edit <span id="How to install hadoop on Windows 10-hadoop-3.2.3\etc\hadoop\hadoop-env.xml"></span><strong id="hadoop-3.2.3\etc\hadoop\hadoop-env.xml">hadoop-3.2.3\etc\hadoop\hadoop-env.xml</strong>.  Find JAVA_HOME in this file and modify it. If your java path contains spaces , rename it to short path. <a href="https://stackoverflow.com/questions/31621032/hadoop-on-windows-error-java-home-is-incorrectly-set">Reference</a>
+<pre class="bat">
+set JAVA_HOME="C:\Progra~1\Java\jdk-18.0.1.1"
+</pre>
+
+<li>
+Download and extract <a href="https://github.com/s911415/apache-hadoop-3.1.0-winutils.">https://github.com/s911415/apache-hadoop-3.1.0-winutils.</a>
+
+<li>
+Copy folder bin and replace existed folder bin <span id="How to install hadoop on Windows 10-hadoop-3.2.3\bin"></span><strong id="hadoop-3.2.3\bin">hadoop-3.2.3\bin</strong>.
+
+<li>
+Format namenode via <code>hadoop-3.2.3\bin&gt; hdfs namenode –format</code>
+
+<li>
+Change directory to <span id="How to install hadoop on Windows 10-hadoop-3.2.3\sbin"></span><strong id="hadoop-3.2.3\sbin">hadoop-3.2.3\sbin</strong>. Execute command <code>start-yarn.cmd</code>. There are many error message.
+
+</ul>
 
 <div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
-<p>
-<a href="https://shapeshed.com/vim-templates/">vim templates</a>
-<a href="https://vereperrot.github.io/vim/2019/04/28/Vim-tips.html">https://vereperrot.github.io/vim/2019/04/28/Vim-tips.html</a>
-</p>
+<ul>
+<li>
+google "install hadoop on windows". Reinstall <a href="https://www.oracle.com/java/technologies/downloads/#java8-windows">jdk 8</a> then try again. Follow this guide. You need to have a oracle account for downloading this jdk8 installer.
+
+<li>
+<a href="https://brain-mentors.com/hadoopinstallation/">https://brain-mentors.com/hadoopinstallation/</a>
+
+<li>
+<a href="https://segmentfault.com/q/1010000039773762">error reference</a>
+
+<li>
+google"learn solr search"
+
+<li>
+<a href="https://www.tutorialspoint.com/apache_solr/apache_solr_on_hadoop.htm">https://www.tutorialspoint.com/apache_solr/apache_solr_on_hadoop.htm</a>
+
+<li>
+learn elasticsearch
+
+<ul>
+<li>
+<a href="https://www.tutorialspoint.com/elasticsearch/index.htm">https://www.tutorialspoint.com/elasticsearch/index.htm</a>
+
+<li>
+<a href="https://logz.io/blog/10-elasticsearch-concepts/">https://logz.io/blog/10-elasticsearch-concepts/</a>
+
+</ul>
+</ul>
 
         </div>
         <div class="footer" style="padding:0 64 64 64">
@@ -150,7 +278,7 @@ Create a new shell script in vim <code>:e test.sh</code>. It will append the con
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/How to use templates in vim.html" 
+data-href="https://zhihau.github.io/How to install hadoop on Windows 10.html" 
 data-layout="button_count">
 </div>
 	

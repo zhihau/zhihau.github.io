@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - How to use templates in vim</title>
+        <title>ZhiHau Blog - How to use Yii2 with WAMP server</title>
 <style>
 /**
 * Highlight.js
@@ -88,57 +88,138 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey" style="padding: 48 64 16 64">
         
 <p>
-<span id="-vim"></span><span class="tag" id="vim">vim</span>
+<span id="-PHP"></span><span class="tag" id="PHP">PHP</span>
 </p>
 
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
 <ul>
 <li>
-<a href="How to use templates in vim.html#How to use templates in vim">How to use templates in vim</a>
+<a href="How to use Yii2 with WAMP server.html#How to use Yii2 with WAMP server">How to use Yii2 with WAMP server</a>
+
+<ul>
+<li>
+<a href="How to use Yii2 with WAMP server.html#How to use Yii2 with WAMP server-Install server">Install server</a>
 
 <li>
-<a href="How to use templates in vim.html#Reference">Reference</a>
+<a href="How to use Yii2 with WAMP server.html#How to use Yii2 with WAMP server-Create hello page">Create hello page</a>
+
+</ul>
+<li>
+<a href="How to use Yii2 with WAMP server.html#Reference">Reference</a>
 
 </ul>
 
-<div id="How to use templates in vim"><h1 id="How to use templates in vim" class="header"><a href="#How to use templates in vim">How to use templates in vim</a></h1></div>
-<ol>
+<div id="How to use Yii2 with WAMP server"><h1 id="How to use Yii2 with WAMP server" class="header"><a href="#How to use Yii2 with WAMP server">How to use Yii2 with WAMP server</a></h1></div>
+
+<div id="How to use Yii2 with WAMP server-Install server"><h2 id="Install server" class="header"><a href="#How to use Yii2 with WAMP server-Install server">Install server</a></h2></div>
+<ul>
 <li>
-Add below code to your vimrc file. Remember that vimrc file need to reload <code>:so %</code>.
-<pre class="vim">
-if has("autocmd")
-  augroup templates
-    autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
-    autocmd BufNewFile *.pl,*.py 0r ~/.vim/templates/skeleton.py
-  augroup END
-endif
+Install <a href="https://sourceforge.net/projects/wampserver/">WampServer</a>.
+
+<li>
+wampserver phpmyadmin username is "root". There is no password.
+
+<li>
+Right click on pc icon in explorer. Find env in the search box and hit enter key. Add path <span id="How to use Yii2 with WAMP server-Install server-D:\ZHIHAU\wamp64\bin\php\php8.1.0"></span><strong id="D:\ZHIHAU\wamp64\bin\php\php8.1.0">D:\ZHIHAU\wamp64\bin\php\php8.1.0</strong> to system PATH variable.
+
+<li>
+Create folder D:\ZHIHAU\www
+
+<li>
+Create your project folder D:\ZHIHAU\www\bid
+
+</ul>
+ 
+<ul>
+<li>
+== Install yii framework with archive file ==
+
+<li>
+Download <a href="https://www.yiiframework.com/download">Yii framework archive file</a>.
+
+<li>
+Unzip yii-basic-app-2.0.45.tgz.
+
+<li>
+Rename yii-basic-app-2.0.45 folder to yii.
+
+</ul>
+ 
+<ul>
+<li>
+== Install yii framework with composer ==
+
+<li>
+Download and install<a href="https://getcomposer.org/Composer-Setup.exe">composer.exe</a>.
+
+<li>
+Open a new command prompt.
+
+<li>
+Change directory to D:\ZHIHAU\www.
+
+<li>
+Execute command <code>composer create-project --prefer-dist yiisoft/yii2-app-basic basic</code>. It will create folder D:\ZHIHAU\www\basic
+
+</ul>
+ 
+<ul>
+<li>
+== Start server ==
+
+<li>
+Change directory to directory D:\ZHIHAU\www\basic.
+
+<li>
+Execute command <code>php yii serve --port=8888</code> to start server.
+
+<li>
+Go to <a href="http://localhost:8888/">http://localhost:8888/</a> in the web browser.
+
+</ul>
+
+<div id="How to use Yii2 with WAMP server-Create hello page"><h2 id="Create hello page" class="header"><a href="#How to use Yii2 with WAMP server-Create hello page">Create hello page</a></h2></div>
+<p>
+Add following code to D:\ZHIHAU\www\basic\controllers\SiteController.php
+</p>
+<ul>
+<li>
+{{{class="php"
+ public function actionSay($message="Hello")
+    {
+        return \(this-&gt;render('say',['message'=&gt;\)message]);
+    }
+
+</ul>
+
+<p>
+}}}
+</p>
+<ul>
+<li>
+Create file D:\ZHIHAU\www\basic\views\site\say.php then add.
+<pre class="php">
+&lt;?php
+use yii\helpers\Html;
+?&gt;
+&lt;?= Html::encode($message) ?&gt;
 </pre>
 
-</ol>
-
-<ol>
 <li>
-Find your home path <code>:echo $HOME</code>. My home path is <span id="How to use templates in vim-C:\Users\Zhihau"></span><strong id="C:\Users\Zhihau">C:\Users\Zhihau</strong>.  
+Restart the server 
 
 <li>
-Create folder <span id="How to use templates in vim-templates"></span><strong id="templates">templates</strong> under directory <span id="How to use templates in vim-C:\Users\Zhihau\.vim"></span><strong id="C:\Users\Zhihau\.vim">C:\Users\Zhihau\.vim</strong>. 
+Go to <a href="http://localhost:8888/index.php?r=site/say.">http://localhost:8888/index.php?r=site/say.</a> If you don't pass the message parameter, the page show Hello text.
 
 <li>
-Create a file <span id="How to use templates in vim-skeleton.sh"></span><strong id="skeleton.sh">skeleton.sh</strong> in folder <span id="How to use templates in vim-templates"></span><strong id="templates">templates</strong>.
-<pre class="sh">
-#file name:skeleton.sh
-#!/bin/sh
-</pre>
+Go to <a href="http://localhost:8888/index.php?r=site/say&amp;message=Hello+John.">http://localhost:8888/index.php?r=site/say&amp;message=Hello+John.</a> We pass message parameter. The value is <span id="How to use Yii2 with WAMP server-Create hello page-Hello John"></span><strong id="Hello John">Hello John</strong>. The page will show Hello John text.
 
-<li>
-Create a new shell script in vim <code>:e test.sh</code>. It will append the content of <span id="How to use templates in vim-skeleton.sh"></span><strong id="skeleton.sh">skeleton.sh</strong> to current file.
-
-</ol>
+</ul>
 
 <div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
 <p>
-<a href="https://shapeshed.com/vim-templates/">vim templates</a>
-<a href="https://vereperrot.github.io/vim/2019/04/28/Vim-tips.html">https://vereperrot.github.io/vim/2019/04/28/Vim-tips.html</a>
+<a href="https://www.yiiframework.com/doc/guide/2.0/en/start-installation">The Definitive Guide to Yii 2.0</a>
+<a href="http://tw511.com/5/62/1848.html">first hello world program</a>
 </p>
 
         </div>
@@ -150,7 +231,7 @@ Create a new shell script in vim <code>:e test.sh</code>. It will append the con
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/How to use templates in vim.html" 
+data-href="https://zhihau.github.io/How to use Yii2 with WAMP server.html" 
 data-layout="button_count">
 </div>
 	

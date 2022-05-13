@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - How to use templates in vim</title>
+        <title>ZhiHau Blog - How to delete file in NERDTree</title>
 <style>
 /**
 * Highlight.js
@@ -91,54 +91,14 @@ fjs.parentNode.insertBefore(js, fjs);
 <span id="-vim"></span><span class="tag" id="vim">vim</span>
 </p>
 
-<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
-<ul>
-<li>
-<a href="How to use templates in vim.html#How to use templates in vim">How to use templates in vim</a>
-
-<li>
-<a href="How to use templates in vim.html#Reference">Reference</a>
-
-</ul>
-
-<div id="How to use templates in vim"><h1 id="How to use templates in vim" class="header"><a href="#How to use templates in vim">How to use templates in vim</a></h1></div>
-<ol>
-<li>
-Add below code to your vimrc file. Remember that vimrc file need to reload <code>:so %</code>.
-<pre class="vim">
-if has("autocmd")
-  augroup templates
-    autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
-    autocmd BufNewFile *.pl,*.py 0r ~/.vim/templates/skeleton.py
-  augroup END
-endif
-</pre>
-
-</ol>
-
-<ol>
-<li>
-Find your home path <code>:echo $HOME</code>. My home path is <span id="How to use templates in vim-C:\Users\Zhihau"></span><strong id="C:\Users\Zhihau">C:\Users\Zhihau</strong>.  
-
-<li>
-Create folder <span id="How to use templates in vim-templates"></span><strong id="templates">templates</strong> under directory <span id="How to use templates in vim-C:\Users\Zhihau\.vim"></span><strong id="C:\Users\Zhihau\.vim">C:\Users\Zhihau\.vim</strong>. 
-
-<li>
-Create a file <span id="How to use templates in vim-skeleton.sh"></span><strong id="skeleton.sh">skeleton.sh</strong> in folder <span id="How to use templates in vim-templates"></span><strong id="templates">templates</strong>.
-<pre class="sh">
-#file name:skeleton.sh
-#!/bin/sh
-</pre>
-
-<li>
-Create a new shell script in vim <code>:e test.sh</code>. It will append the content of <span id="How to use templates in vim-skeleton.sh"></span><strong id="skeleton.sh">skeleton.sh</strong> to current file.
-
-</ol>
-
+<div id="How to delete file in NERDTree"><h1 id="How to delete file in NERDTree" class="header"><a href="#How to delete file in NERDTree">How to delete file in NERDTree</a></h1></div>
+<p>
+Browse to the file.
+Press <span id="How to delete file in NERDTree-m"></span><strong id="m">m</strong> to open menu, <span id="How to delete file in NERDTree-d"></span><strong id="d">d</strong> to delete curren file, <span id="How to delete file in NERDTree-y"></span><strong id="y">y</strong> to confirm the delete file
+</p>
 <div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
 <p>
-<a href="https://shapeshed.com/vim-templates/">vim templates</a>
-<a href="https://vereperrot.github.io/vim/2019/04/28/Vim-tips.html">https://vereperrot.github.io/vim/2019/04/28/Vim-tips.html</a>
+<a href="https://stackoverflow.com/questions/39480756/vim-and-nerd-tree-deleting-a-file">https://stackoverflow.com/questions/39480756/vim-and-nerd-tree-deleting-a-file</a>
 </p>
 
         </div>
@@ -150,7 +110,7 @@ Create a new shell script in vim <code>:e test.sh</code>. It will append the con
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/How to use templates in vim.html" 
+data-href="https://zhihau.github.io/How to delete file in NERDTree.html" 
 data-layout="button_count">
 </div>
 	

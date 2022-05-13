@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - How to use templates in vim</title>
+        <title>ZhiHau Blog - How to use apache solr on Windows 10</title>
 <style>
 /**
 * Highlight.js
@@ -88,57 +88,36 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey" style="padding: 48 64 16 64">
         
 <p>
-<span id="-vim"></span><span class="tag" id="vim">vim</span>
+<span id="-SearchEngines"></span><span class="tag" id="SearchEngines">SearchEngines</span>
 </p>
 
-<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
-<ul>
-<li>
-<a href="How to use templates in vim.html#How to use templates in vim">How to use templates in vim</a>
-
-<li>
-<a href="How to use templates in vim.html#Reference">Reference</a>
-
-</ul>
-
-<div id="How to use templates in vim"><h1 id="How to use templates in vim" class="header"><a href="#How to use templates in vim">How to use templates in vim</a></h1></div>
-<ol>
-<li>
-Add below code to your vimrc file. Remember that vimrc file need to reload <code>:so %</code>.
-<pre class="vim">
-if has("autocmd")
-  augroup templates
-    autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
-    autocmd BufNewFile *.pl,*.py 0r ~/.vim/templates/skeleton.py
-  augroup END
-endif
-</pre>
-
-</ol>
+<div id="How to use apache solr on Windows 10"><h1 id="How to use apache solr on Windows 10" class="header"><a href="#How to use apache solr on Windows 10">How to use apache solr on Windows 10</a></h1></div>
+<p>
+the search engine components
+<img src="https://zhihau.github.io/img/search-engine-components.png" />
+</p>
 
 <ol>
 <li>
-Find your home path <code>:echo $HOME</code>. My home path is <span id="How to use templates in vim-C:\Users\Zhihau"></span><strong id="C:\Users\Zhihau">C:\Users\Zhihau</strong>.  
+Go to <a href="https://solr.apache.org/downloads.html">apache solr</a> and download binary release solr-8.11.1.zip.
 
 <li>
-Create folder <span id="How to use templates in vim-templates"></span><strong id="templates">templates</strong> under directory <span id="How to use templates in vim-C:\Users\Zhihau\.vim"></span><strong id="C:\Users\Zhihau\.vim">C:\Users\Zhihau\.vim</strong>. 
+Extract the zip file to any directory. Don't extract to a directory contains white space characters. For instance, <span id="How to use apache solr on Windows 10-D:\Program Files (x86)"></span><strong id="D:\Program Files (x86)">D:\Program Files (x86)</strong>.
 
 <li>
-Create a file <span id="How to use templates in vim-skeleton.sh"></span><strong id="skeleton.sh">skeleton.sh</strong> in folder <span id="How to use templates in vim-templates"></span><strong id="templates">templates</strong>.
-<pre class="sh">
-#file name:skeleton.sh
-#!/bin/sh
-</pre>
+Open command prompt and change directory to <span id="How to use apache solr on Windows 10-solr-8.11.1\bin"></span><strong id="solr-8.11.1\bin">solr-8.11.1\bin</strong>.
 
 <li>
-Create a new shell script in vim <code>:e test.sh</code>. It will append the content of <span id="How to use templates in vim-skeleton.sh"></span><strong id="skeleton.sh">skeleton.sh</strong> to current file.
+Type command <code>solr.cmd start</code> to run this server.
+
+<li>
+Go to URL <a href="http://localhost:8983/">http://localhost:8983/</a> in the web browser. You can see the server information in the web page.
 
 </ol>
 
 <div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
 <p>
-<a href="https://shapeshed.com/vim-templates/">vim templates</a>
-<a href="https://vereperrot.github.io/vim/2019/04/28/Vim-tips.html">https://vereperrot.github.io/vim/2019/04/28/Vim-tips.html</a>
+<a href="https://solr.apache.org/guide/6_6/running-solr.html">run solr</a>
 </p>
 
         </div>
@@ -150,7 +129,7 @@ Create a new shell script in vim <code>:e test.sh</code>. It will append the con
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/How to use templates in vim.html" 
+data-href="https://zhihau.github.io/How to use apache solr on Windows 10.html" 
 data-layout="button_count">
 </div>
 	
