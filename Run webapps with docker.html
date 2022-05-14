@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - Programmer's Development Notes</title>
+        <title>ZhiHau Blog - Run webapps with docker</title>
 <style>
 /**
 * Highlight.js
@@ -87,294 +87,319 @@ fjs.parentNode.insertBefore(js, fjs);
 	</div><!--end of bar-->
         <div class="content w3-light-grey" style="padding: 48 64 16 64">
         
+<p>
+<span id="-Docker"></span><span class="tag" id="Docker">Docker</span>
+</p>
 
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
 <ul>
 <li>
-<a href="index.html#ASP.Net">ASP.Net</a>
+<a href="Run webapps with docker.html#Run webapps with docker">Run webapps with docker</a>
 
-<li>
-<a href="index.html#Docker">Docker</a>
-
-<li>
-<a href="index.html#JavaScript">JavaScript</a>
-
-<li>
-<a href="index.html#Jobs">Jobs</a>
-
-<li>
-<a href="index.html#Linux">Linux</a>
-
-<li>
-<a href="index.html#Git">Git</a>
-
-<li>
-<a href="index.html#PHP">PHP</a>
-
-<li>
-<a href="index.html#Python">Python</a>
-
-<li>
-<a href="index.html#SearchEngines">SearchEngines</a>
-
-<li>
-<a href="index.html#Site">Site</a>
-
-<li>
-<a href="index.html#Vim">Vim</a>
-
-<li>
-<a href="index.html#Vlang">Vlang</a>
-
-<li>
-<a href="index.html#Windows">Windows</a>
-
-<li>
-<a href="index.html#Other">Other</a>
-
-</ul>
-
-<div id="ASP.Net"><h1 id="ASP.Net" class="header"><a href="#ASP.Net">ASP.Net</a></h1></div>
 <ul>
 <li>
-<a href="How to create ASP dot net MVC web application in Visual Studio 2019.html">How to create ASP dot net MVC web application in Visual Studio 2019</a>
+<a href="Run webapps with docker.html#Run webapps with docker-Run a static site in a container">Run a static site in a container</a>
 
-</ul>
-
-<div id="Docker"><h1 id="Docker" class="header"><a href="#Docker">Docker</a></h1></div>
 <ul>
 <li>
-<a href="How to install docker on Windows 10.html">How to install docker on Windows 10</a>
-
-<li>
-<a href="Run webapps with docker.html">Run webapps with docker</a>
-
-<li>
-<a href="Docker Note.html">Docker Note</a>
+<a href="Run webapps with docker.html#Run webapps with docker-Run a static site in a container-docker images">docker images</a>
 
 </ul>
+<li>
+<a href="Run webapps with docker.html#Run webapps with docker-create image">create image</a>
 
-<div id="JavaScript"><h1 id="JavaScript" class="header"><a href="#JavaScript">JavaScript</a></h1></div>
 <ul>
 <li>
-<a href="How to add copy button with highlight_js.html">How to add copy button with highlight_js</a>
+<a href="Run webapps with docker.html#Run webapps with docker-create image-Create a python flask ap that displays random cat pictures">Create a python flask ap that displays random cat pictures</a>
 
 <li>
-<a href="How to use highlight_js with custom code.html">How to use highlight_js with custom code</a>
+<a href="Run webapps with docker.html#Run webapps with docker-create image-Write a Dockerfile">Write a Dockerfile</a>
 
 <li>
-<a href="How to add google search box to a web page.html">How to add google search box to a web page</a>
+<a href="Run webapps with docker.html#Run webapps with docker-create image-Build images">Build images</a>
+
+<li>
+<a href="Run webapps with docker.html#Run webapps with docker-create image-Run images">Run images</a>
 
 </ul>
- 
-<div id="Jobs"><h1 id="Jobs" class="header"><a href="#Jobs">Jobs</a></h1></div>
+</ul>
+<li>
+<a href="Run webapps with docker.html#Reference">Reference</a>
+
+</ul>
+
+<div id="Run webapps with docker"><h1 id="Run webapps with docker" class="header"><a href="#Run webapps with docker">Run webapps with docker</a></h1></div>
+<div id="Run webapps with docker-Run a static site in a container"><h2 id="Run a static site in a container" class="header"><a href="#Run webapps with docker-Run a static site in a container">Run a static site in a container</a></h2></div>
 <ul>
 <li>
-<a href="How to print labor insurance transfer order.html">How to print labor insurance transfer order</a>
-
-<li>
-<a href="How to convert jpg to pdf file.html">How to convert jpg to pdf file</a>
-
-<li>
-<a href="How to convert merge many pdf files to one pdf file.html">How to convert merge many pdf files to one pdf file</a>
-
-<li>
-<a href="How to open a digital account with mega bank.html">How to open a digital account with mega bank</a>
+Pull an image and run. Option d is create a container with the process detached from our terminal.
 
 </ul>
-
-<div id="Linux"><h1 id="Linux" class="header"><a href="#Linux">Linux</a></h1></div>
+<p>
+<code>docker run -d dockersamples/static-site</code>
+</p>
 <ul>
 <li>
-<a href="Use grep command to find text in directories.html">Use grep command to find text in directories</a>
-
-<li>
-<a href="How to find files.html">How to find files</a>
+Show all running containers.
 
 </ul>
-
-<div id="Git"><h1 id="Git" class="header"><a href="#Git">Git</a></h1></div>
+<p>
+<code>docker ps</code>
+We'd like to change the port. The container need to stop first. Using other options to start the container again. Stop container by container ID or name.
+<code>docker stop 90a</code>
+</p>
 <ul>
 <li>
-<a href="Keeping a fork update.html">Keeping a fork update</a>
-
-<li>
-<a href="How to solve a merge conflict.html">How to solve a merge conflict</a>
-
-<li>
-<a href="Related Git eol.html">Related Git eol</a>
-
-<li>
-<a href="How to set default git commit editor.html">How to set default git commit editor</a>
-
-<li>
-<a href="How to push rename file in git.html">How to push rename file in git</a>
-
-<li>
-<a href="How to refer a specific line in github.html">How to refer a specific line in github</a>
+Remove container by container ID
 
 </ul>
- 
-<div id="PHP"><h1 id="PHP" class="header"><a href="#PHP">PHP</a></h1></div>
+<p>
+<code>docker rm 90a</code> 
+</p>
 <ul>
 <li>
-<a href="How to use Yii2 with WAMP server.html">How to use Yii2 with WAMP server</a>
+Run first webserver with a container name and random ports.
 
-<li>
-<a href="How to use Yii1 with WAMP server.html">How to use Yii1 with WAMP server</a>
-
-<li>
-<a href="How to change yiipowered function.html">How to change yiipowered function</a>
-
-<li>
-<a href="php inheritance.html">php inheritance</a>
-
-<li>
-<a href="Yii-1.html">Yii-1.1 tutorial for beginners</a>
-
-<li>
-<a href="The difference between this and parent.html">The difference between this and parent</a>
-
-</ul>
-
-<div id="Python"><h1 id="Python" class="header"><a href="#Python">Python</a></h1></div>
 <ul>
 <li>
-<a href="How to calculate program execution time.html">How to calculate program execution time</a>
+<code>--name</code> give a container name. The container name will show the output of <code>docker ps</code> command.
 
 <li>
-<a href="How to execute external program in python.html">How to execute external program in python</a>
+<code>-e</code> pass environment variable <span id="Run webapps with docker-Run a static site in a container-AUTHOR"></span><strong id="AUTHOR">AUTHOR</strong> to the container
 
 <li>
-<a href="How to calculate the average of a file full of numbers..html">How to calculate the average of a file full of numbers.</a>
+<code>-P</code> publish all ports to random ports. <code>docker ps</code> command will show <span id="Run webapps with docker-Run a static site in a container-0.0.0.0:49154-&gt;80/tcp, 0.0.0.0:49153-&gt;443/tcp"></span><strong id="0.0.0.0:49154-&gt;80/tcp, 0.0.0.0:49153-&gt;443/tcp">0.0.0.0:49154-&gt;80/tcp, 0.0.0.0:49153-&gt;443/tcp</strong>
 
 <li>
-<a href="Compare file names with fuzzy string matching module.html">Compare file names with fuzzy string matching module</a>
+Option d is create a container with the process detached from our terminal.
 
 <li>
-<a href="print multiple variables in python.html">print multiple variables in python</a>
-
-<li>
-<a href="How to control the number of decimal places after the decimal point.html">How to control the number of decimal places after the decimal point</a>
-
-<li>
-<a href="python substring.html">python substring</a>
-
-<li>
-<a href="How to read a json file in python.html">How to read a json file in python</a>
+<code>docker run --name static-site -e AUTHOR="zhihau-site-1" -d -P dockersamples/static-site</code>
 
 </ul>
+<li>
+View port status. Browse <a href="http://localhost:49154/">http://localhost:49154/</a> to see the site.
 
-<div id="SearchEngines"><h1 id="SearchEngines" class="header"><a href="#SearchEngines">SearchEngines</a></h1></div>
+</ul>
+<p>
+$ <code>docker port static-site</code>
+443/tcp -&gt; 0.0.0.0:49153
+80/tcp -&gt; 0.0.0.0:49154
+</p>
 <ul>
 <li>
-<a href="How to use apache solr on Windows 10.html">How to use apache solr on Windows 10</a>
-
-<li>
-<a href="How to install hadoop on Windows 10.html">How to install hadoop on Windows 10</a>
+Run second webserver with custom port
 
 </ul>
-
-<div id="Site"><h1 id="Site" class="header"><a href="#Site">Site</a></h1></div>
+<p>
+<code>docker run --name static-site-2 -e AUTHOR="zhihau-site-2" -d -p 8888:80 dockersamples/static-site</code>
+</p>
 <ul>
 <li>
-<a href="How to add a twitter button to your web site.html">How to add a twitter button to your web site</a>
-
-<li>
-<a href="How to add a facebook share button to your web site.html">How to add a facebook share button to your web site</a>
-
-<li>
-<a href="How to add google adsense to your web site.html">How to add google adsense to your web site</a>
-
-<li>
-<a href="How to add google analytics to your web site.html">How to add google analytics to your web site</a>
-
-<li>
-<a href="site tool.html">site tool</a>
+Shortcut to remove the second site.
 
 </ul>
-<div id="Vim"><h1 id="Vim" class="header"><a href="#Vim">Vim</a></h1></div>
+<p>
+<code>docker rm -f static-site-2</code>
+</p>
+
+<div id="Run webapps with docker-Run a static site in a container-docker images"><h3 id="docker images" class="header"><a href="#Run webapps with docker-Run a static site in a container-docker images">docker images</a></h3></div>
 <ul>
 <li>
-<a href="vimwiki FAQ.html">vimwiki FAQ</a>
-
-<li>
-<a href="vim tips.html">vim tips</a>
-
-<li>
-<a href="my vimrc.html">my vimrc</a>
-
-<li>
-<a href="Using autocomplete function in Vim.html">Using autocomplete function in Vim</a>
-
-<li>
-<a href="How to install a vim plugin.html">How to install a vim plugin</a>
-
-<li>
-<a href="How to use templates in vim.html">How to use templates in vim</a>
-
-<li>
-<a href="vim tab to space 4.html">vim tab to space 4</a>
-
-<li>
-<a href="How to delete file in NERDTree.html">How to delete file in NERDTree</a>
+Show local images
 
 </ul>
-
-<div id="Vlang"><h1 id="Vlang" class="header"><a href="#Vlang">Vlang</a></h1></div>
+<p>
+<code>docker images</code>
+</p>
 <ul>
 <li>
-<a href="Building your command line interface (CLR) tool with vlang.html">Building your command line interface (CLR) tool with vlang</a>
+an image akin to a git repository.
 
 <li>
-<a href="Create math  quiz web application using vlang.html">Create math  quiz web application using vlang</a> 
-
-<li>
-<a href="The easy way to run the vlang code in gvim.html">The easy way to run the vlang code in gvim</a>
-
-<li>
-<a href="Add V syntax highlighting in vim.html">Add V syntax highlighting in vim</a>
-
-<li>
-<a href="vlang bookmarks.html">vlang bookmarks</a>
-
-<li>
-<a href="How to update v.html">How to update v</a>
+Pull a specific version of image
 
 </ul>
- 
-<div id="Windows"><h1 id="Windows" class="header"><a href="#Windows">Windows</a></h1></div>
+<p>
+$<code>docker pull image-name:12.4</code>
+</p>
 <ul>
 <li>
-<a href="program help.html">program help</a>
-
-<li>
-<a href="How to add a add remove programs shortcut on Windows desktop.html">How to add a add remove programs shortcut on Windows desktop</a>
-
-<li>
-<a href="How to install linux bash shell on Windows 10.html">How to install linux bash shell on Windows 10</a>
-
-<li>
-<a href="How to change default web browser on Window 10.html">How to change default web browser on Window 10</a>
-
-<li>
-<a href="How to disable Windows 10 update.html">How to disable Windows 10 update</a>
-
-<li>
-<a href="Find windows 10 startup folder.html">Find windows 10 startup folder</a>
+Pull latest image
 
 </ul>
-
-
-<div id="Other"><h1 id="Other" class="header"><a href="#Other">Other</a></h1></div>
+<p>
+$<code>docker pull image-name</code>
+</p>
 <ul>
 <li>
-<a href="About page.html">About page</a>
+How to get new image?
+
+<ul>
+<li>
+Find image in <a href="https://store.docker.com/">docker store</a>
 
 <li>
-<a href="Projects page.html">Projects page</a>
+Create your own images.
+
+<li>
+<code>docker search ubuntu</code> to search all ubuntu images.
 
 </ul>
+<li>
+Image type
+
+<ul>
+<li>
+base image: no parent image. Such as OS .
+
+<li>
+child image: a image that build on base images.
+
+<li>
+Official images are Docker sanctioned images. Check out the <a href="https://docs.docker.com/docker-hub/official_repos/">official images doc</a>
+
+<li>
+User images: a image created by users.
+
+</ul>
+</ul>
+
+<div id="Run webapps with docker-create image"><h2 id="create image" class="header"><a href="#Run webapps with docker-create image">create image</a></h2></div>
+<div id="Run webapps with docker-create image-Create a python flask ap that displays random cat pictures"><h3 id="Create a python flask ap that displays random cat pictures" class="header"><a href="#Run webapps with docker-create image-Create a python flask ap that displays random cat pictures">Create a python flask ap that displays random cat pictures</a></h3></div>
+<ul>
+<li>
+Create folder flask-app
+
+<li>
+Create file flask-app/app.py
+<pre class="py">
+from flask import Flask, render_template
+import random
+
+app = Flask(__name__)
+
+# list of cat images
+images = [
+    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26388-1381844103-11.gif",
+    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr01/15/9/anigif_enhanced-buzz-31540-1381844535-8.gif",
+    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26390-1381844163-18.gif",
+    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/10/anigif_enhanced-buzz-1376-1381846217-0.gif",
+    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr03/15/9/anigif_enhanced-buzz-3391-1381844336-26.gif",
+    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/10/anigif_enhanced-buzz-29111-1381845968-0.gif",
+    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr03/15/9/anigif_enhanced-buzz-3409-1381844582-13.gif",
+    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr02/15/9/anigif_enhanced-buzz-19667-1381844937-10.gif",
+    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26358-1381845043-13.gif",
+    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/9/anigif_enhanced-buzz-18774-1381844645-6.gif",
+    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/9/anigif_enhanced-buzz-25158-1381844793-0.gif",
+    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr03/15/10/anigif_enhanced-buzz-11980-1381846269-1.gif"
+]
+
+@app.route('/')
+def index():
+    url = random.choice(images)
+    return render_template('index.html', url=url)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0")
+</pre>
+
+<li>
+Create file flask-app/requirements.txt
+<pre class="txt">
+Flask==0.10.1
+</pre>
+
+<li>
+Create folder flask-app/templates
+
+<li>
+Create file flask-app/templates/index.html
+<pre class="html">
+&lt;html&gt;
+ &lt;head&gt;
+ &lt;style type=”text/css”&gt;
+ body {
+ background: black;
+ color: white;
+ }
+ div.container {
+ max-width: 500px;
+ margin: 100px auto;
+ border: 20px solid white;
+ padding: 10px;
+ text-align: center;
+ }
+ h4 {
+ text-transform: uppercase;
+ }
+ &lt;/style&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div class=”container”&gt;
+ &lt;h4&gt;Cat Gif of the day&lt;/h4&gt;
+ &lt;img src=”{{url}}” /&gt;
+ &lt;p&gt;&lt;small&gt;Courtesy: &lt;a href=”http://www.buzzfeed.com/copyranter/the-best-cat-gif-post-in-the-history-of-cat-gifs”&gt;Buzzfeed&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+</ul>
+<div id="Run webapps with docker-create image-Write a Dockerfile"><h3 id="Write a Dockerfile" class="header"><a href="#Run webapps with docker-create image-Write a Dockerfile">Write a Dockerfile</a></h3></div>
+<ul>
+<li>
+We will build python image based on <a href="https://hub.docker.com/_/alpine">Alpine</a>.Create a file called <span id="Run webapps with docker-create image-Write a Dockerfile-Dockerfile"></span><strong id="Dockerfile">Dockerfile</strong>. Specify base images.
+<pre>
+# base image
+FROM alpine:3.5
+# install python and pip
+RUN apk add --update py2-pip
+# install python modules
+COPY requirements.txt /usr/src/app/ 
+RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
+# copy files
+COPY app.py /usr/src/app/ 
+COPY templates/index.html /usr/src/app/templates/
+# port number
+EXPOSE 5000
+# run the app
+CMD ["python", "/usr/src/app/app.py"]
+</pre>
+
+</ul>
+
+<div id="Run webapps with docker-create image-Build images"><h3 id="Build images" class="header"><a href="#Run webapps with docker-create image-Build images">Build images</a></h3></div>
+<ul>
+<li>
+Change directory to flask-app folder. Use option t to specify your Dockerfile directory
+
+</ul>
+<p>
+<code>docker build -t &lt;YOUR_USERNAME&gt;/myfirstapp .</code>
+</p>
+<ul>
+<li>
+Show you just created image
+
+</ul>
+<p>
+<code>docker images</code>
+</p>
+
+<div id="Run webapps with docker-create image-Run images"><h3 id="Run images" class="header"><a href="#Run webapps with docker-create image-Run images">Run images</a></h3></div>
+<p>
+<code>docker run -p 8888:5000 --name myfirstapp zhihaushiu/myfirstapp *</code>
+docker: Error response from daemon: failed to create shim: OCI runtime create failed: container_linux.go:380: starting container process caused: exec: "app.py": executable file not found in $PATH: unknown.
+</p>
+
+
+<div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
+<p>
+<a href="https://grigorkh.medium.com/docker-for-beginners-part-3-webapps-with-docker-18f2243c144e">webapps with docker</a>
+<a href="https://github.com/docker/labs/tree/master/beginner/flask-app">flask-app</a>
+<a href="https://errorsfixing.com/error-running-docker-container-starting-container-process-caused-exec-python-executable-file-not-found-in-path-unknown/">https://errorsfixing.com/error-running-docker-container-starting-container-process-caused-exec-python-executable-file-not-found-in-path-unknown/</a>
+</p>
 
         </div>
         <div class="footer" style="padding:0 64 64 64">
@@ -385,7 +410,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/Programmer's Development Notes.html" 
+data-href="https://zhihau.github.io/Run webapps with docker.html" 
 data-layout="button_count">
 </div>
 	
