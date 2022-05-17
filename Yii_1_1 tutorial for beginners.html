@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - How to use Yii1 with WAMP server</title>
+        <title>ZhiHau Blog - Yii_1_1 tutorial for beginners</title>
 <style>
 /**
 * Highlight.js
@@ -93,128 +93,319 @@ fjs.parentNode.insertBefore(js, fjs);
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
 <ul>
 <li>
-<a href="How to use Yii1 with WAMP server.html#How to use Yii1 with WAMP server">How to use Yii1 with WAMP server</a>
+<a href="Yii_1_1 tutorial for beginners.html#Yii1_1 tutorial for beginners">Yii1_1 tutorial for beginners</a>
 
 <ul>
 <li>
-<a href="How to use Yii1 with WAMP server.html#How to use Yii1 with WAMP server-Install server">Install server</a>
+<a href="Yii_1_1 tutorial for beginners.html#Yii1_1 tutorial for beginners-static page">static page</a>
 
 <li>
-<a href="How to use Yii1 with WAMP server.html#How to use Yii1 with WAMP server-Install yii framework">Install yii framework</a>
+<a href="Yii_1_1 tutorial for beginners.html#Yii1_1 tutorial for beginners-dynamic page">dynamic page</a>
 
 <li>
-<a href="How to use Yii1 with WAMP server.html#How to use Yii1 with WAMP server-Start server">Start server</a>
+<a href="Yii_1_1 tutorial for beginners.html#Yii1_1 tutorial for beginners-link assets">link assets</a>
 
 <li>
-<a href="How to use Yii1 with WAMP server.html#How to use Yii1 with WAMP server-Create hello page">Create hello page</a>
+<a href="Yii_1_1 tutorial for beginners.html#Yii1_1 tutorial for beginners-Create new base path">Create new base path</a>
 
-</ul>
 <li>
-<a href="How to use Yii1 with WAMP server.html#Reference">Reference</a>
+<a href="Yii_1_1 tutorial for beginners.html#Yii1_1 tutorial for beginners-Passing data from controller">Passing data from controller</a>
 
-</ul>
+<li>
+<a href="Yii_1_1 tutorial for beginners.html#Yii1_1 tutorial for beginners-Create layouts">Create layouts</a>
 
-<div id="How to use Yii1 with WAMP server"><h1 id="How to use Yii1 with WAMP server" class="header"><a href="#How to use Yii1 with WAMP server">How to use Yii1 with WAMP server</a></h1></div>
+<li>
+<a href="Yii_1_1 tutorial for beginners.html#Yii1_1 tutorial for beginners-use Gii tool">use Gii tool</a>
 
-<div id="How to use Yii1 with WAMP server-Install server"><h2 id="Install server" class="header"><a href="#How to use Yii1 with WAMP server-Install server">Install server</a></h2></div>
 <ul>
 <li>
-Install <a href="https://sourceforge.net/projects/wampserver/">WampServer</a>.
+<a href="Yii_1_1 tutorial for beginners.html#Yii1_1 tutorial for beginners-use Gii tool-Generator">Generator</a>
 
 <li>
-wampserver phpmyadmin username is "root". There is no password.
+<a href="Yii_1_1 tutorial for beginners.html#Yii1_1 tutorial for beginners-use Gii tool-Models">Models</a>
 
 <li>
-Right click on pc icon in explorer. Find env in the search box and hit enter key. Add path <span id="How to use Yii1 with WAMP server-Install server-D:\ZHIHAU\wamp64\bin\php\php8.1.0"></span><strong id="D:\ZHIHAU\wamp64\bin\php\php8.1.0">D:\ZHIHAU\wamp64\bin\php\php8.1.0</strong> to system PATH variable.
+<a href="Yii_1_1 tutorial for beginners.html#Yii1_1 tutorial for beginners-use Gii tool-Working with models">Working with models</a>
 
 <li>
-Create folder D:\ZHIHAU\www
-
-<li>
-Create your project folder D:\ZHIHAU\www\bid
+<a href="Yii_1_1 tutorial for beginners.html#Yii1_1 tutorial for beginners-use Gii tool-find by primary key">find by primary key</a>
 
 </ul>
- 
-<div id="How to use Yii1 with WAMP server-Install yii framework"><h2 id="Install yii framework" class="header"><a href="#How to use Yii1 with WAMP server-Install yii framework">Install yii framework</a></h2></div>
-<ul>
-<li>
-<a href="https://www.yiiframework.com/download#yii1">Download yii1</a>
-
-<li>
-Extract yii-1.1.25.43e386.zip. Rename folder yii-1.1.25.43e386 as yii.
-
-<li>
-Move the folder yii to directory D:\ZHIHAU\www. 
-
 </ul>
- 
-<div id="How to use Yii1 with WAMP server-Start server"><h2 id="Start server" class="header"><a href="#How to use Yii1 with WAMP server-Start server">Start server</a></h2></div>
-<ul>
-<li>
-Change directory to directory D:\ZHIHAU\www\yii\framework.
-
-<li>
-Execute command <code>yiic webapp d:\ADRIAN-SHIU\www\bid</code> to create bid project on command prompt.
-
-<li>
-If you use git bash, Execute command <code>./yiic webapp /d/ADRIAN-SHIU/www/todo</code>
-
-<li>
-Left click on the Wampserver icon in the tray bar. Select <span id="How to use Yii1 with WAMP server-Start server-Apache|httpd.conf"></span><strong id="Apache|httpd.conf">Apache|httpd.conf</strong> and <span id="How to use Yii1 with WAMP server-Start server-Apache|httpd-vhosts.conf"></span><strong id="Apache|httpd-vhosts.conf">Apache|httpd-vhosts.conf</strong> to edit.
-
 </ul>
+
+<div id="Yii1_1 tutorial for beginners"><h1 id="Yii1_1 tutorial for beginners" class="header"><a href="#Yii1_1 tutorial for beginners">Yii1_1 tutorial for beginners</a></h1></div>
+<div id="Yii1_1 tutorial for beginners-static page"><h2 id="static page" class="header"><a href="#Yii1_1 tutorial for beginners-static page">static page</a></h2></div>
 <p>
-Replace 
+Static page directory D:\site\protected\views\site\pages\
+For example: about staic page full path is D:\site\protected\views\site\pages\about.php
+URL access: <a href="http://localhost/bid/index.php?r=site/page&amp;view=about">http://localhost/bid/index.php?r=site/page&amp;view=about</a>
 </p>
-<pre class="xml">
-DocumentRoot "${INSTALL_DIR}/www"
-&lt;Directory "${INSTALL_DIR}/www/"&gt;
-</pre>
+
+<div id="Yii1_1 tutorial for beginners-dynamic page"><h2 id="dynamic page" class="header"><a href="#Yii1_1 tutorial for beginners-dynamic page">dynamic page</a></h2></div>
 <p>
-with
+How to create a dynamic page? Browse to directory D:\site\protected\controllers. Edit file SiteControllder.php. Add this code.
 </p>
-<pre class="xml">
-DocumentRoot "D:/ZHIHAU/www"
-&lt;Directory "D:/ZHIHAU/www/"&gt;
-</pre>
-<ul>
-<li>
-Left click on the Wampserver icon in the tray bar. Select <span id="How to use Yii1 with WAMP server-Start server-Restart all services"></span><strong id="Restart all services">Restart all services</strong> menu item.
-
-<li>
-Go to <a href="http://localhost/bid">http://localhost/bid</a> in the web browser.
-
-</ul>
-
-<div id="How to use Yii1 with WAMP server-Create hello page"><h2 id="Create hello page" class="header"><a href="#How to use Yii1 with WAMP server-Create hello page">Create hello page</a></h2></div>
-<ul>
-<li>
-Add following code to D:\ZHIHAU\www\bid\protected\controllers\SiteController.php
 <pre class="php">
- public function actionSay($message="Hello")
+ public function actionHello()
     {
-        return $this-&gt;render('say',['message'=&gt;$message]);
+	    echo "hello world";
+    }
+</pre>
+<p>
+Now we can view the page via URL <a href="http://localhost/bid/index.php?r=site/hello.">http://localhost/bid/index.php?r=site/hello.</a> It shows hello world page on the page.
+</p>
+
+<p>
+If I create a dynamic page name called <span id="Yii1_1 tutorial for beginners-dynamic page-page"></span><strong id="page">page</strong>, by URL  <a href="http://localhost/bid/index.php?r=site/page">http://localhost/bid/index.php?r=site/page</a> to view the page. But the static page URL <a href="http://localhost/bid/index.php?r=site/page&amp;view=about">http://localhost/bid/index.php?r=site/page&amp;view=about</a> will not work correctly. 
+</p>
+<pre class="php">
+ public function actionPage()
+    {
+	    echo "this is page";
+    }
+</pre>
+
+<div id="Yii1_1 tutorial for beginners-link assets"><h2 id="link assets" class="header"><a href="#Yii1_1 tutorial for beginners-link assets">link assets</a></h2></div>
+<p>
+&lt;?php echo Yii::app()-&gt;request-&gt;baseUrl; ?&gt;/css/screen.css
+equals /site/css/screen.css
+</p>
+
+<div id="Yii1_1 tutorial for beginners-Create new base path"><h2 id="Create new base path" class="header"><a href="#Yii1_1 tutorial for beginners-Create new base path">Create new base path</a></h2></div>
+<ul>
+<li>
+Create a file called HomeController.php in directory D:\site\protected\controllers
+
+<li>
+Add code to HomeController.php
+<pre class="php">
+&lt;?php
+
+class HomeController extends Controller
+{
+
+    public function actionIndex(){
+        echo "this is the home";
+    }
+}
+</pre>
+
+<li>
+Go to URL <a href="http://localhost/bid/index.php?r=home/index">http://localhost/bid/index.php?r=home/index</a> to view this page. Also you don't need to add index <a href="http://localhost/bid/index.php?r=home.">http://localhost/bid/index.php?r=home.</a>
+
+</ul>
+
+<div id="Yii1_1 tutorial for beginners-Passing data from controller"><h2 id="Passing data from controller" class="header"><a href="#Yii1_1 tutorial for beginners-Passing data from controller">Passing data from controller</a></h2></div>
+<ul>
+<li>
+Create dashboard controller D:\site\protected\controllers\DashboardController.php
+<pre class="php">
+&lt;?php
+
+class DashboardController extends Controller
+{
+
+    public $pageTitle = 'This is the page title';
+
+    /*public function actionHome(){
+        echo 'home is here ' . $this-&gt;pageTitle . $this-&gt;message("yes or no");
+    }*/
+
+    public function message( $msg ){
+        return $msg;
+    }
+    public function actionHome(){
+	$emails=['test@mai.com','john@mail.com'];
+        $this-&gt;render('view',['emails'=&gt;$emails]);
+    }
+}
+</pre>
+
+<li>
+Create view D:\site\protected\views\dashboard\view.php
+<pre class="php">
+&lt;h1&gt;Home Page&lt;/h1&gt;
+&lt;h2&gt;Home Page description&lt;/h2&gt;
+&lt;p&gt;&lt;?php echo $this-&gt;message("this is a message...");?&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;?php foreach($emails as $email):?&gt;
+ &lt;li&gt;&lt;?php echo $email;?&gt;&lt;/li&gt;
+&lt;?php endforeach;?&gt;
+&lt;/ul&gt;
+</pre>
+
+<li>
+Rule: Name of controller class equals name of file. Name of controller class removes controller string that equals name of view folder. the parameter of $this-rander is view file name.
+
+</ul>
+<p>
+D:\site\protected\controllers\DashboardController.php
+D:\site\protected\views\dashboard\view.php
+</p>
+
+<div id="Yii1_1 tutorial for beginners-Create layouts"><h2 id="Create layouts" class="header"><a href="#Yii1_1 tutorial for beginners-Create layouts">Create layouts</a></h2></div>
+<ul>
+<li>
+Layout directory D:\site\protected\views\layouts\
+
+<li>
+Parent controller is D:\site\bid\protected\components\Controller.php .  Every controller inherits this layour.
+<pre class="php">
+//file:Controller.php
+public $layout='//layouts/column1';
+</pre>
+
+<li>
+Use $content variable to get view.
+
+<li>
+Create my layout D:\site\protected\views\layouts\basic.php
+<pre class="php">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;title&gt;&lt;?php echo $this-&gt;pageTitle;?&gt;&lt;/title&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My First Heading&lt;/h1&gt;
+&lt;p&gt;My first paragraph.&lt;/p&gt;
+&lt;div&gt;
+    &lt;?php echo $content;?&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+</pre>
+
+<li>
+Use this layout in DashController.php
+<pre class="php">
+public function actionHome(){
+	    $this-&gt;layout='basic';
+	$emails=['test@mai.com','john@mail.com'];
+	$this-&gt;render('view',['emails'=&gt;$emails]);
+    }
+</pre>
+
+<li>
+Create a base layout like default layout
+
+<ul>
+<li>
+Create D:\site\protected\views\layouts\basic_main.php
+
+<li>
+Edit D:\site\protected\views\layouts\basic.php
+<pre class="php>
+&lt;?php $this-&gt;beginContent('//layouts/basic_main');?&gt;
+&lt;div id="content" style="background:lightyellow"&gt;
+  &lt;?php echo $content;?&gt;
+&lt;/div&gt;
+&lt;?php $this-&gt;endContent();?&gt;
+</pre>
+
+</ul>
+</ul>
+
+<div id="Yii1_1 tutorial for beginners-use Gii tool"><h2 id="use Gii tool" class="header"><a href="#Yii1_1 tutorial for beginners-use Gii tool">use Gii tool</a></h2></div>
+<div id="Yii1_1 tutorial for beginners-use Gii tool-Generator"><h3 id="Generator" class="header"><a href="#Yii1_1 tutorial for beginners-use Gii tool-Generator">Generator</a></h3></div>
+<p>
+Open config file D:\site\protected\config\main.php.
+Uncomment these lines
+</p>
+<pre class="php">
+'gii'=&gt;array(
+			'class'=&gt;'system.gii.GiiModule',
+			'password'=&gt;'you password',
+			// If removed, Gii defaults to localhost only. Edit carefully to taste.
+			'ipFilters'=&gt;array('127.0.0.1','::1'),
+		),
+</pre>
+<p>
+Go to <a href="http://localhost/bid/index.php?r=gii">http://localhost/bid/index.php?r=gii</a> . You can use many generator.
+</p>
+<div id="Yii1_1 tutorial for beginners-use Gii tool-Models"><h3 id="Models" class="header"><a href="#Yii1_1 tutorial for beginners-use Gii tool-Models">Models</a></h3></div>
+<p>
+Open config file D:\site\protected\config\database.php.
+Uncomment these lines
+</p>
+<pre class="php">
+'connectionString' =&gt; 'mysql:host=localhost;dbname=testdrive',
+	'emulatePrepare' =&gt; true,
+	'username' =&gt; 'root',
+	'password' =&gt; '',
+	'charset' =&gt; 'utf8',
+</pre>
+<p>
+Create a testdrive database.
+We will create an <span id="Yii1_1 tutorial for beginners-use Gii tool-Models-event"></span><strong id="event">event</strong> model.
+Create an <span id="Yii1_1 tutorial for beginners-use Gii tool-Models-events"></span><strong id="events">events</strong> table. Execute this sql command in phpmyadmin web page.
+</p>
+<pre class="sql">
+CREATE TABLE `event` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `author` varchar(255) DEFAULT NULL,
+  `details` varchar(255) DEFAULT NULL,
+  `event_date` varchar(255) DEFAULT NULL,
+  `event_time` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `venue` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+</pre>
+<p>
+Go to <a href="http://localhost/bid/index.php?r=gii">http://localhost/bid/index.php?r=gii</a>
+Choose model generator
+Enter table name as <span id="Yii1_1 tutorial for beginners-use Gii tool-Models-event"></span><strong id="event">event</strong>. When you type table name , the model name will generate automatically. Then click generate button to create D:\site\protected\models\Event.php .
+</p>
+
+<div id="Yii1_1 tutorial for beginners-use Gii tool-Working with models"><h3 id="Working with models" class="header"><a href="#Yii1_1 tutorial for beginners-use Gii tool-Working with models">Working with models</a></h3></div>
+<p>
+Create some data into event table.
+Add action to DashController.php
+</p>
+<pre class="php">
+public function actionEvents(){
+	    $events=Event::model()-&gt;findAll();
+	    $this-&gt;render("events",['events'=&gt;$events]);
     }
 
 </pre>
-
-<li>
-Create file D:\ZHIHAU\www\bid\protected\views\site\say.php then add.
-<pre class="php">
-&lt;?= CHtml::encode($message) ?&gt;
-</pre>
-
-<li>
-Go to <a href="http://localhost:8888/bid/index.php?r=site/say.">http://localhost:8888/bid/index.php?r=site/say.</a> If you don't pass the message parameter, the page show Hello text.
-
-<li>
-Go to <a href="http://localhost:8888/bid/index.php?r=site/say&amp;message=Hello+John.">http://localhost:8888/bid/index.php?r=site/say&amp;message=Hello+John.</a> We pass message parameter. The value is <span id="How to use Yii1 with WAMP server-Create hello page-Hello John"></span><strong id="Hello John">Hello John</strong>. The page will show Hello John text.
-
-</ul>
-
-<div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
 <p>
-<a href="https://stackoverflow.com/questions/31635648/how-to-change-the-www-root-directory-on-wampserver-2-5">change wampserver www root directory</a>
+Create D:\ADRIAN-SHIU\www\bid\protected\views\dashboard\events.php
+</p>
+<pre class="php">
+&lt;?php
+foreach ($events as $event) {
+    echo $event-&gt;name . '&lt;br&gt;';
+}
+</pre>
+<p>
+Go to <a href="http://localhost/bid/index.php?r=dashboard/events">http://localhost/bid/index.php?r=dashboard/events</a>
+</p>
+
+<div id="Yii1_1 tutorial for beginners-use Gii tool-find by primary key"><h3 id="find by primary key" class="header"><a href="#Yii1_1 tutorial for beginners-use Gii tool-find by primary key">find by primary key</a></h3></div>
+<p>
+Add action to DashController.php
+</p>
+<pre class="php">
+public function actionEvents(){
+	    $event = Event::model()-&gt;findByPk(2);
+            $this-&gt;render("events",['model'=&gt;$event]);
+    }
+
+</pre>
+<p>
+Create D:\site\protected\views\dashboard\events.php
+</p>
+<pre class="php">
+&lt;?php
+echo $model-&gt;name. '&lt;br&gt;';
+echo $model-&gt;id . '&lt;br&gt;';
+echo $model-&gt;details . '&lt;br&gt;';
+</pre>
+<p>
+Go to <a href="http://localhost/bid/index.php?r=dashboard/events">http://localhost/bid/index.php?r=dashboard/events</a>
 </p>
 
         </div>
@@ -226,7 +417,7 @@ Go to <a href="http://localhost:8888/bid/index.php?r=site/say&amp;message=Hello+
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/How to use Yii1 with WAMP server.html" 
+data-href="https://zhihau.github.io/Yii_1_1 tutorial for beginners.html" 
 data-layout="button_count">
 </div>
 	

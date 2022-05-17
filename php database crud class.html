@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - How to use Yii1 with WAMP server</title>
+        <title>ZhiHau Blog - php database crud class</title>
 <style>
 /**
 * Highlight.js
@@ -93,129 +93,351 @@ fjs.parentNode.insertBefore(js, fjs);
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
 <ul>
 <li>
-<a href="How to use Yii1 with WAMP server.html#How to use Yii1 with WAMP server">How to use Yii1 with WAMP server</a>
+<a href="php database crud class.html#php database crud class">php database crud class</a>
 
 <ul>
 <li>
-<a href="How to use Yii1 with WAMP server.html#How to use Yii1 with WAMP server-Install server">Install server</a>
+<a href="php database crud class.html#php database crud class-Question">Question</a>
 
 <li>
-<a href="How to use Yii1 with WAMP server.html#How to use Yii1 with WAMP server-Install yii framework">Install yii framework</a>
-
-<li>
-<a href="How to use Yii1 with WAMP server.html#How to use Yii1 with WAMP server-Start server">Start server</a>
-
-<li>
-<a href="How to use Yii1 with WAMP server.html#How to use Yii1 with WAMP server-Create hello page">Create hello page</a>
+<a href="php database crud class.html#php database crud class-Answer">Answer</a>
 
 </ul>
-<li>
-<a href="How to use Yii1 with WAMP server.html#Reference">Reference</a>
-
 </ul>
 
-<div id="How to use Yii1 with WAMP server"><h1 id="How to use Yii1 with WAMP server" class="header"><a href="#How to use Yii1 with WAMP server">How to use Yii1 with WAMP server</a></h1></div>
-
-<div id="How to use Yii1 with WAMP server-Install server"><h2 id="Install server" class="header"><a href="#How to use Yii1 with WAMP server-Install server">Install server</a></h2></div>
-<ul>
-<li>
-Install <a href="https://sourceforge.net/projects/wampserver/">WampServer</a>.
-
-<li>
-wampserver phpmyadmin username is "root". There is no password.
-
-<li>
-Right click on pc icon in explorer. Find env in the search box and hit enter key. Add path <span id="How to use Yii1 with WAMP server-Install server-D:\ZHIHAU\wamp64\bin\php\php8.1.0"></span><strong id="D:\ZHIHAU\wamp64\bin\php\php8.1.0">D:\ZHIHAU\wamp64\bin\php\php8.1.0</strong> to system PATH variable.
-
-<li>
-Create folder D:\ZHIHAU\www
-
-<li>
-Create your project folder D:\ZHIHAU\www\bid
-
-</ul>
- 
-<div id="How to use Yii1 with WAMP server-Install yii framework"><h2 id="Install yii framework" class="header"><a href="#How to use Yii1 with WAMP server-Install yii framework">Install yii framework</a></h2></div>
-<ul>
-<li>
-<a href="https://www.yiiframework.com/download#yii1">Download yii1</a>
-
-<li>
-Extract yii-1.1.25.43e386.zip. Rename folder yii-1.1.25.43e386 as yii.
-
-<li>
-Move the folder yii to directory D:\ZHIHAU\www. 
-
-</ul>
- 
-<div id="How to use Yii1 with WAMP server-Start server"><h2 id="Start server" class="header"><a href="#How to use Yii1 with WAMP server-Start server">Start server</a></h2></div>
-<ul>
-<li>
-Change directory to directory D:\ZHIHAU\www\yii\framework.
-
-<li>
-Execute command <code>yiic webapp d:\ADRIAN-SHIU\www\bid</code> to create bid project on command prompt.
-
-<li>
-If you use git bash, Execute command <code>./yiic webapp /d/ADRIAN-SHIU/www/todo</code>
-
-<li>
-Left click on the Wampserver icon in the tray bar. Select <span id="How to use Yii1 with WAMP server-Start server-Apache|httpd.conf"></span><strong id="Apache|httpd.conf">Apache|httpd.conf</strong> and <span id="How to use Yii1 with WAMP server-Start server-Apache|httpd-vhosts.conf"></span><strong id="Apache|httpd-vhosts.conf">Apache|httpd-vhosts.conf</strong> to edit.
-
-</ul>
+<div id="php database crud class"><h1 id="php database crud class" class="header"><a href="#php database crud class">php database crud class</a></h1></div>
+<div id="php database crud class-Question"><h2 id="Question" class="header"><a href="#php database crud class-Question">Question</a></h2></div>
 <p>
-Replace 
+There are some error statements in file <span id="php database crud class-Question-wrong-base.php"></span><strong id="wrong-base.php">wrong-base.php</strong>. Can you fix these bugs of the program?
 </p>
-<pre class="xml">
-DocumentRoot "${INSTALL_DIR}/www"
-&lt;Directory "${INSTALL_DIR}/www/"&gt;
-</pre>
-<p>
-with
-</p>
-<pre class="xml">
-DocumentRoot "D:/ZHIHAU/www"
-&lt;Directory "D:/ZHIHAU/www/"&gt;
-</pre>
-<ul>
-<li>
-Left click on the Wampserver icon in the tray bar. Select <span id="How to use Yii1 with WAMP server-Start server-Restart all services"></span><strong id="Restart all services">Restart all services</strong> menu item.
-
-<li>
-Go to <a href="http://localhost/bid">http://localhost/bid</a> in the web browser.
-
-</ul>
-
-<div id="How to use Yii1 with WAMP server-Create hello page"><h2 id="Create hello page" class="header"><a href="#How to use Yii1 with WAMP server-Create hello page">Create hello page</a></h2></div>
-<ul>
-<li>
-Add following code to D:\ZHIHAU\www\bid\protected\controllers\SiteController.php
 <pre class="php">
- public function actionSay($message="Hello")
-    {
-        return $this-&gt;render('say',['message'=&gt;$message]);
+//filename: wrong-base.php
+&lt;?php
+date_default_timezone_set("Asia/Tai");
+session_start();
+
+class DB{
+    protected $dsn="mysql:host=localhost;charset=utf8;dbname=web01";
+    protected $user="root";
+    protected $pw='';
+    protected $pdo;
+    public $table;
+
+    public function __construct($table){
+        $this-&gt;table=$table;
+        $this-&gt;pdo=new PDO($this-&gt;dsn,$this-&gt;user,$this-&gt;pw);
+        
     }
 
+    public function find($id){
+        $sql="SELECT * FROM $this-&gt;table WHERE ";
+
+        if(is_array($id)){
+            foreach($id as $key =&gt; $value){
+                $tmp[]="`$key`='$value'";
+            }
+
+            $sql .= implode(" AND ",$tmp);
+        }else{
+            $sql .= " `id`='$id'";
+        }
+
+        return $this-&gt;pdo-&gt;query($sql)-&gt;fetch(PDO::FETCH_ASSOC);
+    }
+    public function all(...$arg){
+        $sql="SELECT * FROM $this-&gt;table ";
+
+        switch(count($arg)){
+            case 2:
+                foreach($arg[0] as $key =&gt; $value){
+                    $tmp[]="`$key`='$value'";
+                }
+
+                $sql .=" WHERE ".implode(" AND ",$tmp)." ".$arg[1];
+
+            break;
+            case 1:
+                if(is_array($arg[0])){
+                    
+                    foreach($arg[1] as $key =&gt; $value){
+                        $tmp[]="`$key`='$value'";
+                    }
+                    $sql .= " WHERE ".implode(" AND ".$tmp);
+                }else{
+                    $sql .= $arg[0];
+                    
+                }
+            break;
+        }
+
+        return $this-&gt;pdo-&gt;query($sql)-&gt;fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function math($method,$col,...$arg){
+        $sql="SELECT $method($col) FROM $this-&gt;table ";
+
+        switch(count($arg)){
+            case 2:
+                foreach($arg[0] as $key =&gt; $value){
+                    $tmp[]="`$key`='$value'";
+                }
+
+                $sql .=" WHERE ".implode(" AND ".$arg[0])." ".$arg[1];
+
+            break;
+            case 1:
+                if(is_array($arg[0])){
+                    foreach($arg[0] as $key =&gt; $value){
+                        $tmp[]="`$key`='$value'";
+                    }
+                    $sql .= " WHERE ".implode(" AND ".$arg[0]);
+                }else{
+                    $sql .= $arg[1];
+                    
+                }
+            break;
+        }
+
+
+        return $this-&gt;pdo-&gt;query($sql)-&gt;fetchColumn();
+    }
+    public function save($array){
+        if(isset($array['id'])){
+            //update
+            foreach($array as $key =&gt; $value){
+                $tmp[]="`$key`='$value'";
+            }
+            $sql="UPDATE $this-&gt;table 
+                     SET ".implode(",",$tmp)."
+                   WHERE `id`='{$array['id']}'";
+        }else{
+            //insert
+
+            $sql="INSERT INTO $this-&gt;table (`".implode("`,`",array_keys($array))."`) 
+                                     VALUES('".implode("','",$array)."')";
+        }
+
+       // echo $sql;
+        return $this-&gt;pdo-&gt;exec($sql);
+    }
+
+    public function del($id){
+        $sql="DEL FROM $this-&gt;table WHERE ";
+
+        if(is_array($id)){
+            foreach($id as $key =&gt; $value){
+                $tmp[]="`$key`='$value'";
+            }
+
+            $sql .= implode(" AND ",$tmp);
+        }else{
+            $sql .= " `id`='$id'";
+        }
+
+        return $this-&gt;pdo-&gt;exec($sql);
+    }
+    public function q($sql){
+        return $this-&gt;pdo-&gt;query($sqll)-&gt;fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
+}
+
+function dd($array){
+    echo "&lt;pre&gt;";
+    print_r($array);
+    echo "&lt;/pre&gt;";
+}
+
+function to($url){
+    header("location:".$url);
+}
+
+$Admin=new DB('admin');
+
+//$tt=(isset($_GET['do']))?$_GET['do']:'';
+//$tt=isset($_GET['do'])??'';
+
+/* $total=$Total-&gt;find(1);
+
+//echo $Total-&gt;find(1)['total'];
+echo $total['total'];
+
+print_r($Total-&gt;all()); */
+
+
+
+?&gt;
 </pre>
-
-<li>
-Create file D:\ZHIHAU\www\bid\protected\views\site\say.php then add.
-<pre class="php">
-&lt;?= CHtml::encode($message) ?&gt;
-</pre>
-
-<li>
-Go to <a href="http://localhost:8888/bid/index.php?r=site/say.">http://localhost:8888/bid/index.php?r=site/say.</a> If you don't pass the message parameter, the page show Hello text.
-
-<li>
-Go to <a href="http://localhost:8888/bid/index.php?r=site/say&amp;message=Hello+John.">http://localhost:8888/bid/index.php?r=site/say&amp;message=Hello+John.</a> We pass message parameter. The value is <span id="How to use Yii1 with WAMP server-Create hello page-Hello John"></span><strong id="Hello John">Hello John</strong>. The page will show Hello John text.
-
-</ul>
-
-<div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
+<div id="php database crud class-Answer"><h2 id="Answer" class="header"><a href="#php database crud class-Answer">Answer</a></h2></div>
 <p>
-<a href="https://stackoverflow.com/questions/31635648/how-to-change-the-www-root-directory-on-wampserver-2-5">change wampserver www root directory</a>
+This is the answer base file <span id="php database crud class-Answer-correct-base.php"></span><strong id="correct-base.php">correct-base.php</strong>. 
 </p>
+<pre class="php">
+//filename: correct-base.php
+&lt;?php
+date_default_timezone_set("Asia/Taipei");
+session_start();
+
+class DB{
+    protected $dsn="mysql:host=localhost;charset=utf8;dbname=web01";
+    protected $user="root";
+    protected $pw='';
+    protected $pdo;
+    public $table;
+
+    public function __construct($table){
+        $this-&gt;table=$table;
+        $this-&gt;pdo=new PDO($this-&gt;dsn,$this-&gt;user,$this-&gt;pw);
+        
+    }
+
+    public function find($id){
+        $sql="SELECT * FROM $this-&gt;table WHERE ";
+
+        if(is_array($id)){
+            foreach($id as $key =&gt; $value){
+                $tmp[]="`$key`='$value'";
+            }
+
+            $sql .= implode(" AND ",$tmp);
+        }else{
+            $sql .= " `id`='$id'";
+        }
+
+        return $this-&gt;pdo-&gt;query($sql)-&gt;fetch(PDO::FETCH_ASSOC);
+    }
+    public function all(...$arg){
+        $sql="SELECT * FROM $this-&gt;table ";
+
+        switch(count($arg)){
+            case 2:
+                foreach($arg[0] as $key =&gt; $value){
+                    $tmp[]="`$key`='$value'";
+                }
+
+                $sql .=" WHERE ".implode(" AND ",$tmp)." ".$arg[1];
+
+            break;
+            case 1:
+                if(is_array($arg[0])){
+                    
+                    foreach($arg[1] as $key =&gt; $value){
+                        $tmp[]="`$key`='$value'";
+                    }
+                    $sql .= " WHERE ".implode(" AND ".$tmp);
+                }else{
+                    $sql .= $arg[0];
+                    
+                }
+            break;
+        }
+
+        return $this-&gt;pdo-&gt;query($sql)-&gt;fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function math($method,$col,...$arg){
+        $sql="SELECT $method($col) FROM $this-&gt;table ";
+
+        switch(count($arg)){
+            case 2:
+                foreach($arg[0] as $key =&gt; $value){
+                    $tmp[]="`$key`='$value'";
+                }
+
+                $sql .=" WHERE ".implode(" AND ",$tmp)." ".$arg[1];
+
+            break;
+            case 1:
+                if(is_array($arg[0])){
+                    foreach($arg[0] as $key =&gt; $value){
+                        $tmp[]="`$key`='$value'";
+                    }
+                    $sql .= " WHERE ".implode(" AND ",$tmp);
+                }else{
+                    $sql .= $arg[1];
+                    
+                }
+            break;
+        }
+
+
+        return $this-&gt;pdo-&gt;query($sql)-&gt;fetchColumn();
+    }
+    public function save($array){
+        if(isset($array['id'])){
+            //update
+            foreach($array as $key =&gt; $value){
+                $tmp[]="`$key`='$value'";
+            }
+            $sql="UPDATE $this-&gt;table 
+                     SET ".implode(",",$tmp)."
+                   WHERE `id`='{$array['id']}'";
+        }else{
+            //insert
+
+            $sql="INSERT INTO $this-&gt;table (`".implode("`,`",array_keys($array))."`) 
+                                     VALUES('".implode("','",$array)."')";
+        }
+
+       // echo $sql;
+        return $this-&gt;pdo-&gt;exec($sql);
+    }
+
+    public function del($id){
+        $sql="DEL FROM $this-&gt;table WHERE ";
+
+        if(is_array($id)){
+            foreach($id as $key =&gt; $value){
+                $tmp[]="`$key`='$value'";
+            }
+
+            $sql .= implode(" AND ",$tmp);
+        }else{
+            $sql .= " `id`='$id'";
+        }
+
+        return $this-&gt;pdo-&gt;exec($sql);
+    }
+    public function q($sql){
+        return $this-&gt;pdo-&gt;query($sqll)-&gt;fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
+}
+
+function dd($array){
+    echo "&lt;pre&gt;";
+    print_r($array);
+    echo "&lt;/pre&gt;";
+}
+
+function to($url){
+    header("location:".$url);
+}
+
+$Admin=new DB('admin');
+
+//$tt=(isset($_GET['do']))?$_GET['do']:'';
+//$tt=isset($_GET['do'])??'';
+
+/* $total=$Total-&gt;find(1);
+
+//echo $Total-&gt;find(1)['total'];
+echo $total['total'];
+
+print_r($Total-&gt;all()); */
+
+// all math find del q save
+// echo $Admin-&gt;save(['acc'=&gt;'test']);
+//dd($Admin-&gt;all(" limit 2"));
+dd($Admin-&gt;all(['acc'=&gt;'test']));
+// echo $Admin-&gt;math('count','*',['acc'=&gt;'admin']);
+// echo $Admin-&gt;math('count','*',['acc'=&gt;'admin']," limit 1");
+// echo $Admin-&gt;save(['id'=&gt;$id,'acc'=&gt;'test9']);
+// dd($Admin-&gt;find(['id'=&gt;$id]));
+
+// echo $Admin-&gt;del($id);
+// dd($Admin-&gt;q("select * from admin"));
+</pre>
 
         </div>
         <div class="footer" style="padding:0 64 64 64">
@@ -226,7 +448,7 @@ Go to <a href="http://localhost:8888/bid/index.php?r=site/say&amp;message=Hello+
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/How to use Yii1 with WAMP server.html" 
+data-href="https://zhihau.github.io/php database crud class.html" 
 data-layout="button_count">
 </div>
 	

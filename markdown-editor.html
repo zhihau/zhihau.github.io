@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - How to use Yii1 with WAMP server</title>
+        <title>ZhiHau Blog - markdown-editor</title>
 <style>
 /**
 * Highlight.js
@@ -87,134 +87,108 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey" style="padding: 48 64 16 64">
         
 <p>
-<span id="-PHP"></span><span class="tag" id="PHP">PHP</span>
+<span id="-project"></span><span class="tag" id="project">project</span> <span id="-readme"></span><span class="tag" id="readme">readme</span>
 </p>
 
-<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
-<ul>
-<li>
-<a href="How to use Yii1 with WAMP server.html#How to use Yii1 with WAMP server">How to use Yii1 with WAMP server</a>
-
-<ul>
-<li>
-<a href="How to use Yii1 with WAMP server.html#How to use Yii1 with WAMP server-Install server">Install server</a>
-
-<li>
-<a href="How to use Yii1 with WAMP server.html#How to use Yii1 with WAMP server-Install yii framework">Install yii framework</a>
-
-<li>
-<a href="How to use Yii1 with WAMP server.html#How to use Yii1 with WAMP server-Start server">Start server</a>
-
-<li>
-<a href="How to use Yii1 with WAMP server.html#How to use Yii1 with WAMP server-Create hello page">Create hello page</a>
-
-</ul>
-<li>
-<a href="How to use Yii1 with WAMP server.html#Reference">Reference</a>
-
-</ul>
-
-<div id="How to use Yii1 with WAMP server"><h1 id="How to use Yii1 with WAMP server" class="header"><a href="#How to use Yii1 with WAMP server">How to use Yii1 with WAMP server</a></h1></div>
-
-<div id="How to use Yii1 with WAMP server-Install server"><h2 id="Install server" class="header"><a href="#How to use Yii1 with WAMP server-Install server">Install server</a></h2></div>
-<ul>
-<li>
-Install <a href="https://sourceforge.net/projects/wampserver/">WampServer</a>.
-
-<li>
-wampserver phpmyadmin username is "root". There is no password.
-
-<li>
-Right click on pc icon in explorer. Find env in the search box and hit enter key. Add path <span id="How to use Yii1 with WAMP server-Install server-D:\ZHIHAU\wamp64\bin\php\php8.1.0"></span><strong id="D:\ZHIHAU\wamp64\bin\php\php8.1.0">D:\ZHIHAU\wamp64\bin\php\php8.1.0</strong> to system PATH variable.
-
-<li>
-Create folder D:\ZHIHAU\www
-
-<li>
-Create your project folder D:\ZHIHAU\www\bid
-
-</ul>
- 
-<div id="How to use Yii1 with WAMP server-Install yii framework"><h2 id="Install yii framework" class="header"><a href="#How to use Yii1 with WAMP server-Install yii framework">Install yii framework</a></h2></div>
-<ul>
-<li>
-<a href="https://www.yiiframework.com/download#yii1">Download yii1</a>
-
-<li>
-Extract yii-1.1.25.43e386.zip. Rename folder yii-1.1.25.43e386 as yii.
-
-<li>
-Move the folder yii to directory D:\ZHIHAU\www. 
-
-</ul>
- 
-<div id="How to use Yii1 with WAMP server-Start server"><h2 id="Start server" class="header"><a href="#How to use Yii1 with WAMP server-Start server">Start server</a></h2></div>
-<ul>
-<li>
-Change directory to directory D:\ZHIHAU\www\yii\framework.
-
-<li>
-Execute command <code>yiic webapp d:\ADRIAN-SHIU\www\bid</code> to create bid project on command prompt.
-
-<li>
-If you use git bash, Execute command <code>./yiic webapp /d/ADRIAN-SHIU/www/todo</code>
-
-<li>
-Left click on the Wampserver icon in the tray bar. Select <span id="How to use Yii1 with WAMP server-Start server-Apache|httpd.conf"></span><strong id="Apache|httpd.conf">Apache|httpd.conf</strong> and <span id="How to use Yii1 with WAMP server-Start server-Apache|httpd-vhosts.conf"></span><strong id="Apache|httpd-vhosts.conf">Apache|httpd-vhosts.conf</strong> to edit.
-
-</ul>
+<div id="markdown-editor"><h1 id="markdown-editor" class="header"><a href="#markdown-editor">markdown-editor</a></h1></div>
 <p>
-Replace 
+An example implements markdown to html and copy to clipboard in JavaScript.
 </p>
-<pre class="xml">
-DocumentRoot "${INSTALL_DIR}/www"
-&lt;Directory "${INSTALL_DIR}/www/"&gt;
-</pre>
+
+<div id="markdown-editor-Pros"><h2 id="Pros" class="header"><a href="#markdown-editor-Pros">Pros</a></h2></div>
+<ul>
+<li>
+This is a html tool.
+
+</ul>
+
+<div id="markdown-editor-Why I create this?"><h2 id="Why I create this?" class="header"><a href="#markdown-editor-Why I create this?">Why I create this?</a></h2></div>
 <p>
-with
+I create the markdown editor for <a href="https://matters.news/">matters.news</a>. I like to write text with markdown format. But the online editor of <a href="https://matters.news/">matters.news</a> doesn't support this feature. So I need a tool to convert my post to html format. 
 </p>
-<pre class="xml">
-DocumentRoot "D:/ZHIHAU/www"
-&lt;Directory "D:/ZHIHAU/www/"&gt;
-</pre>
-<ul>
-<li>
-Left click on the Wampserver icon in the tray bar. Select <span id="How to use Yii1 with WAMP server-Start server-Restart all services"></span><strong id="Restart all services">Restart all services</strong> menu item.
 
-<li>
-Go to <a href="http://localhost/bid">http://localhost/bid</a> in the web browser.
-
-</ul>
-
-<div id="How to use Yii1 with WAMP server-Create hello page"><h2 id="Create hello page" class="header"><a href="#How to use Yii1 with WAMP server-Create hello page">Create hello page</a></h2></div>
-<ul>
-<li>
-Add following code to D:\ZHIHAU\www\bid\protected\controllers\SiteController.php
-<pre class="php">
- public function actionSay($message="Hello")
-    {
-        return $this-&gt;render('say',['message'=&gt;$message]);
-    }
-
-</pre>
-
-<li>
-Create file D:\ZHIHAU\www\bid\protected\views\site\say.php then add.
-<pre class="php">
-&lt;?= CHtml::encode($message) ?&gt;
-</pre>
-
-<li>
-Go to <a href="http://localhost:8888/bid/index.php?r=site/say.">http://localhost:8888/bid/index.php?r=site/say.</a> If you don't pass the message parameter, the page show Hello text.
-
-<li>
-Go to <a href="http://localhost:8888/bid/index.php?r=site/say&amp;message=Hello+John.">http://localhost:8888/bid/index.php?r=site/say&amp;message=Hello+John.</a> We pass message parameter. The value is <span id="How to use Yii1 with WAMP server-Create hello page-Hello John"></span><strong id="Hello John">Hello John</strong>. The page will show Hello John text.
-
-</ul>
-
-<div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
 <p>
-<a href="https://stackoverflow.com/questions/31635648/how-to-change-the-www-root-directory-on-wampserver-2-5">change wampserver www root directory</a>
+When I post an article, I follow below steps.
+</p>
+<ul>
+<li>
+Open the markdown editor.
+
+<li>
+Edit something with markdown format at left side text area.
+
+<li>
+When you edit markdown text follow a format, it will show text in a specific input box at right side container. For example:
+
+<ul>
+<li>
+Type <code>subject: &lt;subject&gt;</code>. Click <span id="markdown-editor-Why I create this?-preview"></span><strong id="preview">preview</strong> button. The text of subject will show in the subject input box at right side container . Focus on subject input box to copy text to clipboard. 
+
+<li>
+Type <code>tags: &lt;tags&gt;</code>. Click <span id="markdown-editor-Why I create this?-preview"></span><strong id="preview">preview</strong> button. The text of tags will show in the tags input box at right side container .Focus on tags input box to copy text to clipboard. 
+
+<li>
+Type <code>summary: &lt;summary&gt;</code>. Click <span id="markdown-editor-Why I create this?-preview"></span><strong id="preview">preview</strong> button. The text of summary will show in the summary input box at right side container .Focus on summary input box to copy text to clipboard. 
+
+<li>
+Click on the text of content to select all text. Right click to copy text by choose the copy menu item.
+
+</ul>
+<li>
+Click <span id="markdown-editor-Why I create this?-preview"></span><strong id="preview">preview</strong> button to view HTML of markdown at right side container.
+
+<li>
+When I complete my article, I will copy subject, tags, summary and content to the online editor of <a href="https://matters.news/">matters.news</a>.
+
+</ul>
+
+<p>
+These copy behaviors are so boring. Every site has it's own layout of online editor. So I have to copy from here paste to there. Why not just write here and upload everything? It's so simple. Therefore, I write articles on <a href="https://github.com/vimwiki/vimwiki">vimwiki</a>. Use git push to upload my articles to github site. Then I can view my new articles on <a href="https://zhihau.github.io/">zhihau.github.io</a>
+</p>
+
+<div id="Markdown format"><h1 id="Markdown format" class="header"><a href="#Markdown format">Markdown format</a></h1></div>
+<p>
+SUBJECT: &lt;subject&gt;
+</p>
+
+<p>
+TAGS: anima, lucky, fortune
+</p>
+
+<p>
+SUMMARY: &lt;summary&gt;
+</p>
+
+<ol>
+<li>
+Content
+
+</ol>
+<p>
+## sub-title
+</p>
+
+<p>
+If you like my post, please click the applaud button to support me to keep writing. Thank you!
+</p>
+
+<p>
+[zhihau.github.io](<a href="https://zhihau.github.io/)">https://zhihau.github.io/)</a>
+</p>
+
+<div id="Markdown format-🎇Demo"><h2 id="🎇Demo" class="header"><a href="#Markdown format-🎇Demo">🎇Demo</a></h2></div>
+<p>
+<img src="https://zhihau.github.io/img/markdown-editor-demo.gif" />
+</p>
+
+<div id="Markdown format-♥ Buy me a coffee"><h2 id="♥ Buy me a coffee" class="header"><a href="#Markdown format-♥ Buy me a coffee">♥ Buy me a coffee</a></h2></div>
+<p>
+If the utility solves your problem, you can buy me a coffee via <a href="https://www.buymeacoffee.com/zhihau">this link</a>.
+</p>
+  
+<div id="Markdown format-License"><h2 id="License" class="header"><a href="#Markdown format-License">License</a></h2></div>
+<p>
+MIT
 </p>
 
         </div>
@@ -226,7 +200,7 @@ Go to <a href="http://localhost:8888/bid/index.php?r=site/say&amp;message=Hello+
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/How to use Yii1 with WAMP server.html" 
+data-href="https://zhihau.github.io/markdown-editor.html" 
 data-layout="button_count">
 </div>
 	
