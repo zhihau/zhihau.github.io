@@ -119,8 +119,22 @@ fjs.parentNode.insertBefore(js, fjs);
 
 </ul>
 <li>
+<a href="vimwiki FAQ.html#How to use tags">How to use tags</a>
+
+<li>
 <a href="vimwiki FAQ.html#Reference">Reference</a>
 
+<li>
+<a href="vimwiki FAQ.html#Generated Tags">Generated Tags</a>
+
+<ul>
+<li>
+<a href="vimwiki FAQ.html#Generated Tags-vim">vim</a>
+
+<li>
+<a href="vimwiki FAQ.html#Generated Tags-vimwiki">vimwiki</a>
+
+</ul>
 </ul>
 
 <div id="vimwiki FAQ"><h1 id="vimwiki FAQ" class="header"><a href="#vimwiki FAQ">vimwiki FAQ</a></h1></div>
@@ -154,10 +168,26 @@ match whole word <code>word</code>
 </tr>
 <tr>
 <td>
+<code>:VimwikiSearchTags vim</code>
+</td>
+<td>
+find <code>vim</code> tag
+</td>
+</tr>
+<tr>
+<td>
 <code>:lopen</code>
 </td>
 <td>
 Open all match records
+</td>
+</tr>
+<tr>
+<td>
+<code>:lclose</code>
+</td>
+<td>
+Close all match records window
 </td>
 </tr>
 <tr>
@@ -390,6 +420,25 @@ autocmd VimEnter * if argc() == 0 | execute 'VimwikiIndex' | endif
 autocmd VimEnter * edit D:\Personal\Vimwiki\Todo\ page.wiki
 </pre>
 
+<div id="How to use tags"><h1 id="How to use tags" class="header"><a href="#How to use tags">How to use tags</a></h1></div>
+<ul>
+<li>
+What is a tag? a word surround by <code>:</code>. Such as a vim tag is <code>:vim:</code>.
+
+<li>
+You can add a tag at the first two lines of a wiki page.
+
+<li>
+Or add a tag at below two lines of a header.
+
+<li>
+Or this line we have a <code>:vim:</code> tag.
+
+<li>
+Search tag with <code>:VimwikiSearchTags vim</code>.
+
+</ul>
+
 <div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
 <ul>
 <li>
@@ -403,12 +452,31 @@ autocmd VimEnter * edit D:\Personal\Vimwiki\Todo\ page.wiki
 
 </ul>
 
+
+<div id="Generated Tags"><h1 id="Generated Tags" class="header"><a href="#Generated Tags">Generated Tags</a></h1></div>
+<div id="Generated Tags-vim"><h2 id="vim" class="header"><a href="#Generated Tags-vim">vim</a></h2></div>
+<ul>
+<li>
+<a href="Add V syntax highlighting in vim.html">Add V syntax highlighting in vim</a>
+
+<li>
+<a href="vim tips.html">vim tips</a>
+
+</ul>
+
+<div id="Generated Tags-vimwiki"><h2 id="vimwiki" class="header"><a href="#Generated Tags-vimwiki">vimwiki</a></h2></div>
+<ul>
+<li>
+<a href="vimwiki FAQ.html">vimwiki FAQ</a>
+
+</ul>
+
         </div>
         <div class="footer" style="padding:0 64 64 64">
 
 		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
 	See you in the next story bye.</p>
-		<p><small>Page created on 2022-05-17</small></p>
+		<p><small>Page created on 2022-05-22</small></p>
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
