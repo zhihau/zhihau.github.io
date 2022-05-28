@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - Dead links</title>
+        <title>ZhiHau Blog - How to let two services under the same network</title>
 <style>
 /**
 * Highlight.js
@@ -87,91 +87,133 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey" style="padding: 48 64 16 64">
         
 <p>
-<span id="-bookmark"></span><span class="tag" id="bookmark">bookmark</span> <span id="-chrome"></span><span class="tag" id="chrome">chrome</span> <span id="-browser"></span><span class="tag" id="browser">browser</span> <span id="-links"></span><span class="tag" id="links">links</span>
+<span id="-docker"></span><span class="tag" id="docker">docker</span>
 </p>
 
-<div id="Dead links"><h1 id="Dead links" class="header"><a href="#Dead links">Dead links</a></h1></div>
-<p>
-There are some web services disappear. When I organize my bookmark, I found <a href="https://www.google.com/bookmarks/lookup?hl=en&amp;bkmk=1">google bookmarks</a> web service.  This is a not working web service. If a web service is gone or replace with a new service, I have to delete or edit my bookmark.
-</p>
+<div id="How to let two services under the same network"><h1 id="How to let two services under the same network" class="header"><a href="#How to let two services under the same network">How to let two services under the same network</a></h1></div>
+<div id="How to let two services under the same network-network related commands"><h2 id="network related commands" class="header"><a href="#How to let two services under the same network-network related commands">network related commands</a></h2></div>
+<ul>
+<li>
+Run command <code>docker network ls</code> to list all networks.
 
-<p>
-A bookmarklet for looking up a selected word on a web page. You can select a word on a page. Then click the bookmarklet on your bookmark bar to look up . But google doesn't support this function anymore. If you go to <a href="https://www.google.com.tw/dictionary">google dictionary</a>, response a 404 not found page. 
-</p>
+<li>
+<code>docker network inspect bridge</code> command to check bridge network. If some containers use this network, you will see the container names list in the <span id="How to let two services under the same network-network related commands-Containers"></span><strong id="Containers">Containers</strong> block. If you <span id="How to let two services under the same network-network related commands-stop a container"></span><strong id="stop a container">stop a container</strong>, it will remove information of container from the <span id="How to let two services under the same network-network related commands-Containers"></span><strong id="Containers">Containers</strong> block.
 
-<div id="Dead links-selected a word on a web page then click this bookmark to look up"><h2 id="selected a word on a web page then click this bookmark to look up" class="header"><a href="#Dead links-selected a word on a web page then click this bookmark to look up">selected a word on a web page then click this bookmark to look up</a></h2></div>
-<pre class="js">
-javascript:Qr=document.getSelection();if(!Qr){void(Qr=prompt('Topic...',''))};if(Qr)location.href='http://www.google.com.tw/dictionary?langpair=en|zh-TW&amp;q=%27+unescape(Qr)+%27&amp;hl=zh-TW&amp;aq=f%27
+<li>
+Containers default use <span id="How to let two services under the same network-network related commands-subnet 172.17.0.0/16"></span><strong id="subnet 172.17.0.0/16">subnet 172.17.0.0/16</strong>.
+
+<li>
+<code>winpty docker exec -it &lt;container-name&gt; ip addr</code> to view the container network. For example: you can see the container use my custimize network 172.23.0.2. If you use this command on Git Bash, you have to add <span id="How to let two services under the same network-network related commands-winpty"></span><strong id="winpty">winpty</strong> command to show the output correctly.
+<pre>
+$ winpty docker exec -it my_web_1 ip addr
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: tunl0@NONE: &lt;NOARP&gt; mtu 1480 qdisc noop state DOWN qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+3: sit0@NONE: &lt;NOARP&gt; mtu 1480 qdisc noop state DOWN qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+42: eth0@if43: &lt;BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN&gt; mtu 1500 qdisc noqueue state UP
+    link/ether 02:42:ac:17:00:02 brd ff:ff:ff:ff:ff:ff
+    inet 172.23.0.2/16 brd 172.23.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+
 </pre>
-<p>
-Alternatively, we can install google dictionary extension to find word on <a href="https://en.wikipedia.org/wiki/Google_Chrome">chrome</a>. And delete the bookmark from my bookmark manager.
-</p>
 
-<div id="Dead links-google english chinese dictionary"><h2 id="google english chinese dictionary" class="header"><a href="#Dead links-google english chinese dictionary">google english chinese dictionary</a></h2></div>
-<pre click="js">
-javascript:void(q=prompt('Google %E8%8B%B1%E4%B8%AD%E5%AD%97%E5%85%B8:',getSelection()));if(q) void(location.href='http://www.google.com.tw/dictionary?langpair=en%7Czh-TW&amp;q=%27+escape(q)+%27&amp;hl=zh-TW&amp;aq=f%27%20)
+</ul>
+
+<div id="How to let two services under the same network-list all containers ip address"><h2 id="list all containers ip address" class="header"><a href="#How to let two services under the same network-list all containers ip address">list all containers ip address</a></h2></div>
+<pre>
+docker inspect $(docker ps -q ) \
+--format='{{ printf "%-50s" .Name}} {{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}'
+/web2                                              172.17.0.4
+/web1                                              172.17.0.3
+/web                                               172.17.0.2
+</pre>
+<ul>
+<li>
+reference <a href="https://stackoverflow.com/questions/58764152/how-to-get-a-ip-addresses-for-all-docker-containers-from-the-host">https://stackoverflow.com/questions/58764152/how-to-get-a-ip-addresses-for-all-docker-containers-from-the-host</a>
+
+</ul>
+
+<div id="How to let two services under the same network-stop all containers"><h2 id="stop all containers" class="header"><a href="#How to let two services under the same network-stop all containers">stop all containers</a></h2></div>
+<ul>
+<li>
+<code>docker kill $(docker ps -q)</code>
+
+<li>
+reference <a href="https://typeofnan.dev/how-to-stop-all-docker-containers/">https://typeofnan.dev/how-to-stop-all-docker-containers/</a>
+
+</ul>
+
+<div id="How to let two services under the same network-create new network"><h2 id="create new network" class="header"><a href="#How to let two services under the same network-create new network">create new network</a></h2></div>
+<ul>
+<li>
+<code>docker network create adrian-net</code>
+
+<li>
+Edit first service <span id="How to let two services under the same network-create new network-/d/ADRIAN-SHIU/redistest/docker-compose.yml"></span><strong id="/d/ADRIAN-SHIU/redistest/docker-compose.yml">/d/ADRIAN-SHIU/redistest/docker-compose.yml</strong>. Add web just created network <span id="How to let two services under the same network-create new network-adrian-net"></span><strong id="adrian-net">adrian-net</strong> to service <span id="How to let two services under the same network-create new network-redis"></span><strong id="redis">redis</strong>.
+<pre class="yml">
+version: "3.9"
+services:
+  redis:
+    image: "redis:alpine"
+    networks:
+      - adrian-net
+networks:
+    adrian-net:
+        external: true
 </pre>
 
-<p>
-Bookmarklet is so simple. You don't need to install something. Just add a bookmark and use the service. But a google dictionary extension. I have to install it. It cannot save my storage. I don't like to install them. Because it takes some time to download a package and install. 
-</p>
+</ul>
 
-<div id="small town"><h1 id="small town" class="header"><a href="#small town">small town</a></h1></div>
-<p>
-A site likes a small town. If no one go there, it may be not a town. You will remove it from your bookmark manager.
-</p>
-
-<div id="for a task"><h1 id="for a task" class="header"><a href="#for a task">for a task</a></h1></div>
-<p>
-If I work for a company, I have to use mail service and gitlab of the company. And more web services of the company. I add many bookmarks. One day if I leave the company. These bookmarks become dead links. Because I am not a employee of the company, I don't have permission to access these service. I need to remove these bookmarks from my bookmark manager.
-</p>
-
-<div id="Generated Tags"><h1 id="Generated Tags" class="header"><a href="#Generated Tags">Generated Tags</a></h1></div>
-<div id="Generated Tags-bookmark"><h2 id="bookmark" class="header"><a href="#Generated Tags-bookmark">bookmark</a></h2></div>
 <ul>
 <li>
-<a href="Dead links.html">Dead links</a>
+Edit second service <span id="How to let two services under the same network-create new network-/d/ADRIAN-SHIU/composetest/docker-compose.yml"></span><strong id="/d/ADRIAN-SHIU/composetest/docker-compose.yml">/d/ADRIAN-SHIU/composetest/docker-compose.yml</strong>. Add web just created network <span id="How to let two services under the same network-create new network-adrian-net"></span><strong id="adrian-net">adrian-net</strong> to service <span id="How to let two services under the same network-create new network-web"></span><strong id="web">web</strong>.
 
 </ul>
 
-<div id="Generated Tags-browser"><h2 id="browser" class="header"><a href="#Generated Tags-browser">browser</a></h2></div>
+<pre class="yml">
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+    volumes:
+      - .:/code
+    networks:
+      - adrian-net
+    environment:
+      FLASK_ENV: development
+      #  redis:
+      #image: "redis:alpine"
+networks:
+    adrian-net:
+        external: true
+</pre>
 <ul>
 <li>
-<a href="Dead links.html">Dead links</a>
-
-</ul>
-
-<div id="Generated Tags-chrome"><h2 id="chrome" class="header"><a href="#Generated Tags-chrome">chrome</a></h2></div>
-<ul>
-<li>
-<a href="Dead links.html">Dead links</a>
-
-</ul>
-
-<div id="Generated Tags-links"><h2 id="links" class="header"><a href="#Generated Tags-links">links</a></h2></div>
-<ul>
-<li>
-<a href="Dead links.html">Dead links</a>
-
-</ul>
-
-<div id="Generated Tags-tag"><h2 id="tag" class="header"><a href="#Generated Tags-tag">tag</a></h2></div>
-<ul>
-<li>
-<a href="index.html#tst">index#tst</a>
+Run command <code>docker-compose up -d</code> to build and start services.
 
 <li>
-<a href="test.html">test</a>
+We can view them started with command <code>docker ps</code> .
+<pre>
+$ docker ps
+CONTAINER ID   IMAGE             COMMAND                  CREATED          STATUS          PORTS                    NAMES
+70e17d6bc287   redis:alpine      "docker-entrypoint.s…"   10 seconds ago   Up 8 seconds    6379/tcp                 redistest_redis_1
+f24153364671   composetest_web   "flask run"              42 seconds ago   Up 39 seconds   0.0.0.0:8000-&gt;5000/tcp   composetest_web_1
+</pre>
 
-</ul>
-
-<div id="Generated Tags-this-is"><h2 id="this-is" class="header"><a href="#Generated Tags-this-is">this-is</a></h2></div>
-<ul>
 <li>
-<a href="index.html#tst">index#tst</a>
-
-<li>
-<a href="multi word.html">multi word</a>
+Use curl command to test our web service.
+<pre>
+$ curl 127.0.0.1:8000
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    46  100    46    0     0     46      0  0:00:01 --:--:--  0:00:01 46000Hello World! I have been seen 1 times aaaaaa.
+</pre>
 
 </ul>
 
@@ -184,7 +226,7 @@ If I work for a company, I have to use mail service and gitlab of the company. A
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/Dead links.html" 
+data-href="https://zhihau.github.io/How to let two services under the same network.html" 
 data-layout="button_count">
 </div>
 	

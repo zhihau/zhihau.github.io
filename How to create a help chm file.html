@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - Dead links</title>
+        <title>ZhiHau Blog - How to create a help chm file</title>
 <style>
 /**
 * Highlight.js
@@ -87,93 +87,306 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey" style="padding: 48 64 16 64">
         
 <p>
-<span id="-bookmark"></span><span class="tag" id="bookmark">bookmark</span> <span id="-chrome"></span><span class="tag" id="chrome">chrome</span> <span id="-browser"></span><span class="tag" id="browser">browser</span> <span id="-links"></span><span class="tag" id="links">links</span>
+<span id="-help"></span><span class="tag" id="help">help</span> <span id="-Windows"></span><span class="tag" id="Windows">Windows</span>
 </p>
 
-<div id="Dead links"><h1 id="Dead links" class="header"><a href="#Dead links">Dead links</a></h1></div>
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="How to create a help chm file.html#How to create a help chm file">How to create a help chm file</a>
+
+<ul>
+<li>
+<a href="How to create a help chm file.html#How to create a help chm file-Create chm files in ten minutes">Create chm files in ten minutes</a>
+
+<li>
+<a href="How to create a help chm file.html#How to create a help chm file-Why I don't use hhw to create my chm file?">Why I don't use hhw to create my chm file?</a>
+
+<li>
+<a href="How to create a help chm file.html#How to create a help chm file-How to use hhc.exe to compile document?">How to use hhc.exe to compile document?</a>
+
+<li>
+<a href="How to create a help chm file.html#How to create a help chm file-The components of chm files">The components of chm files</a>
+
+<li>
+<a href="How to create a help chm file.html#How to create a help chm file-What a filename.hhp file looks like">What a filename.hhp file looks like</a>
+
+<li>
+<a href="How to create a help chm file.html#How to create a help chm file-What a filename.hhc file looks like">What a filename.hhc file looks like</a>
+
+<li>
+<a href="How to create a help chm file.html#How to create a help chm file-What a filename.hhk file looks like">What a filename.hhk file looks like</a>
+
+<li>
+<a href="How to create a help chm file.html#How to create a help chm file-locale">locale</a>
+
+<li>
+<a href="How to create a help chm file.html#How to create a help chm file-chm cannot show web pages">chm cannot show web pages</a>
+
+</ul>
+</ul>
+
+<div id="How to create a help chm file"><h1 id="How to create a help chm file" class="header"><a href="#How to create a help chm file">How to create a help chm file</a></h1></div>
+<ul>
+<li>
+Microsoft provides a chm create tool called <span id="How to create a help chm file-HTML Help Workshop"></span><strong id="HTML Help Workshop">HTML Help Workshop</strong>.
+
+<li>
+Download <a href="https://docs.microsoft.com/en-us/previous-versions/windows/desktop/htmlhelp/microsoft-html-help-downloads">HTML Help Workshop</a>.
+
+<li>
+After HTML Help Workshop installed, there are some tools in the directory.
+
+<ul>
+<li>
+hhw.exe - A  GUI for creating chm documents.
+
+<li>
+hhc.exe - A command line program for creating chm documents.
+
+</ul>
+</ul>
+    
+<div id="How to create a help chm file-Create chm files in ten minutes"><h2 id="Create chm files in ten minutes" class="header"><a href="#How to create a help chm file-Create chm files in ten minutes">Create chm files in ten minutes</a></h2></div>
+<ul>
+<li>
+Edit filename.hhp
+<pre>
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=test.chm        #Specify output chm file
+Contents file=filename.hhc    #Specify contens file
+Default topic=test.html       #Specify the first page
+Display compile progress=Yes
+Index file=filename.hhk       #Specify index file
+Language=0x404 中文 (台灣)
+
+
+[FILES]
+
+
+[INFOTYPES]
+</pre>
+
+<li>
+Edit filename.hhc. The program will translate to hhc format file automatically.
+<pre>
+test|test.html
+&lt;TAB&gt;test1|test1.html
+&lt;TAB&gt;test2|test2.html
+FAQ|FAQ.html
+</pre>
+
+<li>
+Edit filename.hhk. The program will translate to hhk format file automatically.
+<pre>
+test|test.html
+&lt;TAB&gt;test1|test1.html
+&lt;TAB&gt;test2|test2.html
+hello|hello.html
+&lt;TAB&gt;hello1|hello1.html
+</pre>
+
+</ul>
+
+<div id="How to create a help chm file-Why I don't use hhw to create my chm file?"><h2 id="Why I don't use hhw to create my chm file?" class="header"><a href="#How to create a help chm file-Why I don't use hhw to create my chm file?">Why I don't use hhw to create my chm file?</a></h2></div>
+<ul>
+<li>
+Because when I leave a page after I edit it and go to the next page. The program doesn't mention that please save the page. I lost what I edit before. It's not useful.
+
+<li>
+It doesn't support syntax highlighting.
+
+<li>
+When I'd like to replace a string for all files. I have to open files one by one for replacing old string with new string. It's a boring task.
+
+<li>
+If there are some files don't save, the program will pop up many windows to ask you <span id="How to create a help chm file-Why I don't use hhw to create my chm file?-do you want to save the file?"></span><strong id="do you want to save the file?">do you want to save the file?</strong>.
+
+</ul>
+
+<div id="How to create a help chm file-How to use hhc.exe to compile document?"><h2 id="How to use hhc.exe to compile document?" class="header"><a href="#How to create a help chm file-How to use hhc.exe to compile document?">How to use hhc.exe to compile document?</a></h2></div>
 <p>
-There are some web services disappear. When I organize my bookmark, I found <a href="https://www.google.com/bookmarks/lookup?hl=en&amp;bkmk=1">google bookmarks</a> web service.  This is a not working web service. If a web service is gone or replace with a new service, I have to delete or edit my bookmark.
+Use the command <code>hhc myfile.hhp</code>. hhp is the short term of HTML Help project.
 </p>
+<pre>
+D:\Program Files\HTML Help Workshop&gt;hhc.exe "MyPath\test.hhp"
+Microsoft HTML Help Compiler 4.74.8702
 
-<p>
-A bookmarklet for looking up a selected word on a web page. You can select a word on a page. Then click the bookmarklet on your bookmark bar to look up . But google doesn't support this function anymore. If you go to <a href="https://www.google.com.tw/dictionary">google dictionary</a>, response a 404 not found page. 
-</p>
+Compiling MyPath\test.chm
 
-<div id="Dead links-selected a word on a web page then click this bookmark to look up"><h2 id="selected a word on a web page then click this bookmark to look up" class="header"><a href="#Dead links-selected a word on a web page then click this bookmark to look up">selected a word on a web page then click this bookmark to look up</a></h2></div>
-<pre class="js">
-javascript:Qr=document.getSelection();if(!Qr){void(Qr=prompt('Topic...',''))};if(Qr)location.href='http://www.google.com.tw/dictionary?langpair=en|zh-TW&amp;q=%27+unescape(Qr)+%27&amp;hl=zh-TW&amp;aq=f%27
+
+Compile time: 0 minutes, 3 seconds
+18      Topics
+88      Local links
+0       Internet links
+31      Graphics
+
+
+Created MyPath\test.chm, 1,084,707 byt
+es
+Compression decreased file by 109,454 bytes.
+</pre>
+
+<div id="How to create a help chm file-The components of chm files"><h2 id="The components of chm files" class="header"><a href="#How to create a help chm file-The components of chm files">The components of chm files</a></h2></div>
+<ul>
+<li>
+filename.hhp - HTML help project file
+
+<li>
+filename.hhc - HTML help contents file
+
+<li>
+filename.hhk - HTML help index file
+
+<li>
+filename.html - HTML documents
+
+</ul>
+
+<div id="How to create a help chm file-What a filename.hhp file looks like"><h2 id="What a filename.hhp file looks like" class="header"><a href="#How to create a help chm file-What a filename.hhp file looks like">What a filename.hhp file looks like</a></h2></div>
+<pre>
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=test.chm
+Contents file=filename.hhc
+Default topic=test.html
+Display compile progress=No
+Full-text search=Yes
+Index file=filename.hhk
+Language=0x404 中文 (台灣)
+
+
+[FILES]
+
+
+[INFOTYPES]
 </pre>
 <p>
-Alternatively, we can install google dictionary extension to find word on <a href="https://en.wikipedia.org/wiki/Google_Chrome">chrome</a>. And delete the bookmark from my bookmark manager.
+For the part of language, if the document is Chinese, the value is 0x404 中文 (台灣). If the document is English , the value is 0x409 英文(美國).
 </p>
 
-<div id="Dead links-google english chinese dictionary"><h2 id="google english chinese dictionary" class="header"><a href="#Dead links-google english chinese dictionary">google english chinese dictionary</a></h2></div>
-<pre click="js">
-javascript:void(q=prompt('Google %E8%8B%B1%E4%B8%AD%E5%AD%97%E5%85%B8:',getSelection()));if(q) void(location.href='http://www.google.com.tw/dictionary?langpair=en%7Czh-TW&amp;q=%27+escape(q)+%27&amp;hl=zh-TW&amp;aq=f%27%20)
+<p>
+Add search page, <code>Full-text search=Yes</code>.
+</p>
+
+<div id="How to create a help chm file-What a filename.hhc file looks like"><h2 id="What a filename.hhc file looks like" class="header"><a href="#How to create a help chm file-What a filename.hhc file looks like">What a filename.hhc file looks like</a></h2></div>
+<pre class="html">
+&lt;!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;meta name="GENERATOR" content="Microsoft&amp;reg; HTML Help Workshop 4.1"&gt;
+&lt;!-- Sitemap 1.0 --&gt;
+&lt;/HEAD&gt;&lt;BODY&gt;
+&lt;OBJECT type="text/site properties"&gt;
+	&lt;param name="ImageType" value="Folder"&gt;
+&lt;/OBJECT&gt;
+&lt;UL&gt;
+	&lt;LI&gt; &lt;OBJECT type="text/sitemap"&gt;
+		&lt;param name="Name" value="test"&gt;
+		&lt;param name="Local" value="test.html"&gt;
+		&lt;/OBJECT&gt;
+	&lt;UL&gt;
+		&lt;LI&gt; &lt;OBJECT type="text/sitemap"&gt;
+			&lt;param name="Name" value="test1"&gt;
+			&lt;param name="Local" value="test1.html"&gt;
+			&lt;/OBJECT&gt;
+		&lt;LI&gt; &lt;OBJECT type="text/sitemap"&gt;
+			&lt;param name="Name" value="test2"&gt;
+			&lt;param name="Local" value="test2.html"&gt;
+			&lt;/OBJECT&gt;
+	&lt;/UL&gt;
+            &lt;LI&gt; &lt;OBJECT type="text/sitemap"&gt;
+		&lt;param name="Name" value="FAQ"&gt;
+		&lt;param name="Local" value="FAQ.html"&gt;
+		&lt;/OBJECT&gt;
+&lt;/UL&gt;
+&lt;/BODY&gt;&lt;/HTML&gt;
+</pre>
+<p>
+The produced contents look like:
+Folder(test) +
+</p>
+<blockquote>
+-Item(test1)
+-Item(test2)
+</blockquote>
+<p>
+Item(FAQ)
+</p>
+
+<div id="How to create a help chm file-What a filename.hhk file looks like"><h2 id="What a filename.hhk file looks like" class="header"><a href="#How to create a help chm file-What a filename.hhk file looks like">What a filename.hhk file looks like</a></h2></div>
+<p>
+index file orgnizes some interested subjects and index.
+</p>
+<pre class="html">
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;META http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;META content="AurigaDoc" name="generator"&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;UL&gt;
+&lt;LI&gt;&lt;OBJECT type="text/sitemap"&gt;&lt;param name="Name" value="test"&gt;&lt;param name="Name" value="test"&gt;&lt;param name="Local" value="test.html"&gt;&lt;/OBJECT&gt;
+	&lt;UL&gt;
+
+	&lt;LI&gt;&lt;OBJECT type="text/sitemap"&gt;&lt;param name="Name" value="test1"&gt;&lt;param name="Name" value="test1"&gt;&lt;param name="Local" value="test1.html"&gt;&lt;/OBJECT&gt;&lt;/LI&gt;
+            &lt;/UL&gt;
+
+&lt;/LI&gt;
+&lt;LI&gt;&lt;OBJECT type="text/sitemap"&gt;&lt;param name="Name" value="hello"&gt;&lt;param name="Name" value="hello"&gt;&lt;param name="Local" value="hello.html"&gt;&lt;/OBJECT&gt;
+	&lt;UL&gt;
+
+	&lt;LI&gt;&lt;OBJECT type="text/sitemap"&gt;&lt;param name="Name" value="hello1"&gt;&lt;param name="Name" value="hello1"&gt;&lt;param name="Local" value="hello1.html"&gt;&lt;/OBJECT&gt;&lt;/LI&gt;
+            &lt;/UL&gt;
+
+&lt;/LI&gt;
+&lt;/UL&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+
+</pre>
+<p>
+tree diagram:
+test+
+</p>
+<blockquote>
+-test1
+-test2
+</blockquote>
+<p>
+hello+
+</p>
+<blockquote>
+-hello1
+</blockquote>
+     
+<div id="How to create a help chm file-locale"><h2 id="locale" class="header"><a href="#How to create a help chm file-locale">locale</a></h2></div>
+<p>
+Add some code at the beginning of filename.html.
+</p>
+<pre class="html">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW"&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=big5"&gt;
+
+</pre>
+<p>
+If the document is English, you have to add below code.
+</p>
+<pre class="html">
+&lt;!DOCTYPE HTML PUBLIC "--//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+&lt;!--dummy--&gt;&lt;html&gt;
+&lt;head&gt;
+&lt;META http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
 </pre>
 
+<div id="How to create a help chm file-chm cannot show web pages"><h2 id="chm cannot show web pages" class="header"><a href="#How to create a help chm file-chm cannot show web pages">chm cannot show web pages</a></h2></div>
 <p>
-Bookmarklet is so simple. You don't need to install something. Just add a bookmark and use the service. But a google dictionary extension. I have to install it. It cannot save my storage. I don't like to install them. Because it takes some time to download a package and install. 
+Because the chm files placed under the folder name that contains <code>#</code> character. 
 </p>
-
-<div id="small town"><h1 id="small town" class="header"><a href="#small town">small town</a></h1></div>
-<p>
-A site likes a small town. If no one go there, it may be not a town. You will remove it from your bookmark manager.
-</p>
-
-<div id="for a task"><h1 id="for a task" class="header"><a href="#for a task">for a task</a></h1></div>
-<p>
-If I work for a company, I have to use mail service and gitlab of the company. And more web services of the company. I add many bookmarks. One day if I leave the company. These bookmarks become dead links. Because I am not a employee of the company, I don't have permission to access these service. I need to remove these bookmarks from my bookmark manager.
-</p>
-
-<div id="Generated Tags"><h1 id="Generated Tags" class="header"><a href="#Generated Tags">Generated Tags</a></h1></div>
-<div id="Generated Tags-bookmark"><h2 id="bookmark" class="header"><a href="#Generated Tags-bookmark">bookmark</a></h2></div>
-<ul>
-<li>
-<a href="Dead links.html">Dead links</a>
-
-</ul>
-
-<div id="Generated Tags-browser"><h2 id="browser" class="header"><a href="#Generated Tags-browser">browser</a></h2></div>
-<ul>
-<li>
-<a href="Dead links.html">Dead links</a>
-
-</ul>
-
-<div id="Generated Tags-chrome"><h2 id="chrome" class="header"><a href="#Generated Tags-chrome">chrome</a></h2></div>
-<ul>
-<li>
-<a href="Dead links.html">Dead links</a>
-
-</ul>
-
-<div id="Generated Tags-links"><h2 id="links" class="header"><a href="#Generated Tags-links">links</a></h2></div>
-<ul>
-<li>
-<a href="Dead links.html">Dead links</a>
-
-</ul>
-
-<div id="Generated Tags-tag"><h2 id="tag" class="header"><a href="#Generated Tags-tag">tag</a></h2></div>
-<ul>
-<li>
-<a href="index.html#tst">index#tst</a>
-
-<li>
-<a href="test.html">test</a>
-
-</ul>
-
-<div id="Generated Tags-this-is"><h2 id="this-is" class="header"><a href="#Generated Tags-this-is">this-is</a></h2></div>
-<ul>
-<li>
-<a href="index.html#tst">index#tst</a>
-
-<li>
-<a href="multi word.html">multi word</a>
-
-</ul>
 
         </div>
         <div class="footer" style="padding:0 64 64 64">
@@ -184,7 +397,7 @@ If I work for a company, I have to use mail service and gitlab of the company. A
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/Dead links.html" 
+data-href="https://zhihau.github.io/How to create a help chm file.html" 
 data-layout="button_count">
 </div>
 	

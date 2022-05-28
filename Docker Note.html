@@ -129,15 +129,36 @@ Use command <code>$ docker logs --tail 50 --follow --timestamps link_motc_2020_w
 </p>
 
 <div id="Docker Note-Other commands"><h2 id="Other commands" class="header"><a href="#Docker Note-Other commands">Other commands</a></h2></div>
-<p>
-Run container
-$ <code>docker-compose up -d</code>
-Show all running containers
-$ <code>docker-compose ps</code>
-View log of container. Press <span id="Docker Note-Other commands-Ctrl+C"></span><strong id="Ctrl+C">Ctrl+C</strong> to leave log mode.
-$ <code>docker logs --tail 10 --follow --timestamps &lt;container-name&gt;</code>
-</p>
+<ul>
+<li>
+Run container. $ <code>docker-compose up -d</code>
 
+<li>
+Show all running containers. $ <code>docker-compose ps</code>
+
+<li>
+View log of container. Press <span id="Docker Note-Other commands-Ctrl+C"></span><strong id="Ctrl+C">Ctrl+C</strong> to leave log mode. $ <code>docker logs --tail 10 --follow --timestamps &lt;container-name&gt;</code>
+
+<li>
+<code>docker run --rm --name web composetest_web</code>. Use <span id="Docker Note-Other commands---rm"></span><strong id="--rm">--rm</strong> option :when status of container becomes Exited, the container will remove automatically
+
+<li>
+<code>docker stop web</code>. You don't need to run command <code>docker rm web</code>. Because you use option -rm to start a container.
+
+<li>
+<code>docker rm -f web</code>. Same as SIGKILL signal , like docker kill command. You don't need to execute these command <code>docker stop web</code> and <code>docker rm web</code>.
+
+<li>
+docker inspect -f '<img src="..\Vimwiki\range .NetworkSettings" /><img src="..\Vimwiki\.IPAddress" /><img src="..\Vimwiki\end" />' a6002 . On command prompt use double quotes
+
+<li>
+To view network of a container.
+<pre>
+D:\ADRIAN-SHIU\composetest&gt;docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" a60020bdb7fe
+172.17.0.2
+</pre>
+
+</ul>
 
 <div id="Docker Note-How to view docker-compose logs?"><h2 id="How to view docker-compose logs?" class="header"><a href="#Docker Note-How to view docker-compose logs?">How to view docker-compose logs?</a></h2></div>
 <p>
@@ -162,7 +183,7 @@ $ <code>docker swarm leave --force</code>
 
 		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
 	See you in the next story bye.</p>
-		<p><small>Page created on 2022-05-14</small></p>
+		<p><small>Page created on 2022-05-28</small></p>
 
 <!-- Your share button code -->
 <div class="fb-share-button" 

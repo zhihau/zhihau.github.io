@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - Dead links</title>
+        <title>ZhiHau Blog - docker composer tutorial</title>
 <style>
 /**
 * Highlight.js
@@ -87,93 +87,187 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey" style="padding: 48 64 16 64">
         
 <p>
-<span id="-bookmark"></span><span class="tag" id="bookmark">bookmark</span> <span id="-chrome"></span><span class="tag" id="chrome">chrome</span> <span id="-browser"></span><span class="tag" id="browser">browser</span> <span id="-links"></span><span class="tag" id="links">links</span>
+<span id="-docker"></span><span class="tag" id="docker">docker</span>
 </p>
 
-<div id="Dead links"><h1 id="Dead links" class="header"><a href="#Dead links">Dead links</a></h1></div>
-<p>
-There are some web services disappear. When I organize my bookmark, I found <a href="https://www.google.com/bookmarks/lookup?hl=en&amp;bkmk=1">google bookmarks</a> web service.  This is a not working web service. If a web service is gone or replace with a new service, I have to delete or edit my bookmark.
-</p>
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="docker composer tutorial.html#docker composer tutorial">docker composer tutorial</a>
 
-<p>
-A bookmarklet for looking up a selected word on a web page. You can select a word on a page. Then click the bookmarklet on your bookmark bar to look up . But google doesn't support this function anymore. If you go to <a href="https://www.google.com.tw/dictionary">google dictionary</a>, response a 404 not found page. 
-</p>
+<ul>
+<li>
+<a href="docker composer tutorial.html#docker composer tutorial-reference">reference</a>
 
-<div id="Dead links-selected a word on a web page then click this bookmark to look up"><h2 id="selected a word on a web page then click this bookmark to look up" class="header"><a href="#Dead links-selected a word on a web page then click this bookmark to look up">selected a word on a web page then click this bookmark to look up</a></h2></div>
-<pre class="js">
-javascript:Qr=document.getSelection();if(!Qr){void(Qr=prompt('Topic...',''))};if(Qr)location.href='http://www.google.com.tw/dictionary?langpair=en|zh-TW&amp;q=%27+unescape(Qr)+%27&amp;hl=zh-TW&amp;aq=f%27
+</ul>
+</ul>
+
+<div id="docker composer tutorial"><h1 id="docker composer tutorial" class="header"><a href="#docker composer tutorial">docker composer tutorial</a></h1></div>
+<ul>
+<li>
+<code>mkdir composetest</code>
+
+<li>
+<code>cd composetest</code>
+
+<li>
+Edit <span id="docker composer tutorial-app.py"></span><strong id="app.py">app.py</strong>
+<pre class="py">
+import time
+
+import redis
+from flask import Flask
+
+app = Flask(__name__)
+cache = redis.Redis(host='redis', port=6379)
+
+def get_hit_count():
+    retries = 5
+    while True:
+        try:
+            return cache.incr('hits')
+        except redis.exceptions.ConnectionError as exc:
+            if retries == 0:
+                raise exc
+            retries -= 1
+            time.sleep(0.5)
+
+@app.route('/')
+def hello():
+    count = get_hit_count()
+    return 'Hello World! I have been seen {} times.\n'.format(count)
 </pre>
-<p>
-Alternatively, we can install google dictionary extension to find word on <a href="https://en.wikipedia.org/wiki/Google_Chrome">chrome</a>. And delete the bookmark from my bookmark manager.
-</p>
 
-<div id="Dead links-google english chinese dictionary"><h2 id="google english chinese dictionary" class="header"><a href="#Dead links-google english chinese dictionary">google english chinese dictionary</a></h2></div>
-<pre click="js">
-javascript:void(q=prompt('Google %E8%8B%B1%E4%B8%AD%E5%AD%97%E5%85%B8:',getSelection()));if(q) void(location.href='http://www.google.com.tw/dictionary?langpair=en%7Czh-TW&amp;q=%27+escape(q)+%27&amp;hl=zh-TW&amp;aq=f%27%20)
+<li>
+Edit <span id="docker composer tutorial-requirements.txt"></span><strong id="requirements.txt">requirements.txt</strong>
+<pre>
+flask
+redis
 </pre>
 
+<li>
+If you use <span id="docker composer tutorial-notepad"></span><strong id="notepad">notepad</strong> command to edit Dockerfile, Like <code>notepad Dockerfile</code>. After you save this file. It will add <span id="docker composer tutorial-txt"></span><strong id="txt">txt</strong> file extension automatically. Please remove the file extension to prevent build error.
+<pre>
+# syntax=docker/dockerfile:1
+FROM python:3.7-alpine
+WORKDIR /code
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+RUN apk add --no-cache gcc musl-dev linux-headers
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+EXPOSE 5000
+COPY . .
+CMD ["flask", "run"]
+</pre>
+
+<li>
+Edit <span id="docker composer tutorial-docker-compose.yml"></span><strong id="docker-compose.yml">docker-compose.yml</strong>
+<pre class="yml">
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+  redis:
+    image: "redis:alpine"
+</pre>
+
+<li>
+Run command <code>docker-compose up</code> to build and start the container.
+<pre>
+Creating network "composetest_default" with the default driver
+Building web
+[+] Building 0.5s (2/2) FINISHED
+ =&gt; [internal] load build definition from Dockerfile                                                               0.3s
+ =&gt; =&gt; transferring dockerfile: 2B                                                                                 0.0s
+ =&gt; [internal] load .dockerignore                                                                                  0.4s
+ =&gt; =&gt; transferring context: 2B                                                                                    0.0s
+failed to solve with frontend dockerfile.v0: failed to read dockerfile: open /var/lib/docker/tmp/buildkit-mount296356966/Dockerfile: no such file or directory
+ERROR: Service 'web' failed to build : Build failed
+</pre>
+
+</ul>
 <p>
-Bookmarklet is so simple. You don't need to install something. Just add a bookmark and use the service. But a google dictionary extension. I have to install it. It cannot save my storage. I don't like to install them. Because it takes some time to download a package and install. 
+This error means the dockerfile file cannot found.
+Execute the command <code>rename Dockerfile.txt Dockerfile</code> to instead of correct file name.
 </p>
+<ul>
+<li>
+Go to the URL
 
-<div id="small town"><h1 id="small town" class="header"><a href="#small town">small town</a></h1></div>
+</ul>
 <p>
-A site likes a small town. If no one go there, it may be not a town. You will remove it from your bookmark manager.
+<a href="http://localhost:8000/">http://localhost:8000/</a>
+<a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a>
+or test connection with curl command
 </p>
+<pre>
+$ curl 127.0.0.1:8000
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    46  100    46    0     0     46      0  0:00:01 --:--:--  0:00:01  2875Hello World! I have been seen 2 times aaaaaa.
+</pre>
+<ul>
+<li>
+Some related commands
 
-<div id="for a task"><h1 id="for a task" class="header"><a href="#for a task">for a task</a></h1></div>
+<ul>
+<li>
+<code>docker image ls</code> to view all images
+
+<li>
+<code>docker inspect &lt;image-id&gt;</code> to inspect image information
+
+<li>
+<code>docker-compose down</code> to stop and remove container
+
+</ul>
+<li>
+Edit <span id="docker composer tutorial-docker-compose.yml"></span><strong id="docker-compose.yml">docker-compose.yml</strong>
+<pre class="yml">
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+    volumes:
+      - .:/code
+    environment:
+      FLASK_ENV: development
+  redis:
+    image: "redis:alpine"
+</pre>
+
+<li>
+<span id="docker composer tutorial-FLASK_ENV"></span><strong id="FLASK_ENV">FLASK_ENV</strong> variable which tells flask run to run in develop mode and reload the code on change.
+
+<li>
+docker-compose up #build and run the app
+
+<li>
+docker-compose up -d
+
+<li>
+docker-compose ps
+
+<li>
+<code>docker-compose run web env</code> to see what environment variables are available to web service
+
+<li>
+<code>docker-compose stop</code> to stop service3
+
+<li>
+<code>docker-compose down --volumes</code> do everything , removing the containers. removing the data volume used by the redis container
+
+</ul>
+
+<div id="docker composer tutorial-reference"><h2 id="reference" class="header"><a href="#docker composer tutorial-reference">reference</a></h2></div>
 <p>
-If I work for a company, I have to use mail service and gitlab of the company. And more web services of the company. I add many bookmarks. One day if I leave the company. These bookmarks become dead links. Because I am not a employee of the company, I don't have permission to access these service. I need to remove these bookmarks from my bookmark manager.
+<a href="https://docs.docker.com/compose/gettingstarted/">https://docs.docker.com/compose/gettingstarted/</a>
 </p>
-
-<div id="Generated Tags"><h1 id="Generated Tags" class="header"><a href="#Generated Tags">Generated Tags</a></h1></div>
-<div id="Generated Tags-bookmark"><h2 id="bookmark" class="header"><a href="#Generated Tags-bookmark">bookmark</a></h2></div>
-<ul>
-<li>
-<a href="Dead links.html">Dead links</a>
-
-</ul>
-
-<div id="Generated Tags-browser"><h2 id="browser" class="header"><a href="#Generated Tags-browser">browser</a></h2></div>
-<ul>
-<li>
-<a href="Dead links.html">Dead links</a>
-
-</ul>
-
-<div id="Generated Tags-chrome"><h2 id="chrome" class="header"><a href="#Generated Tags-chrome">chrome</a></h2></div>
-<ul>
-<li>
-<a href="Dead links.html">Dead links</a>
-
-</ul>
-
-<div id="Generated Tags-links"><h2 id="links" class="header"><a href="#Generated Tags-links">links</a></h2></div>
-<ul>
-<li>
-<a href="Dead links.html">Dead links</a>
-
-</ul>
-
-<div id="Generated Tags-tag"><h2 id="tag" class="header"><a href="#Generated Tags-tag">tag</a></h2></div>
-<ul>
-<li>
-<a href="index.html#tst">index#tst</a>
-
-<li>
-<a href="test.html">test</a>
-
-</ul>
-
-<div id="Generated Tags-this-is"><h2 id="this-is" class="header"><a href="#Generated Tags-this-is">this-is</a></h2></div>
-<ul>
-<li>
-<a href="index.html#tst">index#tst</a>
-
-<li>
-<a href="multi word.html">multi word</a>
-
-</ul>
 
         </div>
         <div class="footer" style="padding:0 64 64 64">
@@ -184,7 +278,7 @@ If I work for a company, I have to use mail service and gitlab of the company. A
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/Dead links.html" 
+data-href="https://zhihau.github.io/docker composer tutorial.html" 
 data-layout="button_count">
 </div>
 	

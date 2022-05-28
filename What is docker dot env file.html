@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <title>ZhiHau Blog - Dead links</title>
+        <title>ZhiHau Blog - What is docker dot env file</title>
 <style>
 /**
 * Highlight.js
@@ -87,93 +87,334 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey" style="padding: 48 64 16 64">
         
 <p>
-<span id="-bookmark"></span><span class="tag" id="bookmark">bookmark</span> <span id="-chrome"></span><span class="tag" id="chrome">chrome</span> <span id="-browser"></span><span class="tag" id="browser">browser</span> <span id="-links"></span><span class="tag" id="links">links</span>
+<span id="-docker"></span><span class="tag" id="docker">docker</span>
 </p>
 
-<div id="Dead links"><h1 id="Dead links" class="header"><a href="#Dead links">Dead links</a></h1></div>
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="What is docker dot env file.html#what is docker .env file">what is docker .env file</a>
+
+<ul>
+<li>
+<a href="What is docker dot env file.html#what is docker .env file-skip port is already allocated error message">skip port is already allocated error message</a>
+
+<li>
+<a href="What is docker dot env file.html#what is docker .env file-case. if I have a .env file then delete it.">case. if I have a .env file then delete it.</a>
+
+<li>
+<a href="What is docker dot env file.html#what is docker .env file-update container">update container</a>
+
+<li>
+[[#what is docker .env file#the difference between <code>docker-compose ps</code> and <code>docker ps</code>|the difference between <code>docker-compose ps</code> and <code>docker ps</code>]]
+
+<li>
+<a href="What is docker dot env file.html#what is docker .env file-matters needing attention">matters needing attention</a>
+
+<li>
+<a href="What is docker dot env file.html#what is docker .env file-commands">commands</a>
+
+<li>
+<a href="What is docker dot env file.html#what is docker .env file-the exmaple project files">the exmaple project files</a>
+
+<ul>
+<li>
+<a href="What is docker dot env file.html#what is docker .env file-the exmaple project files-directory">directory</a>
+
+<li>
+<a href="What is docker dot env file.html#what is docker .env file-the exmaple project files-.env">.env</a>
+
+<li>
+<a href="What is docker dot env file.html#what is docker .env file-the exmaple project files-app.py">app.py</a>
+
+<li>
+<a href="What is docker dot env file.html#what is docker .env file-the exmaple project files-docker-compose.yml">docker-compose.yml</a>
+
+<li>
+<a href="What is docker dot env file.html#what is docker .env file-the exmaple project files-Dockerfile">Dockerfile</a>
+
+<li>
+<a href="What is docker dot env file.html#what is docker .env file-the exmaple project files-requirements.txt">requirements.txt</a>
+
+</ul>
+</ul>
+</ul>
+
+<div id="what is docker .env file"><h1 id="what is docker .env file" class="header"><a href="#what is docker .env file">what is docker .env file</a></h1></div>
+
 <p>
-There are some web services disappear. When I organize my bookmark, I found <a href="https://www.google.com/bookmarks/lookup?hl=en&amp;bkmk=1">google bookmarks</a> web service.  This is a not working web service. If a web service is gone or replace with a new service, I have to delete or edit my bookmark.
+.env file for setting customize container name. For instance, I define service called <span id="what is docker .env file-web"></span><strong id="web">web</strong> in my docker-compose.yml file. if I set the COMPOSE_PROJECT_NAME variable as <code>my-app</code> in the file. My container name should be <code>my-app_web_1</code>.
 </p>
 
 <p>
-A bookmarklet for looking up a selected word on a web page. You can select a word on a page. Then click the bookmarklet on your bookmark bar to look up . But google doesn't support this function anymore. If you go to <a href="https://www.google.com.tw/dictionary">google dictionary</a>, response a 404 not found page. 
+If you create a .env file in the docker-compose.yml folder, and run <code>docker-compose up -d </code> command . It will rebuild image .
+The content of .env file
 </p>
+<pre class="yml">
+COMPOSE_PROJECT_NAME=my-app
+</pre>
 
-<div id="Dead links-selected a word on a web page then click this bookmark to look up"><h2 id="selected a word on a web page then click this bookmark to look up" class="header"><a href="#Dead links-selected a word on a web page then click this bookmark to look up">selected a word on a web page then click this bookmark to look up</a></h2></div>
-<pre class="js">
-javascript:Qr=document.getSelection();if(!Qr){void(Qr=prompt('Topic...',''))};if(Qr)location.href='http://www.google.com.tw/dictionary?langpair=en|zh-TW&amp;q=%27+unescape(Qr)+%27&amp;hl=zh-TW&amp;aq=f%27
+<p>
+If you don't stop the <span id="what is docker .env file-web"></span><strong id="web">web</strong> service before , it used the port. You will get <span id="what is docker .env file-port already allocated"></span><strong id="port already allocated">port already allocated</strong> error message. The full message is :
+</p>
+<pre>
+ERROR: for my-app_web_1  Cannot start service web: driver failed programming external connectivity on endpoint my-app_web_1 (adc4b24b942992757600c4cfcdd14ace01a13b52692202ac1a8f1d886a609904): Bind for 0.0.0.0:8000 failed: port is already allocated
 </pre>
 <p>
-Alternatively, we can install google dictionary extension to find word on <a href="https://en.wikipedia.org/wiki/Google_Chrome">chrome</a>. And delete the bookmark from my bookmark manager.
+You can allocate another port in docker-compose.yml file to skip this message. Or kill the service which uses port 8000.
 </p>
+ 
+<div id="what is docker .env file-skip port is already allocated error message"><h2 id="skip port is already allocated error message" class="header"><a href="#what is docker .env file-skip port is already allocated error message">skip port is already allocated error message</a></h2></div>
+<ul>
+<li>
+Change the <span id="what is docker .env file-skip port is already allocated error message-web"></span><strong id="web">web</strong> service port from 8000 to 8001 in docker-compose.yml file.
 
-<div id="Dead links-google english chinese dictionary"><h2 id="google english chinese dictionary" class="header"><a href="#Dead links-google english chinese dictionary">google english chinese dictionary</a></h2></div>
-<pre click="js">
-javascript:void(q=prompt('Google %E8%8B%B1%E4%B8%AD%E5%AD%97%E5%85%B8:',getSelection()));if(q) void(location.href='http://www.google.com.tw/dictionary?langpair=en%7Czh-TW&amp;q=%27+escape(q)+%27&amp;hl=zh-TW&amp;aq=f%27%20)
+<li>
+run <code>docker-compose up -d </code> command
+<pre>
+$ docker-compose up -d
+Recreating my-app_web_1 ...
+Recreating my-app_web_1 ... done
 </pre>
 
+</ul>
 <p>
-Bookmarklet is so simple. You don't need to install something. Just add a bookmark and use the service. But a google dictionary extension. I have to install it. It cannot save my storage. I don't like to install them. Because it takes some time to download a package and install. 
+So we can assign different ports to start many containers with <code>docker-compose up -d</code> command.
 </p>
 
-<div id="small town"><h1 id="small town" class="header"><a href="#small town">small town</a></h1></div>
+<div id="what is docker .env file-case. if I have a .env file then delete it."><h2 id="case. if I have a .env file then delete it." class="header"><a href="#what is docker .env file-case. if I have a .env file then delete it.">case. if I have a .env file then delete it.</a></h2></div>
+<ul>
+<li>
+I start a <span id="what is docker .env file-case. if I have a .env file then delete it.-web"></span><strong id="web">web</strong> service with no .env file. It will run a container and port 8000. The container name is main_web_1. Because my project folder is <span id="what is docker .env file-case. if I have a .env file then delete it.-main"></span><strong id="main">main</strong>.
+
+<li>
+Next, I creae a .env file. The content of file is:
+<pre class="yml">
+COMPOSE_PROJECT_NAME=my-app
+</pre>
+
+<li>
+Run <code>docker-compose up -d</code> to start the service. I get a 8000 port  already allocated error message. 
+
+<li>
+Edit docker-compose.yml to change the port from 8000 to 8001 then try again.
+
+<li>
+The new service started. The new container name is my-app_web_1 with port 8001.
+
+<li>
+Run <code>docker ps</code> to see these changed.
+
+<li>
+Now I delete the .env file and rebuld container. I get a 8001 port already allocated error message. 
+
+<li>
+What's the action when I run <code>docker-compose up -d </code> command?
+
+<ul>
+<li>
+It stop the main_web_1 service. Because I only know my container name is &lt;project-folder-name&gt;_&lt;web-service&gt;_1. I don't have a .env file under the directory. So I don't know the variable <span id="what is docker .env file-case. if I have a .env file then delete it.-COMPOSE_PROJECT_NAME"></span><strong id="COMPOSE_PROJECT_NAME">COMPOSE_PROJECT_NAME</strong> defined something. 
+
+<li>
+And start the main_web_1 service. This port I changed before for the my-app_web_1 service. The container is running so I cannot use the port.
+
+</ul>
+<li>
+The solution is stop and remove <span id="what is docker .env file-case. if I have a .env file then delete it.-my-app_web_1"></span><strong id="my-app_web_1">my-app_web_1</strong> container via <code>docker rm-f my-app_web_1</code> command.
+
+<li>
+Now, I can run <code>docker-compose up -d</code> to start the service. The container name is <span id="what is docker .env file-case. if I have a .env file then delete it.-main_web_1"></span><strong id="main_web_1">main_web_1</strong> with port 8001.
+
+</ul>
+
+<div id="what is docker .env file-update container"><h2 id="update container" class="header"><a href="#what is docker .env file-update container">update container</a></h2></div>
 <p>
-A site likes a small town. If no one go there, it may be not a town. You will remove it from your bookmark manager.
+You can execute <code>docker-compose up -d</code> many times. It will bulid and run the container. If your image not changed, you will a <span id="what is docker .env file-update container-up-to-date"></span><strong id="up-to-date">up-to-date</strong> message.
+</p>
+<pre>
+$ docker-compose up -d
+my-app_web_1 is up-to-date
+</pre>
+
+<div id="what is docker .env file-the difference between `docker-compose ps` and `docker ps`"><h2 id="the difference between `docker-compose ps` and `docker ps`" class="header"><a href="#what is docker .env file-the difference between `docker-compose ps` and `docker ps`">the difference between <code>docker-compose ps</code> and <code>docker ps</code></a></h2></div>
+<ul>
+<li>
+<code>docker-compose ps</code> lists the containers related to iamges.
+
+<li>
+<code>docker ps</code> lists all running containers.
+
+<li>
+The result of <code>docker-compose ps</code> is a subset of the rusult of <code>docker ps</code>.
+
+<li>
+For example:
+<pre>
+ZHI_HAU@SUNCAT-HUANG MINGW64 /d/ZHI_HAU/composetest
+$ docker ps
+CONTAINER ID   IMAGE             COMMAND                  CREATED          STATUS          PORTS                    NAMES
+e61eff4641a1   redis:alpine      "docker-entrypoint.s…"   2 minutes ago    Up 2 minutes    6379/tcp                 composetest_redis_1
+4c8276f577b9   composetest_web   "flask run"              13 minutes ago   Up 13 minutes   0.0.0.0:8001-&gt;5000/tcp   composetest_web_1
+
+ZHI_HAU@SUNCAT-HUANG MINGW64 /d/ZHI_HAU/composetest
+$ docker-compose ps
+       Name                      Command               State           Ports
+-------------------------------------------------------------------------------------
+composetest_redis_1   docker-entrypoint.sh redis ...   Up      6379/tcp
+composetest_web_1     flask run                        Up      0.0.0.0:8001-&gt;5000/tcp
+</pre>
+
+</ul>
+
+<div id="what is docker .env file-matters needing attention"><h2 id="matters needing attention" class="header"><a href="#what is docker .env file-matters needing attention">matters needing attention</a></h2></div>
+<p>
+If I'd like to share my code to my co-worker. My code define a <span id="what is docker .env file-matters needing attention-web"></span><strong id="web">web</strong> service with port 8001. My .env file is:
+</p>
+<pre>
+class="yml"
+COMPOSE_PROJECT_NAME=my-app
+</pre>
+<p>
+The container name is <span id="what is docker .env file-matters needing attention-my-app_web_1"></span><strong id="my-app_web_1">my-app_web_1</strong>. And I start this container.
 </p>
 
-<div id="for a task"><h1 id="for a task" class="header"><a href="#for a task">for a task</a></h1></div>
 <p>
-If I work for a company, I have to use mail service and gitlab of the company. And more web services of the company. I add many bookmarks. One day if I leave the company. These bookmarks become dead links. Because I am not a employee of the company, I don't have permission to access these service. I need to remove these bookmarks from my bookmark manager.
+My co-worker has my code. Just change port from 8001 to 8000 and start service with <code>docker-compose up -d</code> command. What's happened? It will rebuild and start <span id="what is docker .env file-matters needing attention-my-app_web_1"></span><strong id="my-app_web_1">my-app_web_1</strong> container. The content of container is different. Now it instead of my co-worker's content.
 </p>
 
-<div id="Generated Tags"><h1 id="Generated Tags" class="header"><a href="#Generated Tags">Generated Tags</a></h1></div>
-<div id="Generated Tags-bookmark"><h2 id="bookmark" class="header"><a href="#Generated Tags-bookmark">bookmark</a></h2></div>
+<p>
+You can try a test. Change <span id="what is docker .env file-matters needing attention-hello world"></span><strong id="hello world">hello world</strong> to <span id="what is docker .env file-matters needing attention-hello world from co-worker"></span><strong id="hello world from co-worker">hello world from co-worker</strong> in app.py. Then use curl to connect these services.
+</p>
+<pre>
+$ curl 127.0.0.1:8000
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    46  100    46    0     0     46      0  0:00:01 --:--:--  0:00:01  2875Hello World! I have been seen 1 times aaaaaa.
+
+$ curl 127.0.0.1:8001
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    62  100    62    0     0     62      0  0:00:01 --:--:--  0:00:01 62000Fr                                                          om co-worker: Hello World! I have been seen 2 times aaaaaa.
+
+</pre>
+
 <ul>
 <li>
-<a href="Dead links.html">Dead links</a>
+The solution is change the port and container name.* Port cannot reallocated. It shows en error message if you do that. But container name not. Use <code>docker ps</code> command to check the container name is not used before you start a service.
 
 </ul>
 
-<div id="Generated Tags-browser"><h2 id="browser" class="header"><a href="#Generated Tags-browser">browser</a></h2></div>
+<div id="what is docker .env file-commands"><h2 id="commands" class="header"><a href="#what is docker .env file-commands">commands</a></h2></div>
+<pre>
+docker-compose down //stop and remove the containers.
+docker-compose up -d //build and start the containers in detach mode.
+docker-compose ps 
+</pre>
+
+<div id="what is docker .env file-the exmaple project files"><h2 id="the exmaple project files" class="header"><a href="#what is docker .env file-the exmaple project files">the exmaple project files</a></h2></div>
+<div id="what is docker .env file-the exmaple project files-directory"><h3 id="directory" class="header"><a href="#what is docker .env file-the exmaple project files-directory">directory</a></h3></div>
 <ul>
 <li>
-<a href="Dead links.html">Dead links</a>
+composetest/
 
-</ul>
-
-<div id="Generated Tags-chrome"><h2 id="chrome" class="header"><a href="#Generated Tags-chrome">chrome</a></h2></div>
 <ul>
 <li>
-<a href="Dead links.html">Dead links</a>
+.env
+
+<li>
+app.py
+
+<li>
+docker-compose.yml
+
+<li>
+Dockerfile
+
+<li>
+requirements.txt
 
 </ul>
-
-<div id="Generated Tags-links"><h2 id="links" class="header"><a href="#Generated Tags-links">links</a></h2></div>
-<ul>
-<li>
-<a href="Dead links.html">Dead links</a>
-
 </ul>
 
-<div id="Generated Tags-tag"><h2 id="tag" class="header"><a href="#Generated Tags-tag">tag</a></h2></div>
-<ul>
-<li>
-<a href="index.html#tst">index#tst</a>
+<div id="what is docker .env file-the exmaple project files-.env"><h3 id=".env" class="header"><a href="#what is docker .env file-the exmaple project files-.env">.env</a></h3></div>
+<pre class="yml">
+COMPOSE_PROJECT_NAME=my-app
+</pre>
 
-<li>
-<a href="test.html">test</a>
+<div id="what is docker .env file-the exmaple project files-app.py"><h3 id="app.py" class="header"><a href="#what is docker .env file-the exmaple project files-app.py">app.py</a></h3></div>
+<pre class="py">
+import time
 
-</ul>
+import redis
+from flask import Flask
 
-<div id="Generated Tags-this-is"><h2 id="this-is" class="header"><a href="#Generated Tags-this-is">this-is</a></h2></div>
-<ul>
-<li>
-<a href="index.html#tst">index#tst</a>
+app = Flask(__name__)
+cache = redis.Redis(host='redis', port=6379)
 
-<li>
-<a href="multi word.html">multi word</a>
+def get_hit_count():
+    retries = 5
+    while True:
+        try:
+            return cache.incr('hits')
+        except redis.exceptions.ConnectionError as exc:
+            if retries == 0:
+                raise exc
+            retries -= 1
+            time.sleep(0.5)
 
-</ul>
+@app.route('/')
+def hello():
+    count = get_hit_count()
+    return 'Hello World! I have been seen {} times aaaaaa.\n'.format(count)
+
+</pre>
+
+<div id="what is docker .env file-the exmaple project files-docker-compose.yml"><h3 id="docker-compose.yml" class="header"><a href="#what is docker .env file-the exmaple project files-docker-compose.yml">docker-compose.yml</a></h3></div>
+<pre class="yml">
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+    volumes:
+      - .:/code
+    networks:
+      - zhihau-net
+    environment:
+      FLASK_ENV: development
+  redis:
+    image: "redis:alpine"
+    networks:
+      - zhihau-net
+networks:
+    zhihau-net:
+        external: true
+</pre>
+<p>
+create network with command <code>docker network create -d bridge zhihau-net</code>
+</p>
+
+<div id="what is docker .env file-the exmaple project files-Dockerfile"><h3 id="Dockerfile" class="header"><a href="#what is docker .env file-the exmaple project files-Dockerfile">Dockerfile</a></h3></div>
+<pre>
+# syntax=docker/dockerfile:1
+FROM python:3.7-alpine
+WORKDIR /code
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+RUN apk add --no-cache gcc musl-dev linux-headers
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+EXPOSE 5000
+COPY . .
+CMD ["flask", "run"]
+</pre>
+
+<div id="what is docker .env file-the exmaple project files-requirements.txt"><h3 id="requirements.txt" class="header"><a href="#what is docker .env file-the exmaple project files-requirements.txt">requirements.txt</a></h3></div>
+<pre>
+flask
+redis
+</pre>
 
         </div>
         <div class="footer" style="padding:0 64 64 64">
@@ -184,7 +425,7 @@ If I work for a company, I have to use mail service and gitlab of the company. A
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/Dead links.html" 
+data-href="https://zhihau.github.io/What is docker dot env file.html" 
 data-layout="button_count">
 </div>
 	
