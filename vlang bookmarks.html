@@ -373,7 +373,8 @@ element.appendChild(code);
 if(document.location.href.endsWith("Tags.html")){
     net=document.createElement('div');
     net.setAttribute('id','mynetwork');
-    document.body.appendChild(net);
+ //   document.body.appendChild(net);
+    document.body.insertBefore(net, document.body.firstChild);
 }
 var container = document.getElementById("mynetwork");
 if(container!=null){
