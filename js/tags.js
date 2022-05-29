@@ -1,24 +1,24 @@
 // create an array with nodes
 var nodes = new vis.DataSet([
-{ id: 1, label: "T:ASP" }, shape: "circle", color: "pink"
+{ id: 1, label: "T:ASP" , shape: "circle", color: "pink"},
 { id: 2, label: "P:How to create ASP dot net MVC web application in Visual Studio 2019" },
-{ id: 3, label: "T:Autohotkey" }, shape: "circle", color: "pink"
+{ id: 3, label: "T:Autohotkey" , shape: "circle", color: "pink"},
 { id: 4, label: "P:print screen pastes into MS Paint" },
-{ id: 5, label: "T:Docker" }, shape: "circle", color: "pink"
+{ id: 5, label: "T:Docker" , shape: "circle", color: "pink"},
 { id: 6, label: "P:Docker Note" },
 { id: 7, label: "P:Run webapps with docker" },
-{ id: 8, label: "T:Git" }, shape: "circle", color: "pink"
+{ id: 8, label: "T:Git" , shape: "circle", color: "pink"},
 { id: 9, label: "P:How to solve a merge conflict" },
 { id: 10, label: "P:Keeping a fork update" },
 { id: 11, label: "P:Related Git eol" },
-{ id: 12, label: "T:JavaScript" }, shape: "circle", color: "pink"
+{ id: 12, label: "T:JavaScript" , shape: "circle", color: "pink"},
 { id: 13, label: "P:How to add copy button with highlight_js" },
 { id: 14, label: "P:How to use highlight_js with custom code" },
-{ id: 15, label: "T:Linux" }, shape: "circle", color: "pink"
+{ id: 15, label: "T:Linux" , shape: "circle", color: "pink"},
 { id: 16, label: "P:How to find files" },
 { id: 17, label: "P:How to install linux bash shell on Windows 10" },
 { id: 18, label: "P:Use grep command to find text in directories" },
-{ id: 19, label: "T:PHP" }, shape: "circle", color: "pink"
+{ id: 19, label: "T:PHP" , shape: "circle", color: "pink"},
 { id: 20, label: "P:How to change yiipowered function" },
 { id: 21, label: "P:How to use Yii1 with WAMP server" },
 { id: 22, label: "P:How to use Yii2 with WAMP server" },
@@ -26,12 +26,12 @@ var nodes = new vis.DataSet([
 { id: 24, label: "P:Yii_1_1 tutorial for beginners" },
 { id: 25, label: "P:php database crud class" },
 { id: 26, label: "P:php inheritance" },
-{ id: 27, label: "T:SearchEngines" }, shape: "circle", color: "pink"
+{ id: 27, label: "T:SearchEngines" , shape: "circle", color: "pink"},
 { id: 28, label: "P:How to install hadoop on Windows 10" },
 { id: 29, label: "P:How to use apache solr on Windows 10" },
-{ id: 30, label: "T:VBScript" }, shape: "circle", color: "pink"
+{ id: 30, label: "T:VBScript" , shape: "circle", color: "pink"},
 { id: 31, label: "P:Run external program in VBScript" },
-{ id: 32, label: "T:Windows" }, shape: "circle", color: "pink"
+{ id: 32, label: "T:Windows" , shape: "circle", color: "pink"},
 { id: 33, label: "P:Building your command line interface (CLR) tool with vlang" },
 { id: 34, label: "P:Find windows 10 startup folder" },
 { id: 35, label: "P:How to add a add remove programs shortcut on Windows desktop" },
@@ -41,68 +41,68 @@ var nodes = new vis.DataSet([
 { id: 39, label: "P:How to install linux bash shell on Windows 10" },
 { id: 40, label: "P:Multiple commands on one command line" },
 { id: 41, label: "P:Use explorer command to open a directory" },
-{ id: 42, label: "T:autocomplete" }, shape: "circle", color: "pink"
+{ id: 42, label: "T:autocomplete" , shape: "circle", color: "pink"},
 { id: 43, label: "P:Using autocomplete function in Vim" },
-{ id: 44, label: "T:bash" }, shape: "circle", color: "pink"
+{ id: 44, label: "T:bash" , shape: "circle", color: "pink"},
 { id: 45, label: "P:How to install linux bash shell on Windows 10" },
-{ id: 46, label: "T:bookmark" }, shape: "circle", color: "pink"
+{ id: 46, label: "T:bookmark" , shape: "circle", color: "pink"},
 { id: 47, label: "P:Dead links" },
-{ id: 48, label: "T:browser" }, shape: "circle", color: "pink"
+{ id: 48, label: "T:browser" , shape: "circle", color: "pink"},
 { id: 49, label: "P:Dead links" },
-{ id: 50, label: "T:chrome" }, shape: "circle", color: "pink"
+{ id: 50, label: "T:chrome" , shape: "circle", color: "pink"},
 { id: 51, label: "P:Dead links" },
-{ id: 52, label: "T:commandline" }, shape: "circle", color: "pink"
+{ id: 52, label: "T:commandline" , shape: "circle", color: "pink"},
 { id: 53, label: "P:Building your command line interface (CLR) tool with vlang" },
-{ id: 54, label: "T:development" }, shape: "circle", color: "pink"
+{ id: 54, label: "T:development" , shape: "circle", color: "pink"},
 { id: 55, label: "P:Building your command line interface (CLR) tool with vlang" },
 { id: 56, label: "P:Create math  quiz web application using vlang" },
-{ id: 57, label: "T:docker" }, shape: "circle", color: "pink"
+{ id: 57, label: "T:docker" , shape: "circle", color: "pink"},
 { id: 58, label: "P:How to install docker on Windows 10" },
 { id: 59, label: "P:How to let two services under the same network" },
 { id: 60, label: "P:What is docker dot env file" },
 { id: 61, label: "P:docker composer tutorial" },
 { id: 62, label: "P:the difference between Dockerfile and docker-compose" },
-{ id: 63, label: "T:editor" }, shape: "circle", color: "pink"
+{ id: 63, label: "T:editor" , shape: "circle", color: "pink"},
 { id: 64, label: "P:The easy way to run the vlang code in gvim" },
 { id: 65, label: "P:Using autocomplete function in Vim" },
-{ id: 66, label: "T:git" }, shape: "circle", color: "pink"
+{ id: 66, label: "T:git" , shape: "circle", color: "pink"},
 { id: 67, label: "P:How to push rename file in git" },
 { id: 68, label: "P:How to refer a specific line in github" },
 { id: 69, label: "P:How to set default git commit editor" },
-{ id: 70, label: "T:gnu" }, shape: "circle", color: "pink"
+{ id: 70, label: "T:gnu" , shape: "circle", color: "pink"},
 { id: 71, label: "P:Building your command line interface (CLR) tool with vlang" },
-{ id: 72, label: "T:google" }, shape: "circle", color: "pink"
+{ id: 72, label: "T:google" , shape: "circle", color: "pink"},
 { id: 73, label: "P:How to add google adsense to your web site" },
 { id: 74, label: "P:How to add google analytics to your web site" },
-{ id: 75, label: "T:help" }, shape: "circle", color: "pink"
+{ id: 75, label: "T:help" , shape: "circle", color: "pink"},
 { id: 76, label: "P:How to create a help chm file" },
 { id: 77, label: "P:program help" },
-{ id: 78, label: "T:html" }, shape: "circle", color: "pink"
+{ id: 78, label: "T:html" , shape: "circle", color: "pink"},
 { id: 79, label: "P:How to add google search box to a web page" },
-{ id: 80, label: "T:installation" }, shape: "circle", color: "pink"
+{ id: 80, label: "T:installation" , shape: "circle", color: "pink"},
 { id: 81, label: "P:How to install linux bash shell on Windows 10" },
-{ id: 82, label: "T:job" }, shape: "circle", color: "pink"
+{ id: 82, label: "T:job" , shape: "circle", color: "pink"},
 { id: 83, label: "P:How to print labor insurance transfer order" },
-{ id: 84, label: "T:jobs" }, shape: "circle", color: "pink"
+{ id: 84, label: "T:jobs" , shape: "circle", color: "pink"},
 { id: 85, label: "P:How to convert jpg to pdf file" },
 { id: 86, label: "P:How to convert merge many pdf files to one pdf file" },
 { id: 87, label: "P:How to open a digital account with mega bank" },
-{ id: 88, label: "T:links" }, shape: "circle", color: "pink"
+{ id: 88, label: "T:links" , shape: "circle", color: "pink"},
 { id: 89, label: "P:Dead links" },
-{ id: 90, label: "T:math" }, shape: "circle", color: "pink"
+{ id: 90, label: "T:math" , shape: "circle", color: "pink"},
 { id: 91, label: "P:Create math  quiz web application using vlang" },
-{ id: 92, label: "T:pdf" }, shape: "circle", color: "pink"
+{ id: 92, label: "T:pdf" , shape: "circle", color: "pink"},
 { id: 93, label: "P:How to convert jpg to pdf file" },
 { id: 94, label: "P:How to convert merge many pdf files to one pdf file" },
-{ id: 95, label: "T:plugin" }, shape: "circle", color: "pink"
+{ id: 95, label: "T:plugin" , shape: "circle", color: "pink"},
 { id: 96, label: "P:NERDTree tips" },
-{ id: 97, label: "T:programming" }, shape: "circle", color: "pink"
+{ id: 97, label: "T:programming" , shape: "circle", color: "pink"},
 { id: 98, label: "P:The easy way to run the vlang code in gvim" },
-{ id: 99, label: "T:project" }, shape: "circle", color: "pink"
+{ id: 99, label: "T:project" , shape: "circle", color: "pink"},
 { id: 100, label: "P:Projects page" },
 { id: 101, label: "P:markdown-editor" },
 { id: 102, label: "P:transparent-window" },
-{ id: 103, label: "T:python" }, shape: "circle", color: "pink"
+{ id: 103, label: "T:python" , shape: "circle", color: "pink"},
 { id: 104, label: "P:Compare file names with fuzzy string matching module" },
 { id: 105, label: "P:How to calculate program execution time" },
 { id: 106, label: "P:How to calculate the average of a file full of numbers." },
@@ -114,16 +114,16 @@ var nodes = new vis.DataSet([
 { id: 112, label: "P:print multiple variables in python" },
 { id: 113, label: "P:python open google chrome with URL" },
 { id: 114, label: "P:python substring" },
-{ id: 115, label: "T:querystring" }, shape: "circle", color: "pink"
+{ id: 115, label: "T:querystring" , shape: "circle", color: "pink"},
 { id: 116, label: "P:Create math  quiz web application using vlang" },
-{ id: 117, label: "T:readme" }, shape: "circle", color: "pink"
+{ id: 117, label: "T:readme" , shape: "circle", color: "pink"},
 { id: 118, label: "P:markdown-editor" },
 { id: 119, label: "P:transparent-window" },
-{ id: 120, label: "T:replace" }, shape: "circle", color: "pink"
+{ id: 120, label: "T:replace" , shape: "circle", color: "pink"},
 { id: 121, label: "P:Using autocomplete function in Vim" },
-{ id: 122, label: "T:search" }, shape: "circle", color: "pink"
+{ id: 122, label: "T:search" , shape: "circle", color: "pink"},
 { id: 123, label: "P:How to add google search box to a web page" },
-{ id: 124, label: "T:site" }, shape: "circle", color: "pink"
+{ id: 124, label: "T:site" , shape: "circle", color: "pink"},
 { id: 125, label: "P:About page" },
 { id: 126, label: "P:How to add a facebook share button to your web site" },
 { id: 127, label: "P:How to add a twitter button to your web site" },
@@ -133,14 +133,14 @@ var nodes = new vis.DataSet([
 { id: 131, label: "P:Projects page" },
 { id: 132, label: "P:Tags" },
 { id: 133, label: "P:site tool" },
-{ id: 134, label: "T:tag" }, shape: "circle", color: "pink"
+{ id: 134, label: "T:tag" , shape: "circle", color: "pink"},
 { id: 135, label: "P:bo" },
 { id: 136, label: "P:test" },
-{ id: 137, label: "T:this-is" }, shape: "circle", color: "pink"
+{ id: 137, label: "T:this-is" , shape: "circle", color: "pink"},
 { id: 138, label: "P:multi word" },
-{ id: 139, label: "T:tips" }, shape: "circle", color: "pink"
+{ id: 139, label: "T:tips" , shape: "circle", color: "pink"},
 { id: 140, label: "P:The easy way to run the vlang code in gvim" },
-{ id: 141, label: "T:vim" }, shape: "circle", color: "pink"
+{ id: 141, label: "T:vim" , shape: "circle", color: "pink"},
 { id: 142, label: "P:Add V syntax highlighting in vim" },
 { id: 143, label: "P:How to delete file in NERDTree" },
 { id: 144, label: "P:How to install a vim plugin" },
@@ -156,12 +156,12 @@ var nodes = new vis.DataSet([
 { id: 154, label: "P:vim tab to space 4" },
 { id: 155, label: "P:vim tips" },
 { id: 156, label: "P:vimwiki help (Chinese edition)" },
-{ id: 157, label: "T:vimwiki" }, shape: "circle", color: "pink"
+{ id: 157, label: "T:vimwiki" , shape: "circle", color: "pink"},
 { id: 158, label: "P:vimwiki FAQ" },
 { id: 159, label: "P:vimwiki help (Chinese edition)" },
-{ id: 160, label: "T:vimwki" }, shape: "circle", color: "pink"
+{ id: 160, label: "T:vimwki" , shape: "circle", color: "pink"},
 { id: 161, label: "P:How to use highlight_js with custom code" },
-{ id: 162, label: "T:vlang" }, shape: "circle", color: "pink"
+{ id: 162, label: "T:vlang" , shape: "circle", color: "pink"},
 { id: 163, label: "P:Add V syntax highlighting in vim" },
 { id: 164, label: "P:Building your command line interface (CLR) tool with vlang" },
 { id: 165, label: "P:Create math  quiz web application using vlang" },
@@ -170,7 +170,7 @@ var nodes = new vis.DataSet([
 { id: 168, label: "P:The easy way to run the vlang code in gvim" },
 { id: 169, label: "P:build a simple web blog with vlang" },
 { id: 170, label: "P:vlang bookmarks" },
-{ id: 171, label: "T:windows" }, shape: "circle", color: "pink"
+{ id: 171, label: "T:windows" , shape: "circle", color: "pink"},
 { id: 172, label: "P:Create math  quiz web application using vlang" },
 { id: 173, label: "P:Using autocomplete function in Vim" },
 ]);
