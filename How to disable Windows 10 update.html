@@ -377,8 +377,8 @@ element.appendChild(code);
 if(document.location.href.endsWith("Tags.html")){
     net=document.createElement('div');
     net.setAttribute('id','mynetwork');
- //   document.body.appendChild(net);
-    document.body.insertBefore(net, document.getElementById("Generated Tags"));
+    generatedTags=document.getElementsByClassName('content')[0].children[1]
+    document.body.insertBefore(net, generatedTags);
 }
 var container = document.getElementById("mynetwork");
 if(container!=null){
