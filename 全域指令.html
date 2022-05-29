@@ -27,7 +27,19 @@
 <link rel="stylesheet" href="/css/w3.css">
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <script src="/js/jquery.min.js"></script>
-        <title>ZhiHau Blog - 全域指令</title>
+<title>ZhiHau Blog - 全域指令</title>
+<!-- tags net graph -->
+<script src="/js/vis.min.js"></script>
+<script src="/js/tags.js"></script>
+<style>
+#mynetwork {
+  width: auto;
+  height: auto;
+  border: 1px solid lightgray;
+}
+
+</style>
+
 <style>
 /**
 * Highlight.js
@@ -348,6 +360,34 @@ element.appendChild(code);
 </div>
 
 </div> <!--end of container-->
+<!-- start of tag net graph -->
+<script>
+if(document.location.href.endsWith("Tags.html")){
+    net=document.createElement('div');
+    net.setAttribute('id','mynetwork');
+    document.body.appendChild(net);
+}
+var container = document.getElementById("mynetwork");
+if(container!=null){
+        var data = {
+          nodes: nodes,
+          edges: edges,
+        };
+        var options = {
+              layout:{
+              improvedLayout: false,
+            },
+            nodes: {
+              shapeProperties: {
+              interpolation: false    // 'true' for intensive zooming
+            }
+        }
+    };
+    var network = new vis.Network(container, data, options);
+}
+</script>
+<!-- end of tag net graph -->
 <script src="js/main.js"></script>
+
 </body>
 </html>

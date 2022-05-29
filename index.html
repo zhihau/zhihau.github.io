@@ -27,7 +27,19 @@
 <link rel="stylesheet" href="/css/w3.css">
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <script src="/js/jquery.min.js"></script>
-        <title>ZhiHau Blog - Programmer's Development Notes</title>
+<title>ZhiHau Blog - Programmer's Development Notes</title>
+<!-- tags net graph -->
+<script src="/js/vis.min.js"></script>
+<script src="/js/tags.js"></script>
+<style>
+#mynetwork {
+  width: auto;
+  height: auto;
+  border: 1px solid lightgray;
+}
+
+</style>
+
 <style>
 /**
 * Highlight.js
@@ -373,6 +385,9 @@ fjs.parentNode.insertBefore(js, fjs);
 <li>
 <a href="Open two files in vim split windows from the command line.html">Open two files in vim split windows from the command line</a>
 
+<li>
+<a href="How to create vimwiki tag page.html">How to create vimwiki tag page</a>
+
 </ul>
 
 <div id="Vlang"><h1 id="Vlang" class="header"><a href="#Vlang">Vlang</a></h1></div>
@@ -433,6 +448,9 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <div id="Other"><h1 id="Other" class="header"><a href="#Other">Other</a></h1></div>
 <ul>
+<li>
+<a href="Tags.html">Tags</a>
+
 <li>
 <a href="Dead links.html">Dead links</a>
 
@@ -670,6 +688,34 @@ element.appendChild(code);
 </div>
 
 </div> <!--end of container-->
+<!-- start of tag net graph -->
+<script>
+if(document.location.href.endsWith("Tags.html")){
+    net=document.createElement('div');
+    net.setAttribute('id','mynetwork');
+    document.body.appendChild(net);
+}
+var container = document.getElementById("mynetwork");
+if(container!=null){
+        var data = {
+          nodes: nodes,
+          edges: edges,
+        };
+        var options = {
+              layout:{
+              improvedLayout: false,
+            },
+            nodes: {
+              shapeProperties: {
+              interpolation: false    // 'true' for intensive zooming
+            }
+        }
+    };
+    var network = new vis.Network(container, data, options);
+}
+</script>
+<!-- end of tag net graph -->
 <script src="js/main.js"></script>
+
 </body>
 </html>
