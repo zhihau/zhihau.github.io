@@ -14,28 +14,29 @@
   gtag('config', 'G-S5M2V3KD75');
 </script>
 
-<link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
-<link rel="manifest" href="/icon/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+<link rel="manifest" href="icon/site.webmanifest">
 
-        <link rel="Stylesheet" type="text/css" href="/css/style.css" />
+        <link rel="Stylesheet" type="text/css" href="css/style.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="Author: zhihau shiu  ,
     Content: Programmer's development, Category: Blog, Notes">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/css/w3.css">
-<link rel="stylesheet" href="/css/font-awesome.min.css">
-<script src="/js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<script src="js/jquery.min.js"></script>
 <title>ZhiHau Blog - Docker Note</title>
 <!-- tags net graph -->
-<script src="/js/vis.min.js"></script>
-<script src="/js/tags.js"></script>
+<script src="js/vis.min.js"></script>
+<script src="js/tags.js"></script>
 <style>
 #mynetwork {
   width: auto;
-  height: auto;
+  height: 50vh;
   border: 1px solid lightgray;
+
 }
 
 </style>
@@ -83,13 +84,13 @@ fjs.parentNode.insertBefore(js, fjs);
 
 	<div class="w3-bar w3-white w3-border-bottom w3-large"> <!-- start of bar -->
 	  <a href="index.html" class="w3-bar-item w3-button   w3-black"style="font-size: small;
-    font-weight: bold;">ZhiHau Blog</a>
+    font-weight: bold;height:43px;padding-top:11px;">ZhiHau Blog</a>
 	  <div id="search-box">
                 <form action="https://www.google.com/cse" style="margin-bottom: 0px;"id="cse-search-box" target="_blank">
                   <input name="cx" type="hidden" value="1c23c9332d2a80819"/>
                   <input name="ie" type="hidden" value="UTF-8"/>
-                  <input name="q" id="search-box-input"class="w3-bar-item w3-input"type="text" value="" placeholder="search" maxlength="250"  style="font-size: small;width: calc(100% - 119px - 78px - 49px);"/>
-                  <input id = "submitButton"class="w3-bar-item w3-button w3-blue" name="sa" type="submit" value="Search" style="font-size: small;"/>
+                  <input name="q" id="search-box-input"class="w3-bar-item w3-input"type="text" value="" placeholder="search" maxlength="250"  style="font-size: small;width: calc(100% - 119px - 78px - 49px);height:43px;"/>
+                  <input id = "submitButton"class="w3-bar-item w3-button w3-blue" name="sa" type="submit" value="Search" style="font-size: small;height: 43px;"/>
                 </form>
       </div>
 	  <a href="#" id="search-button" class="w3-right w3-bar-item w3-button "><i class="fa fa-search"></i></a>
@@ -97,7 +98,7 @@ fjs.parentNode.insertBefore(js, fjs);
 	  <a href="Projects%20page.html" id="projects-button"class="w3-bar-item w3-button "title="Projects"><i class="fa fa-gear"></i></a>
 	  <a href="#" id="copy-link-button"class="w3-right w3-tooltip w3-bar-item w3-button " title="Copy link"><i class="fa fa-link"></i></a>
 	</div><!--end of bar-->
-        <div class="content w3-light-grey" style="padding: 48 64 16 64">
+        <div class="content w3-light-grey" style="padding: 48px 64px 16px 64px" name="top">
         
 <p>
 <span id="-Docker"></span><span class="tag" id="Docker">Docker</span>
@@ -191,12 +192,13 @@ How to leave swarm mode?
 $ <code>docker swarm leave --force</code>
 </p>
 
+        <a href="#top">Back to top of page</a>
         </div>
-        <div class="footer" style="padding:0 64 64 64">
+        <div class="footer" style="padding:0px 64px 64px 64px">
 
 		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
 	See you in the next story bye.</p>
-		<p><small>Page created on 2022-05-29</small></p>
+		<p><small>Page created on 2022-05-30</small></p>
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
@@ -205,7 +207,7 @@ data-layout="button_count">
 </div>
 	
         </div>
-<script src="/js/highlight.min.js"></script>
+<script src="js/highlight.min.js"></script>
 <script type="text/javascript">
     document.querySelectorAll('pre').forEach(block => hljs.highlightBlock(block));
 </script>
@@ -419,6 +421,25 @@ element.appendChild(code);
 </div> <!--end of container-->
 <!-- start of tag net graph -->
 <script>
+
+      function focusRandom() {
+        //updateValues();
+
+        var nodeId = 5;//Math.floor(Math.random() * amountOfNodes);
+        var options = {
+          // position: {x:positionx,y:positiony}, // this is not relevant when focusing on nodes
+          scale: 1.0,//scale,
+            offset: { x: 0,y:0},//offsetx, y: offsety },
+          animation: {
+            duration: 1000,//duration,
+            easingFunction: "easeInOutQuad",//easingFunction,
+          },
+        };
+        //statusUpdateSpan.innerText = "Focusing on node: " + nodeId;
+        //finishMessage = "Node: " + nodeId + " in focus.";
+        network.focus(nodeId, options);
+      }
+
 if(document.location.href.endsWith("Tags.html")){
     net=document.createElement('div');
     net.setAttribute('id','mynetwork');
@@ -426,7 +447,9 @@ if(document.location.href.endsWith("Tags.html")){
     generatedTags=content.children[1];
     content.insertBefore(net, generatedTags);
 }
+        //<input type="button" onclick="focusRandom();" value="Focus on random node."><br>
 var container = document.getElementById("mynetwork");
+var network=null;
 if(container!=null){
         var data = {
           nodes: nodes,
@@ -442,8 +465,15 @@ if(container!=null){
             }
         }
     };
-    var network = new vis.Network(container, data, options);
+    network = new vis.Network(container, data, options);
 }
+/*
+document.addEventListener("DOMContentLoaded", function(event) {
+if(network!=null)
+network.moveTo({scale: 1}); 
+    // Your code to run since DOM is loaded and ready
+});
+*/
 </script>
 <!-- end of tag net graph -->
 <script src="js/main.js"></script>

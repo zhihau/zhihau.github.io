@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <script src="js/jquery.min.js"></script>
-<title>ZhiHau Blog - How to update v</title>
+<title>ZhiHau Blog - Use visjs to create a network view</title>
 <!-- tags net graph -->
 <script src="js/vis.min.js"></script>
 <script src="js/tags.js"></script>
@@ -101,25 +101,179 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey" style="padding: 48px 64px 16px 64px" name="top">
         
 <p>
-<span id="-Vlang"></span><span class="tag" id="Vlang">Vlang</span>
+<span id="-JavaScript"></span><span class="tag" id="JavaScript">JavaScript</span> <span id="-Network"></span><span class="tag" id="Network">Network</span>
 </p>
 
-<div id="How to update v?"><h1 id="How to update v?" class="header"><a href="#How to update v?">How to update v?</a></h1></div>
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="Use visjs to create a network view.html#Use visjs to create a network view">Use visjs to create a network view</a>
+
+<ul>
+<li>
+<a href="Use visjs to create a network view.html#Use visjs to create a network view-example">example</a>
+
+<li>
+<a href="Use visjs to create a network view.html#Use visjs to create a network view-output">output</a>
+
+<li>
+<a href="Use visjs to create a network view.html#Use visjs to create a network view-load network base on URL">load network base on URL</a>
+
+</ul>
+</ul>
+
+<div id="Use visjs to create a network view"><h1 id="Use visjs to create a network view" class="header"><a href="#Use visjs to create a network view">Use visjs to create a network view</a></h1></div>
 <p>
-<span id="How to update v?-Method 1"></span><strong id="Method 1">Method 1</strong>
-<code>D:\Program Files\v_windows\v&gt;git pull origin master</code>
-<code>D:\Program Files\v_windows\v&gt;make.bat</code>
+You can create <a href="https://visjs.org/">visjs</a> to create a network view. This is a simple <a href="https://visjs.github.io/vis-network/examples/">example</a>.
+</p>
+<div id="Use visjs to create a network view-example"><h2 id="example" class="header"><a href="#Use visjs to create a network view-example">example</a></h2></div>
+<pre class="html">
+
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js" integrity="sha512-XHDcSyqhOoO2ocB7sKOCJEkUjw/pQCJViP1ynpy+EGh/LggzrP6U/V3a++LQTnZT7sCQKeHRyWHfhN2afjXjCg==" crossorigin="anonymous" referrerpolicy="no-referrer"&gt;&lt;/script&gt;
+&lt;style&gt;
+#mynetwork {
+  width: auto;
+  height: auto;
+  border: 1px solid lightgray;
+}
+
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;Create a simple network with some nodes and edges.&lt;/p&gt;
+
+&lt;div id="mynetwork"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+// create an array with nodes
+var nodes = new vis.DataSet([
+  { id: 1, label: "Node 1" },
+  { id: 2, label: "Node 2" },
+  { id: 3, label: "Node 3" },
+  { id: 4, label: "Node 4" },
+  { id: 5, label: "Node 5" },
+]);
+
+// create an array with edges
+var edges = new vis.DataSet([
+  { from: 1, to: 3 },
+  { from: 1, to: 2 },
+  { from: 2, to: 4 },
+  { from: 2, to: 5 },
+  { from: 3, to: 3 },
+]);
+
+// create a network
+var container = document.getElementById("mynetwork");
+var data = {
+  nodes: nodes,
+  edges: edges,
+};
+// options for loading speed up
+        var options = {
+              layout:{
+              improvedLayout: false,
+            },
+            nodes: {
+              shapeProperties: {
+              interpolation: false    // 'true' for intensive zooming
+            }
+        }
+var network = new vis.Network(container, data, options);
+
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<div id="Use visjs to create a network view-output"><h2 id="output" class="header"><a href="#Use visjs to create a network view-output">output</a></h2></div>
+<p>
+<img src="https://zhihau.github.io/img/visjs network view example.png" />
 </p>
 
+<div id="Use visjs to create a network view-load network base on URL"><h2 id="load network base on URL" class="header"><a href="#Use visjs to create a network view-load network base on URL">load network base on URL</a></h2></div>
 <p>
-<span id="How to update v?-Method 2"></span><strong id="Method 2">Method 2</strong>
-<code>v up</code>
+I'd like to add a tags page on my site. When I browse the tags html file, it will load the tags and pages network view. So I check the URL on the location bar. If URL end with <span id="Use visjs to create a network view-load network base on URL-Tags.html"></span><strong id="Tags.html">Tags.html</strong>, the page loads the network and data. Otherwise, the network code doesn't invoke. You can reference this code.
 </p>
+<pre class="html">
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js" integrity="sha512-XHDcSyqhOoO2ocB7sKOCJEkUjw/pQCJViP1ynpy+EGh/LggzrP6U/V3a++LQTnZT7sCQKeHRyWHfhN2afjXjCg==" crossorigin="anonymous" referrerpolicy="no-referrer"&gt;&lt;/script&gt;
+&lt;script src="./tags.js"&gt;&lt;/script&gt;
+&lt;style&gt;
+#mynetwork {
+  width: auto;
+  height: auto;
+  border: 1px solid lightgray;
+}
 
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;Create a simple network with some nodes and edges.&lt;/p&gt;
+
+&lt;!--&lt;div id="mynetwork"&gt;&lt;/div&gt;--&gt;
+
+    &lt;script&gt;
+
+let str = document.location.href;
+    if(str.endsWith("Tags.html")){
+    net=document.createElement('div');
+    net.setAttribute('id','mynetwork');
+    //add network before the generated tags div.
+    content=document.getElementsByClassName('content')[0];
+    generatedTags=content.children[1];
+    content.insertBefore(net, generatedTags);
+}
+var container = document.getElementById("mynetwork");
+    if(container!=null){
+    var data = {
+      nodes: nodes,
+      edges: edges,
+    };
+    var options = {
+    layout:{
+        improvedLayout: false,
+    },
+    nodes: {
+      shapeProperties: {
+        interpolation: false    // 'true' for intensive zooming
+      }
+    }
+    };
+    var network = new vis.Network(container, data, options);
+}
+
+
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
 <p>
-<span id="How to update v?-Method 3"></span><strong id="Method 3">Method 3</strong>
-<code>git clone &amp;&amp; make.bat</code>
+Because if nodes are large, so I use another js file to store them . For example, this is part of my tag node data.
 </p>
+<pre class="js">
+
+// create an array with nodes
+var nodes = new vis.DataSet([
+{ id: 1, label: "T:ASP" , shape: "circle", color: "pink"},
+{ id: 2, label: "P:How to create ASP dot net MVC web application in Visual Studio 2019" },
+{ id: 3, label: "T:Autohotkey" , shape: "circle", color: "pink"},
+{ id: 4, label: "P:print screen pastes into MS Paint" },
+{ id: 5, label: "T:Docker" , shape: "circle", color: "pink"},
+]);
+
+// create an array with edges
+var edges = new vis.DataSet([
+{ from: 1, to: 2 },
+{ from: 2, to: 1 },
+{ from: 3, to: 4 },
+{ from: 4, to: 3 },
+{ from: 5, to: 6 },
+]);
+</pre>
 
         <a href="#top">Back to top of page</a>
         </div>
@@ -131,7 +285,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/How to update v.html" 
+data-href="https://zhihau.github.io/Use visjs to create a network view.html" 
 data-layout="button_count">
 </div>
 	
