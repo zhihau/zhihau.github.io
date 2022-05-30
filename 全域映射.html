@@ -437,45 +437,30 @@ if(document.location.href.endsWith("Tags.html")){
 
     tagButtons =document.createElement('div');
     tagButtons.setAttribute('id','tag-buttons');
-for(var i=1;i<=nodes.length;i++){
-item=nodes._data[i];
-      if(item['label'].indexOf("T:")>-1){
-        tagBtn=document.createElement('input');
-        tagBtn.setAttribute('type','button');
-        tagBtn.setAttribute('onclick','focusNode("'+item['id']+'");');
-        tagBtn.setAttribute('value',item['label'].replace("T:",""));
-        tagButtons.appendChild(tagBtn);
-      }
-};
-    /*for (let key in nodes) {
-      //console.log(key, nodes[key]);
-      if(nodes[key]['label'].indexOf("T:")>-1){
-        tagBtn=document.createElement('input');
-        tagBtn.setAttribute('type','button');
-        tagBtn.setAttribute('onclick','focusNode("'+nodes[key]['id']+'");');
-        tagBtn.setAttribute('value',nodes[key]['label']);
-        tagButtons.appendChild(tagBtn);
-      }
-    }*/
+    tagButtons.setAttribute('class','w3-padding-24');
+    tagButtons.setAttribute('style','background-color: #bbb;');
+    for(var i=1;i<=nodes.length;i++){
+          item=nodes._data[i];
+          if(item['label'].indexOf("T:")>-1){
+            tagBtn=document.createElement('input');
+            tagBtn.setAttribute('type','button');
+            tagBtn.setAttribute('class','w3-black w3-margin-left w3-margin-bottom');
+            tagBtn.setAttribute('onclick','focusNode("'+item['id']+'");');
+            var tagName=item['label'].replace("T:","");
+            tagBtn.setAttribute('value',tagName);
+            tagButtons.appendChild(tagBtn);
+            item['label']=tagName;
+          }else{
+            item['label']=item['label'].replace("P:","");
+          }
+    };
+
     netContainer.appendChild(tagButtons);
 
     content=document.getElementsByClassName('content')[0];
     generatedTags=content.children[1];
     content.insertBefore(netContainer, generatedTags);
 }
-        //<input type="button" onclick="focusRandom();" value="Focus on random node."><br>
-/*let sum = 0;
-nodes._data.forEach(createTagButton);
-function createTagButton(item) {
-    if(item['label'].indexOf("T:")>-1){
-        tagBtn=document.createElement('input');
-        tagBtn.setAttribute('type','button');
-        tagBtn.setAttribute('onclick','focusNode(1);');
-        tagBtn.setAttribute('value','xxx');
-  sum += item;
-    }
-}
-*/
     
 var container = document.getElementById("mynetwork");
 var network=null;
