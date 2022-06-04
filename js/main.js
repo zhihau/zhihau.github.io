@@ -24,4 +24,48 @@ $(document).ready(function(){
 	  $(".fb-share-button>a").css("href",window.location.href);
 	  console.log("2:"+$(".fb-share-button>a").css("href"));
   });*/
+function setCodeSyntaxColor(){
+    elements=document.querySelectorAll('code:not(.hljs)');
+    if(elements.length==0) return;
+    for(var i=0;i<elements.length;i++){
+        var code=elements[i].innerText;
+        code=code.replace(/ +/g,' ');//replace multiple space to one
+        parts=(code.indexOf(" ")>-1)?code.split (" "):[code];
+        parts[0]='<span style="color:lime;font-weight:bolder">'+parts[0]+'</span>';
+        var code_color=[
+    "#FF355E",
+    "#FF00CC",
+    "#EE34D2",
+    "#FF6EFF",
+    "#FF9933",
+    "#FFCC33",
+    "#FFFF66",
+    "#FFFF66",
+    "#CCFF00",
+    "#66FF66",
+    "#AAF0D1",
+    "#50BFE6",
+    "#FF9966",
+    "#FF6037",
+    "#FD5B78",
+    "#FF00CC"
+        ];
+        for(var j=1;j<parts.length;j++){
+            var code_color_index=j-1;
+            if(code_color_index>=code_color.length){
+                console.log("xxx");
+                code_color_index=j-(code_color.length+1);
+            }
+            console.log(j);
+            console.log(parts[j]);
+            console.log(code_color_index);
+            parts[j]='<span style="color:'+((code_color[code_color_index]==undefined)?code_color[code_color.length-1]:code_color[code_color_index])+';">'+parts[j]+'</span>';
+        }
+        elements[i].innerHTML=parts.join(" ");
+        elements[i].setAttribute("style","background:black;padding-right: 8px;padding-left: 8px;border-radius: 10px;");
+
+    }
+    return;
+}
+setCodeSyntaxColor();
 });

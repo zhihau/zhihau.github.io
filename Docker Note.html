@@ -114,6 +114,9 @@ fjs.parentNode.insertBefore(js, fjs);
 <a href="Docker Note.html#Docker Note-docker container status is restarting">docker container status is restarting</a>
 
 <li>
+<a href="Docker Note.html#Docker Note-stop all containers">stop all containers</a>
+
+<li>
 <a href="Docker Note.html#Docker Note-Other commands">Other commands</a>
 
 <li>
@@ -141,6 +144,16 @@ link_motc_2020_www_nginx    nginx -g daemon off;            Restarting
 <p>
 Use command <code>$ docker logs --tail 50 --follow --timestamps link_motc_2020_www_nginx</code> to view log.
 </p>
+
+<div id="Docker Note-stop all containers"><h2 id="stop all containers" class="header"><a href="#Docker Note-stop all containers">stop all containers</a></h2></div>
+<ul>
+<li>
+<code>docker kill $(docker ps -q)</code>
+
+<li>
+reference <a href="https://typeofnan.dev/how-to-stop-all-docker-containers/">https://typeofnan.dev/how-to-stop-all-docker-containers/</a>
+
+</ul>
 
 <div id="Docker Note-Other commands"><h2 id="Other commands" class="header"><a href="#Docker Note-Other commands">Other commands</a></h2></div>
 <ul>
@@ -198,7 +211,7 @@ $ <code>docker swarm leave --force</code>
 
 		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
 	See you in the next story bye.</p>
-		<p><small>Page created on 2022-05-30</small></p>
+		<p><small>Page created on 2022-06-04</small></p>
 
 <!-- Your share button code -->
 <div class="fb-share-button" 

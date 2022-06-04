@@ -111,44 +111,44 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <ul>
 <li>
-<a href="What is docker dot env file.html#what is docker .env file-skip port is already allocated error message">skip port is already allocated error message</a>
+<a href="What is docker dot env file.html#what is docker .env file-Fix port is already allocated error message">Fix port is already allocated error message</a>
 
 <li>
-<a href="What is docker dot env file.html#what is docker .env file-case. if I have a .env file then delete it.">case. if I have a .env file then delete it.</a>
+<a href="What is docker dot env file.html#what is docker .env file-Case. if I have a .env file then delete it.">Case. if I have a .env file then delete it.</a>
 
 <li>
-<a href="What is docker dot env file.html#what is docker .env file-update container">update container</a>
+<a href="What is docker dot env file.html#what is docker .env file-Update container">Update container</a>
 
 <li>
-[[#what is docker .env file#the difference between <code>docker-compose ps</code> and <code>docker ps</code>|the difference between <code>docker-compose ps</code> and <code>docker ps</code>]]
+<a href="What is docker dot env file.html#what is docker .env file-The difference between *docker-compose ps* and *docker ps*">The difference between *docker-compose ps* and *docker ps*</a>
 
 <li>
-<a href="What is docker dot env file.html#what is docker .env file-matters needing attention">matters needing attention</a>
+<a href="What is docker dot env file.html#what is docker .env file-Matters needing attention">Matters needing attention</a>
 
 <li>
-<a href="What is docker dot env file.html#what is docker .env file-commands">commands</a>
+<a href="What is docker dot env file.html#what is docker .env file-Commands">Commands</a>
 
 <li>
-<a href="What is docker dot env file.html#what is docker .env file-the exmaple project files">the exmaple project files</a>
+<a href="What is docker dot env file.html#what is docker .env file-The exmaple project files">The exmaple project files</a>
 
 <ul>
 <li>
-<a href="What is docker dot env file.html#what is docker .env file-the exmaple project files-directory">directory</a>
+<a href="What is docker dot env file.html#what is docker .env file-The exmaple project files-Directory">Directory</a>
 
 <li>
-<a href="What is docker dot env file.html#what is docker .env file-the exmaple project files-.env">.env</a>
+<a href="What is docker dot env file.html#what is docker .env file-The exmaple project files-.env">.env</a>
 
 <li>
-<a href="What is docker dot env file.html#what is docker .env file-the exmaple project files-app.py">app.py</a>
+<a href="What is docker dot env file.html#what is docker .env file-The exmaple project files-app.py">app.py</a>
 
 <li>
-<a href="What is docker dot env file.html#what is docker .env file-the exmaple project files-docker-compose.yml">docker-compose.yml</a>
+<a href="What is docker dot env file.html#what is docker .env file-The exmaple project files-Docker-compose.yml">Docker-compose.yml</a>
 
 <li>
-<a href="What is docker dot env file.html#what is docker .env file-the exmaple project files-Dockerfile">Dockerfile</a>
+<a href="What is docker dot env file.html#what is docker .env file-The exmaple project files-Dockerfile">Dockerfile</a>
 
 <li>
-<a href="What is docker dot env file.html#what is docker .env file-the exmaple project files-requirements.txt">requirements.txt</a>
+<a href="What is docker dot env file.html#what is docker .env file-The exmaple project files-requirements.txt">requirements.txt</a>
 
 </ul>
 </ul>
@@ -178,10 +178,10 @@ ERROR: for my-app_web_1  Cannot start service web: driver failed programming ext
 You can allocate another port in docker-compose.yml file to skip this message. Or kill the service which uses port 8000.
 </p>
  
-<div id="what is docker .env file-skip port is already allocated error message"><h2 id="skip port is already allocated error message" class="header"><a href="#what is docker .env file-skip port is already allocated error message">skip port is already allocated error message</a></h2></div>
+<div id="what is docker .env file-Fix port is already allocated error message"><h2 id="Fix port is already allocated error message" class="header"><a href="#what is docker .env file-Fix port is already allocated error message">Fix port is already allocated error message</a></h2></div>
 <ul>
 <li>
-Change the <span id="what is docker .env file-skip port is already allocated error message-web"></span><strong id="web">web</strong> service port from 8000 to 8001 in docker-compose.yml file.
+Change the <span id="what is docker .env file-Fix port is already allocated error message-web"></span><strong id="web">web</strong> service port from 8000 to 8001 in docker-compose.yml file.
 
 <li>
 run <code>docker-compose up -d </code> command
@@ -196,10 +196,10 @@ Recreating my-app_web_1 ... done
 So we can assign different ports to start many containers with <code>docker-compose up -d</code> command.
 </p>
 
-<div id="what is docker .env file-case. if I have a .env file then delete it."><h2 id="case. if I have a .env file then delete it." class="header"><a href="#what is docker .env file-case. if I have a .env file then delete it.">case. if I have a .env file then delete it.</a></h2></div>
+<div id="what is docker .env file-Case. if I have a .env file then delete it."><h2 id="Case. if I have a .env file then delete it." class="header"><a href="#what is docker .env file-Case. if I have a .env file then delete it.">Case. if I have a .env file then delete it.</a></h2></div>
 <ul>
 <li>
-I start a <span id="what is docker .env file-case. if I have a .env file then delete it.-web"></span><strong id="web">web</strong> service with no .env file. It will run a container and port 8000. The container name is main_web_1. Because my project folder is <span id="what is docker .env file-case. if I have a .env file then delete it.-main"></span><strong id="main">main</strong>.
+I start a <span id="what is docker .env file-Case. if I have a .env file then delete it.-web"></span><strong id="web">web</strong> service with no .env file. It will run a container and port 8000. The container name is main_web_1. Because my project folder is <span id="what is docker .env file-Case. if I have a .env file then delete it.-main"></span><strong id="main">main</strong>.
 
 <li>
 Next, I creae a .env file. The content of file is:
@@ -227,30 +227,30 @@ What's the action when I run <code>docker-compose up -d </code> command?
 
 <ul>
 <li>
-It stop the main_web_1 service. Because I only know my container name is &lt;project-folder-name&gt;_&lt;web-service&gt;_1. I don't have a .env file under the directory. So I don't know the variable <span id="what is docker .env file-case. if I have a .env file then delete it.-COMPOSE_PROJECT_NAME"></span><strong id="COMPOSE_PROJECT_NAME">COMPOSE_PROJECT_NAME</strong> defined something. 
+It stop the main_web_1 service. Because I only know my container name is &lt;project-folder-name&gt;_&lt;web-service&gt;_1. I don't have a .env file under the directory. So I don't know the variable <span id="what is docker .env file-Case. if I have a .env file then delete it.-COMPOSE_PROJECT_NAME"></span><strong id="COMPOSE_PROJECT_NAME">COMPOSE_PROJECT_NAME</strong> defined something. 
 
 <li>
 And start the main_web_1 service. This port I changed before for the my-app_web_1 service. The container is running so I cannot use the port.
 
 </ul>
 <li>
-The solution is stop and remove <span id="what is docker .env file-case. if I have a .env file then delete it.-my-app_web_1"></span><strong id="my-app_web_1">my-app_web_1</strong> container via <code>docker rm-f my-app_web_1</code> command.
+The solution is stop and remove <span id="what is docker .env file-Case. if I have a .env file then delete it.-my-app_web_1"></span><strong id="my-app_web_1">my-app_web_1</strong> container via <code>docker rm-f my-app_web_1</code> command.
 
 <li>
-Now, I can run <code>docker-compose up -d</code> to start the service. The container name is <span id="what is docker .env file-case. if I have a .env file then delete it.-main_web_1"></span><strong id="main_web_1">main_web_1</strong> with port 8001.
+Now, I can run <code>docker-compose up -d</code> to start the service. The container name is <span id="what is docker .env file-Case. if I have a .env file then delete it.-main_web_1"></span><strong id="main_web_1">main_web_1</strong> with port 8001.
 
 </ul>
 
-<div id="what is docker .env file-update container"><h2 id="update container" class="header"><a href="#what is docker .env file-update container">update container</a></h2></div>
+<div id="what is docker .env file-Update container"><h2 id="Update container" class="header"><a href="#what is docker .env file-Update container">Update container</a></h2></div>
 <p>
-You can execute <code>docker-compose up -d</code> many times. It will bulid and run the container. If your image not changed, you will a <span id="what is docker .env file-update container-up-to-date"></span><strong id="up-to-date">up-to-date</strong> message.
+You can execute <code>docker-compose up -d</code> many times. It will bulid and run the container. If your image not changed, you will a <span id="what is docker .env file-Update container-up-to-date"></span><strong id="up-to-date">up-to-date</strong> message.
 </p>
 <pre>
 $ docker-compose up -d
 my-app_web_1 is up-to-date
 </pre>
 
-<div id="what is docker .env file-the difference between `docker-compose ps` and `docker ps`"><h2 id="the difference between `docker-compose ps` and `docker ps`" class="header"><a href="#what is docker .env file-the difference between `docker-compose ps` and `docker ps`">the difference between <code>docker-compose ps</code> and <code>docker ps</code></a></h2></div>
+<div id="what is docker .env file-The difference between *docker-compose ps* and *docker ps*"><h2 id="The difference between *docker-compose ps* and *docker ps*" class="header"><a href="#what is docker .env file-The difference between *docker-compose ps* and *docker ps*">The difference between <span id="what is docker .env file-The difference between *docker-compose ps* and *docker ps*-docker-compose ps"></span><strong id="docker-compose ps">docker-compose ps</strong> and <span id="what is docker .env file-The difference between *docker-compose ps* and *docker ps*-docker ps"></span><strong id="docker ps">docker ps</strong></a></h2></div>
 <ul>
 <li>
 <code>docker-compose ps</code> lists the containers related to iamges.
@@ -280,24 +280,24 @@ composetest_web_1     flask run                        Up      0.0.0.0:8001-&gt;
 
 </ul>
 
-<div id="what is docker .env file-matters needing attention"><h2 id="matters needing attention" class="header"><a href="#what is docker .env file-matters needing attention">matters needing attention</a></h2></div>
+<div id="what is docker .env file-Matters needing attention"><h2 id="Matters needing attention" class="header"><a href="#what is docker .env file-Matters needing attention">Matters needing attention</a></h2></div>
 <p>
-If I'd like to share my code to my co-worker. My code define a <span id="what is docker .env file-matters needing attention-web"></span><strong id="web">web</strong> service with port 8001. My .env file is:
+If I'd like to share my code to my co-worker. My code define a <span id="what is docker .env file-Matters needing attention-web"></span><strong id="web">web</strong> service with port 8001. My .env file is:
 </p>
 <pre>
 class="yml"
 COMPOSE_PROJECT_NAME=my-app
 </pre>
 <p>
-The container name is <span id="what is docker .env file-matters needing attention-my-app_web_1"></span><strong id="my-app_web_1">my-app_web_1</strong>. And I start this container.
+The container name is <span id="what is docker .env file-Matters needing attention-my-app_web_1"></span><strong id="my-app_web_1">my-app_web_1</strong>. And I start this container.
 </p>
 
 <p>
-My co-worker has my code. Just change port from 8001 to 8000 and start service with <code>docker-compose up -d</code> command. What's happened? It will rebuild and start <span id="what is docker .env file-matters needing attention-my-app_web_1"></span><strong id="my-app_web_1">my-app_web_1</strong> container. The content of container is different. Now it instead of my co-worker's content.
+My co-worker has my code. Just change port from 8001 to 8000 and start service with <code>docker-compose up -d</code> command. What's happened? It will rebuild and start <span id="what is docker .env file-Matters needing attention-my-app_web_1"></span><strong id="my-app_web_1">my-app_web_1</strong> container. The content of container is different. Now it instead of my co-worker's content.
 </p>
 
 <p>
-You can try a test. Change <span id="what is docker .env file-matters needing attention-hello world"></span><strong id="hello world">hello world</strong> to <span id="what is docker .env file-matters needing attention-hello world from co-worker"></span><strong id="hello world from co-worker">hello world from co-worker</strong> in app.py. Then use curl to connect these services.
+You can try a test. Change <span id="what is docker .env file-Matters needing attention-hello world"></span><strong id="hello world">hello world</strong> to <span id="what is docker .env file-Matters needing attention-hello world from co-worker"></span><strong id="hello world from co-worker">hello world from co-worker</strong> in app.py. Then use curl to connect these services.
 </p>
 <pre>
 $ curl 127.0.0.1:8000
@@ -318,15 +318,15 @@ The solution is change the port and container name.* Port cannot reallocated. It
 
 </ul>
 
-<div id="what is docker .env file-commands"><h2 id="commands" class="header"><a href="#what is docker .env file-commands">commands</a></h2></div>
+<div id="what is docker .env file-Commands"><h2 id="Commands" class="header"><a href="#what is docker .env file-Commands">Commands</a></h2></div>
 <pre>
 docker-compose down //stop and remove the containers.
 docker-compose up -d //build and start the containers in detach mode.
 docker-compose ps 
 </pre>
 
-<div id="what is docker .env file-the exmaple project files"><h2 id="the exmaple project files" class="header"><a href="#what is docker .env file-the exmaple project files">the exmaple project files</a></h2></div>
-<div id="what is docker .env file-the exmaple project files-directory"><h3 id="directory" class="header"><a href="#what is docker .env file-the exmaple project files-directory">directory</a></h3></div>
+<div id="what is docker .env file-The exmaple project files"><h2 id="The exmaple project files" class="header"><a href="#what is docker .env file-The exmaple project files">The exmaple project files</a></h2></div>
+<div id="what is docker .env file-The exmaple project files-Directory"><h3 id="Directory" class="header"><a href="#what is docker .env file-The exmaple project files-Directory">Directory</a></h3></div>
 <ul>
 <li>
 composetest/
@@ -350,12 +350,12 @@ requirements.txt
 </ul>
 </ul>
 
-<div id="what is docker .env file-the exmaple project files-.env"><h3 id=".env" class="header"><a href="#what is docker .env file-the exmaple project files-.env">.env</a></h3></div>
+<div id="what is docker .env file-The exmaple project files-.env"><h3 id=".env" class="header"><a href="#what is docker .env file-The exmaple project files-.env">.env</a></h3></div>
 <pre class="yml">
 COMPOSE_PROJECT_NAME=my-app
 </pre>
 
-<div id="what is docker .env file-the exmaple project files-app.py"><h3 id="app.py" class="header"><a href="#what is docker .env file-the exmaple project files-app.py">app.py</a></h3></div>
+<div id="what is docker .env file-The exmaple project files-app.py"><h3 id="app.py" class="header"><a href="#what is docker .env file-The exmaple project files-app.py">app.py</a></h3></div>
 <pre class="py">
 import time
 
@@ -383,7 +383,7 @@ def hello():
 
 </pre>
 
-<div id="what is docker .env file-the exmaple project files-docker-compose.yml"><h3 id="docker-compose.yml" class="header"><a href="#what is docker .env file-the exmaple project files-docker-compose.yml">docker-compose.yml</a></h3></div>
+<div id="what is docker .env file-The exmaple project files-Docker-compose.yml"><h3 id="Docker-compose.yml" class="header"><a href="#what is docker .env file-The exmaple project files-Docker-compose.yml">Docker-compose.yml</a></h3></div>
 <pre class="yml">
 version: "3.9"
 services:
@@ -409,7 +409,7 @@ networks:
 create network with command <code>docker network create -d bridge zhihau-net</code>
 </p>
 
-<div id="what is docker .env file-the exmaple project files-Dockerfile"><h3 id="Dockerfile" class="header"><a href="#what is docker .env file-the exmaple project files-Dockerfile">Dockerfile</a></h3></div>
+<div id="what is docker .env file-The exmaple project files-Dockerfile"><h3 id="Dockerfile" class="header"><a href="#what is docker .env file-The exmaple project files-Dockerfile">Dockerfile</a></h3></div>
 <pre>
 # syntax=docker/dockerfile:1
 FROM python:3.7-alpine
@@ -424,7 +424,7 @@ COPY . .
 CMD ["flask", "run"]
 </pre>
 
-<div id="what is docker .env file-the exmaple project files-requirements.txt"><h3 id="requirements.txt" class="header"><a href="#what is docker .env file-the exmaple project files-requirements.txt">requirements.txt</a></h3></div>
+<div id="what is docker .env file-The exmaple project files-requirements.txt"><h3 id="requirements.txt" class="header"><a href="#what is docker .env file-The exmaple project files-requirements.txt">requirements.txt</a></h3></div>
 <pre>
 flask
 redis
@@ -436,7 +436,7 @@ redis
 
 		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
 	See you in the next story bye.</p>
-		<p><small>Page created on 2022-05-30</small></p>
+		<p><small>Page created on 2022-06-04</small></p>
 
 <!-- Your share button code -->
 <div class="fb-share-button" 

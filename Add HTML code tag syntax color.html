@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <script src="js/jquery.min.js"></script>
-<title>ZhiHau Blog - How to add google search box to a web page</title>
+<title>ZhiHau Blog - Add HTML code tag syntax color</title>
 <!-- tags net graph -->
 <script src="js/vis.min.js"></script>
 <script src="js/tags.js"></script>
@@ -101,22 +101,78 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey" style="padding: 48px 64px 16px 64px" name="top">
         
 <p>
-<span id="-Search"></span><span class="tag" id="Search">Search</span> <span id="-HTML"></span><span class="tag" id="HTML">HTML</span>
+<span id="-JavaScript"></span><span class="tag" id="JavaScript">JavaScript</span>
 </p>
 
-<div id="How to add [[https://en.wikipedia.org/wiki/Google|google]] search box to a web page?"><h1 id="How to add [[https://en.wikipedia.org/wiki/Google|google]] search box to a web page?" class="header"><a href="#How to add [[https://en.wikipedia.org/wiki/Google|google]] search box to a web page?">How to add <a href="https://en.wikipedia.org/wiki/Google">google</a> search box to a web page?</a></h1></div>
-<p>
-Press <span id="How to add [[https://en.wikipedia.org/wiki/Google|google]] search box to a web page?-Enter"></span><strong id="Enter">Enter</strong> key to perform a search or type text and click the search button. It will go directly to <a href="https://en.wikipedia.org/wiki/Google">google</a> site.
-</p>
-<pre class="html">
-&lt;div id="search"&gt;
-	&lt;form name="searchForm" action="http://google.com/search"&gt;
-	  &lt;input name="query" type="text" value="" placeholder="search" maxlength="250" /&gt;
-	  &lt;input name="query" type="hidden" value="site:url"/&gt;
-	  &lt;input id = "submitButton" name="submit" type="submit" value="Search" /&gt;
-	&lt;/form&gt;
-&lt;/div&gt;
+<div id="Add HTML code tag syntax color"><h1 id="Add HTML code tag syntax color" class="header"><a href="#Add HTML code tag syntax color">Add HTML code tag syntax color</a></h1></div>
+<ul>
+<li>
+Reference <a href="https://www.w3schools.com/colors/colors_crayola.asp">Fluorescent Colors</a>
+<pre class="js">
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;The code element&lt;/h1&gt;
+&lt;!--
+&lt;p&gt;The HTML &lt;code&gt;button&lt;/code&gt; tag defines a clickable button.&lt;/p&gt;
+
+--&gt;
+&lt;p&gt;The CSS &lt;code class="hljs"&gt;background color&lt;/code&gt; property defines the background color of an element.&lt;/p&gt;
+&lt;p&gt;The CSS &lt;code&gt;background color property defines&lt;/code&gt;the background color of an element.&lt;/p&gt;
+    &lt;script&gt;
+elements=document.querySelectorAll('code:not(.hljs)');
+console.log(elements);
+//elements=document.getElementsByTagName("code");
+ //   if(elements.length==0) return;
+console.log(elements.length);
+for(var i=0;i&lt;elements.length;i++){
+    var code=elements[i].innerText;
+    code=code.replace(/ +/g,' ');//replace multiple space to one
+    parts=(code.indexOf(" ")&gt;-1)?code.split (" "):[code];
+    parts[0]='&lt;span style="color:lime;font-weight:bolder"&gt;'+parts[0]+'&lt;/span&gt;';
+    var code_color=[
+"#FF355E",
+"#FF00CC",
+"#EE34D2",
+"#FF6EFF",
+"#FF9933",
+"#FFCC33",
+"#FFFF66",
+"#FFFF66",
+"#CCFF00",
+"#66FF66",
+"#AAF0D1",
+"#50BFE6",
+"#FF9966",
+"#FF6037",
+"#FD5B78",
+"#FF00CC"
+    ];
+    for(var j=1;j&lt;parts.length;j++){
+        var code_color_index=j-1;
+        if(code_color_index&gt;=code_color.length){
+            console.log("xxx");
+            code_color_index=j-(code_color.length+1);
+        }
+        console.log(j);
+        console.log(parts[j]);
+        console.log(code_color_index);
+        parts[j]='&lt;span style="color:'+((code_color[code_color_index]==undefined)?code_color[code_color.length-1]:code_color[code_color_index])+';"&gt;'+parts[j]+'&lt;/span&gt;';
+    }
+    elements[i].innerHTML=parts.join(" ");
+    elements[i].setAttribute("style","background:black;padding-right: 8px;padding-left: 8px;border-radius: 10px;");
+
+}
+console.log(parts.join(" "));
+document.getElementById("result").innerText=parts.join(" ");
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </pre>
+
+</ul>
 
         <a href="#top">Back to top of page</a>
         </div>
@@ -128,7 +184,7 @@ Press <span id="How to add [[https://en.wikipedia.org/wiki/Google|google]] searc
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/How to add google search box to a web page.html" 
+data-href="https://zhihau.github.io/Add HTML code tag syntax color.html" 
 data-layout="button_count">
 </div>
 	

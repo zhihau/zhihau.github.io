@@ -101,7 +101,7 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey" style="padding: 48px 64px 16px 64px" name="top">
         
 <p>
-<span id="-Linux"></span><span class="tag" id="Linux">Linux</span>
+<span id="-Linux"></span><span class="tag" id="Linux">Linux</span> <span id="-Search"></span><span class="tag" id="Search">Search</span>
 </p>
 
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
@@ -115,32 +115,108 @@ fjs.parentNode.insertBefore(js, fjs);
 </ul>
 
 <div id="Use grep command to find text in directories"><h1 id="Use grep command to find text in directories" class="header"><a href="#Use grep command to find text in directories">Use grep command to find text in directories</a></h1></div>
-<ul>
-<li>
+<table>
+<tr>
+<th>
+Command
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
 <code>grep -rl "text" /path</code>
-
-<li>
+</td>
+<td>
+Find text in files under directory <span id="Use grep command to find text in directories-/path"></span><strong id="/path">/path</strong>. Print  file names.
+</td>
+</tr>
+<tr>
+<td>
 <code>grep -rnH "text" /path</code>
+</td>
+<td>
+Find text in files under directory <span id="Use grep command to find text in directories-/path"></span><strong id="/path">/path</strong>. Print number lines and file names.
+</td>
+</tr>
+</table>
 
-<li>
--r option: recursive
+<table>
+<tr>
+<th>
+Option
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
+<code>-r</code>
+</td>
+<td>
+recursive
+</td>
+</tr>
+<tr>
+<td>
+<code>-l</code>
+</td>
+<td>
+(L)don't print matching lines for improving the speed.
+</td>
+</tr>
+<tr>
+<td>
+<code>-i</code>
+</td>
+<td>
+ignore case
+</td>
+</tr>
+<tr>
+<td>
+<code>-I</code>
+</td>
+<td>
+(I)ignore binary files
+</td>
+</tr>
+<tr>
+<td>
+<code>-n</code>
+</td>
+<td>
+print line number
+</td>
+</tr>
+<tr>
+<td>
+<code>-H</code>
+</td>
+<td>
+print file names
+</td>
+</tr>
+<tr>
+<td>
+<code>-r</code>
+</td>
+<td>
+recursive
+</td>
+</tr>
+<tr>
+<td>
+<code>-r</code>
+</td>
+<td>
+recursive
+</td>
+</tr>
+</table>
 
-<li>
--l option: don't print matching lines for improving the speed.
-
-<li>
--i option: ignore case
-
-<li>
--I option: ignore binary files
-
-<li>
--n option: print line number
-
-<li>
--H option: print file names
-
-</ul>
 <div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
 <p>
 <a href="https://askubuntu.com/questions/55325/how-to-use-grep-command-to-find-text-including-subdirectories">How to grep</a>
@@ -152,7 +228,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
 		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
 	See you in the next story bye.</p>
-		<p><small>Page created on 2022-05-30</small></p>
+		<p><small>Page created on 2022-06-04</small></p>
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
