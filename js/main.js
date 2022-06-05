@@ -24,6 +24,13 @@ $(document).ready(function(){
 	  $(".fb-share-button>a").css("href",window.location.href);
 	  console.log("2:"+$(".fb-share-button>a").css("href"));
   });*/
+function beautyTable(){
+    elements=document.querySelectorAll('table');
+    for(var i=0;i<elements.length;i++){
+elements[i].setAttribute("class","w3-table-all w3-hoverable");
+    }
+} 
+beautyTable();
 function setCodeSyntaxColor(){
     elements=document.querySelectorAll('code:not(.hljs)');
     if(elements.length==0) return;

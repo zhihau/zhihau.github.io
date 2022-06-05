@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <script src="js/jquery.min.js"></script>
-<title>ZhiHau Blog - NERDTree tips</title>
+<title>ZhiHau Blog - Vue tutorial</title>
 <!-- tags net graph -->
 <script src="js/vis.min.js"></script>
 <script src="js/tags.js"></script>
@@ -101,98 +101,231 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey" style="padding: 48px 64px 16px 64px" name="top">
         
 <p>
-<span id="-Vim"></span><span class="tag" id="Vim">Vim</span> <span id="-Plugin"></span><span class="tag" id="Plugin">Plugin</span> <span id="-Bookmark"></span><span class="tag" id="Bookmark">Bookmark</span>
+<span id="-JavaScript"></span><span class="tag" id="JavaScript">JavaScript</span>
 </p>
 
-<div id="NERDTree tips"><h1 id="NERDTree tips" class="header"><a href="#NERDTree tips">NERDTree tips</a></h1></div>
+<div id="Vue tutorial"><h1 id="Vue tutorial" class="header"><a href="#Vue tutorial">Vue tutorial</a></h1></div>
+<div id="Vue tutorial-Install vue with npm"><h2 id="Install vue with npm" class="header"><a href="#Vue tutorial-Install vue with npm">Install vue with npm</a></h2></div>
+<ul>
+<li>
+<code>npm install -g @vue/cli</code>
 
-<div id="How to delete file in NERDTree"><h1 id="How to delete file in NERDTree" class="header"><a href="#How to delete file in NERDTree">How to delete file in NERDTree</a></h1></div>
-<p>
-Browse to the file.
-Press <span id="How to delete file in NERDTree-m"></span><strong id="m">m</strong> to open menu, <span id="How to delete file in NERDTree-d"></span><strong id="d">d</strong> to delete current file, <span id="How to delete file in NERDTree-y"></span><strong id="y">y</strong> to confirm the delete file
-</p>
+<li>
+<code>npm install -g @vue/cli-init</code>
 
-<div id="How to delete file in NERDTree-Use bookmarks"><h2 id="Use bookmarks" class="header"><a href="#How to delete file in NERDTree-Use bookmarks">Use bookmarks</a></h2></div>
-<p>
-Add these lines to vimrc. It will enable NERDTree bookmarks function.
-</p>
-<pre class="vim">
-" Store the bookmarks file
-let NERDTreeBookmarksFile=expand("$HOME/.vim-NERDTreeBookmarks")
-" Show the bookmarks table on startup
-let NERDTreeShowBookmarks=1
+</ul>
+
+<div id="Vue tutorial-Create and run a vue project"><h2 id="Create and run a vue project" class="header"><a href="#Vue tutorial-Create and run a vue project">Create and run a vue project</a></h2></div>
+<ul>
+<li>
+<code>vue create vue-app</code>
+<pre>
+"Manually select features"
+  "Router"
+  "Vuex"
+  "Css pre-precessors"
+Use history mode for router?Yes
+Sass/SCSS(with node-sass)
+Press &lt;Enter&gt;
+Press &lt;Enter&gt;
 </pre>
+
+<li>
+<code>cd vue-app</code>
+
+<li>
+<code>npm run serve</code>
+
+<li>
+go to <span id="Vue tutorial-Create and run a vue project-localhost:8080"></span><strong id="localhost:8080">localhost:8080</strong> in your browser
+
+</ul>
+
+<div id="Vue tutorial-Initial a vue project"><h2 id="Initial a vue project" class="header"><a href="#Vue tutorial-Initial a vue project">Initial a vue project</a></h2></div>
+<ul>
+<li>
+<code>vue init webpack</code>
+
+<ul>
+<li>
+has hot-reload function.
+
+<li>
+rather simple.
+
+<li>
+if you want to use vue-router, ESLint, unit/e2e tests.
+
+</ul>
+<li>
+<code>vue create NewProject</code>
+
+<ul>
+<li>
+You have more configuring the new project.
+
+</ul>
+<li>
+For example, <code>vue init webpack vue-app-w</code>
+<pre>
+? Project name vue-app-w
+? Project description A Vue.js project
+? Author zhihau &lt;@gmail.com&gt;
+? Vue build standalone
+? Install vue-router? Yes
+? Use ESLint to lint your code? No
+? Set up unit tests No
+? Setup e2e tests with Nightwatch? No
+? Should we run `npm install` for you after the project has been created? (recommended) npm
+* `cd vue-app-w`
+{{{
+vue-app-w&gt; npm i vuex
+vue-app-w&gt; npm i node-sass sass-loader --save-dev
+vue-app-w&gt; npm run dev
+</pre>
+
+</ul>
+<div id="Vue tutorial-Problem: ERROR: 10% building 7/15 modules 8 active"><h2 id="Problem: ERROR: 10% building 7/15 modules 8 active" class="header"><a href="#Vue tutorial-Problem: ERROR: 10% building 7/15 modules 8 active">Problem: ERROR: 10% building 7/15 modules 8 active</a></h2></div>
 <p>
-Move the cursor to any file or directory. Run command <code>:Bookmark &lt;name&gt;</code> to create a bookmark for your selected item. You have to give a bookmark name. You don't leave bookmark name as empty.
+When I run below command, it shows the message.
 </p>
 
 <p>
-A bookmark list will show before the tree directory. Move the cursor to anyone bookmark and press <code>o</code> to open the bookmark. Or press <code>Enter</code> key. If you prefer to use mouse, you can double click the bookmark to open it. Press <code>D</code> to delete a bookmark.
+vue-app-w&gt; <code>npm run dev</code>
+</p>
+<blockquote>
+ERROR: 10% building 7/15 modules 8 active ...ads\app\vue-app-w\node_modules\webpack-dev-server\client\utils\createSocketUrl.jsC:\Users\Adrian\Downloads\app\vue-app-w\node_modules\html-webpack-plugin\lib\compiler.js:81
+var outputName = compilation.mainTemplate.applyPluginsWaterfall('asset-path', outputOptions.filename, {
+</blockquote>
+
+<p>
+<span id="Vue tutorial-Problem: ERROR: 10% building 7/15 modules 8 active-SOLUTION"></span><strong id="SOLUTION">SOLUTION</strong>: install latest html-webpack-plugin to fix it
 </p>
 
-<div id="How to delete file in NERDTree-NERDTree cheat sheet"><h2 id="NERDTree cheat sheet" class="header"><a href="#How to delete file in NERDTree-NERDTree cheat sheet">NERDTree cheat sheet</a></h2></div>
-<table>
-<tr>
-<th>
-Shortcut
-</th>
-<th>
-Description
-</th>
-</tr>
-<tr>
-<td>
-<code>o or &lt;Enter&gt; or &lt;Double click&gt;</code>
-</td>
-<td>
-Open a bookmark
-</td>
-</tr>
-<tr>
-<td>
-<code>D</code>
-</td>
-<td>
-Delete a bookmark
-</td>
-</tr>
-<tr>
-<td>
-<code>:Bookmark &lt;name&gt;</code>
-</td>
-<td>
-Create bookmark
-</td>
-</tr>
-<tr>
-<td>
-<code>md</code>
-</td>
-<td>
-Press <code>m</code> to open menu. Press <code>d</code> to delete node.
-</td>
-</tr>
-<tr>
-<td>
-<code>mm</code>
-</td>
-<td>
-Press <code>m</code> to open menu. Press <code>m</code> to move the node.
-</td>
-</tr>
-<tr>
-<td>
-<code>mo</code>
-</td>
-<td>
-Press <code>m</code> to open menu. Press <code>o</code> to open the file with default application.
-</td>
-</tr>
-</table>
-
-<div id="Reference"><h1 id="Reference" class="header"><a href="#Reference">Reference</a></h1></div>
 <p>
-<a href="https://stackoverflow.com/questions/39480756/vim-and-nerd-tree-deleting-a-file">https://stackoverflow.com/questions/39480756/vim-and-nerd-tree-deleting-a-file</a>
+vue-app-w&gt; <code>npm i –save-dev html-webpack-plugin@next</code>
+</p>
+
+<div id="Vue tutorial-Problem: Module build failed"><h2 id="Problem: Module build failed" class="header"><a href="#Vue tutorial-Problem: Module build failed">Problem: Module build failed</a></h2></div>
+<blockquote>
+ERROR: in ./src/App.vue
+Module build failed (from ./node_modules/vue-loader/index.js):
+TypeError: Cannot read property 'vue' of undefined
+at Object.module.exports (C:\Users\Adrian\Downloads\app\vue-app-w\node_modules\vue-loader\lib\loader.js:61:18)
+</blockquote>
+<blockquote>
+@ ./src/main.js 4:0-24 13:21-24
+</blockquote>
+
+<p>
+<span id="Vue tutorial-Problem: Module build failed-SOLUTION"></span><strong id="SOLUTION">SOLUTION</strong>: for webpack ^4.X , install latest npm install vue-loader@14.2.2 to fix it
+vue-app-w&gt; npm install vue-loader@14.2.2
+</p>
+
+<div id="Vue tutorial-Example"><h2 id="Example" class="header"><a href="#Vue tutorial-Example">Example</a></h2></div>
+<p>
+vue-app-w&gt; vim .editorconfig
+</p>
+<pre>
+indent_style = tab
+indent_size = 4
+</pre>
+<ul>
+<li>
+vue-app-w&gt; cd src\components
+
+<li>
+vue-app-w\src\components&gt; notepad Login.vue 
+
+<li>
+vue-app-w\src\components&gt; notepad Dashboard.vue 
+
+<li>
+vue-app-w\src\components&gt; notepad Navigation.vue 
+
+<li>
+vue-app-w\src\components&gt; notepad Settings.vue 
+
+<li>
+content of all vue files:
+<pre>
+&lt;template&gt;
+&lt;div&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+ export default{
+ }
+&lt;/script&gt;
+</pre>
+
+<li>
+vue-app-w\src\components&gt; cd ..
+
+<li>
+vue-app-w\src&gt; notepad store.js
+<pre>
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+export const store=new Vuex.Store({
+ state:{
+ },
+ actions:{
+ },
+ mutations:{
+ }
+})
+</pre>
+
+<li>
+vue-app-w\src&gt; notepad main.js
+<pre>
+import Vue from 'vue'
+import App from './App'
+import router from './router'
+import { store } from './store.js'
+
+Vue.config.productionTip = false
+
+new Vue({
+    el: '#app',
+    router,
+    store,
+    render: h =&gt; h(App)
+})
+</pre>
+
+</ul>
+
+<div id="Vue tutorial-Create firebase project"><h2 id="Create firebase project" class="header"><a href="#Vue tutorial-Create firebase project">Create firebase project</a></h2></div>
+<ul>
+<li>
+go to farebase console
+
+<li>
+click "add project"
+
+<li>
+give a name "vue-app"
+
+<li>
+click "authentication"
+
+<li>
+then click "set sign-up method"
+
+<li>
+then click "email/passwrd" enable and save
+
+</ul>
+
+<div id="Vue tutorial-Create firebase project-Use firebase"><h3 id="Use firebase" class="header"><a href="#Vue tutorial-Create firebase project-Use firebase">Use firebase</a></h3></div>
+<p>
+vue-app-w&gt; <code>npm i firebase</code>
 </p>
 
         <a href="#top">Back to top of page</a>
@@ -205,7 +338,7 @@ Press <code>m</code> to open menu. Press <code>o</code> to open the file with de
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/NERDTree tips.html" 
+data-href="https://zhihau.github.io/Vue tutorial.html" 
 data-layout="button_count">
 </div>
 	

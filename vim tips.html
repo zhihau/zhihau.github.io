@@ -107,20 +107,20 @@ fjs.parentNode.insertBefore(js, fjs);
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
 <ul>
 <li>
-<a href="vim tips.html#vim cheat sheet">vim cheat sheet</a>
+<a href="vim tips.html#Vim cheat sheet">Vim cheat sheet</a>
 
 <ul>
 <li>
-<a href="vim tips.html#vim cheat sheet-visual mode">visual mode</a>
+<a href="vim tips.html#Vim cheat sheet-Visual mode">Visual mode</a>
 
 <li>
-<a href="vim tips.html#vim cheat sheet-command mode">command mode</a>
+<a href="vim tips.html#Vim cheat sheet-Command mode">Command mode</a>
 
 <li>
-<a href="vim tips.html#vim cheat sheet-search mode">search mode</a>
+<a href="vim tips.html#Vim cheat sheet-Search mode">Search mode</a>
 
 <li>
-<a href="vim tips.html#vim cheat sheet-other">other</a>
+<a href="vim tips.html#Vim cheat sheet-Other">Other</a>
 
 </ul>
 <li>
@@ -131,8 +131,8 @@ fjs.parentNode.insertBefore(js, fjs);
 
 </ul>
 
-<div id="vim cheat sheet"><h1 id="vim cheat sheet" class="header"><a href="#vim cheat sheet">vim cheat sheet</a></h1></div>
-<div id="vim cheat sheet-visual mode"><h2 id="visual mode" class="header"><a href="#vim cheat sheet-visual mode">visual mode</a></h2></div>
+<div id="Vim cheat sheet"><h1 id="Vim cheat sheet" class="header"><a href="#Vim cheat sheet">Vim cheat sheet</a></h1></div>
+<div id="Vim cheat sheet-Visual mode"><h2 id="Visual mode" class="header"><a href="#Vim cheat sheet-Visual mode">Visual mode</a></h2></div>
 <table>
 <tr>
 <th>
@@ -144,7 +144,7 @@ Description
 </tr>
 <tr>
 <td>
-"*y
+<code>"*y</code>
 </td>
 <td>
 Copy text to OS clipboard
@@ -152,7 +152,7 @@ Copy text to OS clipboard
 </tr>
 <tr>
 <td>
-"*p
+<code>"*p</code>
 </td>
 <td>
 Paste text from OS clipboard
@@ -160,15 +160,15 @@ Paste text from OS clipboard
 </tr>
 <tr>
 <td>
-gj
+<code>gj</code>
 </td>
 <td>
-move cursor down (multiline text)
+move cursor down (multi lines text)
 </td>
 </tr>
 <tr>
 <td>
-gt/gT
+<code>gt/gT</code>
 </td>
 <td>
 switch tab
@@ -176,7 +176,7 @@ switch tab
 </tr>
 <tr>
 <td>
-p
+<code>p</code>
 </td>
 <td>
 paste to before current line
@@ -184,7 +184,7 @@ paste to before current line
 </tr>
 <tr>
 <td>
-P
+<code>P</code>
 </td>
 <td>
 paste to after current line
@@ -192,7 +192,7 @@ paste to after current line
 </tr>
 <tr>
 <td>
-gx
+<code>gx</code>
 </td>
 <td>
 open URL under cursor
@@ -200,15 +200,119 @@ open URL under cursor
 </tr>
 <tr>
 <td>
-C-W P
+<code>C-Q</code>
+</td>
+<td>
+Block selection
+</td>
+</tr>
+<tr>
+<td>
+<code>C-Q then I</code>
+</td>
+<td>
+Insert text before the selection for multiple lines
+</td>
+</tr>
+<tr>
+<td>
+<code>C-W P</code>
 </td>
 <td>
 Go to previous window
 </td>
 </tr>
+<tr>
+<td>
+<code>w</code>
+</td>
+<td>
+Move to the beginning of next word
+</td>
+</tr>
+<tr>
+<td>
+<code>e</code>
+</td>
+<td>
+Move to the end of next word
+</td>
+</tr>
+<tr>
+<td>
+<code>[s</code>
+</td>
+<td>
+Move to previous wrong spell
+</td>
+</tr>
+<tr>
+<td>
+<code>]s</code>
+</td>
+<td>
+Move to next wrong spell
+</td>
+</tr>
+<tr>
+<td>
+<code>z=</code>
+</td>
+<td>
+Show all spell suggestions. Enter <span id="Vim cheat sheet-Visual mode-number"></span><strong id="number">number</strong> of suggestions to correct word
+</td>
+</tr>
+<tr>
+<td>
+<code>C-W j/k</code>
+</td>
+<td>
+go to up or down window
+</td>
+</tr>
+<tr>
+<td>
+<code>C-W h/l</code>
+</td>
+<td>
+go to left or right window
+</td>
+</tr>
+<tr>
+<td>
+<code>C-W p</code>
+</td>
+<td>
+go to previous window
+</td>
+</tr>
+<tr>
+<td>
+<code>C-W =</code>
+</td>
+<td>
+set an equal size to the splited windows
+</td>
+</tr>
+<tr>
+<td>
+<code>gt</code>
+</td>
+<td>
+go to next tab
+</td>
+</tr>
+<tr>
+<td>
+<code>gT</code>
+</td>
+<td>
+go to previous tab
+</td>
+</tr>
 </table>
-
-<div id="vim cheat sheet-command mode"><h2 id="command mode" class="header"><a href="#vim cheat sheet-command mode">command mode</a></h2></div>
+ 
+<div id="Vim cheat sheet-Command mode"><h2 id="Command mode" class="header"><a href="#Vim cheat sheet-Command mode">Command mode</a></h2></div>
 <table>
 <tr>
 <th>
@@ -220,7 +324,7 @@ Description
 </tr>
 <tr>
 <td>
-:!start "%"
+<code>:!start "%"</code>
 </td>
 <td>
 Open file with the default program
@@ -228,7 +332,7 @@ Open file with the default program
 </tr>
 <tr>
 <td>
-:!cmd /k "%"
+<code>:!cmd /k "%"</code>
 </td>
 <td>
 Open file with the default program
@@ -236,7 +340,7 @@ Open file with the default program
 </tr>
 <tr>
 <td>
-:set enc?
+<code>:set enc?</code>
 </td>
 <td>
 Show file encoding
@@ -244,7 +348,7 @@ Show file encoding
 </tr>
 <tr>
 <td>
-:sort
+<code>:sort</code>
 </td>
 <td>
 Sort lines
@@ -252,7 +356,7 @@ Sort lines
 </tr>
 <tr>
 <td>
-:pwd
+<code>:pwd</code>
 </td>
 <td>
 Show current directory
@@ -260,7 +364,7 @@ Show current directory
 </tr>
 <tr>
 <td>
-:colorscheme desert
+<code>:colorscheme desert</code>
 </td>
 <td>
 Change color scheme
@@ -268,7 +372,7 @@ Change color scheme
 </tr>
 <tr>
 <td>
-:wa
+<code>:wa</code>
 </td>
 <td>
 write all open tab files
@@ -276,7 +380,7 @@ write all open tab files
 </tr>
 <tr>
 <td>
-:set autochdir
+<code>:set autochdir</code>
 </td>
 <td>
 auto change directory
@@ -284,7 +388,7 @@ auto change directory
 </tr>
 <tr>
 <td>
-:!git add .&amp;&amp;git commit
+<code>:!git add .&amp;&amp;git commit</code>
 </td>
 <td>
 Use git commit
@@ -292,7 +396,7 @@ Use git commit
 </tr>
 <tr>
 <td>
-:!git push
+<code>:!git push</code>
 </td>
 <td>
 Use git push
@@ -300,7 +404,7 @@ Use git push
 </tr>
 <tr>
 <td>
-:mksession ~/session.vim
+<code>:mksession ~/session.vim</code>
 </td>
 <td>
 save session to file session.vim
@@ -308,7 +412,7 @@ save session to file session.vim
 </tr>
 <tr>
 <td>
-:source ~/session.vim
+<code>:source ~/session.vim</code>
 </td>
 <td>
 load session file session.vim
@@ -316,7 +420,7 @@ load session file session.vim
 </tr>
 <tr>
 <td>
-:!del %
+<code>:!del %</code>
 </td>
 <td>
 delete current file on Windows
@@ -324,7 +428,7 @@ delete current file on Windows
 </tr>
 <tr>
 <td>
-:!rm %
+<code>:!rm %</code>
 </td>
 <td>
 delete current file on Linux
@@ -332,7 +436,7 @@ delete current file on Linux
 </tr>
 <tr>
 <td>
-:g/pattern/d
+<code>:g/pattern/d</code>
 </td>
 <td>
 delete all lines containing a pattern
@@ -410,9 +514,25 @@ Insert command output to text.
 Prevent "press Enter to continue" message on command prompt
 </td>
 </tr>
+<tr>
+<td>
+<code>:sp</code>
+</td>
+<td>
+split window
+</td>
+</tr>
+<tr>
+<td>
+<code>:vsp</code>
+</td>
+<td>
+vertical split window
+</td>
+</tr>
 </table>
 
-<div id="vim cheat sheet-search mode"><h2 id="search mode" class="header"><a href="#vim cheat sheet-search mode">search mode</a></h2></div>
+<div id="Vim cheat sheet-Search mode"><h2 id="Search mode" class="header"><a href="#Vim cheat sheet-Search mode">Search mode</a></h2></div>
 <table>
 <tr>
 <th>
@@ -424,7 +544,7 @@ Description
 </tr>
 <tr>
 <td>
-/i
+<code>/i</code>
 </td>
 <td>
 find any word contains character <code>i</code>
@@ -432,7 +552,7 @@ find any word contains character <code>i</code>
 </tr>
 <tr>
 <td>
-/\&lt;word\&gt;
+<code>/\&lt;word\&gt;</code>
 </td>
 <td>
 find whole word match <code>word</code>
@@ -456,7 +576,7 @@ move to previous match
 </tr>
 </table>
 
-<div id="vim cheat sheet-other"><h2 id="other" class="header"><a href="#vim cheat sheet-other">other</a></h2></div>
+<div id="Vim cheat sheet-Other"><h2 id="Other" class="header"><a href="#Vim cheat sheet-Other">Other</a></h2></div>
 <table>
 <tr>
 <th>
@@ -468,7 +588,7 @@ Description
 </tr>
 <tr>
 <td>
-ctrl-]
+<code>ctrl-]</code>
 </td>
 <td>
 follow a link in help
@@ -494,7 +614,7 @@ follow a link in help
 
 		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
 	See you in the next story bye.</p>
-		<p><small>Page created on 2022-06-01</small></p>
+		<p><small>Page created on 2022-06-05</small></p>
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
