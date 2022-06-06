@@ -114,6 +114,9 @@ fjs.parentNode.insertBefore(js, fjs);
 <a href="vim tips.html#Vim cheat sheet-Visual mode">Visual mode</a>
 
 <li>
+<a href="vim tips.html#Vim cheat sheet-Split Window">Split Window</a>
+
+<li>
 <a href="vim tips.html#Vim cheat sheet-Command mode">Command mode</a>
 
 <li>
@@ -216,14 +219,6 @@ Insert text before the selection for multiple lines
 </tr>
 <tr>
 <td>
-<code>C-W P</code>
-</td>
-<td>
-Go to previous window
-</td>
-</tr>
-<tr>
-<td>
 <code>w</code>
 </td>
 <td>
@@ -264,6 +259,42 @@ Show all spell suggestions. Enter <span id="Vim cheat sheet-Visual mode-number">
 </tr>
 <tr>
 <td>
+<code>gt</code>
+</td>
+<td>
+go to next tab
+</td>
+</tr>
+<tr>
+<td>
+<code>gT</code>
+</td>
+<td>
+go to previous tab
+</td>
+</tr>
+</table>
+
+<div id="Vim cheat sheet-Split Window"><h2 id="Split Window" class="header"><a href="#Vim cheat sheet-Split Window">Split Window</a></h2></div>
+<table>
+<tr>
+<th>
+Shortcut
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
+<code>C-W P</code>
+</td>
+<td>
+Go to previous window
+</td>
+</tr>
+<tr>
+<td>
 <code>C-W j/k</code>
 </td>
 <td>
@@ -291,27 +322,46 @@ go to previous window
 <code>C-W =</code>
 </td>
 <td>
-set an equal size to the splited windows
+set an equal size to the split windows
 </td>
 </tr>
 <tr>
 <td>
-<code>gt</code>
+<code>C-W +/-</code>
 </td>
 <td>
-go to next tab
+increase/decrease height
 </td>
 </tr>
 <tr>
 <td>
-<code>gT</code>
+<code>C-W &gt;/&lt;</code>
 </td>
 <td>
-go to previous tab
+increase/decrease width
+</td>
+</tr>
+<tr>
+<td>
+<code>C-W _</code>
+</td>
+<td>
+maximize height
+</td>
+</tr>
+<tr>
+<td>
+`C-W
+</td>
+<td>
+`
+</td>
+<td>
+maximize width
 </td>
 </tr>
 </table>
- 
+
 <div id="Vim cheat sheet-Command mode"><h2 id="Command mode" class="header"><a href="#Vim cheat sheet-Command mode">Command mode</a></h2></div>
 <table>
 <tr>
@@ -614,7 +664,7 @@ follow a link in help
 
 		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
 	See you in the next story bye.</p>
-		<p><small>Page created on 2022-06-05</small></p>
+		<p><small>Page created on 2022-06-06</small></p>
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
@@ -873,6 +923,9 @@ if(document.location.href.endsWith("Tags.html")){
           if(item['label'].indexOf("T:")>-1){
             tagBtn=document.createElement('input');
             tagBtn.setAttribute('type','button');
+            if(item['childCount']>1){
+                tagBtn.setAttribute('style','font-weight: bold;');
+            }
             tagBtn.setAttribute('class','w3-black w3-margin-left w3-margin-bottom');
             tagBtn.setAttribute('onclick','focusNode("'+item['id']+'");');
             var tagName=item['label'].replace("T:","");
@@ -898,6 +951,7 @@ if(container!=null){
           nodes: nodes,
           edges: edges,
         };
+console.log(data);
         var options = {
               layout:{
               improvedLayout: false,

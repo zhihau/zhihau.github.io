@@ -19,6 +19,10 @@ $(document).ready(function(){
 	document.execCommand('copy');
 	document.body.removeChild(dummy);
   });
+
+  $("img").click(function(){
+    $("img").toggleClass("w3-image");
+  });
   /*$(".fb-share-button").click(function(){
 	  console.log("1:"+$(".fb-share-button>a").css("href"));
 	  $(".fb-share-button>a").css("href",window.location.href);
@@ -27,10 +31,19 @@ $(document).ready(function(){
 function beautyTable(){
     elements=document.querySelectorAll('table');
     for(var i=0;i<elements.length;i++){
-elements[i].setAttribute("class","w3-table-all w3-hoverable");
+        elements[i].setAttribute("class","w3-table-all w3-hoverable");
     }
 } 
 beautyTable();
+
+function beautyImage(){
+    elements=document.querySelectorAll('img');
+    for(var i=0;i<elements.length;i++){
+        elements[i].setAttribute("class","w3-image w3-border");
+    }
+} 
+beautyImage();
+
 function setCodeSyntaxColor(){
     elements=document.querySelectorAll('code:not(.hljs)');
     if(elements.length==0) return;
