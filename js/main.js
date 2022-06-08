@@ -1,12 +1,8 @@
 $(document).ready(function(){
-  $("#search-box").hide();
+  $("#font-size-bar").hide();
 
-  $("#search-button").click(function(){
-    $("#search-box").toggle();
-    $("#copy-link-button").toggle();
-    $("#about-button").toggle();
-    $("#projects-button").toggle();
-    $("#search-box-input").focus();
+  $("#font-size-btn").click(function(){
+      $("#font-size-bar").toggle();
   });
 
   $("#copy-link-button").click(function(){
@@ -19,9 +15,32 @@ $(document).ready(function(){
 	document.execCommand('copy');
 	document.body.removeChild(dummy);
   });
+  $(".font-size-button").click(function(){
+      
+    $(".content").first().css("font-size",$(this).text()+"px");
+    localStorage.setItem("fontsize", $(this).text());
+  });
 
-  $("img").click(function(){
-    $("img").toggleClass("w3-image");
+    function initialFontSize(){
+        if(localStorage.getItem("fontsize")!=undefined)
+            $(".content").first().css("font-size",localStorage.getItem("fontsize")+"px");
+    }
+    initialFontSize();
+
+    function setImgSize(){
+        var imgs = document.querySelectorAll("img");
+
+                console.log(imgs);
+        for(var i=0;i<imgs.length;i++){
+                console.log("w:"+imgs[i].naturalWidth);
+                console.log("h:"+imgs[i].naturalHeight);
+          imgs[i].setAttribute('width',imgs[i].naturalWidth);
+          imgs[i].setAttribute('height',imgs[i].naturalHeight);
+        }
+    }
+    setImgSize();
+  $("img").click(function(){//click image to maximize height of image
+    $(this).toggleClass("w3-image");
   });
   /*$(".fb-share-button").click(function(){
 	  console.log("1:"+$(".fb-share-button>a").css("href"));
