@@ -38,7 +38,28 @@ ul {
 
 dt { font-weight: bold; }
 
-img { border: none;width:100%;border: 2px solid lightgray; }
+img { 
+border: none;
+/*width:100%;*/
+border: 2px solid lightgray; 
+z-index: 9;
+}
+
+.content{
+position: relative;
+padding: 48px 64px 16px 64px;
+}
+
+.footer{
+padding:0px 64px 64px 64px;
+}
+
+#mynetwork {
+  width: auto;
+  height: 50vh;
+  border: 1px solid lightgray;
+
+}
 
 pre {
   border-left: 5px solid #dcdcdc;

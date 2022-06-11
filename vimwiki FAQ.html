@@ -14,6 +14,7 @@
   gtag('config', 'G-S5M2V3KD75');
 </script>
 
+
 <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
@@ -31,15 +32,6 @@
 <!-- tags net graph -->
 <script src="js/vis.min.js"></script>
 <script src="js/tags.js"></script>
-<style>
-#mynetwork {
-  width: auto;
-  height: 50vh;
-  border: 1px solid lightgray;
-
-}
-
-</style>
 
 <style>
 /**
@@ -97,7 +89,7 @@ fjs.parentNode.insertBefore(js, fjs);
             <button class="w3-button font-size-button w3-right">40</button>
             <button class="w3-button font-size-button w3-right">48</button>
     </div>
-        <div class="content w3-light-grey" style="padding: 48px 64px 16px 64px" name="top">
+        <div class="content w3-light-grey"  name="top">
         
 <p>
 <span id="-Vimwiki"></span><span class="tag" id="Vimwiki">Vimwiki</span>
@@ -129,6 +121,9 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <li>
 <a href="vimwiki FAQ.html#vimwiki FAQ-Open a file when vim start">Open a file when vim start</a>
+
+<li>
+<a href="vimwiki FAQ.html#vimwiki FAQ-Create a customize html file">Create a customize html file</a>
 
 </ul>
 <li>
@@ -422,6 +417,22 @@ autocmd VimEnter * if argc() == 0 | execute 'VimwikiIndex' | endif
 autocmd VimEnter * edit D:\Personal\Vimwiki\Todo\ page.wiki
 </pre>
 
+<div id="vimwiki FAQ-Create a customize html file"><h2 id="Create a customize html file" class="header"><a href="#vimwiki FAQ-Create a customize html file">Create a customize html file</a></h2></div>
+<ol>
+<li>
+Create <span id="vimwiki FAQ-Create a customize html file-customize.html"></span><strong id="customize.html">customize.html</strong> file in directory vimwiki_html.
+
+<li>
+Create <span id="vimwiki FAQ-Create a customize html file-customize.wiki"></span><strong id="customize.wiki">customize.wiki</strong> file in directory vimwiki. This file can prevent <span id="vimwiki FAQ-Create a customize html file-:VimwikiAll2HTML"></span><strong id=":VimwikiAll2HTML">:VimwikiAll2HTML</strong> command to delete your customize.html file that create in directory vimwiki_html. (the <span id="vimwiki FAQ-Create a customize html file-customize.html"></span><strong id="customize.html">customize.html</strong> and <span id="vimwiki FAQ-Create a customize html file-customize.wiki"></span><strong id="customize.wiki">customize.wiki</strong> have to the same name)
+<pre>
+%nohtml
+</pre>
+
+<li>
+Then you can use <span id="vimwiki FAQ-Create a customize html file-[[customize.html|customize\]]"></span><strong id="[[customize.html|customize\]]">[[customize.html|customize\]]</strong> wiki link to refrence the html file.
+
+</ol>
+
 <div id="How to use tags"><h1 id="How to use tags" class="header"><a href="#How to use tags">How to use tags</a></h1></div>
 <ul>
 <li>
@@ -456,11 +467,11 @@ Search tag with <code>:VimwikiSearchTags vim</code>.
 
         <a href="#top">Back to top of page</a>
         </div>
-        <div class="footer" style="padding:0px 64px 64px 64px">
+        <div class="footer" >
 
 		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
 	See you in the next story bye.</p>
-		<p><small>Page created on 2022-06-08</small></p>
+		<p><small>Page created on 2022-06-11</small></p>
 
 <!-- Your share button code -->
 <div class="fb-share-button" 

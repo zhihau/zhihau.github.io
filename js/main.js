@@ -27,26 +27,24 @@ $(document).ready(function(){
     }
     initialFontSize();
 
-    function setImgSize(){
-        var imgs = document.querySelectorAll("img");
-
-                console.log(imgs);
-        for(var i=0;i<imgs.length;i++){
-                console.log("w:"+imgs[i].naturalWidth);
-                console.log("h:"+imgs[i].naturalHeight);
-          imgs[i].setAttribute('width',imgs[i].naturalWidth);
-          imgs[i].setAttribute('height',imgs[i].naturalHeight);
-        }
-    }
-    setImgSize();
   $("img").click(function(){//click image to maximize height of image
+      var attr = $(this).attr('height');
+    // For some browsers, `attr` is undefined; for others, `attr` is false. Check for both.
+    if (typeof attr !== typeof undefined && attr !== false) {
+      // Element has this attribute
+    }else{
+      $(this).attr('height',$(this).prop("naturalHeight"));
+      $(this).attr('width',$(this).prop("naturalWidth"));
+    }
     $(this).toggleClass("w3-image");
   });
+
   /*$(".fb-share-button").click(function(){
 	  console.log("1:"+$(".fb-share-button>a").css("href"));
 	  $(".fb-share-button>a").css("href",window.location.href);
 	  console.log("2:"+$(".fb-share-button>a").css("href"));
   });*/
+
 function beautyTable(){
     elements=document.querySelectorAll('table');
     for(var i=0;i<elements.length;i++){
