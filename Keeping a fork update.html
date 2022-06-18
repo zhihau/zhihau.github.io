@@ -100,6 +100,9 @@ fjs.parentNode.insertBefore(js, fjs);
 <li>
 <a href="Keeping a fork update.html#Keeping a fork update">Keeping a fork update</a>
 
+<li>
+<a href="Keeping a fork update.html#After I fork a project">After I fork a project</a>
+
 </ul>
 
 <div id="Keeping a fork update"><h1 id="Keeping a fork update" class="header"><a href="#Keeping a fork update">Keeping a fork update</a></h1></div>
@@ -120,13 +123,38 @@ Updating your fork from original repo to keep up with their changes:
 
 </ol>
 
+<div id="After I fork a project"><h1 id="After I fork a project" class="header"><a href="#After I fork a project">After I fork a project</a></h1></div>
+<ul>
+<li>
+View remote repository link <code>git remote -v</code>. Example:
+<pre>
+origin  https://github.com/vereperrot/scan-network.git (fetch)
+origin  https://github.com/vereperrot/scan-network.git (push)
+</pre>
+
+<li>
+Add a remote repository link <code>git remote add upstream https://github.com/webnull/scan-network.git</code>.
+
+<li>
+Create <span id="After I fork a project-commit.bat"></span><strong id="commit.bat">commit.bat</strong> file
+<pre>
+git add .
+git commit -F README
+::git remote rm origin
+::git remote add origin https://github.com/vereperrot/vereperrot.github.io.git
+git push
+pause
+</pre>
+
+</ul>
+
         <a href="#top">Back to top of page</a>
         </div>
         <div class="footer" >
 
 		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
 	See you in the next story bye.</p>
-		<p><small>Page created on 2022-06-11</small></p>
+		<p><small>Page created on 2022-06-18</small></p>
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
