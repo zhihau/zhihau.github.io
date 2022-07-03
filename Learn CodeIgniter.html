@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <script src="js/jquery.min.js"></script>
-<title>ZhiHau Blog - Programmer's Development Notes</title>
+<title>ZhiHau Blog - Learn CodeIgniter</title>
 <!-- tags net graph -->
 <script src="js/vis.min.js"></script>
 <script src="js/tags.js"></script>
@@ -91,477 +91,232 @@ fjs.parentNode.insertBefore(js, fjs);
     </div>
         <div class="content w3-light-grey"  name="top">
         
+<p>
+<span id="-PHP"></span><span class="tag" id="PHP">PHP</span>
+</p>
 
-<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<div id="Learn CodeIgniter"><h1 id="Learn CodeIgniter" class="header"><a href="#Learn CodeIgniter">Learn CodeIgniter</a></h1></div>
+<div id="Learn CodeIgniter-what is ci"><h2 id="what is ci" class="header"><a href="#Learn CodeIgniter-what is ci">what is ci</a></h2></div>
+<p>
+ci is a PHP framework. Below I will install <span id="Learn CodeIgniter-what is ci-CodeIgniter4"></span><strong id="CodeIgniter4">CodeIgniter4</strong> on <span id="Learn CodeIgniter-what is ci-Windows 10"></span><strong id="Windows 10">Windows 10</strong>.
+</p>
+
+<div id="Learn CodeIgniter-where is your project folder"><h2 id="where is your project folder" class="header"><a href="#Learn CodeIgniter-where is your project folder">where is your project folder</a></h2></div>
+<p>
+the directory contains an env file.
+</p>
+
+<div id="Learn CodeIgniter-installing ci"><h2 id="installing ci" class="header"><a href="#Learn CodeIgniter-installing ci">installing ci</a></h2></div>
 <ul>
 <li>
-<a href="index.html#Autohotkey">Autohotkey</a>
+Download <a href="https://www.apachefriends.org/download.html">XAMPP</a> and install. It will install PHP translator for executing PHP script files. My XAMPP is <span id="Learn CodeIgniter-installing ci-xampp-windows-x64-7.4.23-0-VC15-installer"></span><strong id="xampp-windows-x64-7.4.23-0-VC15-installer">xampp-windows-x64-7.4.23-0-VC15-installer</strong>.
 
 <li>
-<a href="index.html#ASP.Net">ASP.Net</a>
+Go to <a href="http://www.codeigniter.com/download">codeigniter download</a> to get latest version zip *<span id="Learn CodeIgniter-installing ci-codeigniter4-CodeIgniter4-v4.2.1-0-g061356b.zip"></span><strong id="codeigniter4-CodeIgniter4-v4.2.1-0-g061356b.zip">codeigniter4-CodeIgniter4-v4.2.1-0-g061356b.zip</strong>*
 
 <li>
-<a href="index.html#Docker">Docker</a>
+Unzip file and upload all files to your web server. 
 
 <li>
-<a href="index.html#English">English</a>
+I move all files to directory <span id="Learn CodeIgniter-installing ci-D:\www"></span><strong id="D:\www">D:\www</strong>.
 
 <li>
-<a href="index.html#HTML">HTML</a>
+Start <span id="Learn CodeIgniter-installing ci-XAMPP control panel"></span><strong id="XAMPP control panel">XAMPP control panel</strong>.Edit httpd.conf from clicking apache config button. Click <span id="Learn CodeIgniter-installing ci-apache(httpd.conf)"></span><strong id="apache(httpd.conf)">apache(httpd.conf)</strong> menu item on context menu. Modify your document root directory as following lines. 
+
+<ul>
+<li>
+Document root should direct to a directory contains index.php.
 
 <li>
-<a href="index.html#JavaScript">JavaScript</a>
+If you change the document root , you have to restart Apache server.
+<pre class="conf">
+DocumentRoot "D:/www/public"
+&lt;Directory "D:/www/public"&gt;
+</pre>
+
+</ul>
+<li>
+Then go go localhost in the web browser. You will see a message <span id="Learn CodeIgniter-installing ci-We seem to have hit a snag. Please try again later."></span><strong id="We seem to have hit a snag. Please try again later.">We seem to have hit a snag. Please try again later.</strong>. To view the real error message you have to set display error option as 1.
 
 <li>
-<a href="index.html#Jobs">Jobs</a>
+Open <span id="Learn CodeIgniter-installing ci-D:\www\app\Config\Boot\production.php"></span><strong id="D:\www\app\Config\Boot\production.php">D:\www\app\Config\Boot\production.php</strong> file to modify it.
+<pre class="php">
+ini_set('display_errors', '1');
+</pre>
 
 <li>
-<a href="index.html#Linux">Linux</a>
+Refresh the localhost home page. The real error message is *The framework needs the following extension(s) installed and loaded: intl. *. 
 
 <li>
-<a href="index.html#Logseq">Logseq</a>
+Start <span id="Learn CodeIgniter-installing ci-XAMPP control panel"></span><strong id="XAMPP control panel">XAMPP control panel</strong>.Edit <span id="Learn CodeIgniter-installing ci-php.ini"></span><strong id="php.ini">php.ini</strong> from clicking apache config button. Click <span id="Learn CodeIgniter-installing ci-PHP (php.ini)"></span><strong id="PHP (php.ini)">PHP (php.ini)</strong> menu item on context menu. 
 
 <li>
-<a href="index.html#Git">Git</a>
+Find keyword <span id="Learn CodeIgniter-installing ci-intl"></span><strong id="intl">intl</strong> in php.ini file. Remove ; character to enable this extension. Restart Apache server.
+<pre class="ini">
+extension=intl
+</pre>
 
 <li>
-<a href="index.html#PHP">PHP</a>
+But I got the same error. I reinstall XAMPP to solve this problem.
 
 <li>
-<a href="index.html#Python">Python</a>
-
-<li>
-<a href="index.html#SearchEngines">SearchEngines</a>
-
-<li>
-<a href="index.html#Site">Site</a>
-
-<li>
-<a href="index.html#VBScript">VBScript</a>
-
-<li>
-<a href="index.html#Vim">Vim</a>
-
-<li>
-<a href="index.html#Vlang">Vlang</a>
-
-<li>
-<a href="index.html#Windows">Windows</a>
-
-<li>
-<a href="index.html#Organize">Organize</a>
-
-<li>
-<a href="index.html#Health">Health</a>
-
-<li>
-<a href="index.html#Other">Other</a>
+You cannot use a <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb/related?hl=en">chrome Web Server for Chrome app</a> to run CodeIgniter. Because it doesn't have a php translator in it.
 
 </ul>
 
-<div id="Autohotkey"><h1 id="Autohotkey" class="header"><a href="#Autohotkey">Autohotkey</a></h1></div>
+<div id="Learn CodeIgniter-Basic concepts"><h2 id="Basic concepts" class="header"><a href="#Learn CodeIgniter-Basic concepts">Basic concepts</a></h2></div>
+<div id="Learn CodeIgniter-Basic concepts-Create a controller"><h3 id="Create a controller" class="header"><a href="#Learn CodeIgniter-Basic concepts-Create a controller">Create a controller</a></h3></div>
 <ul>
 <li>
-<a href="print screen pastes into MS Paint.html">print screen pastes into MS Paint</a>
+Start git bash
 
 <li>
-<a href="autohotkey note.html">autohotkey note</a>
+change directory to /d/www/app/Controllers
 
 <li>
-<a href="use autohotkey to suspend and resume system.html">use autohotkey to suspend and resume system</a>
+copy Home.php and name as Pages.php
+
+<li>
+Edit Pages.php
+<pre class="php">
+&lt;?php
+
+namespace App\Controllers;
+
+class Pages extends BaseController
+{
+    public function index()
+    {
+        return view('welcome_message');
+    }
+    public function view ($page='home')
+    {
+    }
+}
+</pre>
+
+<li>
+<code>$ mkdir /d/www/app/Views/templates</code>
+
+<li>
+<code>$ vi /d/www/app/Views/templates/header.php</code>
+<pre class="php">
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;CodeIgniter tutorial&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;&lt;?=esc($title)?&gt;&lt;/h1&gt;
+</pre>
+
+<li>
+<code>vi /d/www/app/Views/templates/footer.php</code>
+<pre class="php">
+&lt;em&gt;&amp;copy; 2022&lt;/em&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<li>
+<code>$ mkdir /d/www/app/Views/pages</code>
+
+<li>
+<code>$ vi /d/www/app/Views/pages/home.php</code>
+<pre class="php">
+this is home
+</pre>
+
+<li>
+<code>$ vi /d/www/app/Views/pages/about.php</code>
+<pre class="php">
+this is about
+</pre>
+
+<li>
+$ vi /d/www/app/Controllers/Pages.php
+<pre class="php">
+&lt;?php
+
+namespace App\Controllers;
+
+class Pages extends BaseController
+{
+    public function index()
+    {
+        return view('welcome_message');
+    }
+    public function view ($page='home')
+    {
+        if(!is_file(APPPATH.'Views/pages/'.$page.'.php')){
+            throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
+        }
+        $data['title']=ucfirst($page);//capitalize the first letter
+
+        return view('templates/header',$data)
+            .view('pages/'.$page)
+            .view('templates/footer');
+    }
+}
+
+</pre>
 
 </ul>
 
-<div id="ASP.Net"><h1 id="ASP.Net" class="header"><a href="#ASP.Net">ASP.Net</a></h1></div>
+<div id="Learn CodeIgniter-Basic concepts-routing"><h3 id="routing" class="header"><a href="#Learn CodeIgniter-Basic concepts-routing">routing</a></h3></div>
 <ul>
 <li>
-<a href="How to create ASP dot net MVC web application in Visual Studio 2019.html">How to create ASP dot net MVC web application in Visual Studio 2019</a>
+<code>$ vi /d/www/app/Config/Routes.php</code>
+<pre class="php">
+$routes-&gt;get('/', 'Home::index');
+$routes-&gt;get('pages', 'Pages::index');
+$routes-&gt;get('(:any)', 'Pages::view/$1');
+</pre>
+
+<li>
+Go to the url <a href="http://localhost/pages.">http://localhost/pages.</a> You will see the home page.
+
+<li>
+Go to the url <a href="http://localhost/test.">http://localhost/test.</a> You will see 404 file not found. Because there is no test.php view under directory  <span id="Learn CodeIgniter-Basic concepts-routing-/d/www/app/Views/pages"></span><strong id="/d/www/app/Views/pages">/d/www/app/Views/pages</strong>.
+
+<li>
+Try <a href="http://localhost/about.">http://localhost/about.</a> You will see the about page.
+
+<li>
+Try <a href="http://localhost/home.">http://localhost/home.</a> You will see the home page.
 
 </ul>
 
-<div id="Docker"><h1 id="Docker" class="header"><a href="#Docker">Docker</a></h1></div>
+<div id="Learn CodeIgniter-Basic concepts-run app"><h3 id="run app" class="header"><a href="#Learn CodeIgniter-Basic concepts-run app">run app</a></h3></div>
 <ul>
 <li>
-<a href="How to install docker on Windows 10.html">How to install docker on Windows 10</a>
+Run app with command <code>php spark serve</code>.
+
+<ul>
+<li>
+Change directory to <span id="Learn CodeIgniter-Basic concepts-run app-/d/www"></span><strong id="/d/www">/d/www</strong> 
 
 <li>
-<a href="Run webapps with docker.html">Run webapps with docker</a>
+Execute command  <code>php spark serve</code>.
 
 <li>
-<a href="Docker Note.html">Docker Note</a>
+Go to url <a href="http://localhost:8080">http://localhost:8080</a> to browse home page.
 
 <li>
-<a href="What is docker dot env file.html">What is docker dot env file</a>
-
-<li>
-<a href="How to let two services under the same network.html">How to let two services under the same network</a>
-
-<li>
-<a href="docker composer tutorial.html">docker composer tutorial</a>
-
-<li>
-<a href="the difference between Dockerfile and docker-compose.html">the difference between Dockerfile and docker-compose</a>
-
-<li>
-<a href="Docker network related commands.html">Docker network related commands</a>
+You can see every request on console. It's easily for debugging.
 
 </ul>
+<li>
+Run app with apache server.
 
-<div id="English"><h1 id="English" class="header"><a href="#English">English</a></h1></div>
 <ul>
 <li>
-<a href="Thinking in English tips.html">Thinking in English tips</a>
+Go to url <a href="http://localhost:80">http://localhost:80</a> to browse home page.
 
 <li>
-<a href="How to use in on at preposition.html">How to use in on at preposition</a>
-
-<li>
-<a href="Learn English by watching drama.html">Learn English by watching drama</a>
-
-<li>
-<a href="Learn English from zero.html">Learn English from zero</a>
+you can change the port in <span id="Learn CodeIgniter-Basic concepts-run app-httpd.conf"></span><strong id="httpd.conf">httpd.conf</strong> file.
 
 </ul>
-
-<div id="HTML"><h1 id="HTML" class="header"><a href="#HTML">HTML</a></h1></div>
-<ul>
-<li>
-<a href="create a back to top link.html">create a back to top link</a>
-
-</ul>
-
-<div id="JavaScript"><h1 id="JavaScript" class="header"><a href="#JavaScript">JavaScript</a></h1></div>
-<ul>
-<li>
-<a href="How to add copy button with highlight_js.html">How to add copy button with highlight_js</a>
-
-<li>
-<a href="How to use highlight_js with custom code.html">How to use highlight_js with custom code</a>
-
-<li>
-<a href="How to add google search box to a web page.html">How to add google search box to a web page</a>
-
-<li>
-<a href="Use visjs to create a network view.html">Use visjs to create a network view</a>
-
-<li>
-<a href="Add HTML code tag syntax color.html">Add HTML code tag syntax color</a>
-
-<li>
-<a href="Vue tutorial.html">Vue tutorial</a>
-
-<li>
-<a href="javascript use map.html">javascript use map</a>
-
-</ul>
- 
-<div id="Jobs"><h1 id="Jobs" class="header"><a href="#Jobs">Jobs</a></h1></div>
-<ul>
-<li>
-<a href="How to print labor insurance transfer order.html">How to print labor insurance transfer order</a>
-
-<li>
-<a href="How to convert jpg to pdf file.html">How to convert jpg to pdf file</a>
-
-<li>
-<a href="How to convert merge many pdf files to one pdf file.html">How to convert merge many pdf files to one pdf file</a>
-
-<li>
-<a href="How to open a digital account with mega bank.html">How to open a digital account with mega bank</a>
-
-</ul>
-
-<div id="Linux"><h1 id="Linux" class="header"><a href="#Linux">Linux</a></h1></div>
-<ul>
-<li>
-<a href="Use grep command to find text in directories.html">Use grep command to find text in directories</a>
-
-<li>
-<a href="How to find files.html">How to find files</a>
-
-</ul>
-
-<div id="Logseq"><h1 id="Logseq" class="header"><a href="#Logseq">Logseq</a></h1></div>
-<ul>
-<li>
-<a href="create a logseq todo list.html">create a logseq todo list</a>
-
-<li>
-<a href="logseq cheatsheet.html">logseq cheatsheet</a>
-
-<li>
-<a href="How to develop logseq plugins.html">How to develop logseq plugins</a>
-
-</ul>
-
-<div id="Git"><h1 id="Git" class="header"><a href="#Git">Git</a></h1></div>
-<ul>
-<li>
-<a href="Keeping a fork update.html">Keeping a fork update</a>
-
-<li>
-<a href="How to solve a merge conflict.html">How to solve a merge conflict</a>
-
-<li>
-<a href="Related Git eol.html">Related Git eol</a>
-
-<li>
-<a href="How to set default git commit editor.html">How to set default git commit editor</a>
-
-<li>
-<a href="How to push rename file in git.html">How to push rename file in git</a>
-
-<li>
-<a href="How to refer a specific line in github.html">How to refer a specific line in github</a>
-
-<li>
-<a href="github error.html">github error</a>
-
-</ul>
- 
-<div id="PHP"><h1 id="PHP" class="header"><a href="#PHP">PHP</a></h1></div>
-<ul>
-<li>
-<a href="How to use Yii2 with WAMP server.html">How to use Yii2 with WAMP server</a>
-
-<li>
-<a href="How to use Yii1 with WAMP server.html">How to use Yii1 with WAMP server</a>
-
-<li>
-<a href="How to change yiipowered function.html">How to change yiipowered function</a>
-
-<li>
-<a href="php inheritance.html">php inheritance</a>
-
-<li>
-<a href="Yii_1_1 tutorial for beginners.html">Yii_1_1 tutorial for beginners</a>
-
-<li>
-<a href="The difference between this and parent.html">The difference between this and parent</a>
-
-<li>
-<a href="php database crud class.html">php database crud class</a>
-
-<li>
-<a href="Learn CodeIgniter.html">Learn CodeIgniter</a>
-
-</ul>
-
-<div id="Python"><h1 id="Python" class="header"><a href="#Python">Python</a></h1></div>
-<ul>
-<li>
-<a href="How to calculate program execution time.html">How to calculate program execution time</a>
-
-<li>
-<a href="How to execute external program in python.html">How to execute external program in python</a>
-
-<li>
-<a href="How to calculate the average of a file full of numbers..html">How to calculate the average of a file full of numbers.</a>
-
-<li>
-<a href="Compare file names with fuzzy string matching module.html">Compare file names with fuzzy string matching module</a>
-
-<li>
-<a href="print multiple variables in python.html">print multiple variables in python</a>
-
-<li>
-<a href="How to control the number of decimal places after the decimal point.html">How to control the number of decimal places after the decimal point</a>
-
-<li>
-<a href="python substring.html">python substring</a>
-
-<li>
-<a href="How to read a json file in python.html">How to read a json file in python</a>
-
-<li>
-<a href="python open google chrome with URL.html">python open google chrome with URL</a>
-
-<li>
-<a href="Use Python Flask to connect with PostgreSQL on Windows 10.html">Use Python Flask to connect with PostgreSQL on Windows 10</a>
-
-</ul>
-
-<div id="SearchEngines"><h1 id="SearchEngines" class="header"><a href="#SearchEngines">SearchEngines</a></h1></div>
-<ul>
-<li>
-<a href="How to use apache solr on Windows 10.html">How to use apache solr on Windows 10</a>
-
-<li>
-<a href="How to install hadoop on Windows 10.html">How to install hadoop on Windows 10</a>
-
-</ul>
-
-<div id="Site"><h1 id="Site" class="header"><a href="#Site">Site</a></h1></div>
-<ul>
-<li>
-<a href="How to add a twitter button to your web site.html">How to add a twitter button to your web site</a>
-
-<li>
-<a href="How to add a facebook share button to your web site.html">How to add a facebook share button to your web site</a>
-
-<li>
-<a href="How to add google adsense to your web site.html">How to add google adsense to your web site</a>
-
-<li>
-<a href="How to add google analytics to your web site.html">How to add google analytics to your web site</a>
-
-<li>
-<a href="site tool.html">site tool</a>
-
-<li>
-<a href="How to add search engine to a web site.html">How to add search engine to a web site</a>
-
-</ul>
-
-<div id="VBScript"><h1 id="VBScript" class="header"><a href="#VBScript">VBScript</a></h1></div>
-<ul>
-<li>
-<a href="Run external program in VBScript.html">Run external program in VBScript</a>
-
-</ul>
-
-<div id="Vim"><h1 id="Vim" class="header"><a href="#Vim">Vim</a></h1></div>
-<ul>
-<li>
-<a href="vimwiki help (Chinese edition).html">vimwiki help (Chinese edition)</a>
-
-<li>
-<a href="vimwiki FAQ.html">vimwiki FAQ</a>
-
-<li>
-<a href="vim tips.html">vim tips</a>
-
-<li>
-<a href="vim key mapping.html">vim key mapping</a>
-
-<li>
-<a href="my vimrc.html">my vimrc</a>
-
-<li>
-<a href="Using autocomplete function in Vim.html">Using autocomplete function in Vim</a>
-
-<li>
-<a href="How to install a vim plugin.html">How to install a vim plugin</a>
-
-<li>
-<a href="How to use templates in vim.html">How to use templates in vim</a>
-
-<li>
-<a href="vim tab to space 4.html">vim tab to space 4</a>
-
-<li>
-<a href="make a key binding to a function in vimrc file.html">make a key binding to a function in vimrc file</a>
-
-<li>
-<a href="NERDTree tips.html">NERDTree tips</a>
-
-<li>
-<a href="How to search a word in a directory.html">How to search a word in a directory</a>
-
-<li>
-<a href="Open two files in vim split windows from the command line.html">Open two files in vim split windows from the command line</a>
-
-<li>
-<a href="How to create vimwiki tag page.html">How to create vimwiki tag page</a>
-
-<li>
-<a href="create a vimwiki todo list.html">create a vimwiki todo list</a>
-
-</ul>
-
-<div id="Vlang"><h1 id="Vlang" class="header"><a href="#Vlang">Vlang</a></h1></div>
-<ul>
-<li>
-<a href="Building your command line interface (CLR) tool with vlang.html">Building your command line interface (CLR) tool with vlang</a>
-
-<li>
-<a href="Create math  quiz web application using vlang.html">Create math  quiz web application using vlang</a> 
-
-<li>
-<a href="The easy way to run the vlang code in gvim.html">The easy way to run the vlang code in gvim</a>
-
-<li>
-<a href="Add V syntax highlighting in vim.html">Add V syntax highlighting in vim</a>
-
-<li>
-<a href="vlang bookmarks.html">vlang bookmarks</a>
-
-<li>
-<a href="How to update v.html">How to update v</a>
-
-<li>
-<a href="build a simple web blog with vlang.html">build a simple web blog with vlang</a>
-
-</ul>
- 
-<div id="Windows"><h1 id="Windows" class="header"><a href="#Windows">Windows</a></h1></div>
-<ul>
-<li>
-<a href="program help.html">program help</a>
-
-<li>
-<a href="How to add a add remove programs shortcut on Windows desktop.html">How to add a add remove programs shortcut on Windows desktop</a>
-
-<li>
-<a href="How to install linux bash shell on Windows 10.html">How to install linux bash shell on Windows 10</a>
-
-<li>
-<a href="How to change default web browser on Window 10.html">How to change default web browser on Window 10</a>
-
-<li>
-<a href="How to disable Windows 10 update.html">How to disable Windows 10 update</a>
-
-<li>
-<a href="Find windows 10 startup folder.html">Find windows 10 startup folder</a>
-
-<li>
-<a href="Use explorer command to open a directory.html">Use explorer command to open a directory</a> 
-
-<li>
-<a href="Multiple commands on one command line.html">Multiple commands on one command line</a>
-
-<li>
-<a href="How to create a help chm file.html">How to create a help chm file</a>
-
-</ul>
-
-<div id="Organize"><h1 id="Organize" class="header"><a href="#Organize">Organize</a></h1></div>
-<ul>
-<li>
-<a href="How to organize bookmarks.html">How to organize bookmarks</a>
-
-<li>
-<a href="Dead links.html">Dead links</a>
-
-</ul>
-
-<div id="Health"><h1 id="Health" class="header"><a href="#Health">Health</a></h1></div>
-<ul>
-<li>
-<a href="Eye muscle training.html">Eye muscle training</a>
-
-<li>
-<a href="How to find happy.html">How to find happy</a>
-
-</ul>
-
-<div id="Other"><h1 id="Other" class="header"><a href="#Other">Other</a></h1></div>
-<ul>
-<li>
-<a href="Reading method.html">Reading method</a>
-
-<li>
-<a href="Why I do not use logseq.html">Why I do not use logseq</a>
-
-<li>
-<a href="Tags.html">Tags</a>
-
-<li>
-<a href="About page.html">About page</a>
-
-<li>
-<a href="Projects page.html">Projects page</a>
-
 </ul>
 
         <a href="#top">Back to top of page</a>
@@ -574,7 +329,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/Programmer's Development Notes.html" 
+data-href="https://zhihau.github.io/Learn CodeIgniter.html" 
 data-layout="button_count">
 </div>
 	

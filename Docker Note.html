@@ -102,6 +102,9 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <ul>
 <li>
+<a href="Docker Note.html#Docker Note-use docker volume">use docker volume</a>
+
+<li>
 <a href="Docker Note.html#Docker Note-docker container status is restarting">docker container status is restarting</a>
 
 <li>
@@ -120,6 +123,39 @@ fjs.parentNode.insertBefore(js, fjs);
 </ul>
 
 <div id="Docker Note"><h1 id="Docker Note" class="header"><a href="#Docker Note">Docker Note</a></h1></div>
+<div id="Docker Note-use docker volume"><h2 id="use docker volume" class="header"><a href="#Docker Note-use docker volume">use docker volume</a></h2></div>
+<ul>
+<li>
+specify host and container directory
+
+</ul>
+<p>
+<code>$ docker run -it -v /home/user1/storage:/storage centos /bin/bash</code>
+</p>
+
+<ul>
+<li>
+only specify container directory
+
+</ul>
+<p>
+<code>$ docker run -it -v /storage centos /bin/bash</code>
+</p>
+<ul>
+<li>
+find host drive
+
+</ul>
+<p>
+<code>$ docker inspect -f '{{.Mounts}}' 4c2a9ef663c2</code>
+</p>
+
+<ul>
+<li>
+reference <a href="https://docs.docker.com/engine/reference/commandline/volume_ls/">volume ls</a>
+
+</ul>
+ 
 <div id="Docker Note-docker container status is restarting"><h2 id="docker container status is restarting" class="header"><a href="#Docker Note-docker container status is restarting">docker container status is restarting</a></h2></div>
 <p>
 I view all running container with <code>docker-compose ps</code> command. The nginx has a restarting status. It means there are some problems. You need to use log command to see what's the problem.
@@ -202,7 +238,7 @@ $ <code>docker swarm leave --force</code>
 
 		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
 	See you in the next story bye.</p>
-		<p><small>Page created on 2022-06-11</small></p>
+		<p><small>Page created on 2022-07-03</small></p>
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
