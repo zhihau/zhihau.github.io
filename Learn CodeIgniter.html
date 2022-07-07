@@ -318,6 +318,203 @@ you can change the port in <span id="Learn CodeIgniter-Basic concepts-run app-ht
 
 </ul>
 </ul>
+<div id="Learn CodeIgniter-using database"><h2 id="using database" class="header"><a href="#Learn CodeIgniter-using database">using database</a></h2></div>
+<ul>
+<li>
+open phpmyadmin by clicking mysql admin button from xampp control panel.
+
+<li>
+create database ci4tutorial
+
+<li>
+click new link at the left sidebar .
+
+<ul>
+<li>
+enter  db name <span id="Learn CodeIgniter-using database-ci4tutorial"></span><strong id="ci4tutorial">ci4tutorial</strong>
+
+<li>
+choose utf8mb4_unicode_520_ci encode
+
+<li>
+click <span id="Learn CodeIgniter-using database-create"></span><strong id="create">create</strong> button to create database
+
+</ul>
+<li>
+click SQL tab 
+
+<li>
+paste below sql statement and click <span id="Learn CodeIgniter-using database-go"></span><strong id="go">go</strong> button to create new table
+<pre class="sql">
+CREATE TABLE news (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    title VARCHAR(128) NOT NULL,
+    slug VARCHAR(128) NOT NULL,
+    body TEXT NOT NULL,
+    PRIMARY KEY (id),
+    KEY slug (slug)
+);
+</pre>
+
+<li>
+click ci4tutorial|news table at left side bar.
+
+<li>
+click SQL tab 
+
+<li>
+paste below sql statement and click <span id="Learn CodeIgniter-using database-go"></span><strong id="go">go</strong> button to insert data
+<pre class="sql">
+INSERT INTO news VALUES
+(1,'Elvis sighted','elvis-sighted','Elvis was sighted at the Podunk internet cafe. It looked like he was writing a CodeIgniter app.'),
+(2,'Say it isn\'t so!','say-it-isnt-so','Scientists conclude that some programmers have a sense of humor.'),
+(3,'Caffeination, Yes!','caffeination-yes','World\'s largest coffee shop open onsite nested coffee shop for staff only.');
+</pre>
+
+</ul>
+
+<div id="Learn CodeIgniter-using database-connect to database"><h3 id="connect to database" class="header"><a href="#Learn CodeIgniter-using database-connect to database">connect to database</a></h3></div>
+<ul>
+<li>
+<code>vi D:\www\env</code>
+<pre class="ini">
+ database.default.hostname = localhost
+ database.default.database = ci4tutorial
+ database.default.username = root
+ database.default.password = root
+ database.default.DBDriver = MySQLi
+</pre>
+
+</ul>
+<div id="Learn CodeIgniter-using database-setting up model"><h3 id="setting up model" class="header"><a href="#Learn CodeIgniter-using database-setting up model">setting up model</a></h3></div>
+<ul>
+<li>
+model for reusing database operation easily
+
+<li>
+vi D:\www\app\Models\NewsModel.php
+<pre class="php">
+&lt;?php
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+class NewsModel extends Model
+{
+    protected $table = 'news';
+    public function getNews($slug = false)
+    {
+        if ($slug === false) {
+            return $this-&gt;findAll();//get all news records
+        }
+
+        return $this-&gt;where(['slug' =&gt; $slug])-&gt;first();//get a news item
+    }
+}
+</pre>
+
+</ul>
+<div id="Learn CodeIgniter-using database-display the news"><h3 id="display the news" class="header"><a href="#Learn CodeIgniter-using database-display the news">display the news</a></h3></div>
+<p>
+vi app/Controllers/News.php
+</p>
+<pre class="php">
+&lt;?php
+
+namespace App\Controllers;
+
+use App\Models\NewsModel;
+
+class News extends BaseController
+{
+    public function index()
+    {
+        $model = model(NewsModel::class);
+
+      $data = [
+            'news'  =&gt; $model-&gt;getNews(),
+            'title' =&gt; 'News archive',
+        ];
+
+        return view('templates/header', $data)
+            . view('news/overview')
+            . view('templates/footer');
+    }
+
+    public function view($slug = null)
+    {
+        $model = model(NewsModel::class);
+
+        $data['news'] = $model-&gt;getNews($slug); //slug likes id
+        if (empty($data['news'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the news item: ' . $slug);
+        }
+
+        $data['title'] = $data['news']['title'];
+
+        return view('templates/header', $data)
+            . view('news/view')
+            . view('templates/footer');
+    }
+}
+</pre>
+<ul>
+<li>
+app/Views/news/overview.php
+<pre class="php">
+&lt;h2&gt;&lt;?= esc($title) ?&gt;&lt;/h2&gt;
+
+&lt;?php if (! empty($news) &amp;&amp; is_array($news)): ?&gt;
+
+    &lt;?php foreach ($news as $news_item): ?&gt;
+&lt;!--esc() to prevent xss attack--&gt;
+        &lt;h3&gt;&lt;?= esc($news_item['title']) ?&gt;&lt;/h3&gt;
+
+        &lt;div class="main"&gt;
+            &lt;?= esc($news_item['body']) ?&gt;
+        &lt;/div&gt;
+        &lt;p&gt;&lt;a href="/news/&lt;?= esc($news_item['slug'], 'url') ?&gt;"&gt;View article&lt;/a&gt;&lt;/p&gt;
+
+    &lt;?php endforeach ?&gt;
+
+&lt;?php else: ?&gt;
+
+    &lt;h3&gt;No News&lt;/h3&gt;
+
+    &lt;p&gt;Unable to find any news for you.&lt;/p&gt;
+
+&lt;?php endif ?&gt;
+</pre>
+
+</ul>
+<div id="Learn CodeIgniter-using database-routing"><h3 id="routing" class="header"><a href="#Learn CodeIgniter-using database-routing">routing</a></h3></div>
+<ul>
+<li>
+vi app/Config/Routes.php
+<pre class="php">
+$routes-&gt;get('news/(:segment)', 'News::view/$1');
+$routes-&gt;get('news', 'News::index');
+$routes-&gt;get('pages', 'Pages::index');
+$routes-&gt;get('(:any)', 'Pages::view/$1');
+</pre>
+
+<li>
+go to url <a href="http://localhost/news">http://localhost/news</a>
+
+<li>
+CodeIgniter\Database\Exceptions\DatabaseException #8
+
+</ul>
+<p>
+Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO) 
+</p>
+
+<div id="Learn CodeIgniter-using database-use sql command to test connection"><h3 id="use sql command to test connection" class="header"><a href="#Learn CodeIgniter-using database-use sql command to test connection">use sql command to test connection</a></h3></div>
+<p>
+D:\xampp\mysql\bin\mysql.exe -h localhost -u root ci4tutorial
+</p>
 
         <a href="#top">Back to top of page</a>
         </div>
@@ -325,7 +522,7 @@ you can change the port in <span id="Learn CodeIgniter-Basic concepts-run app-ht
 
 		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
 	See you in the next story bye.</p>
-		<p><small>Page created on 2022-07-03</small></p>
+		<p><small>Page created on 2022-07-07</small></p>
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
