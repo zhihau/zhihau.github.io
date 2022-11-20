@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <script src="js/jquery.min.js"></script>
-<title>ZhiHau Blog - Projects page</title>
+<title>ZhiHau Blog - screenshot-email-sender</title>
 <!-- tags net graph -->
 <script src="js/vis.min.js"></script>
 <script src="js/tags.js"></script>
@@ -92,47 +92,103 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="content w3-light-grey"  name="top">
         
 <p>
-<span id="-Site"></span><span class="tag" id="Site">Site</span> <span id="-Project"></span><span class="tag" id="Project">Project</span>
+<span id="-project"></span><span class="tag" id="project">project</span> <span id="-readme"></span><span class="tag" id="readme">readme</span>
 </p>
 
-<div id="Projects"><h1 id="Projects" class="header"><a href="#Projects">Projects</a></h1></div>
+<div id="screenshot-email-sender"><h1 id="screenshot-email-sender" class="header"><a href="#screenshot-email-sender">screenshot-email-sender</a></h1></div>
 <ul>
 <li>
-<a href="code tag syntax color.html">code-tag-syntax-color.js</a> - color text in html code tag.
+Take screenshots as email attachments and send them at time intervals.
 
 <li>
-<a href="transparent-window.html">transparent-window</a> - A utility that makes the window transparent, arrange and more. It works on Windows 10.
+It works on Windows.
+
+</ul>
+ 
+<div id="screenshot-email-sender-User Case"><h2 id="User Case" class="header"><a href="#screenshot-email-sender-User Case">User Case</a></h2></div>
+<p>
+<img src="https://zhihau.github.io/img/user_case_1649905881635_0.png" />
+</p>
+
+<div id="screenshot-email-sender-⚔Functions"><h2 id="⚔Functions" class="header"><a href="#screenshot-email-sender-⚔Functions">⚔Functions</a></h2></div>
+<ul>
+<li>
+Set mail sender.
 
 <li>
-<a href="markdown-editor.html">markdown-editor</a> - An example implements markdown to html and copy to clipboard in JavaScript.
+Set time interval.
 
-<li>
-<a href="BMI calculator.html">BMI calculator</a>
+</ul>
 
-<li>
-<a href="logseq-translate-plugin.html">logseq-translate-plugin</a> = This is a logseq translate plugin
+<div id="screenshot-email-sender-🎇Demo"><h2 id="🎇Demo" class="header"><a href="#screenshot-email-sender-🎇Demo">🎇Demo</a></h2></div>
+<p>
+<img src="https://zhihau.github.io/img/screenshot-email-sender_demo_1649920679988_0.gif" />
+</p>
 
+<div id="screenshot-email-sender-🛒History"><h2 id="🛒History" class="header"><a href="#screenshot-email-sender-🛒History">🛒History</a></h2></div>
+<ul>
 <li>
-<a href="screenshot-email-sender.html">screenshot-email-sender</a> = Take screenshots as email attachments and send them at time intervals.
-
-<li>
-<a href="protect-eyes.html">protect-eyes</a> 
+Version 1.0.0 - Date 2008/8/13
 
 <ul>
 <li>
-A utility that implements  [20-20-20](<a href="https://www.healthline.com/health/eye-health/20-20-20-rule#definition)">https://www.healthline.com/health/eye-health/20-20-20-rule#definition)</a> rule. It shows blue screen death GUI every 20 minutes to remind you take a break. Look 20 feet away at something for 20 seconds. It works on Windows 10.
-
-<li>
-<a href="protect-eyes TODO.html">protect-eyes TODO</a>
+send screenshot of SimReport window to gmail
 
 </ul>
 <li>
-<a href="windows-mobile-usb-storage-stress-test.html">windows-mobile-usb-storage-stress-test</a> - A Windows program for windows mobile phone USB storage stress test.
+Version 1.2.3 - Date 2008/8/15
+
+<ul>
+<li>
+Purpose change: send screenshot to gmail
 
 <li>
-<a href="windows-mobile-phone-radio-enable-disable-stress-test.html">windows-mobile-phone-radio-enable-disable-stress-test</a> - A Windows Mobile program for phone radio enable and disable 
+1. Fix bug: Another programm is processing the file.
+      Solution: MailMessage.Dispose();
+
+<li>
+2. Fix bug: The program freezes.
+      Solution: Take screenshots and send email actions execute in a single thread.
+
+<li>
+3. Fix bug:SmtpException: The SMTP server requires a secure connection or the client was not authenticated.
+      Solution: UseDefaultCredentials, Credentials, EnableSsl of SmtpClient settings are not correct.
+
+<li>
+5. Add: Log function
+
+<li>
+6. Add: clear log button
 
 </ul>
+<li>
+Version 1.2.4 - Date 2008/8/25
+
+<ul>
+<li>
+1. Add: Exception message
+
+<li>
+2. Fix bug: Send mail error and capture the same screenshot every time.
+      Solution: On the first error, the image is locked. Cause the second screenshot image cannot be written. After fixing the bug, it takes a different screenshot every time even if the email is wrong.
+
+</ul>
+</ul>
+
+<div id="screenshot-email-sender-♥ Buy me a coffee"><h2 id="♥ Buy me a coffee" class="header"><a href="#screenshot-email-sender-♥ Buy me a coffee">♥ Buy me a coffee</a></h2></div>
+<ul>
+<li>
+If the utility solves your problem, you can buy me a coffee via <a href="https://www.buymeacoffee.com/zhihau">this link</a>.
+
+<li>
+<a href="https://github.com/zhihau/screenshot-email-sender">screenshot-email-sender github</a>
+
+</ul>
+ 
+<div id="screenshot-email-sender-License"><h2 id="License" class="header"><a href="#screenshot-email-sender-License">License</a></h2></div>
+<p>
+MIT
+</p>
 
         <a href="#top">Back to top of page</a>
         </div>
@@ -144,7 +200,7 @@ A utility that implements  [20-20-20](<a href="https://www.healthline.com/health
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/Projects page.html" 
+data-href="https://zhihau.github.io/screenshot-email-sender.html" 
 data-layout="button_count">
 </div>
 	

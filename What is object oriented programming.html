@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <script src="js/jquery.min.js"></script>
-<title>ZhiHau Blog - Projects page</title>
+<title>ZhiHau Blog - What is object oriented programming</title>
 <!-- tags net graph -->
 <script src="js/vis.min.js"></script>
 <script src="js/tags.js"></script>
@@ -91,48 +91,97 @@ fjs.parentNode.insertBefore(js, fjs);
     </div>
         <div class="content w3-light-grey"  name="top">
         
+<div id="What is object oriented programming?"><h1 id="What is object oriented programming?" class="header"><a href="#What is object oriented programming?">What is object oriented programming?</a></h1></div>
+<div id="What is object oriented programming?-programming"><h2 id="programming" class="header"><a href="#What is object oriented programming?-programming">programming</a></h2></div>
+<ul>
+<li>
+What is object oriented programming?
+
+<li>
+Object oriented programming is a way to write program. The purpose is to make the code easy to read. Just like an essay has its structure. The paragraph have introduction, proposition, contradiction and final conclusion. If an essay without structure are difficult to understand.
+
+<li>
+Object oriented programming contains class and object. Class is a complex data type. After you declare an object with class, the object has its memory space. Then we can use the object now. Object oriented programming is useful when making code easy to read and structured.
+
+<li>
+For example: block use class.html, block use function.html. These examples have the same result. Both show two blocks on the web page. One is <span class="todo">TODO</span> block. The other is READ NOTE block. When there was no object oriented programming, use functions to programming. The function code very long and hard to read. Later object oriented programming was invented, it has structure like constructor section that uses to initial variables. And you can create other custom functions. Compare these two simple examples you will find OOP how easy to use it.
+
+<li>
+物件導向是一種寫程式的方式，目的為容易閱讀理解，就跟論說文有其結構一樣，段落分引論、正論、反論、最後結論，沒結構的文章就不好理解。
+
+<li>
+物件導向裡面有類別與物件兩個東西，類別是一種複雜的資料型態，用類別宣告的物件佔記憶體空間才可以拿來用，適用情況是易閱讀、有結構。
+
+<li>
+拿下面兩個例子來說，[block use class.html](<a href="https://codepen.io/zhihau/pen/yLpPrjz),">https://codepen.io/zhihau/pen/yLpPrjz),</a> [block use function.html](<a href="https://codepen.io/zhihau/pen/BaJmEVz)，兩個例子執行結果都一樣，都是在網頁上顯示兩個區塊(block)，一個TODO區塊，一個READ">https://codepen.io/zhihau/pen/BaJmEVz)，兩個例子執行結果都一樣，都是在網頁上顯示兩個區塊(block)，一個TODO區塊，一個READ</a> NOTE區塊。以前沒有物件導向的時候，用函式寫程式，很容易寫得長不好閱讀，後來發明物件導向有它的結構，如constructor區塊用來初始化變數，還能建立其他的函式塊。你可以比較用class與function這兩個例子的差異。
+
+</ul>
+<div id="What is object oriented programming?-block use class.html"><h2 id="block use class.html" class="header"><a href="#What is object oriented programming?-block use class.html">block use class.html</a></h2></div>
+<pre class="html">
+	  &lt;!DOCTYPE html&gt;
+	  &lt;html&gt;
+	  &lt;head&gt;
+	  &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+	  &lt;script&gt;
+	  //類別的目的：容易閱讀理解
+	  //The purpose of class is to make code easy to understand
+	  class Block {
+	  constructor(name, bg) {
+	    //初始化資料區域
+	    //initial data
+	    this.name = name;
+	    this.bg = bg;
+	  }
+	  //每種區塊都有一個建立區塊的函式
+	  //Each block has its own create function.
+	  create() {
+	    return "&lt;div style='background:"+this.bg+"'&gt;"+this.name+"&lt;/div&gt;";
+	  }
+	  }
+	  //定義一種叫做TODO的區塊
+	    //declare a todo clock
+	  let todo = new Block("TODO", "pink");
+	  let readnote = new Block("READ NOTE", "lightyellow");
+	  $(document).ready(function(){
+	  $(document.body).append(todo.create());
+	  $(document.body).append(readnote.create());
+	  });
+	  &lt;/script&gt;
+	  &lt;/head&gt;
+	  &lt;body&gt;
+	  &lt;/body&gt;
+	  &lt;/html&gt;
+</pre>
+<div id="What is object oriented programming?-block use function.html"><h2 id="block use function.html" class="header"><a href="#What is object oriented programming?-block use function.html">block use function.html</a></h2></div>
+<pre class="html">
+	  &lt;!DOCTYPE html&gt;
+	  &lt;html&gt;
+	  &lt;head&gt;
+	  &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+	  &lt;script&gt;
+	  //用函式建立區塊很直覺，直接帶入資料產生區塊HTML。
+	    //Use function to build blocks is intuitive, just pass some arguments to generate the HTML block codes.
+	  //如果要多加區塊的屬性設定，就要多加參數很難閱讀，比如：
+	    //If you want to add more functions, you will pass more arguments. It will make your function difficult to read. For example
+	  // function CreateBlock(name, bg, textColor, text, wordCount){
+	  function CreateBlock(name,bg){
+	    return "&lt;div style='background:"+bg+"'&gt;"+name+"&lt;/div&gt;";
+	  }
+	  $(document).ready(function(){
+	  $(document.body).append(CreateBlock("TODO", "pink"));
+	  $(document.body).append(CreateBlock("READ NOTE", "lightyellow"));
+	  });
+	  &lt;/script&gt;
+	  &lt;/head&gt;
+	  &lt;body&gt;
+	  &lt;/body&gt;
+	  &lt;/html&gt;
+</pre>
+<div id="What is object oriented programming?-The output"><h2 id="The output" class="header"><a href="#What is object oriented programming?-The output">The output</a></h2></div>
 <p>
-<span id="-Site"></span><span class="tag" id="Site">Site</span> <span id="-Project"></span><span class="tag" id="Project">Project</span>
+<img src="https://zhihau.github.io/img/image_1648993087444_0.png" />
+-
 </p>
-
-<div id="Projects"><h1 id="Projects" class="header"><a href="#Projects">Projects</a></h1></div>
-<ul>
-<li>
-<a href="code tag syntax color.html">code-tag-syntax-color.js</a> - color text in html code tag.
-
-<li>
-<a href="transparent-window.html">transparent-window</a> - A utility that makes the window transparent, arrange and more. It works on Windows 10.
-
-<li>
-<a href="markdown-editor.html">markdown-editor</a> - An example implements markdown to html and copy to clipboard in JavaScript.
-
-<li>
-<a href="BMI calculator.html">BMI calculator</a>
-
-<li>
-<a href="logseq-translate-plugin.html">logseq-translate-plugin</a> = This is a logseq translate plugin
-
-<li>
-<a href="screenshot-email-sender.html">screenshot-email-sender</a> = Take screenshots as email attachments and send them at time intervals.
-
-<li>
-<a href="protect-eyes.html">protect-eyes</a> 
-
-<ul>
-<li>
-A utility that implements  [20-20-20](<a href="https://www.healthline.com/health/eye-health/20-20-20-rule#definition)">https://www.healthline.com/health/eye-health/20-20-20-rule#definition)</a> rule. It shows blue screen death GUI every 20 minutes to remind you take a break. Look 20 feet away at something for 20 seconds. It works on Windows 10.
-
-<li>
-<a href="protect-eyes TODO.html">protect-eyes TODO</a>
-
-</ul>
-<li>
-<a href="windows-mobile-usb-storage-stress-test.html">windows-mobile-usb-storage-stress-test</a> - A Windows program for windows mobile phone USB storage stress test.
-
-<li>
-<a href="windows-mobile-phone-radio-enable-disable-stress-test.html">windows-mobile-phone-radio-enable-disable-stress-test</a> - A Windows Mobile program for phone radio enable and disable 
-
-</ul>
 
         <a href="#top">Back to top of page</a>
         </div>
@@ -144,7 +193,7 @@ A utility that implements  [20-20-20](<a href="https://www.healthline.com/health
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="https://zhihau.github.io/Projects page.html" 
+data-href="https://zhihau.github.io/What is object oriented programming.html" 
 data-layout="button_count">
 </div>
 	
