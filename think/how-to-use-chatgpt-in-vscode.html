@@ -1,0 +1,113 @@
+
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="description" content="Author: zhihau shiu  ,
+        Content: Programmer's development, Category: Blog, Notes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--google adsence-->
+        <script src="https://connect.facebook.net/en_US/sdk.js?hash=d3f8450b58c5827c0affa411aec49530" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v3.0"></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2865072968912801" crossorigin="anonymous"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S5M2V3KD75"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-S5M2V3KD75');
+        </script>
+
+        <link rel="stylesheet" href="../css/bolt.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/copy-button.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
+        <title>ZhiHau Blog - ./think/how-to-use-chatgpt-in-vscode</title>
+    </head>
+    <body>
+    <div id="toolbar">
+        <div id="search-box-container">
+            <input type="text" id="search-box" placeholder="search by tags">
+            <div id="suggestions"></div>
+        </div>
+        <div id="nav-container">
+          <a href="https://zhihau.github.io/">Home</a> |
+          <a href="https://zhihau.github.io/about.html">About</a> |
+          <a href="https://zhihau.github.io/projects.html">Projects</a>
+        </div>
+    </div>
+    <div id="main">
+    <h1 id='how-to-use-chatgpt-in-vscode-portable-mode'>How to use chatgpt in vscode portable mode</h1><p><a href="../tags/vscode.html">vscode</a> <a href="../tags/chatgpt.html">chatgpt</a>  </p>
+<h2 id='use-vscode-portable-mode'>Use vscode portable mode</h2><ul>
+<li>Download and unzip <a href="https://code.visualstudio.com/download">vscode.zip</a>.</li>
+<li>Create <strong>data</strong> folder under folder <strong>VSCode-win32-x64-1.74.3</strong> to enable portable mode.</li>
+<li>For example, VSCode-win32-x64-1.74.3/data</li>
+</ul>
+<h2 id='install-chatgpt-extension'>Install chatgpt extension</h2><ul>
+<li>Login https://chat.openai.com/chat with google account</li>
+<li>Execute <strong>Code.exe</strong> to open vscode</li>
+<li>Find <strong>chatgpt</strong> on the extension side bar. Click <strong>install</strong> button to install it.</li>
+<li>Click gear icon beside the uninstall button. Then choose <strong>extension settings</strong> menu item.</li>
+</ul>
+<p><img alt="chatgpt-extension-settings" src="../images/chatgpt-extension-settings.PNG" /></p>
+<ul>
+<li>Extension settings
+-find <strong>authentication type</strong> choose <strong>google authentication</strong>
+-find <strong>chrominum path</strong> and fill in the browser path. If you install
+browser in different directory.</li>
+<li>find <strong>api key</strong> , clicks <strong>Get your api key from OpenAI</strong> link, click
+<strong>open</strong> button to open the link.</li>
+<li>click <strong>create new secret key</strong> button on the web page https://beta.openai.com/account/api-keys. copy key "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"</li>
+<li>you won't be able to view it again through your OpenAI account. If you lose this secret key, you'll need to generate a new one.</li>
+<li>find <strong>method</strong> seelect <strong>gpt3 openai api key</strong></li>
+</ul>
+<h2 id='use-chatgpt-extension'>Use Chatgpt extension</h2><ul>
+<li>open a folder choose <strong>C:\Temp\py_test</strong></li>
+<li>create a test.py file.</li>
+<li>click <strong>chatgpt</strong> icon from side bar</li>
+<li>click <strong>login</strong> button in <strong>chatgpt:conversation windows</strong></li>
+<li>ask question <strong>give me py read file snippet</strong> . click <strong>insert</strong> button at the top bar of the snippet. it will insert snippet to current file.
+<img alt="insert-snippet-code-by-chatgpt" src="../images/insert-snippet-code-by-chatgpt.PNG" /></li>
+<li>or select code from your file. right click menu to choose many chatgpt items
+<img alt="chatgpt-functions-in-vscode" src="../images/chatgpt-functions-in-vscode.PNG" /></li>
+</ul>
+    <script src="../js/tags.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/copy-button.js"></script>
+    <script src="../js/code-tag-syntax-color.js"></script>
+    </div>
+    <div class="footer">
+		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
+	See you in the next story bye.</p>
+		<p><small>Page created on 2023-05-03 18:24:37</small></p>
+    <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- Your share button code -->
+        <div class="fb-share-button" 
+        data-href="you_site_page_url" 
+        data-layout="button_count">
+        </div>	
+    </div>
+    <!-- buy me a coffee-->
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="zhihau" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee." data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <div id="CodeBadgeTemplate" style="display:none">
+        <div class="code-badge">
+            <div class="code-badge-language">{language}</div>
+            <div title="Copy to clipboard">
+                <i class="{copyIconClass} code-badge-copy-icon"></i>
+            </div>
+         </div>
+    </div>
+    </body>
+    </html>
+    

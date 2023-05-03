@@ -1,0 +1,371 @@
+
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="description" content="Author: zhihau shiu  ,
+        Content: Programmer's development, Category: Blog, Notes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--google adsence-->
+        <script src="https://connect.facebook.net/en_US/sdk.js?hash=d3f8450b58c5827c0affa411aec49530" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v3.0"></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2865072968912801" crossorigin="anonymous"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S5M2V3KD75"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-S5M2V3KD75');
+        </script>
+
+        <link rel="stylesheet" href="../css/bolt.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/copy-button.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
+        <title>ZhiHau Blog - ./think/basic-vim-tips</title>
+    </head>
+    <body>
+    <div id="toolbar">
+        <div id="search-box-container">
+            <input type="text" id="search-box" placeholder="search by tags">
+            <div id="suggestions"></div>
+        </div>
+        <div id="nav-container">
+          <a href="https://zhihau.github.io/">Home</a> |
+          <a href="https://zhihau.github.io/about.html">About</a> |
+          <a href="https://zhihau.github.io/projects.html">Projects</a>
+        </div>
+    </div>
+    <div id="main">
+    <h1 id='basic-vim-tips'>Basic vim tips</h1><p><a href="../tags/vim.html">vim</a> <a href="../tags/tips.html">tips</a> <a href="../tags/hotkey.html">hotkey</a>  </p>
+<!-- vim-markdown-toc GitLab -->
+
+<ul>
+<li><a href="#regular-expression">Regular expression</a></li>
+<li><a href="#tabs">Tabs</a></li>
+<li><a href="#search">Search</a></li>
+<li><a href="#split-window">Split Window</a></li>
+<li><a href="#buffer">Buffer</a></li>
+<li><a href="#buffer-mark">Buffer mark</a></li>
+<li><a href="#fold">Fold</a></li>
+<li><a href="#why-i-create-this-document">Why I create this document</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+
+<h2 id='regular-expression'>Regular expression</h2><table>
+<thead>
+<tr>
+<th>Hotkey</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:g/abc.*xyz</code></td>
+<td>Try regular expression.</td>
+</tr>
+<tr>
+<td><code>:g/abc.*xyz/d</code></td>
+<td>Delete match lines.</td>
+</tr>
+</tbody>
+</table>
+<h2 id='tabs'>Tabs</h2><p><img alt="" src="../images/vim-tabs.PNG" /></p>
+<table>
+<thead>
+<tr>
+<th>Hotkey</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:Te</code></td>
+<td>Open tab explorer.</td>
+</tr>
+<tr>
+<td><code>:tabs</code></td>
+<td>Show all tabs.</td>
+</tr>
+<tr>
+<td><code>gt</code></td>
+<td>Go to next tab.</td>
+</tr>
+<tr>
+<td><code>gT</code></td>
+<td>Go to previous tab.</td>
+</tr>
+<tr>
+<td><code>{i}gt</code></td>
+<td>Go to <strong>{i}</strong> tab. Eg.<code>5gt</code> means go to the fifth tab.</td>
+</tr>
+<tr>
+<td><code>:tabclose {i}</code></td>
+<td>Close <strong>{i}</strong>th tab.</td>
+</tr>
+<tr>
+<td><code>:q</code></td>
+<td>Close current tab.</td>
+</tr>
+<tr>
+<td><code>:qa</code></td>
+<td>Close all tabs.</td>
+</tr>
+<tr>
+<td><code>vim -p *.css</code></td>
+<td>Open all css files in tabs.</td>
+</tr>
+<tr>
+<td><code>vim -p hi.css test.css</code></td>
+<td>Open files in tabs.</td>
+</tr>
+</tbody>
+</table>
+<h2 id='search'>Search</h2><table>
+<thead>
+<tr>
+<th>Hotkey</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:vimgrep /vim/ *.wiki</code></td>
+<td>Search word vim in wiki files.</td>
+</tr>
+<tr>
+<td><code>:vimgrep /\&amp;lt;vim\&amp;gt;/ *.wiki</code></td>
+<td>Search full word vim in wiki files.</td>
+</tr>
+<tr>
+<td><code>:cfirst</code></td>
+<td>Move to the first match.</td>
+</tr>
+<tr>
+<td><code>:clast</code></td>
+<td>Move to the last match.</td>
+</tr>
+<tr>
+<td><code>:cprevious or cp</code></td>
+<td>Move to the previous match.</td>
+</tr>
+<tr>
+<td><code>:cnext or cn</code></td>
+<td>Move to the next match.</td>
+</tr>
+<tr>
+<td><code>:cl</code></td>
+<td>List all matches.</td>
+</tr>
+<tr>
+<td><code>/i</code></td>
+<td>Find any word contains character i</td>
+</tr>
+<tr>
+<td><code>/\&amp;lt;vim\&amp;gt;</code></td>
+<td>Find whole word match word</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>Move to next match</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td>Move to previous match</td>
+</tr>
+</tbody>
+</table>
+<h2 id='split-window'>Split Window</h2><p><img alt="" src="../images/vim-split-window.PNG" /></p>
+<table>
+<thead>
+<tr>
+<th>Hotkey</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl-w j/k</code></td>
+<td>Go to up or down window.</td>
+</tr>
+<tr>
+<td><code>Ctrl-w h/l</code></td>
+<td>Go to left or right window.</td>
+</tr>
+<tr>
+<td><code>Ctrl-w p</code></td>
+<td>Go to previous window.</td>
+</tr>
+<tr>
+<td><code>Ctrl-w =</code></td>
+<td>Set an equal size to the split windows.</td>
+</tr>
+<tr>
+<td><code>Ctrl-w +/-</code></td>
+<td>Increase/decrease height.</td>
+</tr>
+<tr>
+<td><code>Ctrl-w &gt;/&lt;</code></td>
+<td>Increase/decrease width.</td>
+</tr>
+<tr>
+<td><code>Ctrl-w _</code></td>
+<td>Maximize height.</td>
+</tr>
+<tr>
+<td><code>Ctrl-w &amp;#124;</code></td>
+<td>Maximize width.</td>
+</tr>
+<tr>
+<td><code>:sp or Ctrl-w-s</code></td>
+<td>Split window. Which one press less key? <code>Ctrl-w-s</code></td>
+</tr>
+<tr>
+<td><code>:vsp or Ctrl-w-v</code></td>
+<td>Split window vertically.</td>
+</tr>
+</tbody>
+</table>
+<h2 id='buffer'>Buffer</h2><table>
+<thead>
+<tr>
+<th>Hotkey</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:ls</code></td>
+<td>List all previous opened files.</td>
+</tr>
+<tr>
+<td><code>:b{i}</code></td>
+<td>Open {i} file.</td>
+</tr>
+<tr>
+<td><code>:bnext or :bn</code></td>
+<td>Open next buffer file.</td>
+</tr>
+<tr>
+<td><code>:bprevious or :bp</code></td>
+<td>Open previous buffer file.</td>
+</tr>
+<tr>
+<td><code>:blast or :bl</code></td>
+<td>Open last buffer file.</td>
+</tr>
+<tr>
+<td><code>:bfirst or :bf</code></td>
+<td>Open first buffer file.</td>
+</tr>
+</tbody>
+</table>
+<h3 id='buffer-mark'>Buffer mark</h3><p><img alt="" src="../images/vim-buffer.PNG" /></p>
+<table>
+<thead>
+<tr>
+<th>Mark</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-</code></td>
+<td>Inactive buffer.</td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td>Active buffer. The file is open for editing.</td>
+</tr>
+<tr>
+<td><code>h</code></td>
+<td>Hide buffer.</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Current buffer. There is a cursor in this window.</td>
+</tr>
+<tr>
+<td><code>#</code></td>
+<td>Swap buffer.</td>
+</tr>
+<tr>
+<td><code>=</code></td>
+<td>Read only buffer.</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>Already modified buffer.</td>
+</tr>
+</tbody>
+</table>
+<h2 id='fold'>Fold</h2><table>
+<thead>
+<tr>
+<th>Hotkey</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>zf</code></td>
+<td>Define a fold. Select lines then press <code>zf</code>.</td>
+</tr>
+<tr>
+<td><code>zo</code></td>
+<td>Open fold.</td>
+</tr>
+<tr>
+<td><code>zc</code></td>
+<td>Close fold.</td>
+</tr>
+<tr>
+<td><code>za</code></td>
+<td>Toggle fold.</td>
+</tr>
+</tbody>
+</table>
+<h2 id='why-i-create-this-document'>Why I create this document</h2><ul>
+<li>When I create a vim document, I can review what I learned.</li>
+<li>Record what I use frequently.</li>
+</ul>
+    <script src="../js/tags.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/copy-button.js"></script>
+    <script src="../js/code-tag-syntax-color.js"></script>
+    </div>
+    <div class="footer">
+		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
+	See you in the next story bye.</p>
+		<p><small>Page created on 2023-05-03 18:24:36</small></p>
+    <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- Your share button code -->
+        <div class="fb-share-button" 
+        data-href="you_site_page_url" 
+        data-layout="button_count">
+        </div>	
+    </div>
+    <!-- buy me a coffee-->
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="zhihau" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee." data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <div id="CodeBadgeTemplate" style="display:none">
+        <div class="code-badge">
+            <div class="code-badge-language">{language}</div>
+            <div title="Copy to clipboard">
+                <i class="{copyIconClass} code-badge-copy-icon"></i>
+            </div>
+         </div>
+    </div>
+    </body>
+    </html>
+    

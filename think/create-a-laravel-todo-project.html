@@ -1,0 +1,285 @@
+
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="description" content="Author: zhihau shiu  ,
+        Content: Programmer's development, Category: Blog, Notes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--google adsence-->
+        <script src="https://connect.facebook.net/en_US/sdk.js?hash=d3f8450b58c5827c0affa411aec49530" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v3.0"></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2865072968912801" crossorigin="anonymous"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S5M2V3KD75"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-S5M2V3KD75');
+        </script>
+
+        <link rel="stylesheet" href="../css/bolt.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/copy-button.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
+        <title>ZhiHau Blog - ./think/create-a-laravel-todo-project</title>
+    </head>
+    <body>
+    <div id="toolbar">
+        <div id="search-box-container">
+            <input type="text" id="search-box" placeholder="search by tags">
+            <div id="suggestions"></div>
+        </div>
+        <div id="nav-container">
+          <a href="https://zhihau.github.io/">Home</a> |
+          <a href="https://zhihau.github.io/about.html">About</a> |
+          <a href="https://zhihau.github.io/projects.html">Projects</a>
+        </div>
+    </div>
+    <div id="main">
+    <h1 id='create-a-laravel-todo-project'>create a laravel todo project</h1><p><a href="../tags/laravel.html">laravel</a> </p>
+<!-- vim-markdown-toc GitLab -->
+
+<ul>
+<li><a href="#create-a-laravel-todo-project">create a laravel todo project</a></li>
+<li><a href="#install-laravel-8">Install laravel 8</a></li>
+<li><a href="#create-task-list">Create task list</a></li>
+<li><a href="#add-routes">add routes</a></li>
+<li><a href="#build-view">build view</a></li>
+<li><a href="#change-home-directory">change home directory</a></li>
+<li><a href="#use-telescope-to-debug-404-not-found">use telescope to debug 404 not found</a></li>
+<li><a href="#commands">commands</a></li>
+<li><a href="#code">code</a></li>
+<li><a href="#problem">Problem</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+<h1 id='create-a-laravel-todo-project'>create a laravel todo project</h1><p><strong>Please read start from <a href="#install-laravel-8">Install laravel 8</a>.</strong>
+<strong>There are many problems in operation below, if you want to refer to it, you can continue to read.</strong>
+- <code>apt install php7.4-cli</code>
+- <code>su user1</code>
+- root@$ <code>mkdir ~/public</code>
+- root@$ <code>cd ~/public</code>
+- root@~/public$ <code>composer create-project laravel/laravel {directory} 4.2 --prefer-dist</code></p>
+<blockquote>
+<p>if you run this commmand as root, you will get this message
+Do not run Composer as root/super user! See https://getcomposer.org/root for details
+Continue as root/super user [yes]?
+- user1@~/public$ <code>cd {directory}</code>
+- user1@~/public/{directory}$ <code>php artisan make:migration create_tasks_table --create=tasks</code>
+if you get "mcrypt php extension required", you have to install mcrypt php extension first.
+sudo apt install php-dev libmcrypt-dev php-pear
+$ sudo pecl channel-update pecl.php.net
+$ sudo pecl install mcrypt
+cf. https://stackoverflow.com/questions/60388595/i-am-getting-mcrypt-php-extension-required-when-i-type-php-artisan-serve-in-my
+- add "extension=mcrypt.so" to /etc/php/7.4/cli/php.ini
+- user1@~/public/{directory}$ <code>php artisan make:migration create_tasks_table --create=tasks</code>
+OUTPUT:
+[InvalidArgumentException]
+ There are no commands defined in the "make" namespace.
+check you laravel version via the commnad <code>php artisan --version</code>. There is no make command in laravel4. cf.https://stackoverflow.com/questions/31255136/why-there-are-no-commands-defined-in-the-make-namespace
+- above steps I follow these two pages:
+- https://laravel.com/docs/4.2/installation#main-content
+- https://laravel.com/docs/5.2/quickstart#introduction</p>
+</blockquote>
+<h2 id='install-laravel-8'>Install laravel 8</h2><ul>
+<li>user1@~/public$ <code>composer create-project laravel/laravel {directory} 8.x --prefer-dist</code></li>
+<li>user1@~/public$ <code>cd {directory}</code></li>
+</ul>
+<h2 id='create-task-list'>Create task list</h2><p>cf. https://laravel.com/docs/5.2/quickstart#introduction
+- user1@~/public/{directory}$ <code>php artisan make:migration create_tasks_table --create=tasks</code>
+- user1@~/public/{directory}$ <code>vi database/migrations/2023_01_03_054703_create_tasks_table.php</code>
+<code>chema::create('tasks', function (Blueprint $table) {
+$table-&gt;increments('id');
+$table-&gt;string('name');
+$table-&gt;timestamps();
+});</code>
+- user1@~/public/{directory}$ <code>php artisan migrate</code></p>
+<blockquote>
+<p>OUTPUT:
+   Illuminate\Database\QueryException
+ could not find driver (SQL: select * from information_schema.tables where table_schema = laravel and table_name = migrations and table_type = 'BASE TABLE')
+- user1@~/public/{directory}$ <code>sudo apt-get install php-mysql</code>
+- user1@~/public/{directory}$ <code>php artisan migrate</code>
+- user1@~/public/{directory}$ <code>php artisan make:model Task</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Directory</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>~/public/{directory}/database/migrations/2023_01_03_054703_create_tasks_table.php</td>
+<td>php artisan make:migration create_tasks_table --create=tasks</td>
+</tr>
+<tr>
+<td>~/public/{directory}/app/Models/Task.php</td>
+<td>php artisan make:model Task</td>
+</tr>
+<tr>
+<td>~/public/{directory}/app/Http/routes.php</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id='add-routes'>add routes</h2><ul>
+<li>user1@~/public/{directory}$ <code>vi app/Http/routes.php</code>
+```
+&lt;?php
+use App\Task;
+use Illuminate\Http\Request;</li>
+</ul>
+<p>/<em>
+* show task dashboard
+</em>/
+Route::get('/',function(){
+//
+});</p>
+<p>/<em>
+* add new task
+</em>/
+Route::post('/task',function(Request $request){
+//
+});</p>
+<p>/<em>
+* delete task
+</em>/
+Route::delete('/task/{task}',function(Task $task){
+//
+});
+```</p>
+<h2 id='build-view'>build view</h2><p>user1@~/public/{directory}$ vi resources/views/app.blade.php
+```
+<!-- resources/views/layouts/app.blade.php --></p>
+<!DOCTYPE html>
+<p><html lang="en">
+<head>
+<title>Laravel Quickstart - Basiclluminate/Database/Connection.php:712
+708▕         // If an exception occurs when attempting to run a query, we'll format the error
+709▕         // message to include the bindings with SQL, which will make this exception a
+710▕         // lot more helpful to the developer instead of just the database's errors.
+711▕         catch (Exception $e) {
+➜ 712▕             throw new QueryException(
+713▕                 $query, $this-&gt;</p>
+<!-- CSS And JavaScript -->
+<p>710▕         // lot more helpful to the developer instead of just the database's errors.
+711▕         catch (Exception $e) {
+➜ 712▕             throw new QueryException(
+713▕                 $query, $this-&gt;</p>
+<body>
+<div class="container">
+<nav class="navbar navbar-default">
+<!-- Navbar Contents -->
+</nav>
+</div>
+
+@yield('content')
+</body>
+<p></html>
+<code>user1@~/public/{directory}$ vi resources/views/tasks.blade.php</code></p>
+<!--<!-- resources/views/tasks.blade.php -->
+<p>@extends('layouts.app')</p>
+<p>@section('content')</p>
+<!-- Bootstrap Boilerplate... -->
+<div class="panel-body">
+<!-- Display Validation Errors -->
+@include('common.errors')
+
+<!-- New Task Form -->
+<form action="{{ url('task') }}" method="POST" class="form-horizontal">
+{{ csrf_field() }}
+
+<!-- Task Name -->
+<div class="form-group">
+<label for="task" class="col-sm-3 control-label">Task</label>
+
+<div class="col-sm-6">
+<input type="text" name="name" id="task-name" class="form-control">
+</div>
+</div>
+
+<!-- Add Task Button -->
+<div class="form-group">
+<div class="col-sm-offset-3 col-sm-6">
+<button type="submit" class="btn btn-default">
+<i class="fa fa-plus"></i> Add Task
+</button>
+</div>
+</div>
+</form>
+</div>
+<!-- TODO: Current Tasks -->
+<p>@endsection
+```</p>
+<h2 id='change-home-directory'>change home directory</h2><p>vi .env
+<code>APP_CODE_PATH_HOST=/home/adrian/public/{directory}/</code>
+modify ./routes/web.php:17:    return view('welcome');
+<code>return view('tasks');</code></p>
+<h2 id='use-telescope-to-debug-404-not-found'>use telescope to debug 404 not found</h2><p>https://blog.51cto.com/lxw1844912514/3067263
+https://haait.net/how-to-fix-404-not-found-in-laravel/
+adrian@SUNCAT-HUANG:~/public/{directory}$ php artisan migrate</p>
+<p>Illuminate\Database\QueryException</p>
+<p>SQLSTATE[HY000] [1045] Access denied for user 'root'@'172.21.0.1' (using password: NO) (SQL: select * from information_schema.tables where table_schema = laravel and table_name = migrations and table_type = 'BASE TABLE')</p>
+<p>at vendor/laravel/framework/src/Illuminate/Database/Connection.php:712
+708▕         // If an exception occurs when attempting to run a query, we'll format the error
+709▕         // message to include the bindings with SQL, which will make this exception a
+710▕         // lot more helpful to the developer instead of just the database's errors.
+711▕         catch (Exception $e) {
+➜ 712▕             throw new QueryException(
+713▕                 $query, $this-&gt;prepareBindings($bindings), $e
+714▕             );
+715▕         }
+716▕     }</p>
+<p>+33 vendor frames
+34  artisan:37
+Illuminate\Foundation\Console\Kernel::handle()</p>
+<h2 id='commands'>commands</h2><p>check laravel version - <code>php artisan --version</code>
+change role to user - su user
+change role to root(wsl ubuntu root no password) - sudo su -</p>
+<h2 id='code'>code</h2><p>https://github.com/laravel/quickstart-basic</p>
+<h2 id='problem'>Problem</h2><ul>
+<li><a href="https://laradock.io/">Follow this guide to start laradock</a>
+-<a href="https://github.com/laradock/laradock/issues/1589">404 not found nginx</a></li>
+</ul>
+    <script src="../js/tags.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/copy-button.js"></script>
+    <script src="../js/code-tag-syntax-color.js"></script>
+    </div>
+    <div class="footer">
+		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
+	See you in the next story bye.</p>
+		<p><small>Page created on 2023-05-03 18:24:09</small></p>
+    <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- Your share button code -->
+        <div class="fb-share-button" 
+        data-href="you_site_page_url" 
+        data-layout="button_count">
+        </div>	
+    </div>
+    <!-- buy me a coffee-->
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="zhihau" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee." data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <div id="CodeBadgeTemplate" style="display:none">
+        <div class="code-badge">
+            <div class="code-badge-language">{language}</div>
+            <div title="Copy to clipboard">
+                <i class="{copyIconClass} code-badge-copy-icon"></i>
+            </div>
+         </div>
+    </div>
+    </body>
+    </html>
+    

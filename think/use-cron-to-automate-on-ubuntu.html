@@ -1,0 +1,163 @@
+
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="description" content="Author: zhihau shiu  ,
+        Content: Programmer's development, Category: Blog, Notes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--google adsence-->
+        <script src="https://connect.facebook.net/en_US/sdk.js?hash=d3f8450b58c5827c0affa411aec49530" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v3.0"></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2865072968912801" crossorigin="anonymous"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S5M2V3KD75"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-S5M2V3KD75');
+        </script>
+
+        <link rel="stylesheet" href="../css/bolt.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/copy-button.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
+        <title>ZhiHau Blog - ./think/use-cron-to-automate-on-ubuntu</title>
+    </head>
+    <body>
+    <div id="toolbar">
+        <div id="search-box-container">
+            <input type="text" id="search-box" placeholder="search by tags">
+            <div id="suggestions"></div>
+        </div>
+        <div id="nav-container">
+          <a href="https://zhihau.github.io/">Home</a> |
+          <a href="https://zhihau.github.io/about.html">About</a> |
+          <a href="https://zhihau.github.io/projects.html">Projects</a>
+        </div>
+    </div>
+    <div id="main">
+    <h1 id='use-cron-to-automate-on-ubuntu'>use cron to automate on ubuntu</h1><p><a href="../tags/linux.html">linux</a> </p>
+<h2 id='summary'>Summary</h2><ul>
+<li>Cron is a job scheduler</li>
+<li>Install cron , <code>apt install cron</code></li>
+<li>It doesn't restart when a crontab file modified.</li>
+<li>The command <strong>crontab</strong> allows the user to modify entries to cron.</li>
+</ul>
+<h2 id='use-crontab'>Use crontab</h2><ol>
+<li>Edit entries with <code>crontab -e</code></li>
+<li>Add below lines to crontab file
+```</li>
+</ol>
+<h1 id='every-minute-write-hello-world-to-greetings.txt-file.'>Every minute write hello world to greetings.txt file.</h1><ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>echo “Hello World at $(date)” &gt;&gt; $HOME/greetings.txt
+```</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Tail $HOME/greetings.txt</code></li>
+</ul>
+<h1 id='cron-job-syntax'>Cron job syntax</h1><ul>
+<li>[min] [hour] [ay of month] [month] [day of week] [command]</li>
+<li>field|values|</li>
+<li>[min]|0-59|</li>
+<li>[hour]|0-23|</li>
+<li>[day of month]|1-31|</li>
+<li>[month]|1-12|</li>
+<li>[day of week]|0-6|</li>
+<li>*|Every allowed value(minute)|</li>
+<li>0-5|0th-5th minute|</li>
+</ul>
+<h1 id='why-is-the-cron-jobs-not-running'>Why is the cron jobs not running</h1><ul>
+<li><code>su user</code></li>
+<li>if you would like to run cron jobs with a user account</li>
+<li>check cron service <code>service cron status</code></li>
+<li>if it doesn't run, run via <code>service cron start</code></li>
+<li>check the cron job was loaded <code>crontab -l</code></li>
+<li>edit the cron jobs <code>crontab -e</code>
+```</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>echo “Hello World at $(date)” &gt;&gt; $HOME/greetings.txt
+```</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h1 id='tail--$home/greetings.txt'>tail  $HOME/greetings.txt</h1></li>
+</ul>
+<h2 id='important'>Important</h2><p>if you edit cron job with vim, please <strong>quit</strong> vim to load the cron jobs.</p>
+<h1 id='reference'>Reference</h1><ul>
+<li>https://blog.csdn.net/liaoyanyunde/article/details/86572370</li>
+<li>https://askubuntu.com/questions/1165969/ubuntu-18-04-on-wsl-cron-daemon-not-running-after-reboot</li>
+<li>https://askubuntu.com/questions/1241397/ubuntu-20-04-service-autostart</li>
+<li>https://www.cherryservers.com/blog/how-to-use-cron-to-automate-linux-jobs-on-ubuntu-20-04</li>
+<li>https://www.geeksforgeeks.org/tail-command-linux-examples/</li>
+<li>https://stackoverflow.com/questions/66314858/how-we-can-see-all-running-services-linux-machine</li>
+<li>https://askubuntu.com/questions/390201/how-to-see-login-history</li>
+<li><a href="https://blog.51cto.com/u_15615469/5256396">Why is the cron jobs not running</a></li>
+</ul>
+    <script src="../js/tags.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/copy-button.js"></script>
+    <script src="../js/code-tag-syntax-color.js"></script>
+    </div>
+    <div class="footer">
+		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
+	See you in the next story bye.</p>
+		<p><small>Page created on 2023-05-03 18:24:25</small></p>
+    <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- Your share button code -->
+        <div class="fb-share-button" 
+        data-href="you_site_page_url" 
+        data-layout="button_count">
+        </div>	
+    </div>
+    <!-- buy me a coffee-->
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="zhihau" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee." data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <div id="CodeBadgeTemplate" style="display:none">
+        <div class="code-badge">
+            <div class="code-badge-language">{language}</div>
+            <div title="Copy to clipboard">
+                <i class="{copyIconClass} code-badge-copy-icon"></i>
+            </div>
+         </div>
+    </div>
+    </body>
+    </html>
+    

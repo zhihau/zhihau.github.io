@@ -1,0 +1,181 @@
+
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="description" content="Author: zhihau shiu  ,
+        Content: Programmer's development, Category: Blog, Notes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--google adsence-->
+        <script src="https://connect.facebook.net/en_US/sdk.js?hash=d3f8450b58c5827c0affa411aec49530" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v3.0"></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2865072968912801" crossorigin="anonymous"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S5M2V3KD75"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-S5M2V3KD75');
+        </script>
+
+        <link rel="stylesheet" href="../css/bolt.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/copy-button.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
+        <title>ZhiHau Blog - ./think/use-tmux</title>
+    </head>
+    <body>
+    <div id="toolbar">
+        <div id="search-box-container">
+            <input type="text" id="search-box" placeholder="search by tags">
+            <div id="suggestions"></div>
+        </div>
+        <div id="nav-container">
+          <a href="https://zhihau.github.io/">Home</a> |
+          <a href="https://zhihau.github.io/about.html">About</a> |
+          <a href="https://zhihau.github.io/projects.html">Projects</a>
+        </div>
+    </div>
+    <div id="main">
+    <h1 id='use-tmux'>use tmux</h1><p><a href="../tags/tmux.html">tmux</a> <a href="../tags/terminal.html">terminal</a> <a href="../tags/hotkey.html">hotkey</a>  </p>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#pane">Pane</a></li>
+<li><a href="#tabs">Tabs</a></li>
+<li><a href="#sessions">Sessions</a></li>
+</ul>
+<h2 id='introduction'>Introduction</h2><ul>
+<li>When you start tmux via <code>tmux</code> command, it will create a session.</li>
+<li>A <strong>session</strong> contains many windows.</li>
+<li>A <strong>window</strong> contains many pane. <strong>Pane</strong> means split window.</li>
+</ul>
+<h2 id='pane'>Pane</h2><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl-b+%</code></td>
+<td>split vertical panes</td>
+</tr>
+<tr>
+<td><code>Ctrl-b+"</code></td>
+<td>split horizontal panes</td>
+</tr>
+<tr>
+<td><code>Ctrl-b+o</code></td>
+<td>switch to next pane</td>
+</tr>
+<tr>
+<td><code>Ctrl-b+q+#</code></td>
+<td>choose # pane to switch</td>
+</tr>
+<tr>
+<td><code>Ctrl-b+alt+&lt;arrow key&gt;</code></td>
+<td>adjust pane size</td>
+</tr>
+<tr>
+<td><code>Ctrl-d or type "exit"</code></td>
+<td>close pane</td>
+</tr>
+<tr>
+<td><code>Ctrl-d+[</code></td>
+<td>open pane scroll mode. Press PgUp or UpArrow to scroll. Press q to end scroll mode</td>
+</tr>
+<tr>
+<td><code>Ctrl-d+z</code></td>
+<td>max pane</td>
+</tr>
+</tbody>
+</table>
+<h2 id='tabs'>Tabs</h2><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl-b+c</code></td>
+<td>create new tab</td>
+</tr>
+<tr>
+<td><code>Ctrl-b+1</code></td>
+<td>switch to tab 1</td>
+</tr>
+<tr>
+<td><code>Ctrl-b+n</code></td>
+<td>switch to next tab</td>
+</tr>
+<tr>
+<td><code>Ctrl-b+w</code></td>
+<td>show tabs menu</td>
+</tr>
+<tr>
+<td><code>Ctrl-b+,</code></td>
+<td>rename tab then press <Enter> to fin</td>
+</tr>
+</tbody>
+</table>
+<h2 id='sessions'>Sessions</h2><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl-b+d</code></td>
+<td>leave current session and don't close any things. Means detach</td>
+</tr>
+<tr>
+<td><code>tmux a</code></td>
+<td>attach to previous session</td>
+</tr>
+</tbody>
+</table>
+    <script src="../js/tags.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/copy-button.js"></script>
+    <script src="../js/code-tag-syntax-color.js"></script>
+    </div>
+    <div class="footer">
+		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
+	See you in the next story bye.</p>
+		<p><small>Page created on 2023-05-03 18:24:20</small></p>
+    <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- Your share button code -->
+        <div class="fb-share-button" 
+        data-href="you_site_page_url" 
+        data-layout="button_count">
+        </div>	
+    </div>
+    <!-- buy me a coffee-->
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="zhihau" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee." data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <div id="CodeBadgeTemplate" style="display:none">
+        <div class="code-badge">
+            <div class="code-badge-language">{language}</div>
+            <div title="Copy to clipboard">
+                <i class="{copyIconClass} code-badge-copy-icon"></i>
+            </div>
+         </div>
+    </div>
+    </body>
+    </html>
+    

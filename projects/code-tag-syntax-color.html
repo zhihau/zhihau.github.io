@@ -1,0 +1,139 @@
+
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="description" content="Author: zhihau shiu  ,
+        Content: Programmer's development, Category: Blog, Notes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--google adsence-->
+        <script src="https://connect.facebook.net/en_US/sdk.js?hash=d3f8450b58c5827c0affa411aec49530" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v3.0"></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2865072968912801" crossorigin="anonymous"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S5M2V3KD75"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-S5M2V3KD75');
+        </script>
+
+        <link rel="stylesheet" href="../css/bolt.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/copy-button.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
+        <title>ZhiHau Blog - projects/code-tag-syntax-color</title>
+    </head>
+    <body>
+    <div id="toolbar">
+        <div id="search-box-container">
+            <input type="text" id="search-box" placeholder="search by tags">
+            <div id="suggestions"></div>
+        </div>
+        <div id="nav-container">
+          <a href="https://zhihau.github.io/">Home</a> |
+          <a href="https://zhihau.github.io/about.html">About</a> |
+          <a href="https://zhihau.github.io/projects.html">Projects</a>
+        </div>
+    </div>
+    <div id="main">
+    <h1 id='code-tag-syntax-color'>Code tag syntax color</h1><p><a href="../tags/projects.html">projects</a> </p>
+<!-- vim-markdown-toc GitLab -->
+
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#play-scheme">Play scheme</a></li>
+<li><a href="#how-to-use-code-tag-syntax-colorjs">How to use code-tag-syntax-color.js</a></li>
+<li><a href="#color-schemes">Color Schemes</a></li>
+<li><a href="#fluorescent-color-scheme">Fluorescent Color Scheme</a></li>
+<li><a href="#bright-color-scheme">Bright Color Scheme</a></li>
+<li><a href="#metallic-color-scheme">Metallic Color Scheme</a></li>
+<li><a href="#silver-color-scheme">Silver Color Scheme</a></li>
+<li><a href="#fragrance-color-scheme">Fragrance Color Scheme</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+
+<h1 id='introduction'>Introduction</h1><p>When I add a code html tag for a <img alt="html-code-tag-default-color" src="../images/html-code-tag-default-color.PNG" />, it has a boring color. So I extend the color to arguments of a command. And you can change the scheme. Likes <code>find / -name "vim"</code>. Cool!😁 You can click scheme buttons to change the code scheme.</p>
+<h1 id='play-scheme'>Play scheme</h1><p>Click below button to change the code tag block scheme.</p>
+<div style="margin-bottom: 20px;font-size: large;">
+<button style="color:#FF355E;background:#000000" onclick="changeScheme(this.innerText)">Fluorescent</button>
+<button style="color:#FF3855;background:#2243B6" onclick="changeScheme(this.innerText)">Bright</button>
+<button style="color:#C46210;background:lightgrey" onclick="changeScheme(this.innerText)">Metallic</button>
+<button style="color:darkgreen;background:#95E0E8" onclick="changeScheme(this.innerText)">Silver</button>
+<button style="color:#FEFEFA;background:darkgoldenrod" onclick="changeScheme(this.innerText)">Fragrance</button>
+</div>
+
+<p><code>history | awk -F\| '{printf("%s %s\n",NF-1,$0)}' |sort -rn|head</code></p>
+<h1 id='how-to-use-code-tag-syntax-color.js'>How to use code-tag-syntax-color.js</h1><p>Add below script code before the close body tag.</p>
+<pre class="html">
+&lt;script src=&quot;https://zhihau.github.io/js/code-tag-syntax-color.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+<p>If you want to ignore some code section, add the selector name to ignore_selectors array. And place this code before the line that include code-tag-syntax-color.js</p>
+<pre class="html">
+&lt;script&gt;
+let ignore_selectors=[&quot;htmlcode&quot;,&quot;pycode&quot;];
+&lt;/script&gt;
+&lt;script src=&quot;https://zhihau.github.io/js/code-tag-syntax-color.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+<p>Full example</p>
+<pre class="html">
+&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+let ignore_selectors=[&quot;htmlcode&quot;,&quot;pycode&quot;];
+&lt;/script&gt;
+&lt;script src=&quot;https://zhihau.github.io/js/code-tag-syntax-color.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;The HTML &lt;code&gt;button&lt;/code&gt; tag defines a clickable button.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h1 id='color-schemes'>Color Schemes</h1><h2 id='fluorescent-color-scheme'>Fluorescent Color Scheme</h2><p><img alt="Fluorescent color sheme" src="../images/Fluo.png" /></p>
+<h2 id='bright-color-scheme'>Bright Color Scheme</h2><p><img alt="Bright color sheme" src="../images/Brig.png" /></p>
+<h2 id='metallic-color-scheme'>Metallic Color Scheme</h2><p><img alt="Metallic color sheme" src="../images/Meta.png" /></p>
+<h2 id='silver-color-scheme'>Silver Color Scheme</h2><p><img alt="Silver color sheme" src="../images/Silv.png" /></p>
+<h2 id='fragrance-color-scheme'>Fragrance Color Scheme</h2><p><img alt="Fragrance color sheme" src="../images/Frag.png" /></p>
+    <script src="../js/tags.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/copy-button.js"></script>
+    <script src="../js/code-tag-syntax-color.js"></script>
+    </div>
+    <div class="footer">
+		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
+	See you in the next story bye.</p>
+		<p><small>Page created on 2023-05-03 18:20:50</small></p>
+    <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- Your share button code -->
+        <div class="fb-share-button" 
+        data-href="you_site_page_url" 
+        data-layout="button_count">
+        </div>	
+    </div>
+    <!-- buy me a coffee-->
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="zhihau" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee." data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <div id="CodeBadgeTemplate" style="display:none">
+        <div class="code-badge">
+            <div class="code-badge-language">{language}</div>
+            <div title="Copy to clipboard">
+                <i class="{copyIconClass} code-badge-copy-icon"></i>
+            </div>
+         </div>
+    </div>
+    </body>
+    </html>
+    

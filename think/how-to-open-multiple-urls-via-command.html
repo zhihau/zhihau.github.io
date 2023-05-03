@@ -1,0 +1,152 @@
+
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="description" content="Author: zhihau shiu  ,
+        Content: Programmer's development, Category: Blog, Notes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--google adsence-->
+        <script src="https://connect.facebook.net/en_US/sdk.js?hash=d3f8450b58c5827c0affa411aec49530" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v3.0"></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2865072968912801" crossorigin="anonymous"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S5M2V3KD75"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-S5M2V3KD75');
+        </script>
+
+        <link rel="stylesheet" href="../css/bolt.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/copy-button.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
+        <title>ZhiHau Blog - ./think/how-to-open-multiple-urls-via-command</title>
+    </head>
+    <body>
+    <div id="toolbar">
+        <div id="search-box-container">
+            <input type="text" id="search-box" placeholder="search by tags">
+            <div id="suggestions"></div>
+        </div>
+        <div id="nav-container">
+          <a href="https://zhihau.github.io/">Home</a> |
+          <a href="https://zhihau.github.io/about.html">About</a> |
+          <a href="https://zhihau.github.io/projects.html">Projects</a>
+        </div>
+    </div>
+    <div id="main">
+    <h1 id='how-to-open-multiple-urls-via-command'>how-to-open-multiple-urls-via-command</h1><p><a href="../tags/javascript.html">javascript</a> </p>
+<h2 id='define-the-commands'>define the commands</h2><ul>
+<li><code>vi ~/.bashrc</code>
+<code>alias chrome='/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe'
+alias bm='_open_bookmarks() { chrome "file:\\G:\OtherComputer\MyComputer\Archive\Note\other\bookmarks.html?g=$1";}; _open_bookmarks'</code></li>
+<li><code>source ~/.bashrc</code> to read new config</li>
+</ul>
+<h2 id='create-bookmarks.html'>create bookmarks.html</h2><p>vi bookmarks.html
+```
+<html></p>
+<body>
+
+<script>
+const params = new Proxy(new URLSearchParams(window.location.search), {
+get: (searchParams, prop) => searchParams.get(prop),
+});
+let group = params.g; //  g is group. eg. ?g=php
+let md=`
+# php
+- https://www.w3schools.com/php/
+- https://www.php.net/manual/en/index.php
+- https://codebeautify.org/jsonviewer
+# py
+- http://peterdowns.com/posts/first-time-with-pypi.html
+- https://github.com/vinta/awesome-python
+`;
+//console.log(md);
+part=md.split('\n');
+links=[];
+flag=0;
+//console.log(group);
+s_group="# "+group
+for(var i=0;i<part.length;i++){
+p=part[i].trim();
+if(p.indexOf('- ')>-1 && flag==1){
+link=p.replace("- ","");
+links.push(link);
+/*
+console.log(p);
+console.log(flag);
+console.log(group);
+*/
+}
+if(p.indexOf('# ')>-1 && p.indexOf(s_group)>-1 &&flag==0){
+console.log('11');
+flag=1;
+}
+if(p.indexOf('# ')>-1 && p.indexOf(s_group)<=-1&&flag==1){
+/*
+console.log('22');
+console.log(p);
+console.log(flag);
+console.log(group);
+*/
+flag=0;
+}
+}
+console.log(links);
+for(var i=0;i<links.length;i++){
+if(i==0){
+window.open(links[i],"_self");
+}else{
+window.open(links[i]);
+}
+};
+
+//window.open('http://yoururl2.com');
+</script>
+</body>
+<p></html>
+```</p>
+<h2 id='use-the-command'>use the command</h2><p><code>bm php</code> to open php group bookmarks</p>
+<h2 id='chrome-settings'>chrome settings</h2><p>click always allow popup window for the file bookmarks.html</p>
+    <script src="../js/tags.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/copy-button.js"></script>
+    <script src="../js/code-tag-syntax-color.js"></script>
+    </div>
+    <div class="footer">
+		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
+	See you in the next story bye.</p>
+		<p><small>Page created on 2023-05-03 18:24:27</small></p>
+    <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- Your share button code -->
+        <div class="fb-share-button" 
+        data-href="you_site_page_url" 
+        data-layout="button_count">
+        </div>	
+    </div>
+    <!-- buy me a coffee-->
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="zhihau" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee." data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <div id="CodeBadgeTemplate" style="display:none">
+        <div class="code-badge">
+            <div class="code-badge-language">{language}</div>
+            <div title="Copy to clipboard">
+                <i class="{copyIconClass} code-badge-copy-icon"></i>
+            </div>
+         </div>
+    </div>
+    </body>
+    </html>
+    

@@ -1,0 +1,28 @@
+<!-- vim-markdown-toc GitLab -->
+
+<ul>
+<li><a href="#how-to-install-a-vim-plugin">How to install a vim plugin</a></li>
+<li><a href="#remember">Remember</a></li>
+<li><a href="#related">Related</a>
+Footnote 1 link[^first].</li>
+</ul>
+<!-- vim-markdown-toc -->
+<h1 id='how-to-install-a-vim-plugin'>How to install a vim plugin</h1><ol>
+<li>Install <a href="https://github.com/junegunn/vim-plug">vim-plug</a>.</li>
+<li>Download plug.vim or execute <code>wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</code>.  Or <code>curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</code></li>
+<li>Put plug.vim in the <strong>autoload</strong> directory. If the folder doesn't exist, create one with <code>mkdir ~/.vim/autoload</code>.</li>
+<li>Add vim-plug tags in vimrc file and put you'd like to install plugin between these tags. For instance, I want to install nerdtree plugin. The vimrc looks like this.
+<code>call plug#begin('~/.vim/plugged')
+Plug 'preservim/nerdtree'
+call plug#end()</code></li>
+<li>Next, restart vim or execute command <code>so %</code> in the command mode to reload the setting file <strong>vimrc</strong>.</li>
+<li>Run command <code>PlugInstall</code> to install plugins.</li>
+<li>:<code>q</code> to leave plugin install window</li>
+</ol>
+<h1 id='remember'>Remember</h1><p><strong>If you don't want to install any plugin and commet it in the plug block, it will not take effect. You need to remove this line or move this line outside the plug block.</strong></p>
+<p>[^first]: Footnote <strong>can have markup</strong></p>
+<h1 id='related'>Related</h1><ul>
+<li><a href="./how-to-install-a-vim-plugin.html">how-to-install-a-vim-plugin</a></li>
+<li><a href="./how-to-install-NERDTree-file-manager-vim-plugin.html">how-to-install-NERDTree-file-manager-vim-plugin</a></li>
+<li><a href="./how-to-install-auto-save-vim-plugin.html">how-to-install-auto-save-vim-plugin</a></li>
+</ul>

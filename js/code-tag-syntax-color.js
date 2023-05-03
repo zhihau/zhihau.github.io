@@ -125,6 +125,7 @@ const schemes={
         }
     };
 let default_scheme="Fluorescent";
+let ignore_selectors=[];
 //let ignore_selectors=["htmlcode","pycode"];
 let code_color=schemes[default_scheme].color;
 let code_background=schemes[default_scheme].background;
@@ -140,8 +141,12 @@ function setCodeSyntaxColor(){
     for(var i=0;i<ignore_selectors.length;i++){
         ignore+=":not(."+ignore_selectors[i]+")";
     }
-    //elements=document.querySelectorAll('code:not(.htmlcode):not(.pycode)');
-    elements=document.querySelectorAll('code'+ignore);
+    if( ignore.length>0)
+        elements=document.querySelectorAll('code'+ignore);
+    else
+        elements=document.querySelectorAll('code:not(.hljs)');
+    console.log(elements.length);
+    //elements=document.querySelectorAll('code'+ignore);
     if(elements.length==0) return;
     for(var i=0;i<elements.length;i++){
         var code=elements[i].innerText;

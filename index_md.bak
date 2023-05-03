@@ -1,0 +1,91 @@
+# Vim
+- [[think/basic-vim-tips.md]]
+- [[think/how-to-install-a-vim-plugin.md]]
+- [[think/how-to-change-vimrc-location.md]]
+- [[think/how-to-search-a-word-in-a-directory.md]]
+- [[think/preview-markdown-file-in-vim.md]]
+- [[think/sort-in-vim.md]]
+- [[think/press-a-key-to-save-and-run-python-script-in-vim.md]]
+- [[think/change-the-temp-directory-in-vim.md]]
+- [[think/use-template-in-gVimPortable.md]]
+- [[think/create-new-file-in-vim.md]]
+- [[think/show-vimrc-location.md]]
+- [[think/vim-use-session.md]]
+
+# Chatgpt
+- [[think/how-to-use-chatgpt-in-vscode.md]]
+
+# English
+- [[think/thinking-in-english-tips.md]]
+
+# Organize 
+- [[think/good-organize-method.md]]
+
+# Wsl
+- [[think/how-to-install-wsl-on-windows-10.md]]
+- [[think/wsl-problem-read-directory-input-output-error.md]]
+- [[think/windows-terminal-settings.md]]
+- [[think/how-to-start-wsl-with-root.md]]
+- [[think/find-chrome-location.md]]
+
+# Javascript
+- [[think/how-to-open-multiple-urls-via-command.md]]
+
+# Python
+- [[think/python-markdown-to-html.md]]
+- [[think/fuzzy-string-matching-in-python.md]]
+- [[think/quit-a-python-script.md]]
+- [[think/python-list-all-available-video-devices.md]]
+- [[think/python-generate-a-executable-file.md]]
+- [[think/locate-python-executable-file.md]]
+- [[think/python-if-else-in-one-line.md]]
+- [[think/python-create-multilines-string-variable.md]]
+- [[think/python-extract-substring-between-two-markers.md]]
+
+# Bookmarks
+- [[think/how-do-I-manage-my-bookmarks.md]]
+
+# Laravel
+- [[think/use-laradock-to-start-your-site.md]]
+- [[think/create-a-laravel-todo-project.md]]
+
+# Linux
+- [[think/use-tmux.md]]
+- [[think/linux-copy-local-file-to-remote.md]]
+- [[think/tar-and-untar-file.md]]
+- [[think/linux-compare-two-directories.md]]
+- [[think/grep-command.md]]
+- [[think/ssh-keep-connection.md]]
+- [[think/ubuntu-see-login-history.md]]
+- [[think/linux-ssh-login-with-password.md]]
+- [[think/linux-command.md]]
+- [[think/linux-list-all-service-command.md]]
+
+# Windows
+- [[think/windows-putty-keep-connection.md]]
+
+# Database
+- [[think/postgresql-copy-database-in-the-same-server.md]]
+- [[think/postgresql-psql-commands.md]]
+- [[think/postgresql-problem.md]]
+- [[think/connect-to-postgresql-in-a-docker-container.md]]
+
+# Git
+- [[think/git-branch.md]]
+- [[think/git-diff.md]]
+- [[think/git-ignore-files.md]]
+- [[think/git-merge.md]]
+- [[think/git-pull.md]]
+- [[think/git-restore.md]]
+- [[think/git-tag.md]]
+- [[think/change-git-default-commit-editor.md]]
+- [[think/git-log.md]]
+- [[think/git-view-commit-history.md]]
+- [[think/git-reset.md]]
+
+# CSS
+- [[think/align-two-divs-horizontally.md]]
+
+# Site
+- [[think/how-to-add-a-twitter-button-to-your-web-site.md]]
+- [[think/how-to-add-a-facebook-share-button-to-your-web-site.md]]

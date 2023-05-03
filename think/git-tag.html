@@ -1,0 +1,145 @@
+
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="description" content="Author: zhihau shiu  ,
+        Content: Programmer's development, Category: Blog, Notes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--google adsence-->
+        <script src="https://connect.facebook.net/en_US/sdk.js?hash=d3f8450b58c5827c0affa411aec49530" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v3.0"></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2865072968912801" crossorigin="anonymous"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S5M2V3KD75"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-S5M2V3KD75');
+        </script>
+
+        <link rel="stylesheet" href="../css/bolt.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/copy-button.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
+        <title>ZhiHau Blog - ./think/git-tag</title>
+    </head>
+    <body>
+    <div id="toolbar">
+        <div id="search-box-container">
+            <input type="text" id="search-box" placeholder="search by tags">
+            <div id="suggestions"></div>
+        </div>
+        <div id="nav-container">
+          <a href="https://zhihau.github.io/">Home</a> |
+          <a href="https://zhihau.github.io/about.html">About</a> |
+          <a href="https://zhihau.github.io/projects.html">Projects</a>
+        </div>
+    </div>
+    <div id="main">
+    <h1 id='use-tag'>Use tag</h1><p><a href="../tags/git.html">git</a> </p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git tag</code></td>
+<td>List all tags</td>
+</tr>
+<tr>
+<td><code>git tag -l "*v1.*"</code></td>
+<td>List tags by patten</td>
+</tr>
+<tr>
+<td><code>git tag -a v1.4 -m "my version 1.4"</code></td>
+<td>Create annotation tag</td>
+</tr>
+<tr>
+<td><code>git show v1.4</code></td>
+<td>View tag information</td>
+</tr>
+<tr>
+<td><code>git tag YYYY-MM-&lt;project-name&gt;_v1.0.0_YYYY-MM-dd_&lt;last-commit-id-8-chars&gt;</code></td>
+<td>Example</td>
+</tr>
+<tr>
+<td><code>git tag -d &lt;tag-name&gt;</code></td>
+<td>Delete tag</td>
+</tr>
+<tr>
+<td><code>git tag &lt;tag-name&gt;</code></td>
+<td>Create tag (lightweight tag,no option -a)</td>
+</tr>
+<tr>
+<td><code>git push -delete origin &lt;tag-name&gt;</code></td>
+<td>Delete remote tag or</td>
+</tr>
+<tr>
+<td><code>git push origin :&lt;tag-name&gt;</code></td>
+<td>Delete remote tag</td>
+</tr>
+<tr>
+<td><code>git push origin &lt;tag-name&gt;</code></td>
+<td>Push tag</td>
+</tr>
+</tbody>
+</table>
+<h1 id='git-show-v1.4--example'>git show v1.4  example</h1><p>{{{
+tag v1.4
+Tagger: Ben Straub <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#110;&#64;&#115;&#116;&#114;&#97;&#117;&#98;&#46;&#99;&#99;">&#98;&#101;&#110;&#64;&#115;&#116;&#114;&#97;&#117;&#98;&#46;&#99;&#99;</a>
+Date:   Sat May 3 20:19:12 2014 -0700</p>
+<p>my version 1.4</p>
+<p>commit ca82a6dff817ec66f44342007202690a93763949
+Author: Scott Chacon <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#99;&#104;&#97;&#99;&#111;&#110;&#64;&#103;&#101;&#101;&#45;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#115;&#99;&#104;&#97;&#99;&#111;&#110;&#64;&#103;&#101;&#101;&#45;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
+Date:   Mon Mar 17 21:52:11 2008 -0700</p>
+<p>changed the version number
+}}}</p>
+<h1 id='git-show-v1.4-lw-example---lightweight-tag'>git show v1.4-lw example - lightweight tag</h1><p>{{{
+commit ca82a6dff817ec66f44342007202690a93763949
+Author: Scott Chacon <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#99;&#104;&#97;&#99;&#111;&#110;&#64;&#103;&#101;&#101;&#45;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#115;&#99;&#104;&#97;&#99;&#111;&#110;&#64;&#103;&#101;&#101;&#45;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
+Date:   Mon Mar 17 21:52:11 2008 -0700
+}}}</p>
+    <script src="../js/tags.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/copy-button.js"></script>
+    <script src="../js/code-tag-syntax-color.js"></script>
+    </div>
+    <div class="footer">
+		<p>Friends who are interested in this story may wish to leave a message <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> your thoughts. If you like my story, you can <a href="https://www.buymeacoffee.com/zhihau">buy me a coffee</a>.
+	See you in the next story bye.</p>
+		<p><small>Page created on 2023-05-03 18:24:13</small></p>
+    <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- Your share button code -->
+        <div class="fb-share-button" 
+        data-href="you_site_page_url" 
+        data-layout="button_count">
+        </div>	
+    </div>
+    <!-- buy me a coffee-->
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="zhihau" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee." data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <div id="CodeBadgeTemplate" style="display:none">
+        <div class="code-badge">
+            <div class="code-badge-language">{language}</div>
+            <div title="Copy to clipboard">
+                <i class="{copyIconClass} code-badge-copy-icon"></i>
+            </div>
+         </div>
+    </div>
+    </body>
+    </html>
+    
